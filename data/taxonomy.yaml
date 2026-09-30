@@ -1,0 +1,112 @@
+# Section tree for the README. Order here is the order in the README.
+# Each paper in papers.yaml points to one leaf `id`.
+- id: surveys
+  title: Surveys and Position Papers
+  children:
+    - id: surveys.self-improvement
+      title: Self-improvement and self-evolution
+    - id: surveys.ai-research
+      title: AI for research and AI scientists
+    - id: surveys.related
+      title: Related surveys (agents, RL for reasoning, evaluation)
+    - id: surveys.position
+      title: Position papers
+
+- id: foundations
+  title: Foundations and Theory
+  blurb: Where the idea of recursive self-improvement comes from, and what theory says about its limits.
+  children:
+    - id: foundations.classic
+      title: Classical lineage
+    - id: foundations.levels
+      title: Definitions and levels of autonomy
+    - id: foundations.theory
+      title: Theory and limits of self-improvement
+
+- id: outputs
+  title: Improving Outputs and Context (Inference Time)
+  blurb: The model is fixed; its answers, prompts, or memory improve.
+  children:
+    - id: outputs.refine
+      title: Self-refinement and self-correction
+    - id: outputs.memory
+      title: Experience, memory, and skill libraries
+    - id: outputs.prompt
+      title: Prompt and program optimization
+
+- id: weights
+  title: Improving Weights (Training Time)
+  blurb: The model trains on data, rewards, or curricula it produces itself.
+  children:
+    - id: weights.self-training
+      title: Self-training and bootstrapped reasoning
+    - id: weights.self-reward
+      title: Self-rewarding and AI feedback
+    - id: weights.self-play
+      title: Self-play and self-generated curricula
+    - id: weights.intrinsic-rl
+      title: RL from intrinsic and unsupervised signals
+    - id: weights.self-adapt
+      title: Self-adaptation and continual self-updating
+    - id: weights.limits
+      title: Model collapse and the limits of synthetic data
+    - id: weights.frontier
+      title: Frontier practice (models trained on their predecessors' outputs)
+    - id: weights.nlp
+      title: Language tasks (translation, summarization, dialogue, multilingual)
+
+- id: agents
+  title: Improving the Improver (Self-Modifying Agents)
+  blurb: The system rewrites its own scaffold, code, or search procedure.
+  children:
+    - id: agents.self-referential
+      title: Self-referential optimizers
+    - id: agents.design
+      title: Automated agent design
+    - id: agents.self-rewriting
+      title: Self-rewriting agents
+    - id: agents.evolution
+      title: LLM-guided evolutionary search
+
+- id: ai4ai
+  title: AI for AI (Automating AI Research)
+  blurb: AI systems that improve the pipeline that produces the next AI systems.
+  children:
+    - id: ai4ai.ideation
+      title: Ideation and hypothesis generation
+    - id: ai4ai.mle
+      title: ML engineering and experimentation agents
+    - id: ai4ai.algorithms
+      title: Algorithm and objective discovery
+    - id: ai4ai.architecture
+      title: Architecture discovery
+    - id: ai4ai.kernels
+      title: Kernels and systems optimization
+    - id: ai4ai.data
+      title: Data, environment, and benchmark generation
+    - id: ai4ai.alignment
+      title: Automated alignment and interpretability research
+    - id: ai4ai.writing-review
+      title: Writing, reviewing, and reproduction
+    - id: ai4ai.scientist
+      title: End-to-end AI scientists
+
+- id: evaluation
+  title: Benchmarks and Evaluation
+  children:
+    - id: evaluation.benchmarks
+      title: Benchmarks for AI research tasks
+    - id: evaluation.measurement
+      title: Measuring progress and self-improvement
+
+- id: safety
+  title: Safety, Governance, and Forecasting
+  children:
+    - id: safety.frameworks
+      title: Frontier safety frameworks, system cards, and governance
+    - id: safety.industry
+      title: Industry reports and milestones
+    - id: safety.forecasting
+      title: Forecasting and economics of AI R&D automation
+    - id: safety.failures
+      title: Failure modes and oversight
