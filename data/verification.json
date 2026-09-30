@@ -4780,6 +4780,11 @@
   "status": "ok",
   "title": "The Red Queen Gödel Machine: Co-Evolving Agents and Their Evaluators"
  },
+ "ibm2020ai": {
+  "query_arxiv": null,
+  "query_title": "AI for AI set to make it easy to create machine learning algorithms",
+  "status": "pending"
+ },
  "ibrahimoglu2026autonomous": {
   "query_arxiv": null,
   "query_title": "Autonomous AI agents and recursive self-improvement: a comprehensive survey of contemporary architectures, capabilities, and safety frameworks",
@@ -11945,6 +11950,41 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Continually self-improving AI"
+ },
+ "yang2026frontis": {
+  "authors": [
+   "Junlin Yang",
+   "Che Jiang",
+   "Yu Fu",
+   "Tianwei Luo",
+   "Can Ren",
+   "Weizhi Wang",
+   "Kaikai Zhao",
+   "Hongyi Liu",
+   "Yuxin Zuo",
+   "Yuru Wang",
+   "Yuchen Fan",
+   "Kai Tian",
+   "Zhenzhao Yuan",
+   "Xiaojian Lin",
+   "Li Sheng",
+   "Rushi Qiang",
+   "Guoli Jia",
+   "Xingtai Lv",
+   "Ermo Hua",
+   "Dianqiao Lei",
+   "Youbang Sun",
+   "Ning Ding",
+   "Bowen Zhou",
+   "Kaiyan Zhang"
+  ],
+  "date": "2026-07-30",
+  "method": "arxiv",
+  "query_arxiv": "2607.28568",
+  "query_title": "Frontis-MA1: Training an AI4AI Model towards Recursive Self-Improvement in Machine Learning Engineering",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Frontis-MA1: Training an AI4AI Model towards Recursive Self-Improvement in Machine Learning Engineering"
  },
  "yang2026sciintegrity": {
   "authors": [

@@ -65,6 +65,11 @@ def split_venue(venue):
     return (m.group(1).strip(), m.group(2)) if m else ((venue or "").strip(), None)
 
 
+def brace_hyphen(name):
+    """Protect hyphenated given names such as 'Huan-ang' from BibTeX's von-part rule."""
+    return " ".join("{" + t + "}" if "-" in t and re.search(r"-[a-z]", t) else t for t in name.split())
+
+
 def authors_field(p, ver):
     names = ver.get("authors") if ver.get("status") == "ok" and ver.get("authors") else None
     if not names:
@@ -74,11 +79,16 @@ def authors_field(p, ver):
             names.append("others")
     if len(names) > 15:
         names = names[:15] + ["others"]
-    return " and ".join(tex(n) for n in names) or "Anonymous"
+    return " and ".join(brace_hyphen(tex(n)) for n in names) or "Anonymous"
+
+
+def url_tex(u):
+    return u.replace("%", "\\%").replace("#", "\\#")
 
 
 def to_bib(p, ver):
-    venue, vyear = split_venue(p.get("venue", ""))
+    full_venue = p.get("venue", "") or ""
+    venue, vyear = split_venue(full_venue)
     year = vyear or str(p.get("date", ""))[:4] or str(ver.get("year", ""))
     fields = {"title": "{" + tex(p["title"]) + "}", "author": authors_field(p, ver), "year": year}
     if p.get("bibtype") == "misc" or not venue or venue.lower().startswith(("arxiv", "preprint")):
@@ -87,9 +97,12 @@ def to_bib(p, ver):
             fields["journal"] = f"arXiv preprint arXiv:{p['arxiv']}"
         else:
             kind = "misc"
-            fields["howpublished"] = "\\url{" + p["url"] + "}"
+            fields["howpublished"] = "\\url{" + url_tex(p["url"]) + "}"
             if p.get("org"):
                 fields["note"] = tex(p["org"])
+    elif "workshop" in full_venue.lower():
+        kind = "inproceedings"
+        fields["booktitle"] = tex(full_venue)
     elif venue in JOURNALS:
         kind = "article"
         fields["journal"] = JOURNALS[venue]
@@ -106,12 +119,12 @@ def to_bib(p, ver):
         fields["journal"] = tex(venue)
     else:  # reports, system cards, blog posts, and other web documents
         kind = "misc"
-        fields["howpublished"] = "\\url{" + p["url"] + "}"
+        fields["howpublished"] = "\\url{" + url_tex(p["url"]) + "}"
         fields["note"] = tex(venue + (f" ({vyear})" if vyear and vyear not in venue else ""))
     if p.get("arxiv") and "journal" not in fields:
         fields["eprint"] = p["arxiv"]
         fields["archivePrefix"] = "arXiv"
-    fields["url"] = p["url"]
+    fields["url"] = url_tex(p["url"])
     body = ",\n".join(f"  {k:<12} = {{{v}}}" if k != "title" else f"  {k:<12} = {v}" for k, v in fields.items())
     return f"@{kind}{{{p['key']},\n{body}\n}}\n"
 

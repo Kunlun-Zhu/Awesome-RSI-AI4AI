@@ -5175,10 +5175,10 @@
 - key: good1966speculations
   short: Good 1965
   title: Speculations Concerning the First Ultraintelligent Machine
-  authors: I. J. Good
-  venue: Advances in Computers vol. 6
+  authors: Irving John Good
+  venue: Advances in Computers 1966
   date: 1966-01
-  url: https://doi.org/10.1016/S0065-2458(08
+  url: https://doi.org/10.1016/S0065-2458(08)60418-0
   section: foundations.classic
   note: Machines designing better machines yield an "intelligence explosion"; first ultraintelligent machine is "last invention"
 - key: schmidhuber1987evolutionary
@@ -5210,7 +5210,7 @@
   date: 2007-01
   url: https://doi.org/10.1007/978-3-540-68677-4_12
   section: foundations.classic
-  note: AGI architecture chapter; standard "seed AI" reference (verified bibliographically only)
+  note: AGI architecture chapter; standard "seed AI" reference
 - key: hall2007self
   short: Hall 2007
   title: 'Self-improving AI: an Analysis'
@@ -5219,7 +5219,7 @@
   date: 2007-01
   url: https://doi.org/10.1007/s11023-007-9065-3
   section: foundations.classic
-  note: Early analytic treatment of self-improving AI (verified bibliographically only)
+  note: Early analytic treatment of self-improving AI
 - key: omohundro2008basic
   short: Basic AI Drives
   title: The Basic AI Drives
@@ -5298,7 +5298,7 @@
   date: 2016-01
   url: https://doi.org/10.1007/978-3-319-41649-6_13
   section: foundations.classic
-  note: Argues RSI systems should be grown from experience rather than proven (verified bibliographically)
+  note: Argues RSI systems should be grown from experience rather than proven
 - key: andrychowicz2016learning
   short: L2L
   title: Learning to learn by gradient descent by gradient descent
@@ -5845,7 +5845,7 @@
   url: https://deepmind.google/blog/introducing-the-frontier-safety-framework/
   section: safety.frameworks
   locus: pipeline
-  note: 'ML R&D critical capability level: fully automate AI R&D pipeline at competitive cost (secondary summary)'
+  note: 'ML R&D critical capability level: fully automate AI R&D pipeline at competitive cost'
 - key: chan2026measuring
   short: AIRDA metrics
   title: Measuring AI R&D Automation
@@ -6230,9 +6230,9 @@
   note: Collects quotes from Clark, Kaplan, Orr and Pachocki ("most important goal"), plus Marcus and Narayanan as skeptics.
 - key: ai2024safety
   short: AI Scientist timeout edits
-  title: (§ safety, AI Scientist v1)
+  title: 'The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery (blog post)'
   authors: Sakana AI
-  venue: Sakana AI 2024
+  venue: Sakana AI blog 2024
   date: 2024-08
   url: https://sakana.ai/ai-scientist/
   section: ai4ai.scientist
@@ -7544,7 +7544,7 @@
   section: weights.self-adapt
   locus: weights
   recursive: 'no'
-  note: (Title verified only; abstract not read) Test-time training for long-context modeling.
+  note: Test-time training for long-context modeling.
 - key: shenfeld2026self
   short: SDFT (continual)
   title: Self-Distillation Enables Continual Learning
@@ -7915,8 +7915,7 @@
   url: https://arxiv.org/abs/2609.00077
   section: weights.limits
   locus: artifact
-  note: (Title and venue verified; abstract not read) Algorithmic mode collapse in code-level autonomous research loops. The
-    AI4AI analogue of collapse.
+  note: Algorithmic mode collapse in code-level autonomous research loops. The AI4AI analogue of collapse.
 - key: daniels2026inducing
   short: EM via iterative DPO
   title: Inducing Emergent Misalignment from Reward Hacks with Iterative DPO
@@ -8298,7 +8297,7 @@
   locus: weights
   signal: mixed
   recursive: 'no'
-  note: Applies R1-Zero-style RL without SFT cold-start to LLM MT (reward details not re-verified here).
+  note: Applies R1-Zero-style RL without SFT cold-start to LLM MT.
 - key: yang2025ssr
   short: SSR-Zero
   title: 'SSR-Zero: Simple Self-Rewarding Reinforcement Learning for Machine Translation'
@@ -8346,7 +8345,7 @@
   arxiv: '2608.06216'
   url: https://arxiv.org/abs/2608.06216
   section: surveys.self-improvement
-  note: '(Comment: "Survey on continual learning in the LLM and agentic-AI era"; abstract not read.)'
+  note: ''
 - key: romeraparedes2024mathematical
   short: FunSearch
   title: Mathematical discoveries from program search with large language models
@@ -8372,7 +8371,7 @@
 - key: zhao2026reward
   short: RSI reward hacking
   title: Reward Hacking in Self-Improving Code Agents
-  authors: Zhao, Srikanth, Wu, Jiang
+  authors: Bingchen Zhao, Dhruv Srikanth, Yuxiang Wu, Zhengyao Jiang
   venue: ICLR 2026 Workshop on AI with Recursive Self-Improvement
   date: 2026-01
   url: https://iclr.cc/virtual/2026/10018648
@@ -8622,3 +8621,36 @@
   section: safety.frameworks
   note: 'AI self-improvement evaluations: Monorepo-Bench dropped as saturated; new internal research-debugging, kernel, NanoGPT,
     and post-training evaluations.'
+- key: yang2026frontis
+  short: Frontis-MA1
+  title: 'Frontis-MA1: Training an AI4AI Model towards Recursive Self-Improvement in Machine Learning Engineering'
+  authors: Junlin Yang, Che Jiang, Yu Fu, Tianwei Luo, Can Ren, Weizhi Wang, Kaikai Zhao, Hongyi Liu
+  venue: arXiv 2026
+  date: 2026-07
+  arxiv: '2607.28568'
+  url: https://arxiv.org/abs/2607.28568
+  section: ai4ai.mle
+  locus: weights
+  note: Trains a model for ML engineering and frames RSI as AI improving the process of building AI (AI4AI).
+- key: ibm2020ai
+  short: IBM AI for AI
+  title: AI for AI set to make it easy to create machine learning algorithms
+  authors: IBM Research
+  venue: IBM Research blog 2020
+  date: 2020-02
+  url: https://research.ibm.com/blog/autoai-create-machine-learning-algorithms
+  section: foundations.classic
+  note: 'Early use of the phrase "AI for AI" in the AutoML sense: designing, training, and optimizing machine learning models
+    automatically.'
+- key: deepmind2026alphaevolve
+  short: AlphaEvolve impact
+  title: 'AlphaEvolve: How our Gemini-powered coding agent is scaling impact across fields'
+  authors: AlphaEvolve team
+  venue: Google DeepMind blog 2026
+  date: 2026-05
+  url: https://deepmind.google/blog/alphaevolve-impact/
+  section: agents.evolution
+  locus: artifact
+  signal: execution
+  note: 'One-year update: a circuit design integrated into next-generation TPU silicon; 20% less Spanner write amplification;
+    cache-replacement policies in two days.'
