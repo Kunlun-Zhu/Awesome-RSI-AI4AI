@@ -12,7 +12,7 @@ A curated and tagged reading list on **recursive self-improvement (RSI)**, **sel
 
 The three terms name one idea at different scales. Self-evolving agents change their memory, prompts, or code as they work; self-improving models train on data and rewards they generate; AI4AI systems improve the pipeline that builds the next model. When the product of any of these loops becomes the improver in the next round, the loop is recursive.
 
-This list accompanies our survey *From Recursive Self-Improvement to AI for AI: A Survey and Perspective on Self-Evolving AI* (preprint coming soon).
+This list accompanies our survey *From Recursive Self-Improvement to AI for AI: A Survey and Perspective on Verification-Bounded Self-Evolving AI* (preprint coming soon).
 
 <p align="center"><img src="assets/overview.png" width="92%" alt="From RSI to AI4AI: the improvement loop"></p>
 
