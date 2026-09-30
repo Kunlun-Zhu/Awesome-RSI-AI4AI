@@ -320,6 +320,16 @@
   "query_title": "When AI builds itself",
   "status": "pending"
  },
+ "anthropic2026measurements": {
+  "query_arxiv": null,
+  "query_title": "Measurements for understanding the pace of AI development inside frontier labs",
+  "status": "pending"
+ },
+ "anthropic2026opus": {
+  "query_arxiv": null,
+  "query_title": "Claude Opus 5.5 System Card",
+  "status": "pending"
+ },
  "anthropic2026responsible": {
   "query_arxiv": null,
   "query_title": "Responsible Scaling Policy Version 3.0",
@@ -555,6 +565,21 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Stop Automating Peer Review Without Rigorous Evaluation"
+ },
+ "becker2025measuring": {
+  "authors": [
+   "Joel Becker",
+   "Nate Rush",
+   "Elizabeth Barnes",
+   "David Rein"
+  ],
+  "date": "2025-07-12",
+  "method": "arxiv",
+  "query_arxiv": "2507.09089",
+  "query_title": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity"
  },
  "beel2025evaluating": {
   "authors": [
@@ -1428,6 +1453,11 @@
   "status": "ok",
   "title": "Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops"
  },
+ "chen2026safety": {
+  "query_arxiv": null,
+  "query_title": "Safety in Self-Evolving Agents: A Survey",
+  "status": "pending"
+ },
  "chen2026self": {
   "authors": [
    "Kuan-Yen Chen",
@@ -1644,6 +1674,11 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Bare Minimum Mitigations for Autonomous AI Development"
+ },
+ "codelion2025openevolve": {
+  "query_arxiv": null,
+  "query_title": "OpenEvolve (open-source AlphaEvolve implementation)",
+  "status": "pending"
  },
  "conmy2023automated": {
   "authors": [
@@ -3987,6 +4022,11 @@
   "status": "ok",
   "title": "Improving Machine Translation with Human Feedback: An Exploration of Quality Estimation as a Reward Model"
  },
+ "he2025breaking": {
+  "query_arxiv": null,
+  "query_title": "Breaking the Reasoning Barrier: A Survey on LLM Complex Reasoning through the Lens of Self-Evolution",
+  "status": "pending"
+ },
  "he2026beneath": {
   "authors": [
    "Bowei He",
@@ -4740,6 +4780,11 @@
   "status": "ok",
   "title": "The Red Queen Gödel Machine: Co-Evolving Agents and Their Evaluators"
  },
+ "ibrahimoglu2026autonomous": {
+  "query_arxiv": null,
+  "query_title": "Autonomous AI agents and recursive self-improvement: a comprehensive survey of contemporary architectures, capabilities, and safety frameworks",
+  "status": "pending"
+ },
  "ichihara2026privileged": {
   "authors": [
    "Yuki Ichihara",
@@ -4793,6 +4838,11 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Autonomous LLM-driven research from data to human-verifiable research papers"
+ },
+ "intology2025previewing": {
+  "query_arxiv": null,
+  "query_title": "Previewing Locus (blog) + PostTrainBench update",
+  "status": "pending"
  },
  "intology2025tempest": {
   "query_arxiv": null,
@@ -4935,6 +4985,11 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Learning to Optimize through Solver-Grounded Self-Play"
+ },
+ "jiang2026self": {
+  "query_arxiv": null,
+  "query_title": "Self-Improving Agents in the Era of Experience: A Survey of Self- to Meta-Evolution",
+  "status": "pending"
  },
  "jin2024agentreview": {
   "authors": [
@@ -5340,6 +5395,11 @@
   "status": "ok",
   "title": "Measuring AI Ability to Complete Long Software Tasks"
  },
+ "kwa2026because": {
+  "query_arxiv": null,
+  "query_title": "Because 8 ≈ e², Anthropic's researcher uplift is plausibly >2x",
+  "status": "pending"
+ },
  "kwan2026scope": {
   "authors": [
    "Wai-Chung Kwan",
@@ -5354,6 +5414,11 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "SCOPE: Self-Play via Co-Evolving Policies for Open-Ended Tasks"
+ },
+ "labs2025pangram": {
+  "query_arxiv": null,
+  "query_title": "Pangram Predicts 21% of ICLR Reviews are AI-Generated (industry blog)",
+  "status": "pending"
  },
  "lange2025robust": {
   "authors": [
@@ -5728,6 +5793,11 @@
   "status": "ok",
   "title": "Build Your Personalized Research Group: A Multiagent Framework for Continual and Interactive Science Automation"
  },
+ "li2025chain": {
+  "query_arxiv": null,
+  "query_title": "Chain of Ideas: Revolutionizing Research Via Novel Idea Development with LLM Agents",
+  "status": "pending"
+ },
  "li2025decomposing": {
   "authors": [
    "Yin Li"
@@ -5790,6 +5860,11 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "The FM Agent"
+ },
+ "li2025generation": {
+  "query_arxiv": null,
+  "query_title": "From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge",
+  "status": "pending"
  },
  "li2025model": {
   "authors": [
@@ -6153,6 +6228,25 @@
   "title": "KernelEvolve: Scaling Agentic Kernel Coding for Heterogeneous AI Accelerators at Meta"
  },
  "libon1932researcharena": {
+  "authors": [
+   "Lena Libon",
+   "Ben Rank",
+   "Jehyeok Yeon",
+   "David Schmotz",
+   "Jeremy Qin",
+   "Daniel Donnelly",
+   "Derck Prinzhorn",
+   "Maksym Andriushchenko"
+  ],
+  "date": "2026-07-21",
+  "method": "arxiv",
+  "query_arxiv": "2607.19321",
+  "query_title": "ResearchArena: Evaluating Sabotage and Monitoring in Automated AI R&D",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "ResearchArena: Evaluating Sabotage and Monitoring in Automated AI R&D"
+ },
+ "libon2026researcharena": {
   "authors": [
    "Lena Libon",
    "Ben Rank",
@@ -6632,6 +6726,11 @@
   "status": "ok",
   "title": "EvoX: Meta-Evolution for Automated Discovery"
  },
+ "liu2026path": {
+  "query_arxiv": null,
+  "query_title": "The Path to Recursive Self-Improving Agents: Foundation, Framework, and Future Directions",
+  "status": "pending"
+ },
  "liu2026researchbench": {
   "authors": [
    "Yujie Liu",
@@ -6709,6 +6808,11 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "SPADE: Self-Play in Adaptive Synthetic Executable Environments"
+ },
+ "long2024llms": {
+  "query_arxiv": null,
+  "query_title": "On LLMs-Driven Synthetic Data Generation, Curation, and Evaluation: A Survey",
+  "status": "pending"
  },
  "lu2022discovered": {
   "authors": [
@@ -7061,6 +7165,11 @@
   "query_title": "Recent Frontier Models Are Reward Hacking",
   "status": "pending"
  },
+ "metr2026summary": {
+  "query_arxiv": null,
+  "query_title": "Summary of METR's predeployment evaluation of Claude Opus 5.5",
+  "status": "pending"
+ },
  "metr2026task": {
   "query_arxiv": null,
   "query_title": "Task-Completion Time Horizons of Frontier AI Models",
@@ -7192,6 +7301,18 @@
   "status": "ok",
   "title": "Jr. AI Scientist and Its Risk Report: Autonomous Scientific Exploration from a Baseline Paper"
  },
+ "mo2026age": {
+  "authors": [
+   "Belinda Mo"
+  ],
+  "date": "2026-06-18",
+  "method": "arxiv",
+  "query_arxiv": "2607.26064",
+  "query_title": "The Age of AI Agents Demands A New Scientific Paradigm To Sustain Trustworthy Science",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "The Age of AI Agents Demands A New Scientific Paradigm To Sustain Trustworthy Science"
+ },
  "mo2026position": {
   "authors": [
    "Belinda Mo"
@@ -7321,6 +7442,11 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "MLGym: A New Framework and Benchmark for Advancing AI Research Agents"
+ },
+ "nguyen2026survey": {
+  "query_arxiv": null,
+  "query_title": "A Survey on Self-evolving Agents for Wireless Networks",
+  "status": "pending"
  },
  "ning2026one": {
   "authors": [
@@ -7570,6 +7696,11 @@
  "openai2026gpt": {
   "query_arxiv": null,
   "query_title": "GPT-5.4 Thinking System Card – AI Self-Improvement",
+  "status": "pending"
+ },
+ "openai2026gpt56": {
+  "query_arxiv": null,
+  "query_title": "GPT-5.6 System Card",
   "status": "pending"
  },
  "openai2026gpta": {
@@ -8512,6 +8643,11 @@
   "status": "ok",
   "title": "Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks"
  },
+ "romeraparedes2024mathematical": {
+  "query_arxiv": null,
+  "query_title": "Mathematical discoveries from program search with large language models",
+  "status": "pending"
+ },
  "roy2025you": {
   "authors": [
    "Shuvendu Roy",
@@ -8626,6 +8762,11 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Rainbow Teaming: Open-Ended Generation of Diverse Adversarial Prompts"
+ },
+ "sapkota2025self": {
+  "query_arxiv": null,
+  "query_title": "From Self-Learning to Self-Evolving Architectures in LLMs: A Short Survey",
+  "status": "pending"
  },
  "schaeffer2025position": {
   "authors": [
@@ -10138,6 +10279,11 @@
   "status": "ok",
   "title": "Bootstrapping LLM-based Task-Oriented Dialogue Agents via Self-Talk"
  },
+ "vatsal2026beyond": {
+  "query_arxiv": null,
+  "query_title": "Beyond Static Agents: A Six-Dimensional Taxonomy and Survey of Self-Evolving LLM Agents for Healthcare",
+  "status": "pending"
+ },
  "venktesh2025trust": {
   "authors": [
    "V Venktesh",
@@ -10517,6 +10663,11 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Auditing Harness Tampering in Self-Improving Agents"
+ },
+ "wang2026diving": {
+  "query_arxiv": null,
+  "query_title": "Diving into Reliable Self-Evolving Agents: A Survey",
+  "status": "pending"
  },
  "wang2026knowledge": {
   "authors": [
@@ -10905,6 +11056,20 @@
   "status": "ok",
   "title": "Forecasting AI Time Horizon Under Compute Slowdowns"
  },
+ "whitfill2025forecasting": {
+  "authors": [
+   "Parker Whitfill",
+   "Ben Snodin",
+   "Joel Becker"
+  ],
+  "date": "2025-11-23",
+  "method": "arxiv",
+  "query_arxiv": "2511.19492",
+  "query_title": "Forecasting AI Time Horizon Under Compute Slowdowns",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Forecasting AI Time Horizon Under Compute Slowdowns"
+ },
  "whitfill2025will": {
   "authors": [
    "Parker Whitfill",
@@ -11094,6 +11259,11 @@
   "status": "ok",
   "title": "Self-Play Preference Optimization for Language Model Alignment"
  },
+ "wu2026ai4ai": {
+  "query_arxiv": null,
+  "query_title": "AI4AI Survey: From Long-Horizon Agents to Recursive Self-Improvement — Definitions, Reliable Horizons, and Open Problems",
+  "status": "pending"
+ },
  "wu2026envs": {
   "authors": [
    "Xiaojun Wu",
@@ -11165,6 +11335,11 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "SciReplicate-Bench: Benchmarking LLMs in Agent-driven Algorithmic Reproduction from Research Papers"
+ },
+ "xiang2026systematic": {
+  "query_arxiv": null,
+  "query_title": "A Systematic Survey of Self-Evolving Agents: From Model-Centric to Environment-Driven Co-Evolution",
+  "status": "pending"
  },
  "xiao2026pilot": {
   "authors": [
@@ -11933,6 +12108,16 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Meta Context Engineering via Agentic Skill Evolution"
+ },
+ "ye2026survey": {
+  "query_arxiv": null,
+  "query_title": "A Survey on AI for AI: When the Improver Becomes the Improvee",
+  "status": "pending"
+ },
+ "yehudai2026survey": {
+  "query_arxiv": null,
+  "query_title": "A Survey on Evaluation of LLM-based Agents",
+  "status": "pending"
  },
  "yeon2026inferencebench": {
   "authors": [
@@ -13161,6 +13346,11 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "AutoReproduce: Automatic AI Experiment Reproduction with Paper Lineage"
+ },
+ "zhao2026reward": {
+  "query_arxiv": null,
+  "query_title": "Reward Hacking in Self-Improving Code Agents",
+  "status": "pending"
  },
  "zhao2026scienceflow": {
   "authors": [

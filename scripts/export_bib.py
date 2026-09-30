@@ -48,7 +48,8 @@ JOURNALS = {
 }
 
 UNICODE_FIX = {"–": "--", "—": "---", "’": "'", "‘": "`", "“": "``", "”": "''", "×": "$\\times$",
-               "→": "$\\rightarrow$", "≥": "$\\geq$", "≤": "$\\leq$", "∞": "$\\infty$", "…": "\\ldots{}"}
+               "→": "$\\rightarrow$", "≥": "$\\geq$", "≤": "$\\leq$", "∞": "$\\infty$", "…": "\\ldots{}",
+               "≈": "$\\approx$", "²": "$^2$", "³": "$^3$", "ℜ": "$\\Re$", "×": "$\\times$", "⁴": "$^4$"}
 
 
 def tex(s):
@@ -97,9 +98,16 @@ def to_bib(p, ver):
         fields["booktitle"] = CONFERENCES.get(venue) or CONFERENCES[venue.split()[0]]
         if "workshop" in venue.lower():
             fields["booktitle"] = tex(venue) + (f" ({vyear})" if vyear else "")
-    else:
-        kind = "inproceedings" if "workshop" in venue.lower() else "article"
-        fields["booktitle" if kind == "inproceedings" else "journal"] = tex(venue)
+    elif "workshop" in venue.lower():
+        kind = "inproceedings"
+        fields["booktitle"] = tex(venue)
+    elif p.get("arxiv") or re.search(r"Journal|Transactions|Review|Letters|Computing|Access|Intelligence Research|Minds and Machines|Studies", venue):
+        kind = "article"
+        fields["journal"] = tex(venue)
+    else:  # reports, system cards, blog posts, and other web documents
+        kind = "misc"
+        fields["howpublished"] = "\\url{" + p["url"] + "}"
+        fields["note"] = tex(venue + (f" ({vyear})" if vyear and vyear not in venue else ""))
     if p.get("arxiv") and "journal" not in fields:
         fields["eprint"] = p["arxiv"]
         fields["archivePrefix"] = "arXiv"

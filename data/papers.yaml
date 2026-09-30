@@ -104,7 +104,7 @@
   short: Pan et al. survey
   title: 'Automatically Correcting Large Language Models: Surveying the landscape of diverse self-correction strategies'
   authors: Liangming Pan, Michael Saxon, Wenda Xu, Deepak Nathani, Xinyi Wang, William Yang Wang
-  venue: arXiv 2023
+  venue: TACL 2024
   date: 2023-08
   arxiv: '2308.03188'
   url: https://arxiv.org/abs/2308.03188
@@ -1558,9 +1558,9 @@
 - key: team2025internagent
   short: InternAgent (formerly NovelSeek)
   title: 'InternAgent: When Agent Becomes the Scientist – Building Closed-Loop System from Hypothesis to Verification'
-  authors: ' InternAgent Team, Bo Zhang, Shiyang Feng, Xiangchao Yan, Jiakang Yuan, Runmin Ma, Yusong Hu, Zhiyin Yu, Xiaohan
+  authors: InternAgent Team, Bo Zhang, Shiyang Feng, Xiangchao Yan, Jiakang Yuan, Runmin Ma, Yusong Hu, Zhiyin Yu, Xiaohan
     He, Songtao Huang, Shaowei Hou, Zheng Nie, Zhilong Wang, Jinyao Liu, Tianshuo Peng, Peng Ye, Dongzhan Zhou, Shufei Zhang,
-    Xiaosong Wang, Yilan Zhang, Meng Li, Zhongying Tu, Xiangyu Yue, Wangli Ouyang, Bowen Zhou, Lei Bai'
+    Xiaosong Wang, Yilan Zhang, Meng Li, Zhongying Tu, Xiangyu Yue, Wangli Ouyang, Bowen Zhou, Lei Bai
   venue: arXiv 2025
   date: 2025-05
   arxiv: '2505.16938'
@@ -2946,11 +2946,11 @@
   arxiv: '2605.19156'
   url: https://arxiv.org/abs/2605.19156
   section: evaluation.benchmarks
-- key: libon1932researcharena
+- key: libon2026researcharena
   short: ResearchArena
   title: 'ResearchArena: Evaluating Sabotage and Monitoring in Automated AI R&D'
   authors: Lena Libon, Ben Rank, J. Yeon, David Schmotz, Jidong Qin, Daniel Donnelly, Derck Prinzhorn, Maksym Andriushchenko
-  venue: arXiv 1932
+  venue: arXiv 2026
   date: 2026-07
   arxiv: '2607.19321'
   url: https://arxiv.org/abs/2607.19321
@@ -3155,7 +3155,7 @@
 - key: zhou2026self
   short: Zhou-SECoding
   title: Self-Evolving Coding Agents
-  authors: Hao Zhou et al. (8)
+  authors: Hao Zhou et al.
   venue: arXiv 2026
   date: 2026-08
   arxiv: '2608.03392'
@@ -3578,7 +3578,7 @@
 - key: kim2024road
   short: Kim-Superalignment
   title: 'The Road to ASI: A Comprehensive Survey of Superalignment'
-  authors: HyunJin Kim et al. (9)
+  authors: HyunJin Kim et al.
   venue: arXiv 2024
   date: 2024-12
   arxiv: '2412.16468'
@@ -3999,7 +3999,7 @@
   short: MLEvolve
   title: 'MLEvolve: A Self-Evolving Framework for Automated Machine Learning Algorithm Discovery'
   authors: Shangheng Du, Xiangchao Yan, Jinxin Shi, Zongsheng Cao, Shiyang Feng, Zichen Liang, Boyuan Sun, Tianshuo Peng,
-    Yifan Zhou, Xin Li (51274), Jie Zhou, Liang He, Bo Zhang, Lei Bai
+    Yifan Zhou, Xin Li, Jie Zhou, Liang He, Bo Zhang, Lei Bai
   venue: arXiv 2026
   date: 2026-06
   arxiv: '2606.06473'
@@ -4149,7 +4149,7 @@
 - key: oh2025discovering
   short: ★DiscoRL
   title: Discovering state-of-the-art reinforcement learning algorithms
-  authors: Oh et al. (Google DeepMind)
+  authors: Oh et al.
   venue: Nature 2025
   date: 2025-01
   url: https://www.nature.com/articles/s41586-025-09761-x
@@ -4320,7 +4320,7 @@
 - key: mirhoseini2021graph
   short: ★AlphaChip
   title: A graph placement methodology for fast chip design (Nature 2021) + 2024 Addendum
-  authors: Mirhoseini et al. (Google)
+  authors: Mirhoseini et al.
   venue: Nature 2021
   date: 2024-09
   url: https://www.nature.com/articles/s41586-021-03544-w
@@ -4988,7 +4988,7 @@
 - key: bills2023language
   short: ★Neuron explanations
   title: Language models can explain neurons in language models
-  authors: Bills et al. (OpenAI)
+  authors: Bills et al.
   venue: OpenAI web paper, May 2023
   date: 2023-05
   url: https://openaipublic.blob.core.windows.net/neuron-explainer/paper/index.html
@@ -5091,7 +5091,7 @@
 - key: bricken2025building
   short: ★Auditing agents
   title: Building and evaluating alignment auditing agents
-  authors: Bricken et al. (Anthropic)
+  authors: Bricken et al.
   venue: Science 2025
   date: 2025-07
   url: https://alignment.anthropic.com/2025/automated-auditing/
@@ -5828,7 +5828,7 @@
 - key: eth2025will
   short: Forethought SIE
   title: Will AI R&D Automation Cause a Software Intelligence Explosion?
-  authors: Daniel Eth & Tom Davidson (Forethought)
+  authors: Daniel Eth & Tom Davidson
   venue: Forethought 2025
   date: 2025-03
   url: https://www.forethought.org/research/will-ai-r-and-d-automation-cause-a-software-intelligence-explosion
@@ -5870,7 +5870,7 @@
 - key: anthropic2026ai
   short: '? Anthropic RSI'
   title: When AI builds itself
-  authors: Anthropic (M. Favaro, J. Clark)
+  authors: Anthropic
   venue: Anthropic 2026
   date: 2026-09
   url: https://www.anthropic.com/institute/recursive-self-improvement
@@ -5916,7 +5916,7 @@
 - key: williams2026responsible
   short: Anthropic RSP v3.0
   title: Responsible Scaling Policy v3.0 (GovAI analysis)
-  authors: Anthropic; analysis by S. Williams & J. Freund (GovAI)
+  authors: Anthropic; analysis by S. Williams & J. Freund
   venue: Anthropic 2026
   date: 2026-02
   url: https://www.governance.ai/analysis/anthropics-rsp-v3-0-how-it-works-whats-changed-and-some-reflections
@@ -6055,7 +6055,7 @@
 - key: anthropic2026systemb
   short: Claude Fable 5.1 / Mythos 5.1 card
   title: 'System Card: Claude Fable 5.1 & Claude Mythos 5.1'
-  authors: Anthropic (+ METR external)
+  authors: Anthropic
   venue: Anthropic 2026
   date: 2026-09
   url: https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf
@@ -6097,17 +6097,17 @@
 - key: ho2025software
   short: 'Epoch: SIE needs experiments'
   title: The software intelligence explosion debate needs experiments
-  authors: Anson Ho & Parker Whitfill (Epoch AI)
+  authors: Anson Ho & Parker Whitfill
   venue: Epoch AI 2025
   date: 2025-11
   url: https://epoch.ai/gradient-updates/the-software-intelligence-explosion-debate-needs-experiments
   section: safety.forecasting
   note: 'r estimates: LLMs 1.89 (90% CI 1.07–3.21), CV 1.26, RL 1.20. Argues the data are shaky and proposes controlled experiments.'
-- key: whitfill1949forecasting
+- key: whitfill2025forecasting
   short: Time horizon under compute slowdown
   title: Forecasting AI Time Horizon Under Compute Slowdowns
   authors: Whitfill, Parker, Snodin, Ben, Becker, Joel
-  venue: arXiv 1949
+  venue: arXiv 2025
   date: 2025-11
   arxiv: '2511.19492'
   url: https://arxiv.org/abs/2511.19492
@@ -6116,7 +6116,7 @@
 - key: kokotajlo2025ai
   short: AI 2027
   title: AI 2027
-  authors: Kokotajlo, Lifland et al. (AI Futures Project)
+  authors: Kokotajlo, Lifland et al.
   venue: AI Futures Project 2025
   date: 2025-04
   url: https://ai-2027.com/
@@ -6143,7 +6143,7 @@
 - key: owen2024interviewing
   short: Epoch interviews
   title: Interviewing AI researchers on automation of AI R&D
-  authors: David Owen (Epoch AI; funded by UK AISI)
+  authors: David Owen
   venue: Epoch AI 2024
   date: 2024-08
   url: https://epoch.ai/blog/interviewing-ai-researchers-on-automation-of-ai-rnd
@@ -6185,7 +6185,7 @@
 - key: amodei2025cfr
   short: Amodei 90% code
   title: CFR event remarks
-  authors: Dario Amodei (Anthropic)
+  authors: Dario Amodei
   venue: CFR event remarks 2025
   date: 2025-03
   url: https://www.itpro.com/technology/artificial-intelligence/anthropic-ceo-dario-amodei-ai-generated-code
@@ -6194,7 +6194,7 @@
 - key: pichai2026pichai
   short: Google 75% code
   title: Pichai remarks
-  authors: Sundar Pichai (Google)
+  authors: Sundar Pichai
   venue: Google Cloud Next remarks 2026
   date: 2026-04
   url: https://devops.com/google-ceo-says-75-of-new-code-is-ai-generated/
@@ -6213,7 +6213,7 @@
 - key: intology2025tempest
   short: Zochi @ACL 2025
   title: 'Tempest: Automatic Multi-Turn Jailbreaking of LLMs with Tree Search'
-  authors: Intology (Zochi)
+  authors: Intology
   venue: ACL 2025
   date: 2025-01
   url: https://www.intology.ai/blog/zochi-acl
@@ -6222,7 +6222,7 @@
 - key: booth2026happens
   short: TIME on RSI
   title: What Happens When AI Starts Building AI?
-  authors: Harry Booth (TIME)
+  authors: Harry Booth
   venue: TIME 2026
   date: 2026-08
   url: https://time.com/article/2026/08/07/ai-recursive-self-improvement-anthropic-openai/
@@ -6343,7 +6343,7 @@
 - key: idais2024consensus
   short: IDAIS-Beijing
   title: Consensus Statement on Red Lines in AI
-  authors: IDAIS (Bengio, Hinton, Yao, Russell et al.)
+  authors: IDAIS
   venue: IDAIS 2024
   date: 2024-03
   url: https://people.eecs.berkeley.edu/~russell/papers/IDAIS24-Beijing-Statement.pdf
@@ -6361,7 +6361,7 @@
 - key: research2025ai
   short: AI Behind Closed Doors
   title: 'AI Behind Closed Doors: a Primer on The Governance of Internal Deployment'
-  authors: Apollo Research (incl. Matteo Pistillo)
+  authors: Apollo Research
   venue: Apollo Research 2025
   date: 2025-04
   url: https://www.apolloresearch.ai/governance/ai-behind-closed-doors-a-primer-on-the-governance-of-internal-deployment
@@ -8347,3 +8347,278 @@
   url: https://arxiv.org/abs/2608.06216
   section: surveys.self-improvement
   note: '(Comment: "Survey on continual learning in the LLM and agentic-AI era"; abstract not read.)'
+- key: romeraparedes2024mathematical
+  short: FunSearch
+  title: Mathematical discoveries from program search with large language models
+  authors: Romera-Paredes et al.
+  venue: Nature 2024
+  date: 2024-01
+  url: https://www.nature.com/articles/s41586-023-06924-6
+  code: https://github.com/google-deepmind/funsearch
+  section: agents.evolution
+  signal: execution
+  note: Evolves programs with a pretrained LLM plus an evaluator to find new constructions (e.g., cap sets) and heuristics.
+- key: codelion2025openevolve
+  short: OpenEvolve
+  title: OpenEvolve (open-source AlphaEvolve implementation)
+  authors: Sharma / codelion
+  venue: GitHub 2025
+  date: 2025-01
+  url: https://huggingface.co/blog/codelion/openevolve
+  code: https://github.com/algorithmicsuperintelligence/openevolve
+  section: agents.evolution
+  signal: execution
+  note: Open-source AlphaEvolve-style pipeline; reports matching the circle-packing result (2.635).
+- key: zhao2026reward
+  short: RSI reward hacking
+  title: Reward Hacking in Self-Improving Code Agents
+  authors: Zhao, Srikanth, Wu, Jiang
+  venue: ICLR 2026 Workshop on AI with Recursive Self-Improvement
+  date: 2026-01
+  url: https://iclr.cc/virtual/2026/10018648
+  section: safety.failures
+  signal: benchmark
+  note: 73.8% (KernelBench) and 46.8% (ALE-Bench) of optimizations are proxy-only; hacking rises from 26.4% to 57.8% between
+    10 and 100 steps.
+- key: intology2025previewing
+  short: Locus (Intology)
+  title: Previewing Locus (blog) + PostTrainBench update
+  authors: Intology
+  venue: Intology blog 2025
+  date: 2025-11
+  url: https://intology.ai/blog/previewing-locus
+  section: ai4ai.scientist
+  locus: artifact
+  recursive: 'no'
+  note: Multi-day autonomous AI R&D system; claims superhuman RE-Bench score and SOTA on PostTrainBench.
+- key: li2025chain
+  short: Chain-of-Ideas
+  title: 'Chain of Ideas: Revolutionizing Research Via Novel Idea Development with LLM Agents'
+  authors: Long Li et al.
+  venue: Findings of EMNLP 2025
+  date: 2025-01
+  url: https://doi.org/10.18653/v1/2025.findings-emnlp.477
+  section: ai4ai.ideation
+  locus: output
+  recursive: 'no'
+  note: Organises literature into progressive "chains" to mirror field evolution for ideation.
+- key: labs2025pangram
+  short: Pangram ICLR 2026 analysis
+  title: Pangram Predicts 21% of ICLR Reviews are AI-Generated (industry blog)
+  authors: Pangram Labs
+  venue: Pangram Labs blog 2025
+  date: 2025-01
+  url: https://www.pangram.com/blog/pangram-predicts-21-of-iclr-reviews-are-ai-generated
+  section: ai4ai.writing-review
+  note: 'Commercial detector run on about 19K ICLR 2026 papers and 70K reviews: ~21% of reviews fully AI-generated.'
+- key: xiang2026systematic
+  short: Xiang-SysSEA
+  title: 'A Systematic Survey of Self-Evolving Agents: From Model-Centric to Environment-Driven Co-Evolution'
+  authors: Zhishang Xiang et al.
+  venue: TechRxiv 2026
+  date: 2026-02
+  url: https://doi.org/10.36227/techrxiv.177203250.05832634/v2
+  section: surveys.self-improvement
+  note: Self-evolving agents under scarce human supervision
+- key: liu2026path
+  short: Liu-PathRSI
+  title: 'The Path to Recursive Self-Improving Agents: Foundation, Framework, and Future Directions'
+  authors: Shuaiqi Liu et al.
+  venue: Preprints.org 2026
+  date: 2026-08
+  url: https://doi.org/10.20944/preprints202608.0051.v1
+  section: surveys.self-improvement
+  note: Self-improving agent systems with persistent updates
+- key: wu2026ai4ai
+  short: Wu-AI4AI
+  title: 'AI4AI Survey: From Long-Horizon Agents to Recursive Self-Improvement — Definitions, Reliable Horizons, and Open
+    Problems'
+  authors: Kai Wu et al.
+  venue: Preprints.org 2026
+  date: 2026-08
+  url: https://doi.org/10.20944/preprints202608.2108.v1
+  section: surveys.self-improvement
+  note: Can AI reliably improve AI? Long-horizon agents → AI4AI → RSI
+- key: ye2026survey
+  short: Ye-AI4AI
+  title: 'A Survey on AI for AI: When the Improver Becomes the Improvee'
+  authors: Deheng Ye, Zheng Zhang, Hao Wang, Chunyan Miao
+  venue: Preprints.org 2026
+  date: 2026-09
+  url: https://doi.org/10.20944/preprints202609.0591.v1
+  section: surveys.self-improvement
+  note: AI improving AI across RL, AutoML, meta-learning, self-play, LM agents
+- key: wang2026diving
+  short: Wang-ReliableSEA
+  title: 'Diving into Reliable Self-Evolving Agents: A Survey'
+  authors: Kaiqi Wang et al.
+  venue: Preprints.org 2026
+  date: 2026-09
+  url: https://doi.org/10.20944/preprints202609.0913.v1
+  section: surveys.self-improvement
+  note: Reliability of self-evolving agents
+- key: ibrahimoglu2026autonomous
+  short: İbrahimoğlu-RSI
+  title: 'Autonomous AI agents and recursive self-improvement: a comprehensive survey of contemporary architectures, capabilities,
+    and safety frameworks'
+  authors: Nadir İbrahimoğlu et al.
+  venue: Cluster Computing 2026
+  date: 2026-09
+  url: https://doi.org/10.1007/s10586-026-06537-4
+  section: surveys.self-improvement
+  note: 'RSI agents: architectures, capabilities, safety'
+- key: jiang2026self
+  short: Jiang-EraExperience (partly verified)
+  title: 'Self-Improving Agents in the Era of Experience: A Survey of Self- to Meta-Evolution'
+  authors: Che Jiang et al.
+  venue: OpenReview 2026
+  date: 2026-06
+  url: https://openreview.net/forum?id=IUltZSgLMm
+  section: surveys.self-improvement
+  note: 'Long-deployed agents: harness-mediated control, self- → meta-evolution'
+- key: he2025breaking
+  short: He-ReasoningSelfEvo
+  title: 'Breaking the Reasoning Barrier: A Survey on LLM Complex Reasoning through the Lens of Self-Evolution'
+  authors: Tao He et al.
+  venue: Findings of ACL 2025
+  date: 2025-01
+  url: https://aclanthology.org/2025.findings-acl.386/
+  section: surveys.self-improvement
+  note: CoT complex reasoning as self-evolution
+- key: sapkota2025self
+  short: Sapkota-SelfLearning
+  title: 'From Self-Learning to Self-Evolving Architectures in LLMs: A Short Survey'
+  authors: Ranjan Sapkota et al.
+  venue: TechRxiv 2025
+  date: 2025-05
+  url: https://doi.org/10.36227/techrxiv.174838070.09235849/v1
+  section: surveys.self-improvement
+  note: SFT/RLHF → self-instruct/self-play/RLVR; Absolute Zero
+- key: vatsal2026beyond
+  short: Vatsal-SE-Health
+  title: 'Beyond Static Agents: A Six-Dimensional Taxonomy and Survey of Self-Evolving LLM Agents for Healthcare'
+  authors: Shubham Vatsal et al.
+  venue: IEEE Access 2026
+  date: 2026-01
+  url: https://doi.org/10.1109/access.2026.3720396
+  section: surveys.self-improvement
+  note: Healthcare
+- key: nguyen2026survey
+  short: Nguyen-SE-Wireless
+  title: A Survey on Self-evolving Agents for Wireless Networks
+  authors: Loc Nguyen et al.
+  venue: SSRN 2026
+  date: 2026-01
+  url: https://doi.org/10.2139/ssrn.7079180
+  section: surveys.self-improvement
+  note: 6G/RAN
+- key: li2025generation
+  short: Li-GenToJudge
+  title: 'From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge'
+  authors: Dawei Li et al.
+  venue: EMNLP 2025
+  date: 2025-01
+  url: https://aclanthology.org/2025.emnlp-main.138/
+  section: surveys.related
+  note: LLM-as-judge
+- key: yehudai2026survey
+  short: Yehudai-AgentEval
+  title: A Survey on Evaluation of LLM-based Agents
+  authors: Asaf Yehudai et al.
+  venue: Findings of ACL 2026
+  date: 2026-01
+  url: https://aclanthology.org/2026.findings-acl.1330/
+  section: surveys.related
+  note: Agent evaluation benchmarks and frameworks
+- key: long2024llms
+  short: Long-SynthData
+  title: 'On LLMs-Driven Synthetic Data Generation, Curation, and Evaluation: A Survey'
+  authors: Lin Long et al.
+  venue: Findings of ACL 2024
+  date: 2024-01
+  url: https://aclanthology.org/2024.findings-acl.658/
+  section: surveys.related
+  note: Synthetic data
+- key: chen2026safety
+  short: ChenJ-SafetySEA
+  title: 'Safety in Self-Evolving Agents: A Survey'
+  authors: Jiahao Chen et al.
+  venue: ResearchGate preprint 2026
+  date: 2026-09
+  url: https://doi.org/10.13140/rg.2.2.23319.74403
+  section: safety.failures
+  note: Safety of self-evolving agents
+- key: becker2025measuring
+  short: Developer RCT
+  title: Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity
+  authors: Joel Becker, Nate Rush, Elizabeth Barnes, David Rein
+  venue: arXiv 2025
+  date: 2025-07
+  arxiv: '2507.09089'
+  url: https://arxiv.org/abs/2507.09089
+  section: evaluation.measurement
+  signal: human
+  note: 'Randomized trial with 16 experienced open-source developers: early-2025 AI tools increased task completion time by
+    19%, while developers expected a speed-up.'
+- key: mo2026age
+  short: Mo (position)
+  title: The Age of AI Agents Demands A New Scientific Paradigm To Sustain Trustworthy Science
+  authors: Belinda Mo
+  venue: ICML 2026
+  date: 2026-06
+  arxiv: '2607.26064'
+  url: https://arxiv.org/abs/2607.26064
+  section: surveys.position
+  note: 'Position: the gap between scientific output from agents and the capacity to verify it is widening; calls for observable-by-default
+    workflows and scalable verification.'
+- key: kwa2026because
+  short: METR uplift note
+  title: Because 8 ≈ e², Anthropic's researcher uplift is plausibly >2x
+  authors: Thomas Kwa
+  venue: METR note 2026
+  date: 2026-07
+  url: https://metr.org/notes/2026-07-08-anthropic-researcher-uplift/
+  section: evaluation.measurement
+  note: Converts an 8x increase in merged code into an estimated 2.3 to 2.9x researcher uplift; a labor^0.55 x compute^0.45
+    formula implies about 3.5x uplift for a 2x overall speed-up.
+- key: metr2026summary
+  short: METR Opus 5.5 evaluation
+  title: Summary of METR's predeployment evaluation of Claude Opus 5.5
+  authors: METR
+  venue: METR 2026
+  date: 2026-09
+  url: https://metr.org/blog/2026-09-22-claude-opus-5-5/
+  section: safety.frameworks
+  note: Reports an estimate of about 1.5x overall acceleration of AI capabilities due to AI, with perhaps a 30% chance of
+    2x; no substantial gain in research judgment.
+- key: anthropic2026measurements
+  short: AI-led R&D index
+  title: Measurements for understanding the pace of AI development inside frontier labs
+  authors: Anthropic
+  venue: Anthropic 2026
+  date: 2026-08
+  url: https://www.anthropic.com/institute/measuring-pace-of-ai-development
+  section: evaluation.measurement
+  locus: pipeline
+  note: 'Rates how much of Anthropic''s AI R&D work Claude performs (AL0 to AL5): Claude leads 26% of work in Aug 2026; model-human
+    exact agreement 59% vs 35% human-human.'
+- key: anthropic2026opus
+  short: Claude Opus 5.5 card
+  title: Claude Opus 5.5 System Card
+  authors: Anthropic
+  venue: Anthropic 2026
+  date: 2026-09
+  url: https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf
+  section: safety.frameworks
+  note: Automated AI R&D task evaluations no longer run because recent models crossed the highest human baselines; relies
+    on internal replays and surveys.
+- key: openai2026gpt56
+  short: GPT-5.6 card
+  title: GPT-5.6 System Card
+  authors: OpenAI
+  venue: OpenAI 2026
+  date: 2026-07
+  url: https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf
+  section: safety.frameworks
+  note: 'AI self-improvement evaluations: Monorepo-Bench dropped as saturated; new internal research-debugging, kernel, NanoGPT,
+    and post-training evaluations.'
