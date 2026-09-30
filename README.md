@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/papers-688-1F3A5F" alt="Papers">
+  <img src="https://img.shields.io/badge/papers-694-1F3A5F" alt="Papers">
   <img src="https://img.shields.io/badge/updated-2026-09-29-2A9D8F" alt="Last update">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC0--1.0-lightgrey" alt="License: CC0-1.0"></a>
   <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-E76F51" alt="PRs welcome"></a>
@@ -76,7 +76,7 @@ Within each subsection, entries are sorted from newest to oldest.
   - [Automated agent design](#automated-agent-design)
   - [Self-rewriting agents](#self-rewriting-agents)
   - [LLM-guided evolutionary search](#llm-guided-evolutionary-search)
-- [AI for AI (Automating AI Research)](#ai-for-ai-automating-ai-research) (207)
+- [AI for AI (Automating AI Research)](#ai-for-ai-automating-ai-research) (209)
   - [Ideation and hypothesis generation](#ideation-and-hypothesis-generation)
   - [ML engineering and experimentation agents](#ml-engineering-and-experimentation-agents)
   - [Algorithm and objective discovery](#algorithm-and-objective-discovery)
@@ -86,7 +86,7 @@ Within each subsection, entries are sorted from newest to oldest.
   - [Automated alignment and interpretability research](#automated-alignment-and-interpretability-research)
   - [Writing, reviewing, and reproduction](#writing-reviewing-and-reproduction)
   - [End-to-end AI scientists](#end-to-end-ai-scientists)
-- [Benchmarks and Evaluation](#benchmarks-and-evaluation) (40)
+- [Benchmarks and Evaluation](#benchmarks-and-evaluation) (44)
   - [Benchmarks for AI research tasks](#benchmarks-for-ai-research-tasks)
   - [Measuring progress and self-improvement](#measuring-progress-and-self-improvement)
 - [Safety, Governance, and Forecasting](#safety-governance-and-forecasting) (66)
@@ -649,6 +649,7 @@ Within each subsection, entries are sorted from newest to oldest.
 - **★KernelBench-Verified**: KernelBench-Verified: Do LLM-Generated Kernels Actually Beat PyTorch?. *Y J Zhang et al.*, arXiv 2026. [[Paper]](https://arxiv.org/abs/2607.16241) 🆕 `Execution / tests`<br><sub>Adds a TF32 baseline and hidden 4-distribution tests; best model (GPT-5.5) drops from 1.43× to 0.88× geometric-mean speedup</sub>
 - **CANN Bench**: CANN Bench: Benchmarking Agent Generated Kernels against Real NPU and Algorithmic Limits. *Xue-Jian Gao et al.*, arXiv 2026. [[Paper]](https://arxiv.org/abs/2607.20518) 🆕 `Execution / tests`<br><sub>53 Ascend-NPU operators and 1,060 cases, scored against hardware-anchored limits with a hack-resistant harness</sub>
 - **CudaPerf**: Multi-turn RL with Structural and Performance Aware Rewards for CUDA Kernel Generation. *Quazi Ishtiaque Mahmud et al.*, arXiv 2026. [[Paper]](https://arxiv.org/abs/2607.20908) 🆕 `Weights` `Mixed`<br><sub>RL with execution rewards plus structural ones (coalescing, occupancy); up to 3.32× over CUDA Agent on PyTorch→CUDA</sub>
+- **KernelEvolve (Meta blog)**: KernelEvolve: How Meta's Ranking Engineer Agent Optimizes AI Infrastructure. *Gang Liao et al.*, Meta Engineering blog 2026. [[Link]](https://engineering.fb.com/2026/04/02/developer-tools/kernelevolve-how-metas-ranking-engineer-agent-optimizes-ai-infrastructure/) `ML artifact` `Execution / tests`<br><sub>Over 60% inference throughput for the Andromeda Ads model on NVIDIA GPUs and over 25% training throughput for an ads model on MTIA.</sub>
 - **★ K-Search**: K-Search: LLM Kernel Generation via Co-Evolving Intrinsic World Model. *Shiyi Cao et al.*, arXiv 2026. [[Paper]](https://arxiv.org/abs/2602.19128) `Execution / tests`<br><sub>Replaces static evolutionary heuristics with a co-evolving LLM "world model" that plans GPU kernel optimization.</sub>
 - **ArchAgent**: ArchAgent: Agentic AI-driven Computer Architecture Discovery. *Raghav Gupta et al.*, arXiv 2026. [[Paper]](https://arxiv.org/abs/2602.22425) `Execution / tests`<br><sub>AlphaEvolve-based design of state-of-the-art cache-replacement policies in two days.</sub>
 - **★CUDA Agent**: CUDA Agent: Large-Scale Agentic RL for High-Performance CUDA Kernel Generation. *Weinan Dai et al.*, arXiv 2026. [[Paper]](https://arxiv.org/abs/2602.24286) `Weights` `Execution / tests`<br><sub>Large-scale agentic RL in a verified, profiled environment; beats torch.compile on 100/100/92% of KernelBench L1/L2/L3</sub>
@@ -720,6 +721,7 @@ Within each subsection, entries are sorted from newest to oldest.
 ### Writing, reviewing, and reproduction
 
 - **Beyond Final Decisions**: Beyond Final Decisions: A Process-Centric Benchmark for Transparent AI-Assisted Peer Review. *Siming Yuan et al.*, arXiv 2026. [[Paper]](https://arxiv.org/abs/2609.05947) 🆕 `Ground truth / rules`<br><sub>Process benchmark (summary → critique → suggestion → decision) on PeerRead, NLPeer ARR-22 and ICLR; decisions are not consistently supported by the model's own review evidence.</sub>
+- **Review-metric reliability**: Judging a Review by its Cover: A Reliability Analysis of LLM-based Peer Review Evaluation Metrics. *Shakiba Amirshahi et al.*, arXiv 2026. [[Paper]](https://arxiv.org/abs/2609.23264) 🆕<br><sub>LLM-based metrics of review quality change under meaning-preserving rewrites.</sub>
 - **Sem-Detect**: Sem-Detect: Semantic Level Detection of AI Generated Peer-Reviews. *André V. Duarte et al.*, arXiv 2026. [[Paper]](https://arxiv.org/abs/2605.21713) `Ground truth / rules`<br><sub>Claim-level semantic detection (AI reviewers converge on the same points); under 3.5% of LLM-refined human reviews misflagged.</sub>
 - **AAAI-26 AI Review Pilot**: AI-Assisted Peer Review at Scale: The AAAI-26 AI Review Pilot. *Joydeep Biswas et al.*, arXiv 2026. [[Paper]](https://arxiv.org/abs/2604.13940) `Output` `Mixed`<br><sub>One labelled AI review for each of 22,977 main-track papers in under a day; authors and PC preferred AI reviews on key dimensions.</sub>
 - **Polishing policies unenforceable**: Policies Permitting LLM Use for Polishing Peer Reviews Are Currently Not Enforceable. *Rounak Saha et al.*, ICML 2026. [[Paper]](https://arxiv.org/abs/2603.20450) `Ground truth / rules`<br><sub>All five detectors (two commercial) misclassify LLM-polished reviews as AI-generated; public estimates need caution.</sub>
@@ -828,14 +830,18 @@ Within each subsection, entries are sorted from newest to oldest.
 
 - **EvoPathBench**: Beyond Endpoint Performance: Process-Level Evaluation of Self-Evolving Agents. *Hongqiang Lin et al.*, arXiv 2026. [[Paper]](https://arxiv.org/abs/2609.24663) 🆕<br><sub>Freezes evolving artifacts at checkpoints and tracks when capabilities emerge, strengthen or regress.</sub>
 - **AI-led R&D index**: Measurements for understanding the pace of AI development inside frontier labs. *Anthropic*, Anthropic 2026. [[Link]](https://www.anthropic.com/institute/measuring-pace-of-ai-development) 🆕 `Research pipeline`<br><sub>Rates how much of Anthropic's AI R&D work Claude performs (AL0 to AL5): Claude leads 26% of work in Aug 2026; model-human exact agreement 59% vs 35% human-human.</sub>
+- **BAITBENCH**: BAITBENCH: Measuring Agent Reward Hacking with Optional Shortcuts Planted in ML Tasks. *Pradyumna Shyama Prasad et al.*, arXiv 2026. [[Paper]](https://arxiv.org/abs/2608.30724) 🆕<br><sub>Planted optional shortcuts in ML tasks measure agents' propensity to reward-hack.</sub>
 - **METR uplift note**: Because 8 ≈ e², Anthropic's researcher uplift is plausibly >2x. *Thomas Kwa*, METR note 2026. [[Link]](https://metr.org/notes/2026-07-08-anthropic-researcher-uplift/) 🆕<br><sub>Converts an 8x increase in merged code into an estimated 2.3 to 2.9x researcher uplift; a labor^0.55 x compute^0.45 formula implies about 3.5x uplift for a 2x overall speed-up.</sub>
 - **SAGE (socialized)**: SAGE: A Quantitative Evaluation of Socialized Evolution in Agent Ecosystems. *Linyue Pan et al.*, arXiv 2026. [[Paper]](https://arxiv.org/abs/2606.03544) `Mixed`<br><sub>Shared histories do not lift the strongest agent past its self-evolution ceiling but help agents that have plateaued.</sub>
+- **METR GPT-5.6 Sol evaluation**: Summary of METR's predeployment evaluation of GPT-5.6 Sol. *METR*, METR 2026. [[Link]](https://metr.org/blog/2026-06-26-gpt-5-6-sol/)<br><sub>50% time horizon of about 11.3 h with cheating counted as failure, over 270 h counted as success, 71 h with cheating runs discarded; none judged a robust measurement.</sub>
+- **Hacker-fixer loops**: Hardening Agent Benchmarks with Adversarial Hacker-Fixer Loops. *Ziqian Zhong et al.*, arXiv 2026. [[Paper]](https://arxiv.org/abs/2606.08960)<br><sub>Adversarial hacker and fixer agents find and patch exploitable tasks in terminal-agent benchmarks.</sub>
 - **AIRDA metrics**: Measuring AI R&D Automation. *Alan Chan et al.*, arXiv 2026. [[Paper]](https://arxiv.org/abs/2603.03992v1) `Research pipeline`<br><sub>Proposes 14 metrics, e.g. capital share of R&D spend, researcher time allocation, AI subversion incidents.</sub>
 - **METR TH1.1**: Time Horizon 1.1. *METR*, METR 2026. [[Link]](https://metr.org/blog/2026-1-29-time-horizon-1-1/)<br><sub>228 tasks, moved to Inspect. Doubling: 196 days all-time, 131 days since 2023, 89 days since 2024. Opus 4.5 at 320 min.</sub>
 - **METR Mythos ≥16 h**: Task-Completion Time Horizons of Frontier AI Models. *METR*, METR 2026. [[Link]](https://metr.org/time-horizons/)<br><sub>Early Mythos Preview: time horizon ≥16 h (95% CI 8.5–55 h). METR says measurements above 16 h are unreliable.</sub>
 - **Time horizon under compute slowdown**: Forecasting AI Time Horizon Under Compute Slowdowns. *Whitfill et al.*, arXiv 2025. [[Paper]](https://arxiv.org/abs/2511.19492)<br><sub>Under a model that rules out a software-only singularity, time-horizon growth is proportional to compute growth.</sub>
 - **Chen-DSAgent**: Large Language Model-based Data Science Agent: A Survey. *Chen et al.*, arXiv 2025. [[Paper]](https://arxiv.org/abs/2508.02744)<br><sub>Data-science agents</sub>
 - **Developer RCT**: Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity. *Joel Becker et al.*, arXiv 2025. [[Paper]](https://arxiv.org/abs/2507.09089) `Human`<br><sub>Randomized trial with 16 experienced open-source developers: early-2025 AI tools increased task completion time by 19%, while developers expected a speed-up.</sub>
+- **Agentic Benchmark Checklist**: Establishing Best Practices for Building Rigorous Agentic Benchmarks. *Yuxuan Zhu et al.*, arXiv 2025. [[Paper]](https://arxiv.org/abs/2507.02825)<br><sub>Agentic Benchmark Checklist for task and outcome validity in agent benchmarks.</sub>
 - **HCAST / METR Time Horizon**: HCAST: Human-Calibrated Autonomy Software Tasks. *David Rein et al.*, arXiv 2025. [[Paper]](https://arxiv.org/abs/2503.17354)
 - **METR time horizons**: Measuring AI Ability to Complete Long Tasks. *Kwa et al.*, NeurIPS 2025. [[Paper]](https://arxiv.org/abs/2503.14499)<br><sub>Introduces the 50% time horizon, which doubled about every 7 months from 2019 to 2025. Claude 3.7 Sonnet ≈ 50 min.</sub>
 - **Sun-StatDSAgents**: A Survey on Large Language Model-based Agents for Statistics and Data Science. *Maojun Sun et al.*, The American Statistician. [[Paper]](https://arxiv.org/abs/2412.14222)<br><sub>Data-science agents</sub>

@@ -8654,3 +8654,66 @@
   signal: execution
   note: 'One-year update: a circuit design integrated into next-generation TPU silicon; 20% less Spanner write amplification;
     cache-replacement policies in two days.'
+- key: metr2026gpt
+  short: METR GPT-5.6 Sol evaluation
+  title: Summary of METR's predeployment evaluation of GPT-5.6 Sol
+  authors: METR
+  venue: METR 2026
+  date: 2026-06
+  url: https://metr.org/blog/2026-06-26-gpt-5-6-sol/
+  section: evaluation.measurement
+  note: 50% time horizon of about 11.3 h with cheating counted as failure, over 270 h counted as success, 71 h with cheating
+    runs discarded; none judged a robust measurement.
+- key: prasad2026baitbench
+  short: BAITBENCH
+  title: 'BAITBENCH: Measuring Agent Reward Hacking with Optional Shortcuts Planted in ML Tasks'
+  authors: Pradyumna Shyama Prasad, Meiri Anto, Leon Eshuijs, Julian Moncarz, Kaustubh Kislay, Juan J. Vazquez
+  venue: arXiv 2026
+  date: 2026-08
+  arxiv: '2608.30724'
+  url: https://arxiv.org/abs/2608.30724
+  section: evaluation.measurement
+  note: Planted optional shortcuts in ML tasks measure agents' propensity to reward-hack.
+- key: zhong2026hardening
+  short: Hacker-fixer loops
+  title: Hardening Agent Benchmarks with Adversarial Hacker-Fixer Loops
+  authors: Ziqian Zhong, Ivgeni Segal, Ivan Bercovich, Shashwat Saxena, Kexun Zhang, Aditi Raghunathan
+  venue: arXiv 2026
+  date: 2026-06
+  arxiv: '2606.08960'
+  url: https://arxiv.org/abs/2606.08960
+  section: evaluation.measurement
+  note: Adversarial hacker and fixer agents find and patch exploitable tasks in terminal-agent benchmarks.
+- key: amirshahi2026judging
+  short: Review-metric reliability
+  title: 'Judging a Review by its Cover: A Reliability Analysis of LLM-based Peer Review Evaluation Metrics'
+  authors: Shakiba Amirshahi, Sajad Ebrahimi, Hai Son Le, Negar Arabzadeh, Ebrahim Bagheri
+  venue: arXiv 2026
+  date: 2026-09
+  arxiv: '2609.23264'
+  url: https://arxiv.org/abs/2609.23264
+  section: ai4ai.writing-review
+  note: LLM-based metrics of review quality change under meaning-preserving rewrites.
+- key: zhu2025establishing
+  short: Agentic Benchmark Checklist
+  title: Establishing Best Practices for Building Rigorous Agentic Benchmarks
+  authors: Yuxuan Zhu, Tengjun Jin, Yada Pruksachatkun, Andy Zhang, Shu Liu, Sasha Cui, Sayash Kapoor, Shayne Longpre
+  venue: arXiv 2025
+  date: 2025-07
+  arxiv: '2507.02825'
+  url: https://arxiv.org/abs/2507.02825
+  section: evaluation.measurement
+  note: Agentic Benchmark Checklist for task and outcome validity in agent benchmarks.
+- key: liao2026kernelevolve
+  short: KernelEvolve (Meta blog)
+  title: 'KernelEvolve: How Meta''s Ranking Engineer Agent Optimizes AI Infrastructure'
+  authors: Gang Liao, Yavuz Yetim, Ruichao Xiao, Zewei Jiang, Raghav Boinepalli, Sheela Yadawad, Liyuan Li, Nathan Yan, Ajit
+    Mathews, Chunqiang Tang, Carole-Jean Wu, Gaoxiang Liu
+  venue: Meta Engineering blog 2026
+  date: 2026-04
+  url: https://engineering.fb.com/2026/04/02/developer-tools/kernelevolve-how-metas-ranking-engineer-agent-optimizes-ai-infrastructure/
+  section: ai4ai.kernels
+  locus: artifact
+  signal: execution
+  note: Over 60% inference throughput for the Andromeda Ads model on NVIDIA GPUs and over 25% training throughput for an ads
+    model on MTIA.

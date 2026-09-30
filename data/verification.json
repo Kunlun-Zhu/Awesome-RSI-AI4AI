@@ -62,7 +62,7 @@
  },
  "ai2024safety": {
   "query_arxiv": null,
-  "query_title": "(§ safety, AI Scientist v1)",
+  "query_title": "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery (blog post)",
   "status": "pending"
  },
  "ai2026ai": {
@@ -167,6 +167,22 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Learning from Synthetic Data: Limitations of ERM"
+ },
+ "amirshahi2026judging": {
+  "authors": [
+   "Shakiba Amirshahi",
+   "Sajad Ebrahimi",
+   "Hai Son Le",
+   "Negar Arabzadeh",
+   "Ebrahim Bagheri"
+  ],
+  "date": "2026-09-20",
+  "method": "arxiv",
+  "query_arxiv": "2609.23264",
+  "query_title": "Judging a Review by its Cover: A Reliability Analysis of LLM-based Peer Review Evaluation Metrics",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Judging a Review by its Cover: A Reliability Analysis of LLM-based Peer Review Evaluation Metrics"
  },
  "amodei2025cfr": {
   "query_arxiv": null,
@@ -1804,6 +1820,11 @@
  "deepmind2025frontiera": {
   "query_arxiv": null,
   "query_title": "Frontier Safety Framework Report – Gemini 3 Pro",
+  "status": "pending"
+ },
+ "deepmind2026alphaevolve": {
+  "query_arxiv": null,
+  "query_title": "AlphaEvolve: How our Gemini-powered coding agent is scaling impact across fields",
   "status": "pending"
  },
  "deepmind2026frontier": {
@@ -6232,6 +6253,11 @@
   "status": "ok",
   "title": "KernelEvolve: Scaling Agentic Kernel Coding for Heterogeneous AI Accelerators at Meta"
  },
+ "liao2026kernelevolve": {
+  "query_arxiv": null,
+  "query_title": "KernelEvolve: How Meta's Ranking Engineer Agent Optimizes AI Infrastructure",
+  "status": "pending"
+ },
  "libon1932researcharena": {
   "authors": [
    "Lena Libon",
@@ -7168,6 +7194,11 @@
  "metr2025recent": {
   "query_arxiv": null,
   "query_title": "Recent Frontier Models Are Reward Hacking",
+  "status": "pending"
+ },
+ "metr2026gpt": {
+  "query_arxiv": null,
+  "query_title": "Summary of METR's predeployment evaluation of GPT-5.6 Sol",
   "status": "pending"
  },
  "metr2026summary": {
@@ -8166,6 +8197,23 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Self-Consistency Preference Optimization"
+ },
+ "prasad2026baitbench": {
+  "authors": [
+   "Pradyumna Shyama Prasad",
+   "Meiri Anto",
+   "Leon Eshuijs",
+   "Julian Moncarz",
+   "Kaustubh Kislay",
+   "Juan J. Vazquez"
+  ],
+  "date": "2026-08-31",
+  "method": "arxiv",
+  "query_arxiv": "2608.30724",
+  "query_title": "BAITBENCH: Measuring Agent Reward Hacking with Optional Shortcuts Planted in ML Tasks",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "BAITBENCH: Measuring Agent Reward Hacking with Optional Shortcuts Planted in ML Tasks"
  },
  "pres2026position": {
   "authors": [
@@ -13551,6 +13599,23 @@
   "status": "ok",
   "title": "ImpossibleBench: Measuring LLMs' Propensity of Exploiting Test Cases"
  },
+ "zhong2026hardening": {
+  "authors": [
+   "Ziqian Zhong",
+   "Ivgeni Segal",
+   "Ivan Bercovich",
+   "Shashwat Saxena",
+   "Kexun Zhang",
+   "Aditi Raghunathan"
+  ],
+  "date": "2026-06-08",
+  "method": "arxiv",
+  "query_arxiv": "2606.08960",
+  "query_title": "Hardening Agent Benchmarks with Adversarial Hacker-Fixer Loops",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Hardening Agent Benchmarks with Adversarial Hacker-Fixer Loops"
+ },
  "zhou2023large": {
   "authors": [
    "Yongchao Zhou",
@@ -13739,6 +13804,42 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "DeepReview: Improving LLM-based Paper Review with Human-like Deep Thinking Process"
+ },
+ "zhu2025establishing": {
+  "authors": [
+   "Yuxuan Zhu",
+   "Tengjun Jin",
+   "Yada Pruksachatkun",
+   "Andy Zhang",
+   "Shu Liu",
+   "Sasha Cui",
+   "Sayash Kapoor",
+   "Shayne Longpre",
+   "Kevin Meng",
+   "Rebecca Weiss",
+   "Fazl Barez",
+   "Rahul Gupta",
+   "Jwala Dhamala",
+   "Jacob Merizian",
+   "Mario Giulianelli",
+   "Harry Coppock",
+   "Cozmin Ududec",
+   "Jasjeet Sekhon",
+   "Jacob Steinhardt",
+   "Antony Kellermann",
+   "Sarah Schwettmann",
+   "Matei Zaharia",
+   "Ion Stoica",
+   "Percy Liang",
+   "Daniel Kang"
+  ],
+  "date": "2025-07-03",
+  "method": "arxiv",
+  "query_arxiv": "2507.02825",
+  "query_title": "Establishing Best Practices for Building Rigorous Agentic Benchmarks",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Establishing Best Practices for Building Rigorous Agentic Benchmarks"
  },
  "zhu2025synthesize": {
   "authors": [

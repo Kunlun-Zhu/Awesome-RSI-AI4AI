@@ -70,6 +70,15 @@ def brace_hyphen(name):
     return " ".join("{" + t + "}" if "-" in t and re.search(r"-[a-z]", t) else t for t in name.split())
 
 
+ORG_WORDS = ("Research", "DeepMind", "Google", "OpenAI", "Anthropic", "Meta", "NVIDIA", "Team", "team", "Institute",
+             "Labs", "Project", "Fellows", "IDAIS", "Weco", "Fortune", "Epoch", "Sakana", "Intology", "METR", "Apollo",
+             "Microsoft", "Amazon", "University", "Blog", "blog", "AI")
+
+
+def is_org(name):
+    return " " in name and any(w in name.split() for w in ORG_WORDS)
+
+
 def authors_field(p, ver):
     names = ver.get("authors") if ver.get("status") == "ok" and ver.get("authors") else None
     if not names:
@@ -79,6 +88,8 @@ def authors_field(p, ver):
             names.append("others")
     if len(names) > 15:
         names = names[:15] + ["others"]
+    if len(names) == 1 and is_org(names[0]):
+        return "{" + tex(names[0]) + "}"
     return " and ".join(brace_hyphen(tex(n)) for n in names) or "Anonymous"
 
 
