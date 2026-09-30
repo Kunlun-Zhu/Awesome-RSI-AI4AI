@@ -33,6 +33,7 @@ Thanks for helping keep this list accurate. The README is generated, so please e
    | `bibtype` | `book` (with `publisher` and optional `isbn`) or `misc` (web documents and preprints hosted outside arXiv). Otherwise the BibTeX type is inferred from `venue`. |
    | `volume`, `pages` | Volume and page range for journal articles and book chapters, when known. |
    | `provenance` | `secondary` if the primary page could not be read and the entry is known only from news or other secondary reports. Omit it otherwise. |
+   | `subgroup` | For a section whose leaf in `data/taxonomy.yaml` declares `subgroups`, the id of the subgroup the entry belongs to. Entries without it go to the first subgroup. Use it to separate comparison systems with an empty closure set from recursive systems in the same section. |
    | `verify` | `skip` for documents with no arXiv identifier, DOI, or database record (blog posts, reports, system cards, news). |
 
    Write `authors` as a comma-separated list of full names in "First Last" order ("Jane Doe, John Smith"), never "Doe, Jane", and end it with `et al.` only when the list is truncated. For an organization, give its name alone ("Anthropic").
@@ -68,18 +69,22 @@ Thanks for helping keep this list accurate. The README is generated, so please e
 
 | Value | Meaning |
 |---|---|
-| `self` | the same model judges its own output (confidence, self-consistency, self-critique) |
+| `self` | the same model judges its own output (confidence, self-consistency, self-critique), or outputs are kept by the model's own construction or by novelty and format heuristics with no external check of correctness |
 | `model` | another model: a reward model or LLM judge |
 | `execution` | running code, tests, compilers, simulators, or environments |
-| `ground-truth` | labeled answers or rule-based checks |
+| `ground-truth` | gold labels, fixed reference outputs, or fixed rules (game outcomes, proof checkers) |
 | `benchmark` | a held-out benchmark score |
 | `human` | human ratings, reviews, or preferences |
 | `mixed` | several of the above with no single dominant signal |
 
-**closure**: which of the proposer `P`, verifier `V`, and update rule `U` the loop updates during a run. The system boundary is whatever the loop can modify while it runs, so a frozen base model or a fixed benchmark lies outside.
-List the members, then write `param` if only their weights or parameters change (`P param`, `P,V param`, `P,U param`) or `proc` if their code or algorithm can change (`P proc`, `P,V proc`). A proposer model that the loop trains (an RL policy, a controller, a self-training model) is `P param`, and a model that judges its own outputs, including by majority vote over its samples, adds `V`.
-Use `none` when the improved artifact is only read by a fixed procedure (Self-Refine; memory and prompt optimizers; ADAS and AFlow, whose meta-optimizer is fixed); archives, memories, and search statistics kept by a fixed procedure do not count. Use `pipeline` when the artifact returns only through the training of a successor model (the AlphaEvolve kernel in Gemini training), and `na` for works that are not loops (surveys, positions, frameworks, benchmarks, forecasts, safety documents).
-Code nested loops separately and tag the loop the work is about: SEAL's outer loop is `P param` and its inner loop `P,U param` (tagged `P,U param`); VeLO is `none` in both loops.
+**closure**: which of the proposer `P`, verifier `V`, and update rule `U` change in the reported runs and take part in producing later updates. The coding manual in the survey's supplement gives the full decision procedure and worked boundary cases; in short:
+
+- The analyzed boundary is one loop: the computations that propose, score, and apply candidates, fixed or not. A frozen base model or a fixed benchmark is inside the boundary but outside the set of components that can change. Code only the components that actually change in the reported runs and are used in later iterations.
+- Decide by the functional role of a changed artifact, not by its storage form. It counts when it proposes or selects candidate changes (the trained model that samples the next candidates, a mutation prompt, a meta-skill, a search strategy, the improver's own code), scores them (a judge, reward model, test suite, rubric), or configures updates (hyperparameters set from the loop's state, update directives). It does not count when it is the object being improved (a task prompt, a task skill, an agent edited by a separate fixed agent), history read by a fixed procedure (archives, memories, meta-prompt trajectories, search statistics), or a component changed only by another loop.
+- A model trained on samples it generates is at least `P param`; if it also labels or scores them, including by majority vote over its own samples, add `V`. Training once on another fixed model's data is `none`.
+- List the members, then write `param` if only weights or parameters change (`P param`, `P,V param`, `P,U param`, `U param`) or `proc` if code, algorithm, or defining instructions change (`P proc`, `V proc`, `P,V proc`). Schedules fixed in advance do not count.
+- Use `none` when the improved artifact is only read or used by a fixed procedure (Self-Refine; OPRO, GEPA, and other prompt and memory optimizers; ADAS and AFlow, whose meta-optimizer is fixed; a fixed agent that trains another model, such as RSI-Master). Use `pipeline` when the artifact returns only through building a new model (the AlphaEvolve kernel in Gemini training; Nemotron-4, DeepSeek-R1), and only when the source states that return path; a company-wide share of AI-written code is `na`. Use `na` for works that are not loops (surveys, positions, frameworks, benchmarks, forecasts, safety documents, announcements of a research program).
+- Code nested loops separately and tag the loop the work is about: SEAL's outer loop is `P param` and its inner loop `P,U param` (tagged `P,U param`); VeLO is `none` in both loops.
 
 **recursive** follows from `closure`: `yes` for any `proc` closure or `pipeline`, `partial` for `param` closures, `no` for `none`, and `na` for `na`.
 
@@ -94,7 +99,7 @@ Every entry needs a `scope` value. Ask one question first: does the improved art
 | `core-rsi` | builds or analyzes a loop in which the improved artifact becomes part of the improver, or studies the theory and limits of such loops | Self-Rewarding LMs, Absolute Zero, SEAL, STOP, Darwin Gödel Machine, model-collapse theory |
 | `core-ai4ai` | uses AI to produce or improve artifacts for building, training, or evaluating AI, or to do ML research | AlphaEvolve, AIDE, DiscoPOP, ASI-Arch, KernelBench agents, The AI Scientist, automated alignment researchers |
 | `support` | measures, forecasts, governs, or surveys RSI and AI4AI | MLE-bench, RE-Bench, METR time horizons, frontier safety frameworks, surveys of self-evolving AI |
-| `background` | is a canonical non-recursive baseline (the procedure that improves stays fixed) | Self-Refine, Reflexion, OPRO, DSPy, Voyager |
+| `background` | is a canonical baseline whose improvement procedure stays fixed, or an adjacent training precursor that the survey cites without making it its focus (background is an editorial role, not a closure class) | Self-Refine, Reflexion, OPRO, DSPy, Voyager; ExIt, Constitutional AI, RLAIF, SCoRe, TTRL |
 
 Out of scope: generic LLM, agent, LLM-as-judge, synthetic-data, or RL-for-reasoning surveys; AI for the natural sciences; domain applications such as translation or medicine; benchmarks that do not measure AI research ability. Put a self-evolving agent under `core-rsi` only if it changes its own improvement procedure or trains on a signal it generates over several rounds; otherwise it is `background` at most.
 

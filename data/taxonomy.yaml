@@ -1,4 +1,6 @@
 # Theme-centred taxonomy (v2): every section is about recursive self-improvement (RSI) or AI for AI (AI4AI).
+# A leaf may declare `subgroups`; an entry's optional `subgroup` field picks one, and entries without it go to the first.
+# Sections are editorial assignments, not closure classes; closure is coded per entry.
 - id: surveys
   title: Surveys and Position Papers
   children:
@@ -32,6 +34,11 @@
       title: Self-play and proposer-solver co-evolution
     - id: rsi.self-adapt
       title: Self-adaptation and learned update procedures
+      subgroups:
+        - id: recursive
+          title: The adapted model takes part in its own later updates
+        - id: fixed-procedure
+          title: "Comparison system with an empty closure set: a separate fixed agent updates another model"
     - id: rsi.limits
       title: Limits of recursive training (collapse, sharpening, self-bias)
     - id: rsi.frontier
@@ -45,6 +52,11 @@
       title: Self-referential optimizers
     - id: rsi.self-modifying
       title: Self-modifying agents (Gödel-machine lineage)
+      subgroups:
+        - id: recursive
+          title: Agents that edit the code or instructions that perform their next edit
+        - id: fixed-procedure
+          title: "Comparison systems with an empty closure set: a fixed evolver or revision procedure changes the agent"
     - id: rsi.meta-evolution
       title: Evolving the improver (meta-level self-evolution)
 
@@ -103,10 +115,16 @@
       title: Failure modes of self-improving loops and oversight
 
 - id: background
-  title: Background (Non-Recursive Self-Improvement)
-  blurb: A short, curated set of baselines that do not improve their own improver.
+  title: Background and Adjacent Precursors
+  blurb: >-
+    Background is an editorial role, not a closure class. It holds canonical baselines whose improvement procedure
+    stays fixed (empty closure set) and adjacent training methods that do have parametric closure, such as expert
+    iteration, Constitutional AI, RLAIF, RISE, SCoRe, Quiet-STaR, and TTRL, but that the survey cites as precursors
+    rather than as its focus.
   children:
     - id: background.refine
       title: Inference-time self-refinement and self-correction
+    - id: background.precursors
+      title: Adjacent training precursors (expert iteration, AI feedback, self-correction training, test-time RL)
     - id: background.context
       title: Prompt, memory, and skill optimization with a fixed procedure

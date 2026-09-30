@@ -103,7 +103,7 @@
   date: 2024-07
   arxiv: '2407.18219'
   url: https://arxiv.org/abs/2407.18219
-  section: background.refine
+  section: background.precursors
   scope: background
   locus: weights
   signal: ground-truth
@@ -120,7 +120,7 @@
   date: 2024-09
   arxiv: '2409.12917'
   url: https://arxiv.org/abs/2409.12917
-  section: background.refine
+  section: background.precursors
   scope: background
   locus: weights
   signal: ground-truth
@@ -228,6 +228,7 @@
   closure: none
   note: An Evolver agent rewrites the whole configuration (prompt, memory, hyperparameters, tool routines) after each episode;
     new J-TTL benchmark.
+  subgroup: fixed-procedure
 - key: ye2026meta
   short: MCE
   title: Meta Context Engineering via Agentic Skill Evolution
@@ -259,9 +260,10 @@
   signal: mixed
   recursive: 'yes'
   closure: V proc
-  note: Agents author multi-file skill packages, co-evolving skill generator and verifier.
+  note: A fixed skill generator (Claude Code or Codex) refines multi-file skill packages, while a surrogate verifier without
+    access to ground-truth tests revises its own checks as the skills change; the evolving verifier is the closure set.
 - key: li2026dynamic
-  short: Dynamic Agent Skills survey
+  short: Dynamic agent skills
   title: 'Dynamic Agent Skills: A Lifecycle Survey and Taxonomy of Evolving Skill Libraries'
   authors: Yubo Li
   venue: TMLR 2026
@@ -276,7 +278,7 @@
   closure: na
   note: Survey of 124 papers framing skills as lifecycle-managed, verified, evolving artifact stores with provenance and rollback.
 - key: wang2026knowledge
-  short: Knowledge-centric SI
+  short: Knowledge-centric self-improvement
   title: Knowledge-Centric Self-Improvement
   authors: Xuefei Julie Wang, Lauren Hyoseo Yoon, Chengrui Qu, A F Wang, Atharva Sehgal, Eric Mazumdar, Yisong Yue
   venue: arXiv 2026
@@ -285,12 +287,13 @@
   url: https://arxiv.org/abs/2607.19592
   section: surveys.position
   scope: support
-  locus: na
+  locus: context
   signal: execution
-  recursive: na
-  closure: na
-  note: Keeps agents disposable and improves a shared curated knowledge base instead; argued to be more inspectable, transferable
-    and cheaper than agent-centric SI.
+  recursive: 'no'
+  closure: none
+  note: Controlled case studies in which disposable agents add evidence-grounded insights to a shared knowledge base that
+    a fixed protocol distills; argues that curated knowledge is more inspectable, transferable and cheaper to improve than
+    the agent itself.
 - key: yang2024large
   short: OPRO
   title: Large Language Models as Optimizers
@@ -374,6 +377,7 @@
   closure: none
   note: A frontier model composes its own improvement procedure under a fixed budget; wins 12/14 comparisons against SkillOpt
     and GEPA.
+  subgroup: fixed-procedure
 - key: singh2026coding
   short: CASD
   title: Coding Agents are Strong Prompt Optimizers
@@ -618,11 +622,12 @@
   section: rsi.self-play
   scope: core-rsi
   locus: weights
-  signal: mixed
+  signal: self
   recursive: partial
   closure: P,V param
-  note: A curriculum agent and a tool-using executor co-evolve; tool use pressures the curriculum toward harder, tool-aware
-    tasks.
+  note: A curriculum agent and a tool-using executor co-evolve from one base model; the executor trains on majority-vote pseudo-labels
+    over its own answers and the curriculum is rewarded by the executor's uncertainty, so tools help solve tasks but do not
+    verify them.
 - key: zhao2026a2flow
   short: A²Flow
   title: 'A²Flow: Automating Agentic Workflow Generation via Self-Adaptive Abstraction Operators'
@@ -752,6 +757,7 @@
   recursive: 'no'
   closure: none
   note: Revises multi-agent topology and prompts only when a diagnosis recurs across samples and paired validation passes.
+  subgroup: fixed-procedure
 - key: razzhigaev2026ouroboros
   short: Ouroboros
   title: 'Ouroboros: A Self-Developing Frontier Coding Agent with Reviewed Core Evolution'
@@ -915,8 +921,9 @@
   signal: execution
   recursive: 'yes'
   closure: pipeline
-  note: Gemini-driven evolutionary coding agent; improves data-center scheduling, TPU circuits, Gemini training kernels; 4×4
-    complex matmul in 48 multiplications.
+  note: Gemini-driven evolutionary coding agent; improves data-center scheduling, TPU circuits, and Gemini training kernels.
+    Coded pipeline for the kernel that sped up training of the Gemini models that power it; its run also co-evolves the meta
+    prompts its LLMs follow (procedural proposer).
 - key: lange2026shinkaevolve
   short: ★ ShinkaEvolve
   title: 'ShinkaEvolve: Towards Open-Ended And Sample-Efficient Program Evolution'
@@ -2616,7 +2623,7 @@
   closure: na
   note: Experts find 24% of 50 LLM research documents paraphrased or heavily borrowed; detectors miss them.
 - key: zhu2025ai
-  short: Zhu-Implementation
+  short: AI scientists need implementation
   title: AI Scientists Fail Without Strong Implementation Capability
   authors: Minjun Zhu, Qiujie Xie, Yixuan Weng, Jian Wu, Zhen Lin, Linyi Yang, Yue Zhang
   venue: arXiv 2025
@@ -2694,7 +2701,7 @@
   note: Three LLM reviewers score 60 papers from Sakana v1/v2, CycleResearcher and data-to-paper; all score low (1.00–1.87
     out of 5).
 - key: ding2026autonomous
-  short: Ding-VerifGap
+  short: AI scientists and the verification gap
   title: 'Autonomous Research Agents: A Survey of AI Scientists and the Verification Gap'
   authors: Tianyu Ding, Aditya Nannapaneni, Bingfan Liu, Ling Zhang
   venue: arXiv 2026
@@ -2707,7 +2714,8 @@
   signal: na
   recursive: na
   closure: na
-  note: 125 candidates → 35 full-text works, 26 runnable systems
+  note: 'Screens 125 candidate works and includes 35, with full-text coding of 26 entries: 24 runnable systems and two study
+    or position papers.'
 - key: dharna2026ai
   short: AI Finds A Way
   title: AI Finds A Way
@@ -2724,7 +2732,7 @@
   closure: na
   note: 26 first-hand anecdotes (100+ researchers) of AI loophole-exploiting or surprising discoveries across ML subfields.
 - key: zheng2025automation
-  short: 'Survey: Automation→Autonomy'
+  short: From automation to autonomy
   title: 'From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery'
   authors: Tianshi Zheng, Zheye Deng, Hong Ting Tsang, Weiqi Wang, Jiaxin Bai, Zihao Wang, Yangqiu Song
   venue: EMNLP 2025
@@ -2739,7 +2747,7 @@
   closure: na
   note: Tool → analyst → scientist autonomy taxonomy for LLMs in science.
 - key: chen2025ai4research
-  short: Chen-AI4Research
+  short: AI4Research
   title: 'AI4Research: A Survey of Artificial Intelligence for Scientific Research'
   authors: Qiguang Chen, Mingda Yang, Libo Qin, Jinhao Liu, Zheng Yan, Jiannan Guan, Dengyun Peng, Yiyan Ji, Hanjing Li, Mengkang
     Hu, Yimeng Zhang, Yihao Liang, Yuhang Zhou, Jiaqi Wang, Zhi Chen, Wanxiang Che
@@ -2755,7 +2763,7 @@
   closure: na
   note: AI across the scientific research lifecycle
 - key: kong2026ai
-  short: Kong-AutoResearchRoadmap
+  short: Auto-research roadmap
   title: 'AI for Auto-Research: Roadmap & User Guide'
   authors: Lingdong Kong, Xian Sun, Wei Chow, Linfeng Li, Kevin Qinghong Lin, Xuan Billy Zhang, Song Wang, Rong Li, Qing Wu,
     Wei Gao, Yingshuo Wang, Shaoyuan Xie, Jiachen Liu, Leigang Qu, Shijie Li, Lai Xing Ng, Benoit R. Cottereau, Ziwei Liu,
@@ -3143,7 +3151,7 @@
   recursive: na
   closure: na
 - key: tao2024survey
-  short: Self-evolution survey
+  short: Self-evolution of LLMs
   title: A Survey on Self-Evolution of Large Language Models
   authors: Zhengwei Tao, Ting-En Lin, Xiancai Chen, Hangyu Li, Yuchuan Wu, Yongbin Li, Zhi Jin, Fei Huang, Dacheng Tao, Jingren
     Zhou
@@ -3174,8 +3182,9 @@
   signal: mixed
   recursive: na
   closure: na
+  short: 'Self-evolving agents: what, when, how, where'
 - key: fang2025comprehensive
-  short: Self-evolving AI agents survey
+  short: Self-evolving AI agents
   title: 'A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic
     Systems'
   authors: Jinyuan Fang, Yanwen Peng, Xi Zhang, Yingxu Wang, Xinhao Yi, Guibin Zhang, Yi Xu, Bin Wu, Siwei Liu, Zihao Li,
@@ -3193,7 +3202,7 @@
   closure: na
   note: 'Unified loop: system inputs, agent system, environment, optimisers'
 - key: yang2026self
-  short: Self-Improvement technical overview
+  short: LLM self-improvement overview
   title: 'Self-Improvement of Large Language Models: A Technical Overview and Future Outlook'
   authors: Haoyan Yang, Mario Xerri, Solha Park, Huajian Zhang, Yiyang Feng, Sai Akhil Kogilathota, Jiawei Zhou
   venue: TMLR 2026
@@ -3209,7 +3218,7 @@
   note: 'Closed-loop lifecycle framework: data acquisition, data selection, model optimization and inference refinement under
     an autonomous evaluation layer.'
 - key: wei2026survey
-  short: Wei-AgenticReasoning
+  short: Agentic reasoning
   title: 'A Survey of Agentic Reasoning for LLMs: Towards Recursively Self-Improving and Collective Agents'
   authors: Tianxin Wei, Ting-Wei Li, Zhining Liu, Xuying Ning, Ze Yang, Jiaru Zou, Zhichen Zeng, Ruizhong Qiu, Xiao Lin, Dongqi
     Fu, Zihao Li, Mengting Ai, Duo Zhou, Wenxuan Bao, Yunzhe Li, et al.
@@ -3225,7 +3234,7 @@
   closure: na
   note: 'Agentic reasoning: foundational, self-evolving, collective'
 - key: chen2026recursive
-  short: Chen-RSI
+  short: Recursive self-improvement in AI
   title: 'Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops'
   authors: Mingguang Chen, Licheng Wang, Bo Qu
   venue: arXiv 2026
@@ -3240,7 +3249,7 @@
   closure: na
   note: 1,250 arXiv papers (2024–26) on AI improving itself, incl. auto research
 - key: ren2026self
-  short: Ren-SIAgent
+  short: Self-improvement in agentic systems
   title: 'Self-Improvements in Modern Agentic Systems: A Survey'
   authors: Z Ren, Yimeng Chen, Dandan Guo, Guowei Rong, Tonghui Li, R. B. Xiong, Qingfeng Lan, Wenyi Wang, Li Nanbo, Yibo
     Yang, Mingchen Zhuge, Jürgen Schmidhuber
@@ -3256,7 +3265,7 @@
   closure: na
   note: Agents that turn experience into capability gains
 - key: duan2026last
-  short: Duan-LastAI
+  short: The last AI built by humans
   title: 'The Last AI Built by Humans: Toward Genuine Recursive Self-Improvement'
   authors: Yi Duan, Ying Liu, Zirui Tang, Haodong Chen, Jun Zhou, Yumou Liu, Bangrui Xu, Yukai Wu, Sidi Chen, Yuhan Zhou,
     Haoyu Wang, Xiaoyou Yu, Shaokun Han, Xuzhou Zhu, Le Zhou, et al.
@@ -3272,7 +3281,7 @@
   closure: na
   note: RSI roadmap, applications (science, embodied, SWE, health), 8 industry cases
 - key: niu2026survey
-  short: Niu-TTI
+  short: Self-improving test-time intelligence
   title: 'A Survey on Self-Improving Test-Time Intelligence: Feedback-Driven Adapting, Learning, and Scaling at Inference'
   authors: Shuaicheng Niu, Guohao Chen, Yaofo Chen, Zhiquan Wen, Jinwu Hu, Zeshuai Deng, Deyu Chen, Shuhai Zhang, Renjie Chen,
     Zihao Lian, Shoukai Xu, Gang Dai, Yunbei Zhang, Wei Luo, Yifan Zhang, Mingkui Tan, Cheng Deng
@@ -3288,7 +3297,7 @@
   closure: na
   note: Deployment-time improvement
 - key: xu2026self
-  short: (first public Jun 2026) Xu-DynGraph
+  short: Agents as dynamic graph transformation
   title: 'Self-Evolving Agents as Dynamic Graph Transformation: A Survey and New Perspective'
   authors: Yuanyuan Xu, Wenjie Zhang, Yin Chen, Xuemin Lin, Ying Zhang
   venue: arXiv 2026
@@ -3303,7 +3312,7 @@
   closure: na
   note: Agent evolution as graph rewrites
 - key: zong2026co
-  short: Zong-CoEvo
+  short: Co-evolution in agentic systems
   title: 'Co-Evolution in Agentic Systems: Toward Self-Directed Evolution Beyond Human Design'
   authors: Qing Zong, Jiayu Liu, Junhao Shen, Zecong Tang, Linsi Wu, Yuxuan Liu, Rui Wang, Zhaowei Wang, Weiqi Wang, Cheng
     Qian, Xiusi Chen, Yangqiu Song
@@ -3319,7 +3328,7 @@
   closure: na
   note: Multi-component co-evolution
 - key: zhou2026self
-  short: Zhou-SECoding
+  short: Self-evolving coding agents
   title: Self-Evolving Coding Agents
   authors: Hao Zhou et al.
   venue: arXiv 2026
@@ -3334,7 +3343,7 @@
   closure: na
   note: Coding agents that persistently update framework, memory, skills, tools, workflow
 - key: tie2025survey
-  short: Tie-AIScientists
+  short: Survey of AI scientists
   title: A Survey of AI Scientists
   authors: Guiyao Tie, Pan Zhou, Lichao Sun
   venue: arXiv 2025
@@ -3349,7 +3358,7 @@
   closure: na
   note: AI scientist systems
 - key: tie2026autoresearch
-  short: Tie-AutoResearchAI
+  short: AutoResearch AI
   title: 'AutoResearch AI: Towards AI-Powered Research Automation for Scientific Discovery'
   authors: Guiyao Tie, Jiawen Shi, Dingjie Song, Yixiao Huang, Ziji Sheng, Xueyang Zhou, Daizong Liu, Pan Zhou, Yongchao Chen,
     Ran Xu, Lifang He, Qingsong Wen, Manling Li, Cong Lu, Shuai Li, et al.
@@ -3365,7 +3374,7 @@
   closure: na
   note: Workflow-level research automation
 - key: komissarov2026ai
-  short: Komissarov-InTheWild
+  short: AI-research agents in the wild
   title: AI-Research Agents in the Wild. From GitHub and arXiv to Regularities and Gaps
   authors: Aleksey Komissarov, A. Ustyuzhanin
   venue: arXiv 2026
@@ -3380,7 +3389,7 @@
   closure: na
   note: 139 repos + 101 papers on autoresearch
 - key: tornede2024automl
-  short: Tornede-AutoML-LLM
+  short: AutoML in the age of LLMs
   title: 'AutoML in the Age of Large Language Models: Current Challenges, Future Opportunities and Risks'
   authors: Alexander Tornede, Difan Deng, Theresa Eimer, Joseph Giovanelli, Aditya Mohan, Tim Ruhkopf, Sarah Segel, Daphne
     Theodorakopoulos, Tanja Tornede, Henning Wachsmuth, Marius Lindauer
@@ -3396,7 +3405,7 @@
   closure: na
   note: LLM ↔ AutoML symbiosis
 - key: gu2024large
-  short: Gu-LLM4MLWorkflows
+  short: LLMs for ML workflows
   title: 'Large Language Models for Constructing and Optimizing Machine Learning Workflows: A Survey'
   authors: Yang Gu, Hengyu You, Jian Cao, Muran Yu, Haoran Fan, Shiyou Qian
   venue: arXiv 2024
@@ -3411,7 +3420,7 @@
   closure: na
   note: LLMs in ML workflows (data, model, HPO)
 - key: chen2025large
-  short: Chen-DSAgent
+  short: Data-science agents
   title: 'Large Language Model-based Data Science Agent: A Survey'
   authors: Ke Chen, Peiran Wang, Yaoning Yu, Xianyang Zhan, Haohan Wang
   venue: arXiv 2025
@@ -3426,7 +3435,7 @@
   closure: na
   note: Data-science agents
 - key: zhang2024survey
-  short: Zhang-SelfPlayRL
+  short: Self-play in RL
   title: A Survey on Self-play Methods in Reinforcement Learning
   authors: Ruize Zhang, Zelai Xu, Chengdong Ma, Chao Yu, Wei-Wei Tu, Wenhao Tang, Shiyu Huang, Deheng Ye, Wenbo Ding, Yaodong
     Yang, Yu Wang
@@ -3505,7 +3514,7 @@
   closure: na
   note: Scalable oversight / superalignment
 - key: hughes2024position
-  short: Hughes-OpenEnded
+  short: Open-endedness for ASI
   title: 'Position: Open-Endedness is Essential for Artificial Superhuman Intelligence'
   authors: Edward Hughes, Michael Dennis, Jack Parker-Holder, Feryal Behbahani, Aditi Mavalankar, Yuge Shi, Tom Schaul, Tim
     Rocktaschel
@@ -3521,7 +3530,7 @@
   closure: na
   note: Open-ended, ever self-improving AI
 - key: liu2025truly
-  short: Metacognition
+  short: Intrinsic metacognitive learning
   title: Truly Self-Improving Agents Require Intrinsic Metacognitive Learning
   authors: Tennison Liu, Mihaela van der Schaar
   venue: ICML 2025
@@ -3551,7 +3560,7 @@
   closure: na
   note: AI scientist evaluation
 - key: he2026greatness
-  short: He-Fuzzing
+  short: Auto-research as fuzzing
   title: 'The Greatness of Science Cannot Be Planned: Agentic Auto-Research is Fuzz Testing'
   authors: Yifeng He, Jicheng Wang, Yinzhe Zhao, Chengyang Shi, Jiachen Liu, Hao Chen
   venue: arXiv 2026
@@ -3566,7 +3575,7 @@
   closure: na
   note: Auto-research search
 - key: yang2026selfa
-  short: YangC-PersonalSingularity
+  short: Personal singularity
   title: 'Self-Aware Recursively Self-Improving Agents for Personal Singularity: A Goal-, Scope-, Tool-, and Benchmark-Driven
     Multi-Agent Architecture'
   authors: Chengshuai Yang
@@ -3613,7 +3622,7 @@
   closure: na
   note: Peer review under AI-scientist output
 - key: lin2025stop
-  short: Lin-SurveyDDoS
+  short: AI-generated survey DDoS
   title: Stop DDoS Attacking the Research Community with AI-Generated Survey Papers
   authors: Jianghao Lin, Rong Shan, Jiachen Zhu, Yunjia Xi, Yong Yu, Weinan Zhang
   venue: NeurIPS 2025
@@ -4641,11 +4650,11 @@
   section: ai4ai.data
   scope: core-ai4ai
   locus: weights
-  signal: ground-truth
+  signal: self
   recursive: 'no'
   closure: none
-  note: GPT-3 bootstraps instructions, inputs and outputs from its own generations, filtered heuristically, then fine-tunes
-    on them.
+  note: GPT-3 bootstraps instructions, inputs and outputs from its own generations and fine-tunes on them; kept items pass
+    only novelty (ROUGE-L) and format heuristics, with no correctness check.
 - key: perez2022discovering
   short: ★Model-written evals
   title: Discovering Language Model Behaviors with Model-Written Evaluations
@@ -4756,7 +4765,8 @@
   signal: model
   recursive: 'yes'
   closure: pipeline
-  note: Over 98% of alignment data synthetically generated; open-sources the synthetic data pipeline and a reward model.
+  note: 'Iterative weak-to-strong alignment: the aligned model of each round generates the next round''s alignment data (over
+    98% synthetic) for a newer base checkpoint; open-sources the synthetic data pipeline and a reward model.'
 - key: penedo2024fineweb
   short: ★FineWeb / FineWeb-Edu
   title: 'The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale'
@@ -4914,10 +4924,11 @@
   section: ai4ai.data
   scope: core-ai4ai
   locus: artifact
-  signal: ground-truth
+  signal: execution
   recursive: 'no'
   closure: none
-  note: Programmatically synthesizes 191 tool environments and about 7K scenarios with rule-based trajectory validators
+  note: Programmatically synthesizes 191 tool environments and about 7K scenarios, validated by generated rule-based trajectory
+    checkers that run in the environment.
 - key: tu2026scaleenv
   short: ScaleEnv
   title: 'ScaleEnv: Scaling Environment Synthesis from Scratch for Generalist Interactive Tool-Use Agent Training'
@@ -5240,7 +5251,7 @@
 - key: yuehhan2026automated
   short: ★AAR mitigation
   title: Automated Researchers Can Mitigate Well-characterized Alignment Failures
-  authors: Chen Yueh-Han, Jiaxin Wen, Jan H. Kirchner
+  authors: Yueh-Han Chen, Jiaxin Wen, Jan Hendrik Kirchner
   venue: Anthropic 2026
   date: 2026-08
   arxiv: '2608.28945'
@@ -5643,11 +5654,11 @@
   section: rsi.self-play
   scope: core-rsi
   locus: weights
-  signal: human
+  signal: ground-truth
   recursive: partial
   closure: P param
-  note: The model learns to distinguish human SFT responses from its previous iteration's generations; provably converges
-    to the human data distribution.
+  note: The model learns to distinguish fixed human-written SFT responses, which serve as the target, from its previous iteration's
+    generations; no human judges during the loop; provably converges to the human data distribution.
 - key: wu2025self
   short: SPPO
   title: Self-Play Preference Optimization for Language Model Alignment
@@ -6156,7 +6167,7 @@
   verify: skip
   note: 'AI R&D threshold: compress two years of 2018–2024 progress into one year'
 - key: anthropic2026ai
-  short: '? Anthropic RSI'
+  short: Anthropic RSI essay
   title: When AI builds itself
   authors: Anthropic
   venue: Anthropic 2026
@@ -6169,7 +6180,9 @@
   recursive: 'yes'
   closure: pipeline
   verify: skip
-  note: Defines RSI as autonomous successor design; reports >80% of merged code Claude-authored
+  note: Traces Claude's growing role in Anthropic's own model development, from chatbots assisting to agents writing whole
+    files, and reports that Claude authored more than 80% of merged code by May 2026; defines RSI as autonomous successor
+    design.
 - key: lim2026missing
   short: Post-training AI
   title: 'What is Missing from AI Post-Training AI: An Empirical Analysis'
@@ -6436,8 +6449,8 @@
   recursive: 'yes'
   closure: pipeline
   verify: skip
-  note: Claude authors a "large majority" of merged code. Speed-up is "not yet by a factor of 2". Introduces CoBench. Unreleased
-    "Model 2" is covered.
+  note: 'Assesses AI R&D risk: Claude authors a "large majority" of merged code and has made Anthropic''s research faster,
+    "not yet by a factor of 2". Introduces CoBench. Covers the unreleased "Model 2".'
 - key: anthropic2026systemb
   short: Claude Fable 5.1 / Mythos 5.1 card
   title: 'System Card: Claude Fable 5.1 & Claude Mythos 5.1'
@@ -6636,11 +6649,11 @@
   signal: human
   recursive: 'yes'
   closure: pipeline
-  provenance: secondary
   verify: skip
-  note: 'Claims the intern milestone: 3.1 agent-workdays per human workday (measured mid-August). Agent effort was still below
-    human labor in June 2026. The primary page returns HTTP 403 to automated access; details are from press reports (Engadget,
-    Help Net Security).'
+  note: 'Reports the "automated research intern" milestone as met: by mid-August 2026 the research organization used 3.1 agent-workdays
+    of effort per workday of human labor. The page returns HTTP 403 to our fetchers (last checked 30 Sep 2026), so the figures
+    are taken from secondary reports that quote it.'
+  provenance: secondary
 - key: amodei2025cfr
   short: Amodei 90% code
   title: CFR event remarks
@@ -6666,13 +6679,14 @@
   url: https://devops.com/google-ceo-says-75-of-new-code-is-ai-generated/
   section: closing.lab-evidence
   scope: support
-  locus: pipeline
-  signal: human
-  recursive: 'yes'
-  closure: pipeline
+  locus: na
+  signal: na
+  recursive: na
+  closure: na
   provenance: secondary
   verify: skip
-  note: 75% of new Google code is AI-generated, up from about 25% (2024) and 50% (late 2025).
+  note: 75% of new Google code is AI-generated, up from about 25% (2024) and 50% (late 2025); a company-wide usage indicator
+    that does not state a path into model development.
 - key: booth2026happens
   short: TIME on RSI
   title: What Happens When AI Starts Building AI?
@@ -6902,7 +6916,7 @@
   date: 2024-03
   arxiv: '2403.09629'
   url: https://arxiv.org/abs/2403.09629
-  section: background.refine
+  section: background.precursors
   scope: background
   locus: weights
   signal: ground-truth
@@ -6924,7 +6938,9 @@
   signal: ground-truth
   recursive: partial
   closure: P param
-  note: Reuses STaR's incorrect samples to train a DPO verifier; iterating improves both the reasoner and the verifier.
+  note: Reuses STaR's incorrect samples to train a DPO verifier; the training filter is answer correctness (gold answers for
+    math, unit tests for code), and the verifier only ranks samples at test time, so it lies outside the training loop's closure
+    set.
 - key: yuan2023scaling
   short: RFT
   title: Scaling Relationship on Learning Mathematical Reasoning with Large Language Models
@@ -6933,7 +6949,7 @@
   date: 2023-08
   arxiv: '2308.01825'
   url: https://arxiv.org/abs/2308.01825
-  section: background.refine
+  section: background.precursors
   scope: background
   locus: weights
   signal: ground-truth
@@ -6973,14 +6989,14 @@
   closure: P param
   note: Expert iteration for Lean theorem proving over a curriculum of statements of increasing difficulty.
 - key: anthony2017thinking
-  short: ExIt (background)
+  short: ExIt
   title: Thinking Fast and Slow with Deep Learning and Tree Search
   authors: Thomas Anthony, Zheng Tian, David Barber
   venue: NeurIPS 2017
   date: 2017-05
   arxiv: '1705.08439'
   url: https://arxiv.org/abs/1705.08439
-  section: background.refine
+  section: background.precursors
   scope: background
   locus: weights
   signal: execution
@@ -7032,10 +7048,11 @@
   section: rsi.self-training
   scope: core-rsi
   locus: weights
-  signal: mixed
+  signal: ground-truth
   recursive: partial
   closure: P,V param
-  note: Four rounds of self-evolution co-train a small policy and a process preference model using code-verified MCTS trajectories.
+  note: Four rounds of self-evolution co-train a small policy and a process preference model; trajectories are kept when their
+    final answer matches the gold answer, code execution filters steps, and the preference model guides later search.
 - key: pang2024iterative
   short: IRPO
   title: Iterative Reasoning Preference Optimization
@@ -7064,9 +7081,10 @@
   locus: weights
   signal: mixed
   recursive: partial
-  closure: P param
-  note: Shows exploration and reward discriminability both decay over self-training iterations; adaptively re-tunes configs
-    to rebalance them.
+  closure: P,V param
+  note: Shows exploration and reward discriminability both decay over self-training iterations; each iteration picks the sampling
+    temperature and the reward threshold that maximize a balance score, so the acceptance threshold of the verifier changes
+    with the loop.
 - key: pourcel2025self
   short: SOAR
   title: 'Self-Improving Language Models for Evolutionary Program Synthesis: A Case Study on ARC-AGI'
@@ -7115,7 +7133,7 @@
   date: 2022-12
   arxiv: '2212.08073'
   url: https://arxiv.org/abs/2212.08073
-  section: background.refine
+  section: background.precursors
   scope: background
   locus: weights
   signal: mixed
@@ -7131,7 +7149,7 @@
   date: 2023-09
   arxiv: '2309.00267'
   url: https://arxiv.org/abs/2309.00267
-  section: background.refine
+  section: background.precursors
   scope: background
   locus: weights
   signal: model
@@ -7166,11 +7184,11 @@
   section: rsi.self-reward
   scope: core-rsi
   locus: weights
-  signal: ground-truth
+  signal: self
   recursive: partial
   closure: P param
-  note: Iteratively trains an LLM-as-a-Judge on synthetic contrasting response pairs and its own improved judgments, with
-    no human preference labels.
+  note: Iteratively trains an LLM-as-a-Judge on its own judgments of synthetic response pairs whose preference label is fixed
+    by construction (a response to a perturbed instruction is taken as worse); no human or gold preference labels.
 - key: zhang2025process
   short: PSRLM
   title: Process-based Self-Rewarding Language Models
@@ -7250,11 +7268,11 @@
   section: rsi.self-play
   scope: core-rsi
   locus: weights
-  signal: execution
+  signal: ground-truth
   recursive: partial
   closure: P param
-  note: Self-play of Adversarial Taboo (attacker vs defender) with RL on game outcomes improves general reasoning benchmarks
-    iteratively.
+  note: Self-play of Adversarial Taboo (attacker vs defender) with RL on game outcomes, which the game rules decide; improves
+    general reasoning benchmarks iteratively.
 - key: ye2024scalable
   short: eva
   title: 'Scalable Reinforcement Post-Training Beyond Static Human Prompts: Evolving Alignment via Asymmetric Self-Play'
@@ -7752,7 +7770,7 @@
   arxiv: '2504.16084'
   url: https://arxiv.org/abs/2504.16084
   code: https://github.com/PRIME-RL/TTRL
-  section: background.refine
+  section: background.precursors
   scope: background
   locus: weights
   signal: self
@@ -7784,7 +7802,7 @@
   date: 2025-06
   arxiv: '2506.10947'
   url: https://arxiv.org/abs/2506.10947
-  section: background.refine
+  section: background.precursors
   scope: background
   locus: weights
   signal: mixed
@@ -7817,7 +7835,7 @@
   date: 2025-07
   arxiv: '2507.10532'
   url: https://arxiv.org/abs/2507.10532
-  section: background.refine
+  section: background.precursors
   scope: background
   locus: weights
   signal: ground-truth
@@ -8004,6 +8022,7 @@
   closure: none
   note: A Feedback-Agent updates both the harness and the weights of a task agent; the combination beats scaffold-only iteration
     in three domains.
+  subgroup: fixed-procedure
 - key: behrouz2026language
   short: LMs Need Sleep
   title: 'Language Models Need Sleep: Learning to Self-Modify and Consolidate Memories'
@@ -8570,14 +8589,14 @@
   note: Long-context RL without MCTS, value functions or PRMs; "long2short" methods transfer long-CoT ability into short-CoT
     models.
 - key: he2020revisiting
-  short: Noisy self-training (background)
+  short: Noisy self-training
   title: Revisiting Self-Training for Neural Sequence Generation
   authors: Junxian He, Jiatao Gu, Jiajun Shen, Marc’Aurelio Ranzato
   venue: ICLR 2020
   date: 2019-09
   arxiv: '1909.13788'
   url: https://arxiv.org/abs/1909.13788
-  section: background.refine
+  section: background.precursors
   scope: background
   locus: weights
   signal: self
@@ -8585,7 +8604,7 @@
   closure: P param
   note: 'Pre-LLM: self-training on pseudo-parallel data helps MT and summarization; dropout and input noise are key.'
 - key: deng2025self
-  short: MLLM self-improvement survey
+  short: MLLM self-improvement
   title: 'Self-Improvement in Multimodal Large Language Models: A Survey'
   authors: Shijian Deng, Kai Wang, Tianyu Yang, Harsh Singh, Yapeng Tian
   venue: EMNLP 2025
@@ -8695,7 +8714,7 @@
   verify: skip
   note: 'Commercial detector run on about 19K ICLR 2026 papers and 70K reviews: ~21% of reviews fully AI-generated.'
 - key: xiang2026systematic
-  short: Xiang-SysSEA
+  short: Systematic survey of self-evolving agents
   title: 'A Systematic Survey of Self-Evolving Agents: From Model-Centric to Environment-Driven Co-Evolution'
   authors: Zhishang Xiang, Chengyi Yang, Zerui Chen, Zhimin Wei, Yunbo Tang, Zongpei Teng, Zexi Peng, Zongxia Li, Chengsong
     Huang, Yicheng He, Chang Yang, Xinrun Wang, Xiao Huang, Qinggang Zhang, Jinsong Su
@@ -8711,7 +8730,7 @@
   closure: na
   note: Self-evolving agents under scarce human supervision
 - key: liu2026path
-  short: Liu-PathRSI
+  short: Path to RSI agents
   title: 'The Path to Recursive Self-Improving Agents: Foundation, Framework, and Future Directions'
   authors: Shuaiqi Liu, Zhengkai Lin, Yuxiang Zhang, Yuanyi Ren, Yue Wu, Yongbin Li, Zheng Wang, Zhihang Fu, Jieping Ye
   venue: Preprints.org 2026
@@ -8726,7 +8745,7 @@
   closure: na
   note: Self-improving agent systems with persistent updates
 - key: wu2026ai4ai
-  short: Wu-AI4AI
+  short: AI4AI survey
   title: 'AI4AI Survey: From Long-Horizon Agents to Recursive Self-Improvement — Definitions, Reliable Horizons, and Open
     Problems'
   authors: Kai Wu, Hao Lyu, Zhen Luo, Chaofan Wang, Siyu Ye, Jinghao Lin, Xiaozhong Ji, Boyuan Jiang, Shengzhi Wang, Zihan
@@ -8743,7 +8762,7 @@
   closure: na
   note: Can AI reliably improve AI? Long-horizon agents → AI4AI → RSI
 - key: ye2026survey
-  short: Ye-AI4AI
+  short: Survey on AI for AI
   title: 'A Survey on AI for AI: When the Improver Becomes the Improvee'
   authors: Deheng Ye, Zheng Zhang, Hao Wang, Chunyan Miao
   venue: Preprints.org 2026
@@ -8758,7 +8777,7 @@
   closure: na
   note: AI improving AI across RL, AutoML, meta-learning, self-play, LM agents
 - key: wang2026diving
-  short: Wang-ReliableSEA
+  short: Reliable self-evolving agents
   title: 'Diving into Reliable Self-Evolving Agents: A Survey'
   authors: Kaiqi Wang, Wenjin Hou, Yuchen Yan, Hongrui Jia, Zhisheng Zhong, Botao Ren, Yifei Chen, Songyang Zhang, Yongliang
     Shen, Jun Xiao, Yi Yang, Yueting Zhuang, Hehe Fan
@@ -8774,7 +8793,7 @@
   closure: na
   note: Reliability of self-evolving agents
 - key: ibrahimoglu2026autonomous
-  short: İbrahimoğlu-RSI
+  short: Autonomous agents and RSI
   title: 'Autonomous AI agents and recursive self-improvement: a comprehensive survey of contemporary architectures, capabilities,
     and safety frameworks'
   authors: Nadir İbrahimoğlu, Mustafa Umut Demirezen, Furkan Yıldız
@@ -8790,7 +8809,7 @@
   closure: na
   note: 'RSI agents: architectures, capabilities, safety'
 - key: jiang2026self
-  short: Jiang-EraExperience
+  short: Self- to meta-evolution
   title: 'Self-Improving Agents in the Era of Experience: A Survey of Self- to Meta-Evolution'
   authors: Che Jiang, Jincheng Zhong, Yu Fu, Kai Tian, Junlin Yang, Kaikai Zhao, Yuchong Wang, Tianwei Luo, Weizhi Wang, Yuxin
     Zuo, Guoli Jia, Xingtai Lv, Dianqiao Lei, Sihang Zeng, Yuru Wang, et al.
@@ -8810,7 +8829,7 @@
     and meta-evolution. Title, authors and release date (25 Jun 2026) checked against the authors'' repository; the OpenReview
     page blocks automated access.'
 - key: he2025breaking
-  short: He-ReasoningSelfEvo
+  short: Reasoning as self-evolution
   title: 'Breaking the Reasoning Barrier: A Survey on LLM Complex Reasoning through the Lens of Self-Evolution'
   authors: Tao He, Hao Li, Jingchang Chen, Runxuan Liu, Yixin Cao, Lizi Liao, Zihao Zheng, Zheng Chu, Jiafeng Liang, Ming
     Liu, Bing Qin
@@ -8826,7 +8845,7 @@
   closure: na
   note: CoT complex reasoning as self-evolution
 - key: sapkota2025self
-  short: Sapkota-SelfLearning
+  short: Self-learning to self-evolving
   title: 'From Self-Learning to Self-Evolving Architectures in Large Language Models: A Short Survey'
   authors: Ranjan Sapkota, Konstantinos I. Roumeliotis, Sushil Pokhrel, Manoj Karkee
   venue: TechRxiv 2025
@@ -8872,7 +8891,7 @@
   note: 'Randomized trial with 16 experienced open-source developers: early-2025 AI tools increased task completion time by
     19%, while developers expected a speed-up.'
 - key: mo2026age
-  short: Mo (position)
+  short: A new paradigm for trust in AI science
   title: The Age of AI Agents Demands A New Scientific Paradigm To Sustain Trustworthy Science
   authors: Belinda Mo
   venue: ICML 2026
@@ -9142,7 +9161,7 @@
     at a time.
 - key: anthropic2026automated
   short: Automated alignment researchers (blog)
-  title: Automated researchers can mitigate well-characterized alignment failures
+  title: Automated researchers can reliably mitigate alignment failures
   authors: Anthropic
   venue: Anthropic blog 2026
   date: 2026-08

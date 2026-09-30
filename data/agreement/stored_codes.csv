@@ -1,0 +1,61 @@
+item,key,part,section,closure
+1,idais2025consensus,safety,safety.frameworks,na
+2,komissarov2026ai,surveys,surveys.ai-scientist,na
+3,zhou2025large,ai4ai,ai4ai.writing-review,na
+4,steunebrink2016growing,foundations,foundations.classic,na
+5,liu2025alphago,ai4ai,ai4ai.architecture,none
+6,zhang2026privileged,rsi-weights,rsi.self-adapt,"P,V param"
+7,sun2025theoretical,foundations,foundations.theory,"P,V param"
+8,wang2025co,rsi-weights,rsi.self-play,"P,V param"
+9,chen2026autonomous,ai4ai,ai4ai.mle,none
+10,zeng2025b,rsi-weights,rsi.self-training,P param
+11,qiu2025ai,ai4ai,ai4ai.ideation,na
+12,wang2024autosurvey,ai4ai,ai4ai.writing-review,none
+13,yuan2025dolphin,ai4ai,ai4ai.scientist,none
+14,goldie2024that,ai4ai,ai4ai.kernels,na
+15,starace2025paperbench,evaluation,evaluation.benchmarks,na
+16,anthropic2026ai,closing,closing.lab-evidence,pipeline
+17,roy2025you,rsi-weights,rsi.limits,"P,V param"
+18,kwa2026because,evaluation,evaluation.measurement,na
+19,ye2026meta,rsi-agents,rsi.meta-evolution,P proc
+20,xiang2026systematic,surveys,surveys.rsi,na
+21,kumar2025training,background,background.refine,P param
+22,zou2025fml,evaluation,evaluation.benchmarks,na
+23,he2020revisiting,background,background.refine,P param
+24,fei2026emas,rsi-agents,rsi.self-modifying,none
+25,narayanan2025ai,safety,safety.forecasting,na
+26,ibm2020ai,foundations,foundations.classic,na
+27,gan2026auditing,safety,safety.failures,na
+28,tie2025survey,surveys,surveys.ai-scientist,na
+29,chen2025scienceagentbench,evaluation,evaluation.benchmarks,na
+30,wu2024meta,rsi-weights,rsi.self-reward,"P,V param"
+31,yampolskiy2015seed,foundations,foundations.classic,na
+32,luo2026learning,rsi-weights,rsi.limits,"P,V param"
+33,li2026cuda,ai4ai,ai4ai.kernels,P param
+34,si2026execution,ai4ai,ai4ai.mle,P param
+35,anthropic2026risk,closing,closing.lab-evidence,pipeline
+36,fernando2023promptbreeder,rsi-agents,rsi.self-referential,P proc
+37,schmidhuber2003goedel,foundations,foundations.classic,P proc
+38,liu2026path,surveys,surveys.rsi,na
+39,amin2026learning,rsi-weights,rsi.limits,P param
+40,kim2024road,safety,safety.frameworks,na
+41,field2026ai,safety,safety.forecasting,na
+42,openai2026gpta,safety,safety.frameworks,na
+43,xia2025live,rsi-agents,rsi.self-modifying,P proc
+44,bertrand2024stability,rsi-weights,rsi.limits,P param
+45,shao2024deepseekmath,rsi-weights,rsi.frontier,P param
+46,li2025autotriton,ai4ai,ai4ai.kernels,P param
+47,wang2026knowledge,surveys,surveys.position,na
+48,press2025algotune,evaluation,evaluation.benchmarks,na
+49,deepmind2026frontier,safety,safety.frameworks,na
+50,hosseini2024v,rsi-weights,rsi.self-training,P param
+51,yuehhan2026automated,ai4ai,ai4ai.alignment,none
+52,che2026kernelbrain,ai4ai,ai4ai.kernels,none
+53,yang2026frontis,closing,closing.research-agents,P param
+54,siegel2024core,evaluation,evaluation.benchmarks,na
+55,liao2026kernelevolve,ai4ai,ai4ai.kernels,none
+56,zheng2025skillweaver,background,background.context,none
+57,chen2026magellan,ai4ai,ai4ai.kernels,none
+58,suzgun2025dynamic,background,background.context,none
+59,zhou2026self,surveys,surveys.rsi,na
+60,huang2024large,background,background.refine,none

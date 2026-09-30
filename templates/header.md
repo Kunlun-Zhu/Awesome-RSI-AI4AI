@@ -16,7 +16,7 @@ A curated and tagged reading list on **recursive self-improvement (RSI)** and **
 - **AI4AI**: uses AI to produce or improve what AI is built, trained, or evaluated with. Examples: ML engineering, algorithms and objectives, architectures, kernels, training data and environments, alignment and evaluation research, and AI scientists working on ML.
 - **Support**: measures, forecasts, governs, or surveys RSI and AI4AI.
 
-A short **Background** section keeps the canonical non-recursive baselines, such as self-refinement and prompt and memory optimization. Generic LLM or agent surveys, AI for the natural sciences, and domain applications are out of scope. Entries removed in the September 2026 re-scoping are listed with reasons in [`data/excluded.yaml`](data/excluded.yaml).
+A short **Background and Adjacent Precursors** section keeps canonical baselines whose improvement procedure stays fixed, such as self-refinement and prompt and memory optimization, and adjacent training methods that the survey cites as precursors. Background is an editorial role, not a closure class. Generic LLM or agent surveys, AI for the natural sciences, and domain applications are out of scope. Entries removed in the September 2026 re-scoping are listed with reasons in [`data/excluded.yaml`](data/excluded.yaml).
 
 This list accompanies our survey *From Recursive Self-Improvement to AI for AI: A Survey and Perspective on Verification-Bounded Self-Evolving AI* (preprint coming soon).
 
@@ -32,7 +32,7 @@ We describe every system as an improvement loop. A proposer suggests a change to
 2. **Agent code**: the system rewrites its own improver.
 3. **The AI research pipeline**: AI improves the artifacts from which the next model is built.
 
-These are followed by the systems where the routes meet (**Closing the Loop**), then measurement, safety, and governance, and finally the non-recursive background. Entries carry these tags once they have been coded; a missing tag means not yet coded, and a tag that does not apply is left out:
+These are followed by the systems where the routes meet (**Closing the Loop**), then measurement, safety, and governance, and finally the background and adjacent precursors. Entries carry these tags once they have been coded; a missing tag means not yet coded, and a tag that does not apply is left out:
 
 | Tag | Values |
 |---|---|

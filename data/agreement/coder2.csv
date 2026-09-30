@@ -1,0 +1,61 @@
+item,closure,confidence,rationale
+1,na,high,Consensus statement on safety and governance; not an improvement loop.
+2,na,high,Measurement study of repos and papers on autoresearch.
+3,na,high,Measurement study of LLM usage in writing and review with no return path.
+4,na,medium,Position paper arguing how RSI systems should be built; no concrete loop or run.
+5,none,high,Fixed LLM agents propose and test architectures; architectures are the artifact and memory is only evidence (roles d and e).
+6,"P,V param",low,Loop studied is on-policy self-distillation where the trained model samples its own data and also serves as teacher that labels it; assumes teacher shares updated weights.
+7,"P,V param",medium,Models the self-improvement loop in which the trained model both solves and self-verifies; code the studied loop.
+8,"P,V param",medium,RL trains the coder and unit tester whose changed weights propose code and score later candidates.
+9,none,medium,Fixed hierarchical agent team improves ML artifacts; the agents themselves never change.
+10,"P,V param",low,Self-training model samples its own data (P) and adaptively changed reward threshold accepts later samples (V); could be read as U if configs are treated as update hyperparameters.
+11,na,high,Benchmark.
+12,none,medium,Fixed LLM pipeline drafts and refines a survey in a single pass; nothing in the procedure changes.
+13,none,high,Fixed LLM reads ranked experiment results as history for the next ideas (role e).
+14,na,medium,Rebuttal/position document defending AlphaChip methodology; not itself a loop.
+15,na,high,Benchmark.
+16,na,low,Definitional piece plus a code-share usage statistic; coded na unless the source is read as tying that share to building the successor (would be pipeline).
+17,"P,V param",medium,Loop studied is label-free RL where the trained model generates samples and rewards them by majority vote over its own outputs.
+18,na,high,Forecast/estimate note on researcher uplift.
+19,P proc,medium,"Evolved context-engineering skills instruct the base agent how to produce later context candidates (role a), as in MetaSkill-Evolve."
+20,na,high,Survey.
+21,P param,high,Online RL on self-generated traces with a fixed reward check; trained model samples next attempts.
+22,na,high,Benchmark.
+23,P param,medium,Iterated self-training where the retrained model pseudo-labels the next round's data.
+24,none,high,Fixed diagnosis/proposal/validation procedure revises a multi-agent system (manual B14).
+25,na,high,Position essay/forecast.
+26,none,low,Blog describing AutoML in which a fixed search designs models (target is role d); could be na as a terminology source.
+27,na,high,Benchmark.
+28,na,high,Survey.
+29,na,high,Benchmark.
+30,"P,V param",high,Same model acts as actor and judge and is trained by DPO on both; judge prompts fixed.
+31,na,high,Definitions and theory of RSI software without a loop.
+32,"P,V param",low,Iterative synthetic self-improvement: the trained model generates data and its own uncertainty curates it; assumes self-generated data.
+33,P param,high,RL where the trained model generates kernels it is trained on; exemplars in prompt are history and reward is fixed.
+34,P param,low,RL from execution reward trains the ideator on its own samples; the compared evolutionary search with a fixed LLM would be none.
+35,na,high,Governance/risk report with usage statistics.
+36,P proc,high,Mutation prompts are evolved and generate later task prompts (manual B1).
+37,P proc,high,Design-level self-rewrite of the proof searcher under fixed utility (manual B15).
+38,na,high,Survey/framework paper.
+39,P param,low,Studied loop is retraining on data contaminated by earlier generations' outputs; could be na if read as a static theorem.
+40,na,high,Survey.
+41,na,high,Interview study.
+42,na,high,System card / safety document.
+43,P proc,medium,The agent edits its own scaffold and tools and the edited agent performs the next edits (tie-breaker 3).
+44,P param,high,Studied loop is a generative model retrained on its own samples.
+45,P param,medium,GRPO on-policy RL where the trained model samples its own training data; reward model changes only in a side iterative-RL analysis.
+46,P param,high,GRPO with fixed rule-based and execution rewards; trained model samples its own data.
+47,none,low,Fixed procedure curates a shared knowledge base that disposable agents read to act (roles d and e).
+48,na,high,Benchmark.
+49,na,high,Frontier safety framework report.
+50,P param,medium,STaR-style generator trains on its own filtered samples; the verifier is trained from them but does not score later training candidates.
+51,none,high,Fixed automated alignment researchers post-train a target model that never becomes a researcher (manual B13).
+52,none,high,Fixed LLM mutation and fixed evolutionary search improve kernels (role d).
+53,P param,low,Model trained for ML engineering presumably via on-policy RL on its own trajectories.
+54,na,high,Benchmark.
+55,none,medium,Fixed agent optimizes kernels for ads models; no stated return path to the agent's model.
+56,none,high,Skill library read by a fixed agent (manual B2).
+57,none,medium,AlphaEvolve run with fixed LLM and program database evolves compiler heuristics; no stated return path.
+58,none,medium,Memory holds task strategies read by a fixed LM; not executed as improvement instructions (tie-breaker 2).
+59,na,medium,Appears to be a survey of self-evolving coding agents.
+60,none,medium,Loop studied is intrinsic self-correction where a fixed model revises its answer (role d).

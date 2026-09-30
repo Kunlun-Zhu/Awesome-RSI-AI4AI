@@ -10,12 +10,14 @@ rate limits are recorded as "pending" and retried on the next run.
     python scripts/verify.py --all      # re-verify everything
     python scripts/verify.py --report   # print entries that are not status=ok
     python scripts/verify.py --pages    # also fetch the page of every `verify: skip` entry and look for its title
+    python scripts/verify.py --pages-all  # refetch the page of every `verify: skip` entry, even if already checked
 
 Entries marked `verify: skip` (blog posts, reports, system cards, news) have no database record; their status is
 "manual". With --pages, the cache also records whether the URL resolved and whether the page text contains the title.
 """
 import argparse
 import difflib
+import html
 import json
 import pathlib
 import re
@@ -157,7 +159,7 @@ def page_check(p):
         return {"page": f"error: {type(err).__name__}"}
     if "pdf" in ctype or body[:5] == b"%PDF-":
         return {"page": "pdf"}
-    text = norm(re.sub(r"<[^>]+>", " ", body.decode("utf-8", "ignore")))
+    text = norm(html.unescape(re.sub(r"<[^>]+>", " ", body.decode("utf-8", "ignore"))))
     words = norm(re.sub(r"\(.*?\)", "", p["title"])).split()[:8]
     return {"page": "title-found" if " ".join(words) in text else "title-not-found"}
 
@@ -167,7 +169,9 @@ def main():
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--report", action="store_true")
     ap.add_argument("--pages", action="store_true")
+    ap.add_argument("--pages-all", action="store_true")
     args = ap.parse_args()
+    args.pages = args.pages or args.pages_all
 
     papers = yaml.safe_load((ROOT / "data" / "papers.yaml").read_text()) or []
     cache = json.loads(CACHE.read_text()) if CACHE.exists() else {}
@@ -177,7 +181,7 @@ def main():
         return (args.all or c is None or c.get("status") == "pending"
                 or c.get("query_title") != p["title"] or c.get("query_arxiv") != p.get("arxiv")
                 or c.get("query_doi") != p.get("doi") or ("query_url" in c and c["query_url"] != p["url"])
-                or (args.pages and p.get("verify") == "skip" and "page" not in c))
+                or (args.pages and p.get("verify") == "skip" and ("page" not in c or args.pages_all)))
 
     if not args.report:
         todo = [p for p in papers if stale(p)]

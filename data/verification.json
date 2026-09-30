@@ -349,10 +349,10 @@
   "status": "manual"
  },
  "anthropic2026automated": {
-  "page": "title-not-found",
+  "page": "title-found",
   "query_arxiv": null,
   "query_doi": null,
-  "query_title": "Automated researchers can mitigate well-characterized alignment failures",
+  "query_title": "Automated researchers can reliably mitigate alignment failures",
   "query_url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
   "status": "manual"
  },
@@ -2400,7 +2400,7 @@
   "title": "Position: AI Agents in Scientific Teams Should Be Studied as Human-Agent Systems"
  },
  "eth2025will": {
-  "page": "title-not-found",
+  "page": "title-found",
   "query_arxiv": null,
   "query_doi": null,
   "query_title": "Will AI R&D Automation Cause a Software Intelligence Explosion?",
@@ -8049,7 +8049,7 @@
   "status": "manual"
  },
  "openai2026research": {
-  "page": "http-403",
+  "page": "title-found",
   "query_arxiv": null,
   "query_doi": null,
   "query_title": "Research acceleration: The view inside OpenAI",

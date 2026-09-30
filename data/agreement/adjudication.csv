@@ -1,0 +1,6 @@
+item,key,stored,second,resolved,reason
+10,zeng2025b,P param,"P,V param","P,V param","Second coder right: B-STaR sets the reward threshold from the loop's own balance score each iteration, a parametric change of the verifier; manual now separates such state-dependent parameters from schedules fixed in advance."
+16,anthropic2026ai,pipeline,na,pipeline,"Stored code kept: the source describes Claude's role in Anthropic's own model development, a stated return path; the note shown to the coder omitted it and was revised."
+26,ibm2020ai,na,none,na,"Stored code kept: the blog names a research program (AutoML as 'AI for AI') and reports no specific loop; manual now states this case under '--'."
+35,anthropic2026risk,pipeline,na,pipeline,"Stored code kept: the report states that Claude has made Anthropic's research faster, which is the development of its successors; note revised to say so."
+47,wang2026knowledge,na,none,none,"Second coder right: the paper runs controlled case studies with a fixed knowledge-curation protocol, so it is a loop with an empty closure set, not a position paper."

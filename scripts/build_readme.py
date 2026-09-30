@@ -48,8 +48,13 @@ def load():
     return taxonomy, papers
 
 
+def subgroups(leaf):
+    """Ordered subgroup ids of a taxonomy leaf; entries without a `subgroup` field belong to the first."""
+    return [g["id"] for g in leaf.get("subgroups", [])]
+
+
 def validate(taxonomy, papers):
-    leaves = {c["id"] for top in taxonomy for c in top.get("children", [])}
+    leaves = {c["id"]: c for top in taxonomy for c in top.get("children", [])}
     errors, keys = [], collections.Counter(p["key"] for p in papers)
     for k, n in keys.items():
         if n > 1:
@@ -57,6 +62,8 @@ def validate(taxonomy, papers):
     for p in papers:
         if p.get("section") not in leaves:
             errors.append(f"{p['key']}: unknown section {p.get('section')!r}")
+        elif p.get("subgroup") and p["subgroup"] not in subgroups(leaves[p["section"]]):
+            errors.append(f"{p['key']}: subgroup {p['subgroup']!r} is not declared for section {p['section']!r}")
         if p.get("locus", "na") not in LOCUS and p.get("locus", "na") != "na":
             errors.append(f"{p['key']}: unknown locus {p.get('locus')!r}")
         if p.get("signal", "na") not in SIGNAL and p.get("signal", "na") != "na":
@@ -164,8 +171,15 @@ def render(taxonomy, papers):
             if not items:
                 continue
             out += [f"### {c['title']}", ""]
-            out += [entry(p) for p in items]
-            out.append("")
+            groups = c.get("subgroups") or [{"id": None, "title": None}]
+            for g in groups:
+                members = [p for p in items if (p.get("subgroup") or groups[0]["id"]) == g["id"]]
+                if not members:
+                    continue
+                if g["title"]:
+                    out += [f"#### {g['title']}", ""]
+                out += [entry(p) for p in members]
+                out.append("")
 
     out.append((ROOT / "templates" / "footer.md").read_text().rstrip())
     total = len(papers)

@@ -86,6 +86,12 @@ def is_org(name):
     return " " in name and any(w in name.split() for w in ORG_WORDS)
 
 
+# arXiv lists some authors family name first. BibTeX would read the given name as the surname ("Yueh-Han et al."),
+# so these names are written in BibTeX's "Family, Given" form.
+FAMILY_FIRST = {"Chen Yueh-Han": "Chen, Yueh-Han", "Yueh-Han Chen": "Chen, Yueh-Han",
+                "Tan Zhi-Xuan": "Tan, Zhi-Xuan", "Tan Zhi\u2010Xuan": "Tan, Zhi-Xuan"}
+
+
 def clean_names(names):
     """Tidy arXiv author metadata: drop tokens without letters (the ':' in 'Nvidia, :'), and rejoin a given name and a
     family name that arXiv split into two single-word authors (e.g. 'Xue', 'Liu' from 'Xue (Steve) Liu')."""
@@ -119,6 +125,7 @@ def authors_field(p, ver):
         names = names[:15] + ["others"]
     if len(names) == 1 and is_org(names[0]):
         return "{" + tex(names[0]) + "}"
+    names = [FAMILY_FIRST.get(n, n) for n in names]
     return " and ".join(brace_hyphen(tex(n)) for n in names) or "Anonymous"
 
 
@@ -142,7 +149,8 @@ def to_bib(p, ver):
             fields["journal"] = f"arXiv preprint arXiv:{p['arxiv']}"
         else:
             kind = "misc"
-            fields["howpublished"] = "\\url{" + url_tex(p["url"]) + "}"
+            if venue and not venue.lower().startswith(("arxiv", "preprint")):
+                fields["howpublished"] = tex(full_venue)  # the kind of document; the URL is printed from `url`
             if p.get("org"):
                 fields["note"] = tex(p["org"])
     elif any(m in full_venue.lower() for m in WORKSHOP_MARKS):
@@ -164,8 +172,7 @@ def to_bib(p, ver):
         fields["journal"] = tex(venue)
     else:  # reports, system cards, blog posts, and other web documents
         kind = "misc"
-        fields["howpublished"] = "\\url{" + url_tex(p["url"]) + "}"
-        fields["note"] = tex(venue + (f" ({vyear})" if vyear and vyear not in venue else ""))
+        fields["howpublished"] = tex(venue + (f" ({vyear})" if vyear and vyear not in venue else ""))
     if p.get("arxiv") and "journal" not in fields:
         fields["eprint"] = p["arxiv"]
         fields["archivePrefix"] = "arXiv"
@@ -174,7 +181,7 @@ def to_bib(p, ver):
             fields[extra] = str(p[extra]).replace("-", "--")
     if p.get("doi"):
         fields["doi"] = p["doi"]
-    fields["url"] = url_tex(p["url"])
+    fields["url"] = url_tex(p["url"])  # printed once; a howpublished URL would repeat it
     body = ",\n".join(f"  {k:<12} = {{{v}}}" if k != "title" else f"  {k:<12} = {v}" for k, v in fields.items())
     return f"@{kind}{{{p['key']},\n{body}\n}}\n"
 
