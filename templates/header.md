@@ -16,6 +16,8 @@ This list accompanies our survey *From Recursive Self-Improvement to AI for AI: 
 
 <p align="center"><img src="assets/overview.png" width="92%" alt="From RSI to AI4AI: the improvement loop"></p>
 
+<p align="center"><img src="assets/timeline.png" width="88%" alt="Milestones from 1965 to 2026"></p>
+
 ## How the list is organized
 
 We describe every self-improving system as an improvement loop. A proposer suggests a change to some artifact, a verifier decides whether the change is an improvement, and an update rule keeps or discards it. Sections are ordered by what the loop changes, from a single answer up to the AI research pipeline itself. Every entry carries two tags:
