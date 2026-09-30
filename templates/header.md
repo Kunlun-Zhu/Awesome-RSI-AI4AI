@@ -32,7 +32,7 @@ We describe every system as an improvement loop. A proposer suggests a change to
 2. **Agent code**: the system rewrites its own improver.
 3. **The AI research pipeline**: AI improves the artifacts from which the next model is built.
 
-These are followed by the systems where the routes meet (**Closing the Loop**), then measurement, safety, and governance, and finally the non-recursive background. Every entry carries these tags:
+These are followed by the systems where the routes meet (**Closing the Loop**), then measurement, safety, and governance, and finally the non-recursive background. Entries carry these tags once they have been coded; a missing tag means not yet coded, and a tag that does not apply is left out:
 
 | Tag | Values |
 |---|---|
@@ -41,4 +41,4 @@ These are followed by the systems where the routes meet (**Closing the Loop**), 
 | 🔁 | Recursive: the change feeds back into the system's own ability to improve |
 | 🆕 | First released in July 2026 or later |
 
-Within each subsection, entries are sorted from newest to oldest.
+Within each subsection, entries are sorted from newest to oldest. Each work appears once; a blog post or report section that accompanies a listed paper is kept only when the survey cites it separately, and its note starts with "Companion to". Duplicates removed from the list are recorded in [`data/excluded.yaml`](data/excluded.yaml).

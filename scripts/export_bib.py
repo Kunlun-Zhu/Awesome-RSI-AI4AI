@@ -33,6 +33,7 @@ CONFERENCES = {
     "KDD": "Proceedings of the ACM SIGKDD Conference on Knowledge Discovery and Data Mining",
     "AGI": "Artificial General Intelligence (AGI Conference)",
     "GECCO": "Proceedings of the Genetic and Evolutionary Computation Conference",
+    "STOC": "Proceedings of the ACM Symposium on Theory of Computing",
 }
 JOURNALS = {
     "TMLR": "Transactions on Machine Learning Research",
@@ -45,11 +46,17 @@ JOURNALS = {
     "Nature Machine Intelligence": "Nature Machine Intelligence",
     "Frontiers of Computer Science": "Frontiers of Computer Science",
     "PNAS": "Proceedings of the National Academy of Sciences",
+    "Frontiers in Psychology": "Frontiers in Psychology",
+    "Nat. Mach. Intell.": "Nature Machine Intelligence",
+    "PACM HCI": "Proceedings of the ACM on Human-Computer Interaction",
+    "Advances in Computers": "Advances in Computers",
 }
+WORKSHOP_MARKS = ("workshop", "@", "blackboxnlp")
 
 UNICODE_FIX = {"–": "--", "—": "---", "’": "'", "‘": "`", "“": "``", "”": "''", "×": "$\\times$",
                "→": "$\\rightarrow$", "≥": "$\\geq$", "≤": "$\\leq$", "∞": "$\\infty$", "…": "\\ldots{}",
-               "≈": "$\\approx$", "²": "$^2$", "³": "$^3$", "ℜ": "$\\Re$", "×": "$\\times$", "⁴": "$^4$"}
+               "≈": "$\\approx$", "²": "$^2$", "³": "$^3$", "ℜ": "$\\Re$", "×": "$\\times$", "⁴": "$^4$",
+               "\u2010": "-", "\u2011": "-"}
 
 
 def tex(s):
@@ -79,12 +86,34 @@ def is_org(name):
     return " " in name and any(w in name.split() for w in ORG_WORDS)
 
 
+def clean_names(names):
+    """Tidy arXiv author metadata: drop tokens without letters (the ':' in 'Nvidia, :'), and rejoin a given name and a
+    family name that arXiv split into two single-word authors (e.g. 'Xue', 'Liu' from 'Xue (Steve) Liu')."""
+    names = [n.strip() for n in names if re.search(r"[A-Za-z\u00C0-\u017F]", n)]
+    out, i = [], 0
+    while i < len(names):
+        n = names[i]
+        if n.lower() == "nvidia":
+            out.append("NVIDIA")
+        elif len(n.split()) == 1 and i + 1 < len(names) and len(names[i + 1].split()) == 1 and names[i + 1].lower() != "nvidia":
+            out.append(n + " " + names[i + 1])
+            i += 1
+        else:
+            out.append(n)
+        i += 1
+    return out
+
+
 def authors_field(p, ver):
-    names = ver.get("authors") if ver.get("status") == "ok" and ver.get("authors") else None
+    # arXiv author lists are used for arXiv-verified entries. Entries with a DOI cite the version of record, whose author
+    # order can differ from the preprint, and OpenAlex lists can add middle names, so the curated list wins there.
+    use_ver = ver.get("status") == "ok" and ver.get("method") == "arxiv" and ver.get("authors") and not p.get("doi")
+    names = clean_names(ver["authors"]) if use_ver else None
     if not names:
-        names = [a.strip() for a in (p.get("authors") or "").split(",") if a.strip()]
-        names = [n.replace(" et al.", "") for n in names]
-        if (p.get("authors") or "").strip().endswith("et al."):
+        raw = (p.get("authors") or "").strip()
+        names = [a.strip().replace(" et al.", "") for a in raw.split(",") if a.strip()]
+        names = [n for n in names if n and n != "et al."]
+        if raw.endswith("et al."):
             names.append("others")
     if len(names) > 15:
         names = names[:15] + ["others"]
@@ -102,7 +131,12 @@ def to_bib(p, ver):
     venue, vyear = split_venue(full_venue)
     year = vyear or str(p.get("date", ""))[:4] or str(ver.get("year", ""))
     fields = {"title": "{" + tex(p["title"]) + "}", "author": authors_field(p, ver), "year": year}
-    if p.get("bibtype") == "misc" or not venue or venue.lower().startswith(("arxiv", "preprint")):
+    if p.get("bibtype") == "book":
+        kind = "book"
+        fields["publisher"] = tex(p.get("publisher") or venue)
+        if p.get("isbn"):
+            fields["isbn"] = p["isbn"]
+    elif p.get("bibtype") == "misc" or not venue or venue.lower().startswith(("arxiv", "preprint")):
         if p.get("arxiv"):
             kind = "article"
             fields["journal"] = f"arXiv preprint arXiv:{p['arxiv']}"
@@ -111,7 +145,7 @@ def to_bib(p, ver):
             fields["howpublished"] = "\\url{" + url_tex(p["url"]) + "}"
             if p.get("org"):
                 fields["note"] = tex(p["org"])
-    elif "workshop" in full_venue.lower():
+    elif any(m in full_venue.lower() for m in WORKSHOP_MARKS):
         kind = "inproceedings"
         fields["booktitle"] = tex(full_venue)
     elif venue in JOURNALS:
@@ -135,6 +169,11 @@ def to_bib(p, ver):
     if p.get("arxiv") and "journal" not in fields:
         fields["eprint"] = p["arxiv"]
         fields["archivePrefix"] = "arXiv"
+    for extra in ("volume", "pages"):
+        if p.get(extra):
+            fields[extra] = str(p[extra]).replace("-", "--")
+    if p.get("doi"):
+        fields["doi"] = p["doi"]
     fields["url"] = url_tex(p["url"])
     body = ",\n".join(f"  {k:<12} = {{{v}}}" if k != "title" else f"  {k:<12} = {v}" for k, v in fields.items())
     return f"@{kind}{{{p['key']},\n{body}\n}}\n"

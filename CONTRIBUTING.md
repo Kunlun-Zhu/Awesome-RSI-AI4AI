@@ -20,9 +20,22 @@ Thanks for helping keep this list accurate. The README is generated, so please e
      scope: core-rsi                  # core-rsi | core-ai4ai | support | background
      locus: scaffold                  # see tagging guide below
      signal: execution
-     recursive: yes                   # yes | partial | no
+     recursive: yes                   # yes | partial | no | na (follows from closure)
+     closure: P proc                  # see tagging guide below
      note: One sentence on what the paper contributes.
    ```
+
+   Optional fields:
+
+   | Field | Use |
+   |---|---|
+   | `doi` | DOI of the version of record, without `https://doi.org/`. Give it for every journal or proceedings paper that has one; `verify.py` then checks the entry by DOI, and `export_bib.py` takes the author list from `authors` (the version of record) instead of arXiv. For a work with no arXiv version, set `url` to `https://doi.org/<doi>`. |
+   | `bibtype` | `book` (with `publisher` and optional `isbn`) or `misc` (web documents and preprints hosted outside arXiv). Otherwise the BibTeX type is inferred from `venue`. |
+   | `volume`, `pages` | Volume and page range for journal articles and book chapters, when known. |
+   | `provenance` | `secondary` if the primary page could not be read and the entry is known only from news or other secondary reports. Omit it otherwise. |
+   | `verify` | `skip` for documents with no arXiv identifier, DOI, or database record (blog posts, reports, system cards, news). |
+
+   Write `authors` as a comma-separated list of full names in "First Last" order ("Jane Doe, John Smith"), never "Doe, Jane", and end it with `et al.` only when the list is truncated. For an organization, give its name alone ("Anthropic").
 
 2. Run the checks and rebuild:
 
@@ -32,7 +45,9 @@ Thanks for helping keep this list accurate. The README is generated, so please e
    python scripts/build_readme.py
    ```
 
-   `verify.py` must report `ok` for the new entry. If a blog post or report has no OpenAlex record, add `verify: skip`.
+   `verify.py` must report `ok` for the new entry. If a blog post or report has no OpenAlex record, add `verify: skip`; `python scripts/verify.py --pages` then records whether its URL resolves and shows the title.
+
+   Before adding, search `papers.yaml` for the same arXiv identifier, DOI, URL, and title. One work gets one entry. A blog post or report section that accompanies a listed paper gets its own entry only if the survey cites it separately; its note must start with `Companion to <key>.` When you find a duplicate, keep the key the survey cites, merge the notes, and move the other entry to `data/excluded.yaml` with `excluded_reason: duplicate of <key>`. `build_readme.py` rejects entries that share an arXiv identifier, DOI, or URL unless one is marked as a companion of the other.
 
 3. Open a pull request with both `data/` and `README.md` changes.
 
@@ -61,7 +76,14 @@ Thanks for helping keep this list accurate. The README is generated, so please e
 | `human` | human ratings, reviews, or preferences |
 | `mixed` | several of the above with no single dominant signal |
 
-**recursive**: `yes` if the improved artifact becomes part of the improver in the next round (for example, the updated agent rewrites itself again), `partial` if only some components feed back, `no` otherwise.
+**closure**: which of the proposer `P`, verifier `V`, and update rule `U` the loop updates during a run. The system boundary is whatever the loop can modify while it runs, so a frozen base model or a fixed benchmark lies outside.
+List the members, then write `param` if only their weights or parameters change (`P param`, `P,V param`, `P,U param`) or `proc` if their code or algorithm can change (`P proc`, `P,V proc`). A proposer model that the loop trains (an RL policy, a controller, a self-training model) is `P param`, and a model that judges its own outputs, including by majority vote over its samples, adds `V`.
+Use `none` when the improved artifact is only read by a fixed procedure (Self-Refine; memory and prompt optimizers; ADAS and AFlow, whose meta-optimizer is fixed); archives, memories, and search statistics kept by a fixed procedure do not count. Use `pipeline` when the artifact returns only through the training of a successor model (the AlphaEvolve kernel in Gemini training), and `na` for works that are not loops (surveys, positions, frameworks, benchmarks, forecasts, safety documents).
+Code nested loops separately and tag the loop the work is about: SEAL's outer loop is `P param` and its inner loop `P,U param` (tagged `P,U param`); VeLO is `none` in both loops.
+
+**recursive** follows from `closure`: `yes` for any `proc` closure or `pipeline`, `partial` for `param` closures, `no` for `none`, and `na` for `na`.
+
+Leave a tag out if it has not been coded yet; the paper's supplement prints a missing tag as "n.c." (not coded). Use `na` for `locus`, `signal`, or `closure` only when the tag does not apply, for example the locus of a theorem about evaluation or the signal of a loop that keeps every sample unchecked (model collapse); `na` is printed as "--".
 
 ## Scope
 

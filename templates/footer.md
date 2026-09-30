@@ -4,7 +4,7 @@ Additions and corrections are welcome. Please edit [`data/papers.yaml`](data/pap
 
 ```bash
 pip install pyyaml
-python scripts/verify.py          # checks the entry against OpenAlex
+python scripts/verify.py          # checks the entry against arXiv, or OpenAlex by DOI or title
 python scripts/build_readme.py    # regenerates README.md
 python scripts/export_bib.py      # regenerates rsi-ai4ai.bib (BibTeX for every entry)
 ```

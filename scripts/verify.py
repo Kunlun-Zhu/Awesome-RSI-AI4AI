@@ -9,6 +9,10 @@ rate limits are recorded as "pending" and retried on the next run.
     python scripts/verify.py            # verify new or pending entries
     python scripts/verify.py --all      # re-verify everything
     python scripts/verify.py --report   # print entries that are not status=ok
+    python scripts/verify.py --pages    # also fetch the page of every `verify: skip` entry and look for its title
+
+Entries marked `verify: skip` (blog posts, reports, system cards, news) have no database record; their status is
+"manual". With --pages, the cache also records whether the URL resolved and whether the page text contains the title.
 """
 import argparse
 import difflib
@@ -90,12 +94,14 @@ def arxiv_batch(ids):
     return out
 
 
-def openalex_lookup(title, doi=None):
+def openalex_lookup(title, doi=None, search=True):
     candidates = []
     if doi:
         body = http_get(f"{OPENALEX}/works/doi:{doi}")
         if body:
             candidates.append(("doi", json.loads(body)))
+    if not candidates and not search:
+        raise RateLimited(title)
     if not candidates:
         q = urllib.parse.quote(title[:250])
         body = http_get(f"{OPENALEX}/works?search={q}&per-page=5")
@@ -130,19 +136,37 @@ def lookup(p, arxiv_meta=None):
         sim = similarity(p["title"], meta["title"])
         return {"status": status_for(sim), "similarity": round(sim, 3), "method": "arxiv", **meta}
     global _OPENALEX_DOWN
-    if _OPENALEX_DOWN:
-        return {"status": "pending"}
     try:
+        if _OPENALEX_DOWN:  # DOI lookups use a separate endpoint and are still worth trying
+            return openalex_lookup(p["title"], p["doi"], search=False) if p.get("doi") else {"status": "pending"}
         return openalex_lookup(p["title"], p.get("doi"))
     except RateLimited:
         _OPENALEX_DOWN = True
         return {"status": "pending"}
 
 
+def page_check(p):
+    """Fetch the entry's URL and report whether it resolves and mentions the title (first eight title words)."""
+    req = urllib.request.Request(p["url"], headers={"User-Agent": "Mozilla/5.0 (Macintosh) AppleWebKit/537.36 Chrome/126"})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            ctype, body = resp.headers.get("Content-Type", ""), resp.read(3_000_000)
+    except urllib.error.HTTPError as err:
+        return {"page": f"http-{err.code}"}
+    except (urllib.error.URLError, TimeoutError, ValueError) as err:
+        return {"page": f"error: {type(err).__name__}"}
+    if "pdf" in ctype or body[:5] == b"%PDF-":
+        return {"page": "pdf"}
+    text = norm(re.sub(r"<[^>]+>", " ", body.decode("utf-8", "ignore")))
+    words = norm(re.sub(r"\(.*?\)", "", p["title"])).split()[:8]
+    return {"page": "title-found" if " ".join(words) in text else "title-not-found"}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--report", action="store_true")
+    ap.add_argument("--pages", action="store_true")
     args = ap.parse_args()
 
     papers = yaml.safe_load((ROOT / "data" / "papers.yaml").read_text()) or []
@@ -151,19 +175,21 @@ def main():
     def stale(p):
         c = cache.get(p["key"])
         return (args.all or c is None or c.get("status") == "pending"
-                or c.get("query_title") != p["title"] or c.get("query_arxiv") != p.get("arxiv"))
+                or c.get("query_title") != p["title"] or c.get("query_arxiv") != p.get("arxiv")
+                or c.get("query_doi") != p.get("doi") or ("query_url" in c and c["query_url"] != p["url"])
+                or (args.pages and p.get("verify") == "skip" and "page" not in c))
 
     if not args.report:
         todo = [p for p in papers if stale(p)]
         meta = arxiv_batch([p["arxiv"] for p in todo if p.get("arxiv")])
         for i, p in enumerate(todo, 1):
             if p.get("verify") == "skip":
-                r = {"status": "manual"}
+                r = {"status": "manual", **(page_check(p) if args.pages else {})}
             else:
                 r = lookup(p, meta)
                 if not p.get("arxiv"):
                     time.sleep(0.2)
-            r.update(query_title=p["title"], query_arxiv=p.get("arxiv"))
+            r.update(query_title=p["title"], query_arxiv=p.get("arxiv"), query_doi=p.get("doi"), query_url=p["url"])
             cache[p["key"]] = r
             if r["status"] != "ok":
                 print(f"[{i}/{len(todo)}] {r['status']:9s} {p['key']}")

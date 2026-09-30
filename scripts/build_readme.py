@@ -63,9 +63,27 @@ def validate(taxonomy, papers):
             errors.append(f"{p['key']}: unknown signal {p.get('signal')!r}")
         if p.get("scope") not in SCOPES:
             errors.append(f"{p['key']}: missing or unknown scope {p.get('scope')!r}")
+        if p.get("recursive", "na") not in ("yes", "partial", "no", "na", True, False):
+            errors.append(f"{p['key']}: unknown recursive {p.get('recursive')!r}")
+        if p.get("provenance", "primary") not in ("primary", "secondary"):
+            errors.append(f"{p['key']}: unknown provenance {p.get('provenance')!r}")
+        if p.get("bibtype", "misc") not in ("misc", "book"):
+            errors.append(f"{p['key']}: unknown bibtype {p.get('bibtype')!r}")
         for field in ("title", "url", "date"):
             if not p.get(field):
                 errors.append(f"{p['key']}: missing {field}")
+    # one work, one entry: identifiers may repeat only between a work and its declared companion
+    companion = {p["key"]: m.group(1) for p in papers
+                 if (m := re.match(r"Companion to (\w+)", str(p.get("note", ""))))}
+    seen = {}
+    for p in papers:
+        url = re.sub(r"^https?://(www\.)?", "", p["url"].rstrip("/")).lower()
+        for ident in (("arxiv", p.get("arxiv")), ("doi", str(p.get("doi", "")).lower() or None), ("url", url)):
+            if not ident[1]:
+                continue
+            other = seen.setdefault(ident, p["key"])
+            if other != p["key"] and companion.get(p["key"]) != other and companion.get(other) != p["key"]:
+                errors.append(f"{p['key']}: same {ident[0]} as {other}; merge them or mark one as a companion")
     return errors
 
 

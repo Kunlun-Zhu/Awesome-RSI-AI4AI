@@ -1572,3 +1572,61 @@
   section: surveys.related
   note: Synthetic data
   excluded_reason: 'out: Generic synthetic-data survey, not self-improvement specific.'
+# Duplicates removed on 2026-09-30 (review R3.1): same underlying work as the kept key.
+- key: mo2026position
+  short: Mo-TrustworthySci
+  title: (Position:) The Age of AI Agents Demands A New Scientific Paradigm To Sustain Trustworthy Science
+  authors: Belinda Mo
+  venue: ICML 2026
+  date: 2026-07
+  arxiv: '2607.26064'
+  url: https://arxiv.org/abs/2607.26064
+  section: surveys.position
+  scope: support
+  note: Science done by autonomous agents
+  excluded_reason: duplicate of mo2026age (same arXiv 2607.26064)
+- key: fellows2026automateda
+  short: AAR (Apr 2026)
+  title: Automated Alignment Researchers
+  authors: Anthropic Fellows
+  venue: Anthropic Fellows 2026
+  date: 2026-04
+  url: https://www.anthropic.com/research/automated-alignment-researchers
+  section: safety.failures
+  scope: support
+  note: 9 Opus 4.6 agents raise weak-to-strong PGR from 0.23 (humans) to 0.97 at about $18k. They also reward-hacked.
+  excluded_reason: duplicate of fellows2026automated (same URL)
+- key: ai2026ai
+  short: AI Scientist in Nature
+  title: 'The AI Scientist: Towards Fully Automated AI Research (Nature)'
+  authors: Sakana AI et al.
+  venue: Nature 2026
+  date: 2026-03
+  url: https://www.nature.com/articles/s41586-026-10265-5
+  section: ai4ai.scientist
+  scope: core-ai4ai
+  note: Automated reviewer reaches 69% balanced accuracy. Paper quality scales with the base model. Watermarking and withdrawal
+    norms.
+  excluded_reason: duplicate of yamada2026end (Nature record of the same paper, doi:10.1038/s41586-026-10265-5)
+- key: ai2024safety
+  short: AI Scientist timeout edits
+  title: 'The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery (blog post)'
+  authors: Sakana AI
+  venue: Sakana AI blog 2024
+  date: 2024-08
+  url: https://sakana.ai/ai-scientist/
+  section: safety.failures
+  scope: support
+  note: Edited its own timeout, and in one run relaunched itself endlessly, instead of speeding up its code.
+  excluded_reason: duplicate of lu2024ai (companion blog post of the same work; not cited separately)
+- key: intology2025tempest
+  short: Zochi @ACL 2025
+  title: 'Tempest: Automatic Multi-Turn Jailbreaking of LLMs with Tree Search'
+  authors: Intology
+  venue: ACL 2025
+  date: 2025-01
+  url: https://www.intology.ai/blog/zochi-acl
+  section: ai4ai.scientist
+  scope: core-ai4ai
+  note: Claimed first AI-generated paper accepted to an A* main track, and it is an NLP venue. Claimed top 8.2% by meta-review.
+  excluded_reason: duplicate of zhou2025tempest (companion blog post of the same paper; not cited separately)

@@ -185,9 +185,12 @@
   "title": "Judging a Review by its Cover: A Reliability Analysis of LLM-based Peer Review Evaluation Metrics"
  },
  "amodei2025cfr": {
+  "page": "title-not-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "CFR event remarks",
-  "status": "pending"
+  "query_url": "https://www.itpro.com/technology/artificial-intelligence/anthropic-ceo-dario-amodei-ai-generated-code",
+  "status": "manual"
  },
  "andrychowicz2016learning": {
   "authors": [
@@ -322,64 +325,100 @@
   "title": "Thinking Fast and Slow with Deep Learning and Tree Search"
  },
  "anthropic2025petri": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Petri: An open-source auditing tool to accelerate AI safety research",
-  "status": "pending"
+  "query_url": "https://www.anthropic.com/research/petri-open-source-auditing",
+  "status": "manual"
  },
  "anthropic2025responsible": {
+  "page": "pdf",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Responsible Scaling Policy (v2.1)",
-  "status": "pending"
+  "query_url": "https://www-cdn.anthropic.com/17310f6d70ae5627f55313ed067afc1a762a4068.pdf",
+  "status": "manual"
  },
  "anthropic2026ai": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "When AI builds itself",
-  "status": "pending"
+  "query_url": "https://www.anthropic.com/institute/recursive-self-improvement",
+  "status": "manual"
  },
  "anthropic2026automated": {
+  "page": "title-not-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Automated researchers can mitigate well-characterized alignment failures",
+  "query_url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
   "status": "manual"
  },
  "anthropic2026measurements": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Measurements for understanding the pace of AI development inside frontier labs",
-  "status": "pending"
+  "query_url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+  "status": "manual"
  },
  "anthropic2026opus": {
+  "page": "pdf",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Claude Opus 5.5 System Card",
-  "status": "pending"
+  "query_url": "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf",
+  "status": "manual"
  },
  "anthropic2026responsible": {
+  "page": "pdf",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Responsible Scaling Policy Version 3.0",
-  "status": "pending"
+  "query_url": "https://www.anthropic.com/responsible-scaling-policy/rsp-v3-0",
+  "status": "manual"
  },
  "anthropic2026risk": {
+  "page": "pdf",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Risk Report: August 2026 (redacted)",
-  "status": "pending"
+  "query_url": "https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf",
+  "status": "manual"
  },
  "anthropic2026system": {
+  "page": "pdf",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "System Card: Claude Opus 4.6",
-  "status": "pending"
+  "query_url": "https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf",
+  "status": "manual"
  },
  "anthropic2026systema": {
+  "page": "pdf",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "System Card: Claude Mythos Preview",
-  "status": "pending"
+  "query_url": "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf",
+  "status": "manual"
  },
  "anthropic2026systemb": {
+  "page": "pdf",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "System Card: Claude Fable 5.1 & Claude Mythos 5.1",
-  "status": "pending"
+  "query_url": "https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf",
+  "status": "manual"
  },
  "anthropic2026updated": {
+  "page": "pdf",
   "query_arxiv": null,
-  "query_title": "Updated threshold for automation of AI R&D\" (§1.3.1 of Risk Report)",
-  "status": "pending"
+  "query_doi": null,
+  "query_title": "Updated threshold for automation of AI R&D (Section 1.3.1 of Risk Report: August 2026)",
+  "query_url": "https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf",
+  "status": "manual"
  },
  "asai2024openscholar": {
   "authors": [
@@ -418,9 +457,12 @@
   "title": "OpenScholar: Synthesizing Scientific Literature with Retrieval-augmented LMs"
  },
  "aschenbrenner2024situational": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Situational Awareness: The Decade Ahead",
-  "status": "pending"
+  "query_url": "https://situational-awareness.ai/",
+  "status": "manual"
  },
  "assumpcao2026codeevolve": {
   "authors": [
@@ -833,9 +875,12 @@
   "title": "Refining Over Resampling: Test-Time Self-Correction for LLM Reasoning"
  },
  "bills2023language": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Language models can explain neurons in language models",
-  "status": "pending"
+  "query_url": "https://openaipublic.blob.core.windows.net/neuron-explainer/paper/index.html",
+  "status": "manual"
  },
  "biswas2026ai": {
   "authors": [
@@ -891,9 +936,12 @@
   "title": "Demonstrating specification gaming in reasoning models"
  },
  "booth2026happens": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "What Happens When AI Starts Building AI?",
-  "status": "pending"
+  "query_url": "https://time.com/article/2026/08/07/ai-recursive-self-improvement-anthropic-openai/",
+  "status": "manual"
  },
  "borji2024note": {
   "authors": [
@@ -908,9 +956,12 @@
   "title": "A Note on Shumailov et al. (2024): `AI Models Collapse When Trained on Recursively Generated Data'"
  },
  "bostrom2014superintelligence": {
+  "page": "title-not-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Superintelligence: Paths, Dangers, Strategies",
-  "status": "pending"
+  "query_url": "https://global.oup.com/academic/product/superintelligence-9780199678112",
+  "status": "manual"
  },
  "bowkis2026automated": {
   "authors": [
@@ -978,9 +1029,12 @@
   "title": "AstaBench: Rigorous Benchmarking of AI Agents with a Scientific Research Suite"
  },
  "bricken2025building": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Building and evaluating alignment auditing agents",
-  "status": "pending"
+  "query_url": "https://alignment.anthropic.com/2025/automated-auditing/",
+  "status": "manual"
  },
  "briesch2023large": {
   "authors": [
@@ -1111,9 +1165,12 @@
   "title": "AdaEvolve: Adaptive LLM Driven Zeroth-Order Optimization"
  },
  "chalmers2010singularity": {
+  "page": "pdf",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "The Singularity: A Philosophical Analysis",
-  "status": "pending"
+  "query_url": "https://consc.net/papers/singularity.pdf",
+  "status": "manual"
  },
  "chan2024mle": {
   "authors": [
@@ -1475,9 +1532,51 @@
   "title": "Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops"
  },
  "chen2026safety": {
+  "authors": [
+   "Jiahao Chen",
+   "Zhou Feng",
+   "Oubo Ma",
+   "Yichen Yan",
+   "Ruixiao Lin",
+   "Hangtao Zhang",
+   "Linkang Du",
+   "Hengyu An",
+   "Yong Yang",
+   "Jun Liu",
+   "Junhao Li",
+   "Naen Xu",
+   "Chunyi Zhou",
+   "Yuan Su",
+   "Zehao Jin",
+   "Qianli Ma",
+   "Leyi Qi",
+   "Yiming Wang",
+   "Zhe Ma",
+   "Yuwen Pu",
+   "Mengyao Du",
+   "Yuanyi Song",
+   "Enhao Huang",
+   "Z. F. Fu",
+   "Jun Wang",
+   "Jinfeng Li",
+   "Yuefeng Chen",
+   "Hui Xue",
+   "Yiming Li",
+   "Tianyu Du",
+   "Shouling Ji"
+  ],
+  "date": "2026-09-10",
+  "doi": "https://doi.org/10.13140/rg.2.2.23319.74403",
+  "method": "doi",
+  "openalex": "https://openalex.org/W7212183339",
   "query_arxiv": null,
+  "query_doi": "10.13140/rg.2.2.23319.74403",
   "query_title": "Safety in Self-Evolving Agents: A Survey",
-  "status": "pending"
+  "query_url": "https://doi.org/10.13140/rg.2.2.23319.74403",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Safety in Self-Evolving Agents: A Survey",
+  "year": 2026
  },
  "chen2026self": {
   "authors": [
@@ -1697,9 +1796,12 @@
   "title": "Bare Minimum Mitigations for Autonomous AI Development"
  },
  "codelion2025openevolve": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "OpenEvolve (open-source AlphaEvolve implementation)",
-  "status": "pending"
+  "query_url": "https://huggingface.co/blog/codelion/openevolve",
+  "status": "manual"
  },
  "conmy2023automated": {
   "authors": [
@@ -1813,240 +1915,52 @@
   "title": "MARG: Multi-Agent Review Generation for Scientific Papers"
  },
  "deepmind2024frontier": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Frontier Safety Framework (v1/v2)",
-  "status": "pending"
+  "query_url": "https://deepmind.google/blog/introducing-the-frontier-safety-framework/",
+  "status": "manual"
  },
  "deepmind2025frontier": {
+  "page": "title-not-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Frontier Safety Framework v3.0 (Sep 2025); v3.1 (17 Apr 2026)",
-  "status": "pending"
+  "query_url": "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/",
+  "status": "manual"
  },
  "deepmind2025frontiera": {
+  "page": "pdf",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Frontier Safety Framework Report – Gemini 3 Pro",
-  "status": "pending"
+  "query_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf",
+  "status": "manual"
  },
  "deepmind2026alphaevolve": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "AlphaEvolve: How our Gemini-powered coding agent is scaling impact across fields",
-  "status": "pending"
+  "query_url": "https://deepmind.google/blog/alphaevolve-impact/",
+  "status": "manual"
  },
  "deepmind2026frontier": {
+  "page": "pdf",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Frontier Safety Framework Report – Gemini 3.7 Flash",
-  "status": "pending"
+  "query_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf",
+  "status": "manual"
  },
  "deepseekai2025deepseek": {
-  "authors": [
-   " DeepSeek-AI",
-   "Daya Guo",
-   "Dejian Yang",
-   "Haowei Zhang",
-   "Junxiao Song",
-   "Peiyi Wang",
-   "Qihao Zhu",
-   "Runxin Xu",
-   "Ruoyu Zhang",
-   "Shirong Ma",
-   "Xiao Bi",
-   "Xiaokang Zhang",
-   "Xingkai Yu",
-   "Yu Wu",
-   "Z. F. Wu",
-   "Zhibin Gou",
-   "Zhihong Shao",
-   "Zhuoshu Li",
-   "Ziyi Gao",
-   "Aixin Liu",
-   "Bing Xue",
-   "Bingxuan Wang",
-   "Bochao Wu",
-   "Bei Feng",
-   "Chengda Lu",
-   "Chenggang Zhao",
-   "Chengqi Deng",
-   "Chenyu Zhang",
-   "Chong Ruan",
-   "Damai Dai",
-   "Deli Chen",
-   "Dongjie Ji",
-   "Erhang Li",
-   "Fangyun Lin",
-   "Fucong Dai",
-   "Fuli Luo",
-   "Guangbo Hao",
-   "Guanting Chen",
-   "Guowei Li",
-   "H. Zhang",
-   "Han Bao",
-   "Hanwei Xu",
-   "Haocheng Wang",
-   "Honghui Ding",
-   "Huajian Xin",
-   "Huazuo Gao",
-   "Hui Qu",
-   "Hui Li",
-   "Jianzhong Guo",
-   "Jiashi Li",
-   "Jiawei Wang",
-   "Jingchang Chen",
-   "Jingyang Yuan",
-   "Junjie Qiu",
-   "Junlong Li",
-   "J. L. Cai",
-   "Jiaqi Ni",
-   "Jian Liang",
-   "Jin Chen",
-   "Kai Dong",
-   "Kai Hu",
-   "Kaige Gao",
-   "Kang Guan",
-   "Kexin Huang",
-   "Kuai Yu",
-   "Lean Wang",
-   "Lecong Zhang",
-   "Liang Zhao",
-   "Litong Wang",
-   "Liyue Zhang",
-   "Lei Xu",
-   "Leyi Xia",
-   "Mingchuan Zhang",
-   "Minghua Zhang",
-   "Minghui Tang",
-   "Meng Li",
-   "Miaojun Wang",
-   "Mingming Li",
-   "Ning Tian",
-   "Panpan Huang",
-   "Peng Zhang",
-   "Qiancheng Wang",
-   "Qinyu Chen",
-   "Qiushi Du",
-   "Ruiqi Ge",
-   "Ruisong Zhang",
-   "Ruizhe Pan",
-   "Runji Wang",
-   "R. J. Chen",
-   "R. L. Jin",
-   "Ruyi Chen",
-   "Shanghao Lu",
-   "Shangyan Zhou",
-   "Shanhuang Chen",
-   "Shengfeng Ye",
-   "Shiyu Wang",
-   "Shuiping Yu",
-   "Shunfeng Zhou",
-   "Shuting Pan",
-   "S. S. Li",
-   "Shuang Zhou",
-   "Shaoqing Wu",
-   "Shengfeng Ye",
-   "Tao Yun",
-   "Tian Pei",
-   "Tianyu Sun",
-   "T. Wang",
-   "Wangding Zeng",
-   "Wanjia Zhao",
-   "Wen Liu",
-   "Wenfeng Liang",
-   "Wenjun Gao",
-   "Wenqin Yu",
-   "Wentao Zhang",
-   "W. L. Xiao",
-   "Wei An",
-   "Xiaodong Liu",
-   "Xiaohan Wang",
-   "Xiaokang Chen",
-   "Xiaotao Nie",
-   "Xin Cheng",
-   "Xin Liu",
-   "Xin Xie",
-   "Xingchao Liu",
-   "Xinyu Yang",
-   "Xinyuan Li",
-   "Xuecheng Su",
-   "Xuheng Lin",
-   "X. Q. Li",
-   "Xiangyue Jin",
-   "Xiaojin Shen",
-   "Xiaosha Chen",
-   "Xiaowen Sun",
-   "Xiaoxiang Wang",
-   "Xinnan Song",
-   "Xinyi Zhou",
-   "Xianzu Wang",
-   "Xinxia Shan",
-   "Y. K. Li",
-   "Y. Q. Wang",
-   "Y. X. Wei",
-   "Yang Zhang",
-   "Yanhong Xu",
-   "Yao Li",
-   "Yao Zhao",
-   "Yaofeng Sun",
-   "Yaohui Wang",
-   "Yi Yu",
-   "Yichao Zhang",
-   "Yifan Shi",
-   "Yiliang Xiong",
-   "Ying He",
-   "Yishi Piao",
-   "Yisong Wang",
-   "Yixuan Tan",
-   "Yiyang Ma",
-   "Yiyuan Liu",
-   "Yongqiang Guo",
-   "Yuan Ou",
-   "Yuduan Wang",
-   "Yue Gong",
-   "Yuheng Zou",
-   "Yujia He",
-   "Yunfan Xiong",
-   "Yuxiang Luo",
-   "Yuxiang You",
-   "Yuxuan Liu",
-   "Yuyang Zhou",
-   "Y. X. Zhu",
-   "Yanhong Xu",
-   "Yanping Huang",
-   "Yaohui Li",
-   "Yi Zheng",
-   "Yuchen Zhu",
-   "Yunxian Ma",
-   "Ying Tang",
-   "Yukun Zha",
-   "Yuting Yan",
-   "Z. Z. Ren",
-   "Zehui Ren",
-   "Zhangli Sha",
-   "Zhe Fu",
-   "Zhean Xu",
-   "Zhenda Xie",
-   "Zhengyan Zhang",
-   "Zhewen Hao",
-   "Zhicheng Ma",
-   "Zhigang Yan",
-   "Zhiyu Wu",
-   "Zihui Gu",
-   "Zijia Zhu",
-   "Zijun Liu",
-   "Zilin Li",
-   "Ziwei Xie",
-   "Ziyang Song",
-   "Zizheng Pan",
-   "Zhen Huang",
-   "Zhipeng Xu",
-   "Zhongyu Zhang",
-   "Zhen Zhang"
-  ],
-  "date": "2025-01-22",
-  "method": "arxiv",
+  "page": "title-not-found",
   "query_arxiv": "2501.12948",
+  "query_doi": null,
   "query_title": "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning (arXiv: DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL)",
-  "similarity": 0.55,
-  "status": "manual",
-  "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"
+  "query_url": "https://arxiv.org/abs/2501.12948",
+  "status": "manual"
  },
  "delaney2026risk": {
   "authors": [
@@ -2416,6 +2330,25 @@
   "status": "ok",
   "title": "Sem-Detect: Semantic Level Detection of AI Generated Peer-Reviews"
  },
+ "dwork2015preserving": {
+  "authors": [
+   "Cynthia Dwork",
+   "Vitaly Feldman",
+   "Moritz Hardt",
+   "Toniann Pitassi",
+   "Omer Reingold",
+   "Aaron Roth"
+  ],
+  "date": "2014-11-10",
+  "method": "arxiv",
+  "query_arxiv": "1411.2664",
+  "query_doi": "10.1145/2746539.2746580",
+  "query_title": "Preserving Statistical Validity in Adaptive Data Analysis",
+  "query_url": "https://arxiv.org/abs/1411.2664",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Preserving Statistical Validity in Adaptive Data Analysis"
+ },
  "eger2025transforming": {
   "authors": [
    "Steffen Eger",
@@ -2467,9 +2400,12 @@
   "title": "Position: AI Agents in Scientific Teams Should Be Studied as Human-Agent Systems"
  },
  "eth2025will": {
+  "page": "title-not-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Will AI R&D Automation Cause a Software Intelligence Explosion?",
-  "status": "pending"
+  "query_url": "https://www.forethought.org/research/will-ai-r-and-d-automation-cause-a-software-intelligence-explosion",
+  "status": "manual"
  },
  "eulig2026position": {
   "authors": [
@@ -2599,6 +2535,35 @@
   "status": "ok",
   "title": "SeRL: Self-Play Reinforcement Learning for Large Language Models with Limited Data"
  },
+ "fawzi2022discovering": {
+  "authors": [
+   "Alhussein Fawzi",
+   "Matej Balog",
+   "Aja Huang",
+   "Thomas Hubert",
+   "Bernardino Romera‐Paredes",
+   "Mohammadamin Barekatain",
+   "Alexander Andreevich Novikov",
+   "Francisco J. R. Ruiz",
+   "Julian Schrittwieser",
+   "Grzegorz Świrszcz",
+   "David Lawrence Silver",
+   "Demis Hassabis",
+   "Pushmeet Kohli"
+  ],
+  "date": "2022-10-05",
+  "doi": "https://doi.org/10.1038/s41586-022-05172-4",
+  "method": "doi",
+  "openalex": "https://openalex.org/W4302010773",
+  "query_arxiv": null,
+  "query_doi": "10.1038/s41586-022-05172-4",
+  "query_title": "Discovering faster matrix multiplication algorithms with reinforcement learning",
+  "query_url": "https://doi.org/10.1038/s41586-022-05172-4",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Discovering faster matrix multiplication algorithms with reinforcement learning",
+  "year": 2022
+ },
  "fei2026emas": {
   "authors": [
    "Chao Fei",
@@ -2617,9 +2582,12 @@
   "title": "EMAS: Stabilizing Multi-Agent System Evolution through Evidence-Guided Revision"
  },
  "fellows2026automated": {
+  "page": "title-found",
   "query_arxiv": null,
-  "query_title": "Automated Alignment Researchers (weak-to-strong supervision study)",
-  "status": "pending"
+  "query_doi": null,
+  "query_title": "Automated Alignment Researchers",
+  "query_url": "https://www.anthropic.com/research/automated-alignment-researchers",
+  "status": "manual"
  },
  "fellows2026automateda": {
   "query_arxiv": null,
@@ -2804,6 +2772,20 @@
   "similarity": 0.907,
   "status": "ok",
   "title": "Auditing Sabotage Bench: A Benchmark for Detecting and Fixing Research Sabotage in ML Codebases"
+ },
+ "gao2023scaling": {
+  "authors": [
+   "Leo Gao",
+   "John Schulman",
+   "Jacob Hilton"
+  ],
+  "date": "2022-10-19",
+  "method": "arxiv",
+  "query_arxiv": "2210.10760",
+  "query_title": "Scaling Laws for Reward Model Overoptimization",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Scaling Laws for Reward Model Overoptimization"
  },
  "gao2025flowreasoner": {
   "authors": [
@@ -3022,9 +3004,21 @@
   "title": "Evolutionary Safety of Recursive Self-Improving AI: Taxonomy, Risk Discovery, and Evaluation"
  },
  "good1966speculations": {
+  "authors": [
+   "Irving John Good"
+  ],
+  "date": "1966-01-01",
+  "doi": "https://doi.org/10.1016/s0065-2458(08)60418-0",
+  "method": "doi",
+  "openalex": "https://openalex.org/W1586718744",
   "query_arxiv": null,
+  "query_doi": "10.1016/S0065-2458(08)60418-0",
   "query_title": "Speculations Concerning the First Ultraintelligent Machine",
-  "status": "pending"
+  "query_url": "https://doi.org/10.1016/S0065-2458(08)60418-0",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Speculations Concerning the First Ultraintelligent Machine",
+  "year": 1966
  },
  "gottweis2025accelerating": {
   "authors": [
@@ -3971,9 +3965,21 @@
   "title": "ArchAgent: Agentic AI-driven Computer Architecture Discovery"
  },
  "hall2007self": {
+  "authors": [
+   "John Storrs Hall"
+  ],
+  "date": "2007-09-06",
+  "doi": "https://doi.org/10.1007/s11023-007-9065-3",
+  "method": "doi",
+  "openalex": "https://openalex.org/W1966427255",
   "query_arxiv": null,
+  "query_doi": "10.1007/s11023-007-9065-3",
   "query_title": "Self-improving AI: an Analysis",
-  "status": "pending"
+  "query_url": "https://doi.org/10.1007/s11023-007-9065-3",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Self-improving AI: an Analysis",
+  "year": 2007
  },
  "hardt2024test": {
   "authors": [
@@ -4073,9 +4079,31 @@
   "title": "Improving Machine Translation with Human Feedback: An Exploration of Quality Estimation as a Reward Model"
  },
  "he2025breaking": {
+  "authors": [
+   "Tao He",
+   "Hao Li",
+   "Jingchang Chen",
+   "Runxuan Liu",
+   "Yixin Cao",
+   "Lizi Liao",
+   "Zihao Zheng",
+   "Zheng Chu",
+   "Jiafeng Liang",
+   "Ming Liu",
+   "Bing Qin"
+  ],
+  "date": "2025-01-01",
+  "doi": "https://doi.org/10.18653/v1/2025.findings-acl.386",
+  "method": "doi",
+  "openalex": "https://openalex.org/W4412888539",
   "query_arxiv": null,
+  "query_doi": "10.18653/v1/2025.findings-acl.386",
   "query_title": "Breaking the Reasoning Barrier: A Survey on LLM Complex Reasoning through the Lens of Self-Evolution",
-  "status": "pending"
+  "query_url": "https://aclanthology.org/2025.findings-acl.386/",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Breaking the Reasoning Barrier A Survey on LLM Complex Reasoning through the Lens of Self-Evolution",
+  "year": 2025
  },
  "he2026beneath": {
   "authors": [
@@ -4179,9 +4207,12 @@
   "title": "SIA: Self Improving AI with Harness & Weight Updates"
  },
  "ho2025software": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "The software intelligence explosion debate needs experiments",
-  "status": "pending"
+  "query_url": "https://epoch.ai/gradient-updates/the-software-intelligence-explosion-debate-needs-experiments",
+  "status": "manual"
  },
  "hong2024data": {
   "authors": [
@@ -4831,14 +4862,31 @@
   "title": "The Red Queen Gödel Machine: Co-Evolving Agents and Their Evaluators"
  },
  "ibm2020ai": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "AI for AI set to make it easy to create machine learning algorithms",
-  "status": "pending"
+  "query_url": "https://research.ibm.com/blog/autoai-create-machine-learning-algorithms",
+  "status": "manual"
  },
  "ibrahimoglu2026autonomous": {
+  "authors": [
+   "Nadir İbrahimoğlu",
+   "Mustafa Umut Demi̇rezen",
+   "Furkan Yıldız"
+  ],
+  "date": "2026-09-01",
+  "doi": "https://doi.org/10.1007/s10586-026-06537-4",
+  "method": "doi",
+  "openalex": "https://openalex.org/W7213538267",
   "query_arxiv": null,
+  "query_doi": "10.1007/s10586-026-06537-4",
   "query_title": "Autonomous AI agents and recursive self-improvement: a comprehensive survey of contemporary architectures, capabilities, and safety frameworks",
-  "status": "pending"
+  "query_url": "https://doi.org/10.1007/s10586-026-06537-4",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Autonomous AI agents and recursive self-improvement: a comprehensive survey of contemporary architectures, capabilities, and safety frameworks",
+  "year": 2026
  },
  "ichihara2026privileged": {
   "authors": [
@@ -4869,14 +4917,20 @@
   "title": "OpenReviewer: A Specialized Large Language Model for Generating Critical Scientific Paper Reviews"
  },
  "idais2024consensus": {
+  "page": "pdf",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Consensus Statement on Red Lines in AI",
-  "status": "pending"
+  "query_url": "https://people.eecs.berkeley.edu/~russell/papers/IDAIS24-Beijing-Statement.pdf",
+  "status": "manual"
  },
  "idais2025consensus": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Consensus Statement on Ensuring Alignment and Human Control of Advanced AI Systems",
-  "status": "pending"
+  "query_url": "https://idais.ai/dialogue/idais-shanghai/",
+  "status": "manual"
  },
  "ifargan2024autonomous": {
   "authors": [
@@ -4895,9 +4949,12 @@
   "title": "Autonomous LLM-driven research from data to human-verifiable research papers"
  },
  "intology2025previewing": {
+  "page": "title-not-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Previewing Locus (blog) + PostTrainBench update",
-  "status": "pending"
+  "query_url": "https://intology.ai/blog/previewing-locus",
+  "status": "manual"
  },
  "intology2025tempest": {
   "query_arxiv": null,
@@ -4920,6 +4977,29 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Discovering Temporally-Aware Reinforcement Learning Algorithms"
+ },
+ "jaderberg2017population": {
+  "authors": [
+   "Max Jaderberg",
+   "Valentin Dalibard",
+   "Simon Osindero",
+   "Wojciech M. Czarnecki",
+   "Jeff Donahue",
+   "Ali Razavi",
+   "Oriol Vinyals",
+   "Tim Green",
+   "Iain Dunning",
+   "Karen Simonyan",
+   "Chrisantha Fernando",
+   "Koray Kavukcuoglu"
+  ],
+  "date": "2017-11-27",
+  "method": "arxiv",
+  "query_arxiv": "1711.09846",
+  "query_title": "Population Based Training of Neural Networks",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Population Based Training of Neural Networks"
  },
  "jansen2025codescientist": {
   "authors": [
@@ -5042,9 +5122,12 @@
   "title": "Learning to Optimize through Solver-Grounded Self-Play"
  },
  "jiang2026self": {
+  "page": "title-not-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Self-Improving Agents in the Era of Experience: A Survey of Self- to Meta-Evolution",
-  "status": "pending"
+  "query_url": "https://openreview.net/forum?id=IUltZSgLMm",
+  "status": "manual"
  },
  "jin2024agentreview": {
   "authors": [
@@ -5143,9 +5226,12 @@
   "title": "Can Generalist Agents Automate Data Curation?"
  },
  "karpathy2026autoresearch": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "autoresearch (GitHub repository)",
-  "status": "pending"
+  "query_url": "https://github.com/karpathy/autoresearch",
+  "status": "manual"
  },
  "kaur2026rethinking": {
   "authors": [
@@ -5238,9 +5324,11 @@
   "date": "2024-12-21",
   "method": "arxiv",
   "query_arxiv": "2412.16468",
-  "query_title": "The Road to ASI: A Comprehensive Survey of Superalignment",
-  "similarity": 0.818,
-  "status": "check",
+  "query_doi": null,
+  "query_title": "The Road to Artificial SuperIntelligence: A Comprehensive Survey of Superalignment",
+  "query_url": "https://arxiv.org/abs/2412.16468",
+  "similarity": 1.0,
+  "status": "ok",
   "title": "The Road to Artificial SuperIntelligence: A Comprehensive Survey of Superalignment"
  },
  "kim2025reproduction": {
@@ -5272,9 +5360,12 @@
   "title": "Eliminating Meta Optimization Through Self-Referential Meta Learning"
  },
  "kokotajlo2025ai": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "AI 2027",
-  "status": "pending"
+  "query_url": "https://ai-2027.com/",
+  "status": "manual"
  },
  "komissarov2026ai": {
   "authors": [
@@ -5451,9 +5542,12 @@
   "title": "Measuring AI Ability to Complete Long Software Tasks"
  },
  "kwa2026because": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Because 8 ≈ e², Anthropic's researcher uplift is plausibly >2x",
-  "status": "pending"
+  "query_url": "https://metr.org/notes/2026-07-08-anthropic-researcher-uplift/",
+  "status": "manual"
  },
  "kwan2026scope": {
   "authors": [
@@ -5471,9 +5565,12 @@
   "title": "SCOPE: Self-Play via Co-Evolving Policies for Open-Ended Tasks"
  },
  "labs2025pangram": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Pangram Predicts 21% of ICLR Reviews are AI-Generated (industry blog)",
-  "status": "pending"
+  "query_url": "https://www.pangram.com/blog/pangram-predicts-21-of-iclr-reviews-are-ai-generated",
+  "status": "manual"
  },
  "lange2025robust": {
   "authors": [
@@ -5849,9 +5946,34 @@
   "title": "Build Your Personalized Research Group: A Multiagent Framework for Continual and Interactive Science Automation"
  },
  "li2025chain": {
+  "authors": [
+   "Long Li",
+   "Weiwen Xu",
+   "Jiayan Guo",
+   "Ruochen Zhao",
+   "Xingxuan Li",
+   "Y. F. Yuan",
+   "Bo Zhang",
+   "Yuming Jiang",
+   "Yifei Xin",
+   "Ronghao Dang",
+   "Rong Yu",
+   "Deli Zhao",
+   "Feng Tian",
+   "Lidong Bing"
+  ],
+  "date": "2025-01-01",
+  "doi": "https://doi.org/10.18653/v1/2025.findings-emnlp.477",
+  "method": "doi",
+  "openalex": "https://openalex.org/W4416034681",
   "query_arxiv": null,
+  "query_doi": "10.18653/v1/2025.findings-emnlp.477",
   "query_title": "Chain of Ideas: Revolutionizing Research Via Novel Idea Development with LLM Agents",
-  "status": "pending"
+  "query_url": "https://doi.org/10.18653/v1/2025.findings-emnlp.477",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Chain of Ideas: Revolutionizing Research Via Novel Idea Development with LLM Agents",
+  "year": 2025
  },
  "li2025decomposing": {
   "authors": [
@@ -6283,9 +6405,12 @@
   "title": "KernelEvolve: Scaling Agentic Kernel Coding for Heterogeneous AI Accelerators at Meta"
  },
  "liao2026kernelevolve": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "KernelEvolve: How Meta's Ranking Engineer Agent Optimizes AI Infrastructure",
-  "status": "pending"
+  "query_url": "https://engineering.fb.com/2026/04/02/developer-tools/kernelevolve-how-metas-ranking-engineer-agent-optimizes-ai-infrastructure/",
+  "status": "manual"
  },
  "libon1932researcharena": {
   "authors": [
@@ -6803,9 +6928,29 @@
   "title": "Mendel Gödel Machine: Recursive Self-Improving Coding Agents via Comparative Evolution"
  },
  "liu2026path": {
+  "authors": [
+   "Shuaiqi Liu",
+   "Zhengkai Lin",
+   "Yuxiang Zhang",
+   "Yuanyi Ren",
+   "Yue Wu",
+   "Yihua Li",
+   "Zheng Wang",
+   "Zhihang Fu",
+   "Jieping Ye"
+  ],
+  "date": "2026-08-03",
+  "doi": "https://doi.org/10.20944/preprints202608.0051.v1",
+  "method": "doi",
+  "openalex": "https://openalex.org/W7172518711",
   "query_arxiv": null,
+  "query_doi": "10.20944/preprints202608.0051.v1",
   "query_title": "The Path to Recursive Self-Improving Agents: Foundation, Framework, and Future Directions",
-  "status": "pending"
+  "query_url": "https://doi.org/10.20944/preprints202608.0051.v1",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "The Path to Recursive Self-Improving Agents: Foundation, Framework, and Future Directions",
+  "year": 2026
  },
  "liu2026researchbench": {
   "authors": [
@@ -7232,34 +7377,52 @@
   "title": "AutoData: Agentic Search for Pre-training Data Selection"
  },
  "metr2025common": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Common Elements of Frontier AI Safety Policies (Dec 2025)",
-  "status": "pending"
+  "query_url": "https://metr.org/common-elements",
+  "status": "manual"
  },
  "metr2025recent": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Recent Frontier Models Are Reward Hacking",
-  "status": "pending"
+  "query_url": "https://metr.org/blog/2025-06-05-recent-reward-hacking/",
+  "status": "manual"
  },
  "metr2026gpt": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Summary of METR's predeployment evaluation of GPT-5.6 Sol",
-  "status": "pending"
+  "query_url": "https://metr.org/blog/2026-06-26-gpt-5-6-sol/",
+  "status": "manual"
  },
  "metr2026summary": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Summary of METR's predeployment evaluation of Claude Opus 5.5",
-  "status": "pending"
+  "query_url": "https://metr.org/blog/2026-09-22-claude-opus-5-5/",
+  "status": "manual"
  },
  "metr2026task": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Task-Completion Time Horizons of Frontier AI Models",
-  "status": "pending"
+  "query_url": "https://metr.org/time-horizons/",
+  "status": "manual"
  },
  "metr2026time": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Time Horizon 1.1",
-  "status": "pending"
+  "query_url": "https://metr.org/blog/2026-1-29-time-horizon-1-1/",
+  "status": "manual"
  },
  "metz2022velo": {
   "authors": [
@@ -7284,9 +7447,40 @@
   "title": "VeLO: Training Versatile Learned Optimizers by Scaling Up"
  },
  "mirhoseini2021graph": {
+  "authors": [
+   "Azalia Mirhoseini",
+   "Anna Goldie",
+   "Mustafa Yazgan",
+   "Joe Wenjie Jiang",
+   "Ebrahim M. Songhori",
+   "Shen Wang",
+   "Young‐Joon Lee",
+   "Eric N. Johnson",
+   "Omkar Pathak",
+   "Azade Nova",
+   "Jiwoo Pak",
+   "Andy Tong",
+   "Kavya Srinivasa",
+   "William Hang",
+   "E. Tuncer",
+   "Quoc Viet Le",
+   "James P. Laudon",
+   "Richard C. Ho",
+   "Roger Carpenter",
+   "Jeff Dean"
+  ],
+  "date": "2021-06-09",
+  "doi": "https://doi.org/10.1038/s41586-021-03544-w",
+  "method": "doi",
+  "openalex": "https://openalex.org/W3171752851",
   "query_arxiv": null,
-  "query_title": "A graph placement methodology for fast chip design (Nature 2021) + 2024 Addendum",
-  "status": "pending"
+  "query_doi": "10.1038/s41586-021-03544-w",
+  "query_title": "A graph placement methodology for fast chip design",
+  "query_url": "https://www.nature.com/articles/s41586-021-03544-w",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "A graph placement methodology for fast chip design",
+  "year": 2021
  },
  "miserendino2025swe": {
   "authors": [
@@ -7476,9 +7670,12 @@
   "title": "ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI"
  },
  "narayanan2025ai": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "AI as Normal Technology",
-  "status": "pending"
+  "query_url": "https://knightcolumbia.org/content/ai-as-normal-technology",
+  "status": "manual"
  },
  "nasir2024llmatic": {
   "authors": [
@@ -7739,9 +7936,29 @@
   "title": "Discovering Reinforcement Learning Algorithms"
  },
  "oh2025discovering": {
+  "authors": [
+   "Junhyuk Oh",
+   "Greg Farquhar",
+   "Iurii Kemaev",
+   "Dan A. Calian",
+   "Matteo Hessel",
+   "Luisa Zintgraf",
+   "Satinder Pal Singh",
+   "Hado P. van Hasselt",
+   "David Lawrence Silver"
+  ],
+  "date": "2025-10-22",
+  "doi": "https://doi.org/10.1038/s41586-025-09761-x",
+  "method": "doi",
+  "openalex": "https://openalex.org/W4415437559",
   "query_arxiv": null,
+  "query_doi": "10.1038/s41586-025-09761-x",
   "query_title": "Discovering state-of-the-art reinforcement learning algorithms",
-  "status": "pending"
+  "query_url": "https://www.nature.com/articles/s41586-025-09761-x",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Discovering state-of-the-art reinforcement learning algorithms",
+  "year": 2025
  },
  "olausson2024self": {
   "authors": [
@@ -7760,54 +7977,84 @@
   "title": "Is Self-Repair a Silver Bullet for Code Generation?"
  },
  "omohundro2008basic": {
+  "page": "pdf",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "The Basic AI Drives",
-  "status": "pending"
+  "query_url": "https://selfawaresystems.com/wp-content/uploads/2008/01/ai_drives_final.pdf",
+  "status": "manual"
  },
  "openai2025openai": {
+  "page": "title-not-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "OpenAI livestream (Altman & Pachocki)",
-  "status": "pending"
+  "query_url": "https://techcrunch.com/2025/10/28/sam-altman-says-openai-will-have-a-legitimate-ai-researcher-by-2028/",
+  "status": "manual"
  },
  "openai2025preparedness": {
+  "page": "pdf",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Preparedness Framework Version 2",
-  "status": "pending"
+  "query_url": "https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf",
+  "status": "manual"
  },
  "openai2026gpt": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "GPT-5.4 Thinking System Card – AI Self-Improvement",
-  "status": "pending"
+  "query_url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/ai-self-improvement",
+  "status": "manual"
  },
  "openai2026gpt56": {
+  "page": "pdf",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "GPT-5.6 System Card",
-  "status": "pending"
+  "query_url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
+  "status": "manual"
  },
  "openai2026gpta": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "GPT-5.6 Preview System Card (Sol/Terra/Luna)",
-  "status": "pending"
+  "query_url": "https://deploymentsafety.openai.com/gpt-5-6-preview",
+  "status": "manual"
  },
  "openai2026introducing": {
+  "page": "title-not-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Introducing GPT-5.3-Codex / System Card",
-  "status": "pending"
+  "query_url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+  "status": "manual"
  },
  "openai2026openai": {
+  "page": "title-not-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "OpenAI says its AI models escaped a secure test environment",
-  "status": "pending"
+  "query_url": "https://fortune.com/2026/07/21/openai-says-ai-models-escaped-control-hacked-hugging-face/",
+  "status": "manual"
  },
  "openai2026openaia": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "OpenAI pauses training a second time",
-  "status": "pending"
+  "query_url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/",
+  "status": "manual"
  },
  "openai2026research": {
+  "page": "http-403",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Research acceleration: The view inside OpenAI",
-  "status": "pending"
+  "query_url": "https://openai.com/index/research-acceleration-view-inside-openai/",
+  "status": "manual"
  },
  "opsahlong2024optimizing": {
   "authors": [
@@ -7927,9 +8174,12 @@
   "title": "Optimize Cheap, Deploy Strong: Cost-Aware Cross-Tier Transfer for Evolutionary Optimization"
  },
  "owen2024interviewing": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Interviewing AI researchers on automation of AI R&D",
-  "status": "pending"
+  "query_url": "https://epoch.ai/blog/interviewing-ai-researchers-on-automation-of-ai-rnd",
+  "status": "manual"
  },
  "pan2023automatically": {
   "authors": [
@@ -8156,9 +8406,12 @@
   "title": "Red Teaming Language Models with Language Models"
  },
  "pichai2026pichai": {
+  "page": "title-not-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Pichai remarks",
-  "status": "pending"
+  "query_url": "https://devops.com/google-ceo-says-75-of-new-code-is-ai-generated/",
+  "status": "manual"
  },
  "polu2023formal": {
   "authors": [
@@ -8575,6 +8828,21 @@
   "status": "ok",
   "title": "Ouroboros: A Self-Developing Frontier Coding Agent with Reviewed Core Evolution"
  },
+ "real2019regularized": {
+  "authors": [
+   "Esteban Real",
+   "Alok Aggarwal",
+   "Yanping Huang",
+   "Quoc V Le"
+  ],
+  "date": "2018-02-05",
+  "method": "arxiv",
+  "query_arxiv": "1802.01548",
+  "query_title": "Regularized Evolution for Image Classifier Architecture Search",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Regularized Evolution for Image Classifier Architecture Search"
+ },
  "real2020automl": {
   "authors": [
    "Esteban Real",
@@ -8686,14 +8954,20 @@
   "title": "Self-Improving Large Language Models via Progressive Experience Evolution"
  },
  "research2025ai": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "AI Behind Closed Doors: a Primer on The Governance of Internal Deployment",
-  "status": "pending"
+  "query_url": "https://www.apolloresearch.ai/governance/ai-behind-closed-doors-a-primer-on-the-governance-of-internal-deployment",
+  "status": "manual"
  },
  "researchers2025automated": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Automated Researchers Can Subtly Sandbag",
-  "status": "pending"
+  "query_url": "https://www.alignmentforum.org/posts/niBXcbthcQRXG5M5Y/automated-researchers-can-subtly-sandbag",
+  "status": "manual"
  },
  "robeyns2025self": {
   "authors": [
@@ -8742,9 +9016,32 @@
   "title": "Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks"
  },
  "romeraparedes2024mathematical": {
+  "authors": [
+   "Bernardino Romera‐Paredes",
+   "Mohammadamin Barekatain",
+   "Alexander Andreevich Novikov",
+   "Matej Balog",
+   "Manish Kumar",
+   "Emilien Dupont",
+   "Francisco J. R. Ruiz",
+   "Jordan S. Ellenberg",
+   "Pengming Wang",
+   "Omar Fawzi",
+   "Pushmeet Kohli",
+   "Alhussein Fawzi"
+  ],
+  "date": "2023-12-14",
+  "doi": "https://doi.org/10.1038/s41586-023-06924-6",
+  "method": "doi",
+  "openalex": "https://openalex.org/W4389727268",
   "query_arxiv": null,
+  "query_doi": "10.1038/s41586-023-06924-6",
   "query_title": "Mathematical discoveries from program search with large language models",
-  "status": "pending"
+  "query_url": "https://www.nature.com/articles/s41586-023-06924-6",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Mathematical discoveries from program search with large language models",
+  "year": 2023
  },
  "roy2025you": {
   "authors": [
@@ -8862,9 +9159,24 @@
   "title": "Rainbow Teaming: Open-Ended Generation of Diverse Adversarial Prompts"
  },
  "sapkota2025self": {
+  "authors": [
+   "Ranjan Sapkota",
+   "Konstantinos I. Roumeliotis",
+   "Sushil Pokhrel",
+   "Manoj Karkee"
+  ],
+  "date": "2025-05-27",
+  "doi": "https://doi.org/10.36227/techrxiv.174838070.09235849/v1",
+  "method": "doi",
+  "openalex": "https://openalex.org/W4410763854",
   "query_arxiv": null,
-  "query_title": "From Self-Learning to Self-Evolving Architectures in LLMs: A Short Survey",
-  "status": "pending"
+  "query_doi": "10.36227/techrxiv.174838070.09235849/v1",
+  "query_title": "From Self-Learning to Self-Evolving Architectures in Large Language Models: A Short Survey",
+  "query_url": "https://doi.org/10.36227/techrxiv.174838070.09235849/v1",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "From Self-Learning to Self-Evolving Architectures in Large Language Models: A Short Survey",
+  "year": 2025
  },
  "schaeffer2025position": {
   "authors": [
@@ -8916,14 +9228,40 @@
   "title": "AgentRxiv: Towards Collaborative Autonomous Research"
  },
  "schmidhuber1987evolutionary": {
+  "page": "pdf",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Evolutionary Principles in Self-Referential Learning (Diploma thesis)",
-  "status": "pending"
+  "query_url": "https://people.idsia.ch/~juergen/diploma1987ocr.pdf",
+  "status": "manual"
  },
  "schmidhuber2003goedel": {
-  "query_arxiv": null,
+  "authors": [
+   "Juergen Schmidhuber"
+  ],
+  "date": "2003-09-25",
+  "method": "arxiv",
+  "query_arxiv": "cs/0309048",
+  "query_doi": null,
   "query_title": "Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements",
-  "status": "pending"
+  "query_url": "https://arxiv.org/abs/cs/0309048",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements"
+ },
+ "schmidhuber2013powerplay": {
+  "authors": [
+   "Jürgen Schmidhuber"
+  ],
+  "date": "2011-12-22",
+  "method": "arxiv",
+  "query_arxiv": "1112.5309",
+  "query_doi": "10.3389/fpsyg.2013.00313",
+  "query_title": "PowerPlay: Training an Increasingly General Problem Solver by Continually Searching for the Simplest Still Unsolvable Problem",
+  "query_url": "https://arxiv.org/abs/1112.5309",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "POWERPLAY: Training an Increasingly General Problem Solver by Continually Searching for the Simplest Still Unsolvable Problem"
  },
  "schoen2025stress": {
   "authors": [
@@ -9221,21 +9559,12 @@
   "title": "Rethinking Privileged Information in On-Policy Self-Distillation"
  },
  "shumailov2024ai": {
-  "authors": [
-   "Ilia Shumailov",
-   "Zakhar Shumaylov",
-   "Yiren Zhao",
-   "Yarin Gal",
-   "Nicolas Papernot",
-   "Ross Anderson"
-  ],
-  "date": "2023-05-27",
-  "method": "arxiv",
+  "page": "title-not-found",
   "query_arxiv": "2305.17493",
+  "query_doi": null,
   "query_title": "AI models collapse when trained on recursively generated data (arXiv version: The Curse of Recursion: Training on Generated Data Makes Models Forget)",
-  "similarity": 0.645,
-  "status": "manual",
-  "title": "The Curse of Recursion: Training on Generated Data Makes Models Forget"
+  "query_url": "https://arxiv.org/abs/2305.17493",
+  "status": "manual"
  },
  "si2025ideation": {
   "authors": [
@@ -9297,6 +9626,68 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "CORE-Bench: Fostering the Credibility of Published Research Through a Computational Reproducibility Agent Benchmark"
+ },
+ "silver2017mastering": {
+  "authors": [
+   "David Lawrence Silver",
+   "Julian Schrittwieser",
+   "Karen Simonyan",
+   "Ioannis Antonoglou",
+   "Aja Huang",
+   "Arthur Guez",
+   "Thomas Hubert",
+   "Lucas Baker",
+   "Matthew Lai",
+   "Adrian Bolton",
+   "Yutian Chen",
+   "Timothy Lillicrap",
+   "Fan Hui",
+   "Laurent Sifre",
+   "George van den Driessche",
+   "Thore Graepel",
+   "Demis Hassabis"
+  ],
+  "date": "2017-10-01",
+  "doi": "https://doi.org/10.1038/nature24270",
+  "method": "doi",
+  "openalex": "https://openalex.org/W2766447205",
+  "query_arxiv": null,
+  "query_doi": "10.1038/nature24270",
+  "query_title": "Mastering the game of Go without human knowledge",
+  "query_url": "https://doi.org/10.1038/nature24270",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Mastering the game of Go without human knowledge",
+  "year": 2017
+ },
+ "silver2018general": {
+  "authors": [
+   "David Lawrence Silver",
+   "Thomas Hubert",
+   "Julian Schrittwieser",
+   "Ioannis Antonoglou",
+   "Matthew Lai",
+   "Arthur Guez",
+   "Marc Lanctot",
+   "Laurent Sifre",
+   "Dharshan Kumaran",
+   "Thore Graepel",
+   "Timothy Lillicrap",
+   "Karen Simonyan",
+   "Demis Hassabis"
+  ],
+  "date": "2018-12-06",
+  "doi": "https://doi.org/10.1126/science.aar6404",
+  "method": "doi",
+  "openalex": "https://openalex.org/W2902907165",
+  "query_arxiv": null,
+  "query_doi": "10.1126/science.aar6404",
+  "query_title": "A general reinforcement learning algorithm that masters chess, shogi, and Go through self-play",
+  "query_url": "https://doi.org/10.1126/science.aar6404",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "A general reinforcement learning algorithm that masters chess, shogi, and Go through self-play",
+  "year": 2018
  },
  "singh2024beyond": {
   "authors": [
@@ -9511,9 +9902,23 @@
   "title": "On the Self-Verification Limitations of Large Language Models on Reasoning and Planning Tasks"
  },
  "steunebrink2016growing": {
+  "authors": [
+   "Bas R. Steunebrink",
+   "Kristinn R. Þórisson",
+   "Jürgen Schmidhuber"
+  ],
+  "date": "2016-01-01",
+  "doi": "https://doi.org/10.1007/978-3-319-41649-6_13",
+  "method": "doi",
+  "openalex": "https://openalex.org/W2492531005",
   "query_arxiv": null,
+  "query_doi": "10.1007/978-3-319-41649-6_13",
   "query_title": "Growing Recursive Self-Improvers",
-  "status": "pending"
+  "query_url": "https://doi.org/10.1007/978-3-319-41649-6_13",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Growing Recursive Self-Improvers",
+  "year": 2016
  },
  "stojanovski2025reasoning": {
   "authors": [
@@ -9553,6 +9958,25 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Reinforcement Learning with Semantic Rewards Enables Low-Resource Language Expansion without Alignment Tax"
+ },
+ "subramaniam2025multiagent": {
+  "authors": [
+   "Vighnesh Subramaniam",
+   "Yilun Du",
+   "Joshua B. Tenenbaum",
+   "Antonio Torralba",
+   "Shuang Li",
+   "Igor Mordatch"
+  ],
+  "date": "2025-01-10",
+  "method": "arxiv",
+  "query_arxiv": "2501.05707",
+  "query_doi": null,
+  "query_title": "Multiagent Finetuning: Self Improvement with Diverse Reasoning Chains",
+  "query_url": "https://arxiv.org/abs/2501.05707",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Multiagent Finetuning: Self Improvement with Diverse Reasoning Chains"
  },
  "sun2025survey": {
   "authors": [
@@ -10069,9 +10493,12 @@
   "title": "Kimi k1.5: Scaling Reinforcement Learning with LLMs"
  },
  "team20264": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "4 Levels of Recursive Self-Improvement (blog)",
-  "status": "pending"
+  "query_url": "https://www.weco.ai/blog/4-levels-of-recursive-self-improvement",
+  "status": "manual"
  },
  "thakkar2025llm": {
   "authors": [
@@ -10455,6 +10882,39 @@
   "status": "ok",
   "title": "Optimizing the Score, Losing Sight of the Task: Reward Hacking Across Weights, Selection, and Prompts"
  },
+ "wang2019paired": {
+  "authors": [
+   "Rui Wang",
+   "Joel Lehman",
+   "Jeff Clune",
+   "Kenneth O. Stanley"
+  ],
+  "date": "2019-01-07",
+  "method": "arxiv",
+  "query_arxiv": "1901.01753",
+  "query_title": "Paired Open-Ended Trailblazer (POET): Endlessly Generating Increasingly Complex and Diverse Learning Environments and Their Solutions",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Paired Open-Ended Trailblazer (POET): Endlessly Generating Increasingly Complex and Diverse Learning Environments and Their Solutions"
+ },
+ "wang2020enhanced": {
+  "authors": [
+   "Rui Wang",
+   "Joel Lehman",
+   "Aditya Rawal",
+   "Jiale Zhi",
+   "Yulun Li",
+   "Jeff Clune",
+   "Kenneth O. Stanley"
+  ],
+  "date": "2020-03-19",
+  "method": "arxiv",
+  "query_arxiv": "2003.08536",
+  "query_title": "Enhanced POET: Open-Ended Reinforcement Learning through Unbounded Invention of Learning Challenges and their Solutions",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Enhanced POET: Open-Ended Reinforcement Learning through Unbounded Invention of Learning Challenges and their Solutions"
+ },
  "wang2023gensim": {
   "authors": [
    "Lirui Wang",
@@ -10763,9 +11223,33 @@
   "title": "Auditing Harness Tampering in Self-Improving Agents"
  },
  "wang2026diving": {
+  "authors": [
+   "K.W. Wang",
+   "Wenjin Hou",
+   "Yuchen Yan",
+   "Hongrui Jia",
+   "Zhisheng Zhong",
+   "Botao Ren",
+   "Yifei Chen",
+   "Songyang Zhang",
+   "Yongliang Shen",
+   "Jun Xiao",
+   "Yi Yang",
+   "Yueting Zhuang",
+   "Hehe Fan"
+  ],
+  "date": "2026-09-11",
+  "doi": "https://doi.org/10.20944/preprints202609.0913.v1",
+  "method": "doi",
+  "openalex": "https://openalex.org/W7212419164",
   "query_arxiv": null,
+  "query_doi": "10.20944/preprints202609.0913.v1",
   "query_title": "Diving into Reliable Self-Evolving Agents: A Survey",
-  "status": "pending"
+  "query_url": "https://doi.org/10.20944/preprints202609.0913.v1",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Diving into Reliable Self-Evolving Agents: A Survey",
+  "year": 2026
  },
  "wang2026knowledge": {
   "authors": [
@@ -11216,9 +11700,12 @@
   "title": "RE-Bench: Evaluating frontier AI R&D capabilities of language model agents against human experts"
  },
  "williams2026responsible": {
+  "page": "title-found",
   "query_arxiv": null,
-  "query_title": "Responsible Scaling Policy v3.0 (GovAI analysis)",
-  "status": "pending"
+  "query_doi": null,
+  "query_title": "Anthropic's RSP v3.0: How it Works, What's Changed, and Some Reflections",
+  "query_url": "https://www.governance.ai/analysis/anthropics-rsp-v3-0-how-it-works-whats-changed-and-some-reflections",
+  "status": "manual"
  },
  "woo2025tritonrl": {
   "authors": [
@@ -11358,9 +11845,43 @@
   "title": "Self-Play Preference Optimization for Language Model Alignment"
  },
  "wu2026ai4ai": {
+  "authors": [
+   "Kai Wu",
+   "Hao Lyu",
+   "Zhen Luo",
+   "Chaofan Wang",
+   "Siyu Ye",
+   "Jinghao Lin",
+   "Xiaozhong Ji",
+   "Boyuan Jiang",
+   "Shengzhi Wang",
+   "Zihan Wang",
+   "Yiwen Ye",
+   "Hao Wang",
+   "Zimu Wang",
+   "Wenzhe Liu",
+   "Ruobing Wang",
+   "Kai Cai",
+   "Mingliang Xiong",
+   "Wen Fang",
+   "Mingqing Liu",
+   "Yifan Zhang",
+   "Lei Yang",
+   "Xiaobin Hu",
+   "Qingwen Liu"
+  ],
+  "date": "2026-08-28",
+  "doi": "https://doi.org/10.20944/preprints202608.2108.v1",
+  "method": "doi",
+  "openalex": "https://openalex.org/W7204818238",
   "query_arxiv": null,
+  "query_doi": "10.20944/preprints202608.2108.v1",
   "query_title": "AI4AI Survey: From Long-Horizon Agents to Recursive Self-Improvement — Definitions, Reliable Horizons, and Open Problems",
-  "status": "pending"
+  "query_url": "https://doi.org/10.20944/preprints202608.2108.v1",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "AI4AI Survey: From Long-Horizon Agents to Recursive Self-Improvement—Definitions, Reliable Horizons, and Open Problems",
+  "year": 2026
  },
  "wu2026envs": {
   "authors": [
@@ -11435,9 +11956,35 @@
   "title": "SciReplicate-Bench: Benchmarking LLMs in Agent-driven Algorithmic Reproduction from Research Papers"
  },
  "xiang2026systematic": {
+  "authors": [
+   "Zhiyi Xiang",
+   "Chengyi Yang",
+   "Zerui Chen",
+   "Zhimin Wei",
+   "Yunbo Tang",
+   "Zongpei Teng",
+   "Zexi Peng",
+   "Zongxia Li",
+   "Chengsong Huang",
+   "Yicheng He",
+   "Chang Yang",
+   "Bo An",
+   "Xiao Huang",
+   "Qinggang Zhang",
+   "Jinsong Su"
+  ],
+  "date": "2026-02-27",
+  "doi": "https://doi.org/10.36227/techrxiv.177203250.05832634/v2",
+  "method": "doi",
+  "openalex": "https://openalex.org/W7131832063",
   "query_arxiv": null,
+  "query_doi": "10.36227/techrxiv.177203250.05832634/v2",
   "query_title": "A Systematic Survey of Self-Evolving Agents: From Model-Centric to Environment-Driven Co-Evolution",
-  "status": "pending"
+  "query_url": "https://doi.org/10.36227/techrxiv.177203250.05832634/v2",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "A Systematic Survey of Self-Evolving Agents: From Model-Centric to Environment-Driven Co-Evolution",
+  "year": 2026
  },
  "xiao2026pilot": {
   "authors": [
@@ -11706,7 +12253,9 @@
   "date": "2026-03-31",
   "method": "arxiv",
   "query_arxiv": "2606.15497",
+  "query_doi": "10.1038/s41586-026-10265-5",
   "query_title": "Towards end-to-end automation of AI research",
+  "query_url": "https://arxiv.org/abs/2606.15497",
   "similarity": 1.0,
   "status": "ok",
   "title": "Towards End-to-End Automation of AI Research"
@@ -12243,9 +12792,24 @@
   "title": "Meta Context Engineering via Agentic Skill Evolution"
  },
  "ye2026survey": {
+  "authors": [
+   "Deheng Ye",
+   "Zheng Zhang",
+   "Hao Wang",
+   "Chunyan Miao"
+  ],
+  "date": "2026-09-08",
+  "doi": "https://doi.org/10.20944/preprints202609.0591.v1",
+  "method": "doi",
+  "openalex": "https://openalex.org/W7212053766",
   "query_arxiv": null,
+  "query_doi": "10.20944/preprints202609.0591.v1",
   "query_title": "A Survey on AI for AI: When the Improver Becomes the Improvee",
-  "status": "pending"
+  "query_url": "https://doi.org/10.20944/preprints202609.0591.v1",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "A Survey on AI for AI: When the Improver Becomes the Improvee",
+  "year": 2026
  },
  "yehudai2026survey": {
   "query_arxiv": null,
@@ -12562,14 +13126,29 @@
   "title": "Beyond Final Decisions: A Process-Centric Benchmark for Transparent AI-Assisted Peer Review"
  },
  "yudkowsky2007levels": {
+  "authors": [
+   "Eliezer Yudkowsky"
+  ],
+  "date": "2007-01-01",
+  "doi": "https://doi.org/10.1007/978-3-540-68677-4_12",
+  "method": "doi",
+  "openalex": "https://openalex.org/W204232703",
   "query_arxiv": null,
+  "query_doi": "10.1007/978-3-540-68677-4_12",
   "query_title": "Levels of Organization in General Intelligence",
-  "status": "pending"
+  "query_url": "https://doi.org/10.1007/978-3-540-68677-4_12",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Levels of Organization in General Intelligence",
+  "year": 2007
  },
  "yudkowsky2013intelligence": {
+  "page": "pdf",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Intelligence Explosion Microeconomics",
-  "status": "pending"
+  "query_url": "https://intelligence.org/files/IEM.pdf",
+  "status": "manual"
  },
  "yue2025reinforcement": {
   "authors": [
@@ -13481,9 +14060,12 @@
   "title": "AutoReproduce: Automatic AI Experiment Reproduction with Paper Lineage"
  },
  "zhao2026reward": {
+  "page": "title-found",
   "query_arxiv": null,
+  "query_doi": null,
   "query_title": "Reward Hacking in Self-Improving Code Agents",
-  "status": "pending"
+  "query_url": "https://iclr.cc/virtual/2026/10018648",
+  "status": "manual"
  },
  "zhao2026scienceflow": {
   "authors": [
@@ -13970,6 +14552,19 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Co-Evolution in Agentic Systems: Toward Self-Directed Evolution Beyond Human Design"
+ },
+ "zoph2017neural": {
+  "authors": [
+   "Barret Zoph",
+   "Quoc V. Le"
+  ],
+  "date": "2016-11-05",
+  "method": "arxiv",
+  "query_arxiv": "1611.01578",
+  "query_title": "Neural Architecture Search with Reinforcement Learning",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Neural Architecture Search with Reinforcement Learning"
  },
  "zou2025fml": {
   "authors": [
