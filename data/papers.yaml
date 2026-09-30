@@ -579,7 +579,7 @@
   short: Promptbreeder
   title: 'Promptbreeder: Self-Referential Self-Improvement Via Prompt Evolution'
   authors: Chrisantha Fernando, Dylan Banarse, Henryk Michalewski, Simon Osindero, Tim Rocktäschel
-  venue: arXiv 2023
+  venue: ICML 2024
   date: 2023-09
   arxiv: '2309.16797'
   url: https://arxiv.org/abs/2309.16797
@@ -834,7 +834,7 @@
   short: DGM
   title: 'Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents'
   authors: Zhang, Jenny, Hu, Shengran, Lu, Cong, Lange, Robert, Clune, Jeff
-  venue: arXiv 2025
+  venue: ICLR 2026
   date: 2025-05
   arxiv: '2505.22954'
   url: https://arxiv.org/abs/2505.22954
@@ -2277,7 +2277,7 @@
   short: Paper2Code
   title: 'Paper2Code: Automating Code Generation from Scientific Papers in Machine Learning'
   authors: Minju Seo, Jinheon Baek, Seongyun Lee, Sung Ju Hwang
-  venue: arXiv 2025
+  venue: ICLR 2026
   date: 2025-04
   arxiv: '2504.17192'
   url: https://arxiv.org/abs/2504.17192
@@ -2772,7 +2772,7 @@
   title: 'LMR-BENCH: Evaluating LLM Agent''s Ability on Reproducing Language Modeling Research'
   authors: Shuo Yan, Ruochen Li, Ziming Luo, Zimu Wang, Daoyang Li, Liqiang Jing, Kaiyu He, Peilin Wu, George Michalopoulos,
     Yue Zhang, Ziyang Zhang, Mian Zhang, Zhiyu Chen, Xinya Du
-  venue: arXiv 2025
+  venue: EMNLP 2025
   date: 2025-06
   arxiv: '2506.17335'
   url: https://arxiv.org/abs/2506.17335
@@ -5150,7 +5150,7 @@
   short: ★AAR mitigation
   title: Automated Researchers Can Mitigate Well-characterized Alignment Failures
   authors: Chen Yueh-Han, Jiaxin Wen, Jan H. Kirchner
-  venue: arXiv 2026
+  venue: Anthropic 2026
   date: 2026-08
   arxiv: '2608.28945'
   url: https://arxiv.org/abs/2608.28945
@@ -5417,7 +5417,7 @@
   title: 'Weak-to-Strong Generalization: Eliciting Strong Capabilities With Weak Supervision'
   authors: Collin Burns, Pavel Izmailov, Jan H. Kirchner, Bowen Baker, Leo Gao, Leopold Aschenbrenner, Yining Chen, Adrien
     Ecoffet, Manas Joglekar, Jan Leike, Ilya Sutskever, Jeff Wu
-  venue: arXiv 2023
+  venue: ICML 2024
   date: 2023-12
   arxiv: '2312.09390'
   url: https://arxiv.org/abs/2312.09390
