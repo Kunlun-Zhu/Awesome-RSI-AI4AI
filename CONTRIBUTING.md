@@ -16,7 +16,8 @@ Thanks for helping keep this list accurate. The README is generated, so please e
      arxiv: "2310.02304"              # optional
      url: https://arxiv.org/abs/2310.02304
      code: https://github.com/microsoft/stop   # optional
-     section: agents.self-referential # a leaf id from data/taxonomy.yaml
+     section: rsi.self-referential    # a leaf id from data/taxonomy.yaml
+     scope: core-rsi                  # core-rsi | core-ai4ai | support | background
      locus: scaffold                  # see tagging guide below
      signal: execution
      recursive: yes                   # yes | partial | no
@@ -64,4 +65,15 @@ Thanks for helping keep this list accurate. The README is generated, so please e
 
 ## Scope
 
-In scope: work on AI systems that improve themselves or improve the process that builds AI systems, plus theory, benchmarks, safety analyses, and surveys on these topics. Out of scope: general AI-for-science systems that do not target AI research, unless they are a standard reference point (these may go in the relevant section with a note).
+Every entry needs a `scope` value. Ask one question first: does the improved artifact become part of the improver (RSI), or is it something AI systems are built, trained, or evaluated with (AI4AI)? If the answer is neither, the paper probably belongs elsewhere.
+
+| `scope` | Use when the work | Examples |
+|---|---|---|
+| `core-rsi` | builds or analyzes a loop in which the improved artifact becomes part of the improver, or studies the theory and limits of such loops | Self-Rewarding LMs, Absolute Zero, SEAL, STOP, Darwin Gödel Machine, model-collapse theory |
+| `core-ai4ai` | uses AI to produce or improve artifacts for building, training, or evaluating AI, or to do ML research | AlphaEvolve, AIDE, DiscoPOP, ASI-Arch, KernelBench agents, The AI Scientist, automated alignment researchers |
+| `support` | measures, forecasts, governs, or surveys RSI and AI4AI | MLE-bench, RE-Bench, METR time horizons, frontier safety frameworks, surveys of self-evolving AI |
+| `background` | is a canonical non-recursive baseline (the procedure that improves stays fixed) | Self-Refine, Reflexion, OPRO, DSPy, Voyager |
+
+Out of scope: generic LLM, agent, LLM-as-judge, synthetic-data, or RL-for-reasoning surveys; AI for the natural sciences; domain applications such as translation or medicine; benchmarks that do not measure AI research ability. Put a self-evolving agent under `core-rsi` only if it changes its own improvement procedure or trains on a signal it generates over several rounds; otherwise it is `background` at most.
+
+Sections (`section`) are leaves of [`data/taxonomy.yaml`](data/taxonomy.yaml): the three routes (`rsi.*` for weights and agents, `ai4ai.*` for the research pipeline), `closing.*` for systems where the routes meet, then `evaluation.*`, `safety.*`, `surveys.*`, `foundations.*`, and `background.*`.

@@ -8,19 +8,31 @@
   <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-E76F51" alt="PRs welcome"></a>
 </p>
 
-A curated and tagged reading list on **recursive self-improvement (RSI)**, **self-evolving AI and agents**, and **AI for AI research (AI4AI)**. It covers AI systems that improve their own outputs, memory, weights, and code, and AI systems that take over parts of the research that produces the next generation of AI.
+A curated and tagged reading list on **recursive self-improvement (RSI)** and **AI for AI (AI4AI)**: AI systems whose improvements feed back into their own ability to improve, and AI systems that do the research and engineering that builds the next generation of AI. Self-evolving agents and self-improving models are included when their loop is recursive, or when they are the standard baseline that a recursive loop is compared against.
 
-The three terms name one idea at different scales. Self-evolving agents change their memory, prompts, or code as they work; self-improving models train on data and rewards they generate; AI4AI systems improve the pipeline that builds the next model. When the product of any of these loops becomes the improver in the next round, the loop is recursive.
+**What is in scope.** Every entry does one of the following.
+
+- **RSI**: builds or analyzes a loop in which the improved artifact becomes part of what does the improving. Examples: the trained model generates the next round's training signal, or the agent edits the code that edits it. Theory and limits of such loops also count.
+- **AI4AI**: uses AI to produce or improve what AI is built, trained, or evaluated with. Examples: ML engineering, algorithms and objectives, architectures, kernels, training data and environments, alignment and evaluation research, and AI scientists working on ML.
+- **Support**: measures, forecasts, governs, or surveys RSI and AI4AI.
+
+A short **Background** section keeps the canonical non-recursive baselines, such as self-refinement and prompt and memory optimization. Generic LLM or agent surveys, AI for the natural sciences, and domain applications are out of scope. Entries removed in the September 2026 re-scoping are listed with reasons in [`data/excluded.yaml`](data/excluded.yaml).
 
 This list accompanies our survey *From Recursive Self-Improvement to AI for AI: A Survey and Perspective on Verification-Bounded Self-Evolving AI* (preprint coming soon).
 
-<p align="center"><img src="assets/overview.png" width="92%" alt="From RSI to AI4AI: the improvement loop"></p>
+<p align="center"><img src="assets/overview.png" width="92%" alt="Three routes from RSI to AI4AI: weights, agent code, and the AI research pipeline"></p>
 
 <p align="center"><img src="assets/timeline.png" width="88%" alt="Milestones from 1965 to 2026"></p>
 
 ## How the list is organized
 
-We describe every self-improving system as an improvement loop. A proposer suggests a change to some artifact, a verifier decides whether the change is an improvement, and an update rule keeps or discards it. Sections are ordered by what the loop changes, from a single answer up to the AI research pipeline itself. Every entry carries two tags:
+We describe every system as an improvement loop. A proposer suggests a change to some artifact, a verifier decides whether the change is an improvement, and an update rule keeps or discards it. Sections follow the three routes by which AI improves AI:
+
+1. **Weights**: the model trains on a signal it generates.
+2. **Agent code**: the system rewrites its own improver.
+3. **The AI research pipeline**: AI improves the artifacts from which the next model is built.
+
+These are followed by the systems where the routes meet (**Closing the Loop**), then measurement, safety, and governance, and finally the non-recursive background. Every entry carries these tags:
 
 | Tag | Values |
 |---|---|

@@ -336,6 +336,11 @@
   "query_title": "When AI builds itself",
   "status": "pending"
  },
+ "anthropic2026automated": {
+  "query_arxiv": null,
+  "query_title": "Automated researchers can mitigate well-characterized alignment failures",
+  "status": "manual"
+ },
  "anthropic2026measurements": {
   "query_arxiv": null,
   "query_title": "Measurements for understanding the pace of AI development inside frontier labs",
@@ -2323,6 +2328,30 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "MLEvolve: A Self-Evolving Framework for Automated Machine Learning Algorithm Discovery"
+ },
+ "du2026rsimaster": {
+  "authors": [
+   "Yaxin Du",
+   "Xiyuan Yang",
+   "Zhifan Zhou",
+   "Yujie Ge",
+   "Cheng Wang",
+   "Jiajun Wang",
+   "Sijie Chen",
+   "Zehui Liu",
+   "Yuxin Zhang",
+   "Weicheng Gu",
+   "Julian Zhang",
+   "Zixing Lei",
+   "Siheng Chen"
+  ],
+  "date": "2026-09-28",
+  "method": "arxiv",
+  "query_arxiv": "2609.35561",
+  "query_title": "RSI-Master: Structuring Experiments to Guide Autonomous Model Improvement",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "RSI-Master: Structuring Experiments to Guide Autonomous Model Improvement"
  },
  "duan2026last": {
   "authors": [
@@ -6756,6 +6785,22 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "EvoX: Meta-Evolution for Automated Discovery"
+ },
+ "liu2026mendel": {
+  "authors": [
+   "Changzhi Liu",
+   "Yilun Liu",
+   "Sikuan Yan",
+   "Volker Tresp",
+   "Yunpu Ma"
+  ],
+  "date": "2026-08-07",
+  "method": "arxiv",
+  "query_arxiv": "2608.07645",
+  "query_title": "Mendel Gödel Machine: Recursive Self-Improving Coding Agents via Comparative Evolution",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Mendel Gödel Machine: Recursive Self-Improving Coding Agents via Comparative Evolution"
  },
  "liu2026path": {
   "query_arxiv": null,

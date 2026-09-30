@@ -1,112 +1,112 @@
-# Section tree for the README. Order here is the order in the README.
-# Each paper in papers.yaml points to one leaf `id`.
+# Theme-centred taxonomy (v2): every section is about recursive self-improvement (RSI) or AI for AI (AI4AI).
 - id: surveys
   title: Surveys and Position Papers
   children:
-    - id: surveys.self-improvement
-      title: Self-improvement and self-evolution
-    - id: surveys.ai-research
-      title: AI for research and AI scientists
-    - id: surveys.related
-      title: Related surveys (agents, RL for reasoning, evaluation)
+    - id: surveys.rsi
+      title: Surveys on recursive self-improvement, self-evolving AI, and AI4AI
+    - id: surveys.ai-scientist
+      title: Surveys on AI scientists and automated AI research
     - id: surveys.position
       title: Position papers
 
 - id: foundations
-  title: Foundations and Theory
-  blurb: Where the idea of recursive self-improvement comes from, and what theory says about its limits.
+  title: Foundations of Recursive Self-Improvement
+  blurb: The idea, its definitions, and what theory says about its limits.
   children:
     - id: foundations.classic
-      title: Classical lineage
+      title: Classical lineage (intelligence explosion, Gödel machines, learning to learn)
     - id: foundations.levels
-      title: Definitions and levels of autonomy
+      title: Definitions and levels
     - id: foundations.theory
-      title: Theory and limits of self-improvement
+      title: Theory and limits of recursive improvement
 
-- id: outputs
-  title: Improving Outputs and Context (Inference Time)
-  blurb: The model is fixed; its answers, prompts, or memory improve.
+- id: rsi-weights
+  title: RSI in Weights (Models That Improve Their Own Training Signal)
+  blurb: The model generates the data, rewards, or curricula that train its next version.
   children:
-    - id: outputs.refine
-      title: Self-refinement and self-correction
-    - id: outputs.memory
-      title: Experience, memory, and skill libraries
-    - id: outputs.prompt
-      title: Prompt and program optimization
+    - id: rsi.self-training
+      title: Iterated self-training and bootstrapped reasoning
+    - id: rsi.self-reward
+      title: Self-rewarding and self-judging models
+    - id: rsi.self-play
+      title: Self-play and proposer-solver co-evolution
+    - id: rsi.self-adapt
+      title: Self-adaptation and learned update procedures
+    - id: rsi.limits
+      title: Limits of recursive training (collapse, sharpening, self-bias)
+    - id: rsi.frontier
+      title: Models trained on their predecessors' outputs
 
-- id: weights
-  title: Improving Weights (Training Time)
-  blurb: The model trains on data, rewards, or curricula it produces itself.
+- id: rsi-agents
+  title: RSI in Agents (Systems That Rewrite Their Own Improver)
+  blurb: The agent edits the code, prompts, or search procedure that produces its next version.
   children:
-    - id: weights.self-training
-      title: Self-training and bootstrapped reasoning
-    - id: weights.self-reward
-      title: Self-rewarding and AI feedback
-    - id: weights.self-play
-      title: Self-play and self-generated curricula
-    - id: weights.intrinsic-rl
-      title: RL from intrinsic and unsupervised signals
-    - id: weights.self-adapt
-      title: Self-adaptation and continual self-updating
-    - id: weights.limits
-      title: Model collapse and the limits of synthetic data
-    - id: weights.frontier
-      title: Frontier practice (models trained on their predecessors' outputs)
-    - id: weights.nlp
-      title: Language tasks (translation, summarization, dialogue, multilingual)
-
-- id: agents
-  title: Improving the Improver (Self-Modifying Agents)
-  blurb: The system rewrites its own scaffold, code, or search procedure.
-  children:
-    - id: agents.self-referential
+    - id: rsi.self-referential
       title: Self-referential optimizers
-    - id: agents.design
-      title: Automated agent design
-    - id: agents.self-rewriting
-      title: Self-rewriting agents
-    - id: agents.evolution
-      title: LLM-guided evolutionary search
+    - id: rsi.self-modifying
+      title: Self-modifying agents (Gödel-machine lineage)
+    - id: rsi.meta-evolution
+      title: Evolving the improver (meta-level self-evolution)
 
 - id: ai4ai
-  title: AI for AI (Automating AI Research)
-  blurb: AI systems that improve the pipeline that produces the next AI systems.
+  title: AI for AI (Automating the AI Research Pipeline)
+  blurb: AI systems that improve the artifacts from which the next AI systems are built.
   children:
-    - id: ai4ai.ideation
-      title: Ideation and hypothesis generation
+    - id: ai4ai.agent-design
+      title: Automated design of AI agents and workflows
     - id: ai4ai.mle
       title: ML engineering and experimentation agents
+    - id: ai4ai.discovery
+      title: LLM-guided discovery of ML algorithms and code
     - id: ai4ai.algorithms
-      title: Algorithm and objective discovery
+      title: Objectives, optimizers, and learning algorithms
     - id: ai4ai.architecture
-      title: Architecture discovery
+      title: Architectures
     - id: ai4ai.kernels
-      title: Kernels and systems optimization
+      title: Kernels, compilers, and systems for AI
     - id: ai4ai.data
-      title: Data, environment, and benchmark generation
+      title: Training data, environments, and benchmarks generated by AI
     - id: ai4ai.alignment
-      title: Automated alignment and interpretability research
+      title: Automated alignment, interpretability, and evaluation research
+    - id: ai4ai.ideation
+      title: Research ideation for AI research
     - id: ai4ai.writing-review
-      title: Writing, reviewing, and reproduction
+      title: Writing, reviewing, and reproducing AI research
     - id: ai4ai.scientist
-      title: End-to-end AI scientists
+      title: End-to-end AI scientists for AI research
+
+- id: closing
+  title: Closing the Loop (RSI Through AI4AI)
+  blurb: Where AI research agents improve themselves, and where models help build their successors.
+  children:
+    - id: closing.research-agents
+      title: Research agents that improve themselves
+    - id: closing.lab-evidence
+      title: Evidence from frontier labs
 
 - id: evaluation
-  title: Benchmarks and Evaluation
+  title: Measuring RSI and AI4AI
   children:
     - id: evaluation.benchmarks
-      title: Benchmarks for AI research tasks
+      title: Benchmarks of AI research and development ability
     - id: evaluation.measurement
-      title: Measuring progress and self-improvement
+      title: Measuring self-improvement and AI R&D automation
 
 - id: safety
   title: Safety, Governance, and Forecasting
   children:
     - id: safety.frameworks
       title: Frontier safety frameworks, system cards, and governance
-    - id: safety.industry
-      title: Industry reports and milestones
     - id: safety.forecasting
       title: Forecasting and economics of AI R&D automation
     - id: safety.failures
-      title: Failure modes and oversight
+      title: Failure modes of self-improving loops and oversight
+
+- id: background
+  title: Background (Non-Recursive Self-Improvement)
+  blurb: A short, curated set of baselines that do not improve their own improver.
+  children:
+    - id: background.refine
+      title: Inference-time self-refinement and self-correction
+    - id: background.context
+      title: Prompt, memory, and skill optimization with a fixed procedure

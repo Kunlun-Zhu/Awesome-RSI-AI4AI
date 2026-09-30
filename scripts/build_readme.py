@@ -33,6 +33,7 @@ SIGNAL = {
     "benchmark": "Benchmark score",
     "mixed": "Mixed",
 }
+SCOPES = ("core-rsi", "core-ai4ai", "support", "background")
 NEW_SINCE = "2026-07"  # entries first released on or after this month get a 🆕
 
 
@@ -60,6 +61,8 @@ def validate(taxonomy, papers):
             errors.append(f"{p['key']}: unknown locus {p.get('locus')!r}")
         if p.get("signal", "na") not in SIGNAL and p.get("signal", "na") != "na":
             errors.append(f"{p['key']}: unknown signal {p.get('signal')!r}")
+        if p.get("scope") not in SCOPES:
+            errors.append(f"{p['key']}: missing or unknown scope {p.get('scope')!r}")
         for field in ("title", "url", "date"):
             if not p.get(field):
                 errors.append(f"{p['key']}: missing {field}")

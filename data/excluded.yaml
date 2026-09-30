@@ -1,0 +1,1574 @@
+# Entries removed on 2026-09-30 when the list was re-scoped to RSI and AI4AI.
+# Kept for transparency; restore an entry by moving it back to papers.yaml with a v2 section and scope.
+- key: chen2024teaching
+  short: Self-Debug
+  title: Teaching Large Language Models to Self-Debug
+  authors: Xinyun Chen, Maxwell Lin, Nathanael Schärli, Denny Zhou
+  venue: ICLR 2024
+  date: 2023-04
+  arxiv: '2304.05128'
+  url: https://arxiv.org/abs/2304.05128
+  section: outputs.refine
+  signal: execution
+  note: Few-shot "rubber-duck" debugging using execution results and self-explanation; SOTA on Spider, TransCoder and MBPP
+    at the time.
+  excluded_reason: 'background: Execution-feedback self-debug; fixed procedure, not canonical.'
+- key: olausson2024self
+  short: Self-repair study
+  title: Is Self-Repair a Silver Bullet for Code Generation?
+  authors: Theo Olausson, Jeevana Priya Inala, Chenglong Wang, Jianfeng Gao, Armando Solar-Lezama
+  venue: ICLR 2024
+  date: 2023-06
+  arxiv: '2306.09896'
+  url: https://arxiv.org/abs/2306.09896
+  section: outputs.refine
+  signal: mixed
+  note: Once the cost of repair is counted, gains are modest and inconsistent; feedback quality, not repair itself, is the
+    bottleneck.
+  excluded_reason: 'background: Critical study of self-repair limits; not a recursive loop.'
+- key: tyen2024llms
+  short: Tyen et al.
+  title: LLMs cannot find reasoning errors, but can correct them given the error location
+  authors: Gladys Tyen, Mansoor, Hassan, Victor Cărbune, Peter Chen, Mak, Tony
+  venue: Findings of ACL 2024
+  date: 2023-11
+  arxiv: '2311.08516'
+  url: https://arxiv.org/abs/2311.08516
+  section: outputs.refine
+  signal: ground-truth
+  note: 'Separates finding a mistake from fixing it: LLMs are poor at locating errors but can fix them once told where they
+    are.'
+  excluded_reason: 'background: Separates error localization from fixing; inference-time only.'
+- key: pan2023automatically
+  short: Pan et al. survey
+  title: 'Automatically Correcting Large Language Models: Surveying the landscape of diverse self-correction strategies'
+  authors: Liangming Pan, Michael Saxon, Wenda Xu, Deepak Nathani, Xinyi Wang, William Yang Wang
+  venue: TACL 2024
+  date: 2023-08
+  arxiv: '2308.03188'
+  url: https://arxiv.org/abs/2308.03188
+  section: surveys.self-improvement
+  note: Early taxonomy of self-correction by feedback source, format and timing (training, generation, post-hoc).
+  excluded_reason: 'out: Generic self-correction taxonomy survey, not specifically RSI/AI4AI.'
+- key: lee2025revise
+  short: ReVISE
+  title: 'ReVISE: Learning to Refine at Test-Time via Intrinsic Self-Verification'
+  authors: Hyun‐Seok Lee, Seunghyuk Oh, Kim, Jaehyung, Jung-Hun Shin, Tack, Jihoon
+  venue: ICML 2025
+  date: 2025-02
+  arxiv: '2502.14565'
+  url: https://arxiv.org/abs/2502.14565
+  section: outputs.refine
+  signal: ground-truth
+  note: Curriculum preference learning teaches self-verification and then correction, with confidence-aware decoding at test
+    time.
+  excluded_reason: 'background: Test-time self-verification then correction; fixed procedure.'
+- key: zhang2024understanding
+  short: Dark side
+  title: Understanding the Dark Side of LLMs' Intrinsic Self-Correction
+  authors: Qingjie Zhang, Di Wang, Qian, Haoting, Yiming Li, Tianwei Zhang, Minlie Huang, Xu, Ke, Li, Hewu, Liu, Yan, Han
+    Qiu
+  venue: arXiv 2024
+  date: 2024-12
+  arxiv: '2412.14959'
+  url: https://arxiv.org/abs/2412.14959
+  section: outputs.refine
+  signal: self
+  note: Interpretability analysis of why intrinsic self-correction fails on simple and complex tasks (o1, 4o, Llama families).
+  excluded_reason: 'background: Interpretability study of why self-correction fails; not recursive.'
+- key: jiang2025feedback
+  short: Feedback Friction
+  title: 'Feedback Friction: LLMs Struggle to Fully Incorporate External Feedback'
+  authors: Dongwei Jiang, Bowei Zhang, Andrew Wang, Nicholas Andrews, Daniel Khashabi
+  venue: arXiv 2025
+  date: 2025-06
+  arxiv: '2506.11930'
+  url: https://arxiv.org/abs/2506.11930
+  section: outputs.refine
+  signal: ground-truth
+  note: Even with near-complete ground-truth feedback, solvers fail to fully absorb corrections.
+  excluded_reason: 'background: Studies failure to incorporate external feedback; not a recursive loop.'
+- key: li2025decomposing
+  short: Error-depth
+  title: 'Decomposing LLM Self-Correction: The Accuracy-Correction Paradox and Error Depth Hypothesis'
+  authors: Yin Li
+  venue: arXiv 2025
+  date: 2026-01
+  arxiv: '2601.00828'
+  url: https://arxiv.org/abs/2601.00828
+  section: outputs.refine
+  signal: self
+  note: Weaker models correct themselves more often than stronger ones (26.8% vs 16.7%); stronger models make fewer but "deeper"
+    errors.
+  excluded_reason: 'background: Self-correction accuracy paradox; inference-time analysis.'
+- key: cheng2026contextual
+  short: Contextual Drag
+  title: 'Contextual Drag: How Errors in the Context Affect LLM Reasoning'
+  authors: Yun Cheng, Xingyu Zhu, Haoyu Zhao, Sanjeev Arora
+  venue: arXiv 2026
+  date: 2026-02
+  arxiv: '2602.04288'
+  url: https://arxiv.org/abs/2602.04288
+  section: outputs.refine
+  signal: mixed
+  note: Failed attempts in context cause 10–20% drops over 11 models; iterative refinement can collapse into self-deterioration.
+  excluded_reason: 'background: Shows iterative refinement can self-deteriorate; inference-time.'
+- key: chen2026self
+  short: Self-Correction Illusion
+  title: 'The Self-Correction Illusion: Role Relabeling Gates Explicit Error Flagging in Large Language Models'
+  authors: Kuan-Yen Chen, Fang-yi Su, Shih‐Yen Lin, Bao Li, Jung-Hsien Chiang
+  venue: arXiv 2026
+  date: 2026-06
+  arxiv: '2606.05976'
+  url: https://arxiv.org/abs/2606.05976
+  section: outputs.refine
+  signal: self
+  note: Relabeling a model's own erroneous claim as coming from an external role raises explicit correction by 23–93 pp.
+  excluded_reason: 'background: Role-relabeling effect on explicit self-correction; inference-time.'
+- key: bilal2026refining
+  short: Refine-over-Resample
+  title: 'Refining Over Resampling: Test-Time Self-Correction for LLM Reasoning'
+  authors: Ahsan Bilal, Muhammad Ahmed Mohsin, Muhammad Umer, Lena Trigg, Ali Subhan, Muhammad Ali, Dean F. Hougen
+  venue: EMNLP 2026
+  date: 2026-08
+  arxiv: '2608.05643'
+  url: https://arxiv.org/abs/2608.05643
+  section: outputs.refine
+  signal: self
+  note: 'Verifier-free "breadth × depth": sample several attempts, self-critique each, then majority-vote; beats best-of-N
+    with a verifier on math.'
+  excluded_reason: 'background: Test-time self-critique plus majority vote; fixed procedure.'
+- key: zhao2024expel
+  short: ExpeL
+  title: 'ExpeL: LLM Agents Are Experiential Learners'
+  authors: Andrew X. Zhao, Daniel T. Huang, Quentin Xu, Matthieu Gaetan Lin, Yong‐Jin Liu, Gao Ming Huang
+  venue: AAAI 2024
+  date: 2023-08
+  arxiv: '2308.10144'
+  url: https://arxiv.org/abs/2308.10144
+  code: https://github.com/LeapLabTHU/ExpeL
+  section: outputs.memory
+  signal: execution
+  note: Gathers trajectories, extracts natural-language insights, and recalls insights and examples at inference, with no
+    parameter updates.
+  excluded_reason: 'background: Fixed-procedure experience/memory distillation, no weight updates.'
+- key: majumder2023clin
+  short: CLIN
+  title: 'CLIN: A Continually Learning Language Agent for Rapid Task Adaptation and Generalization'
+  authors: Bodhisattwa Prasad Majumder, Bhavana Dalvi Mishra, Peter A. Jansen, Oyvind Tafjord, Niket Tandon, Li Zhang, Chris
+    Callison-Burch, Peter E. Clark
+  venue: COLM 2023
+  date: 2023-10
+  arxiv: '2310.10134'
+  url: https://arxiv.org/abs/2310.10134
+  section: outputs.memory
+  signal: execution
+  note: Persistent causal-abstraction memory updated after each trial; +23 points over Reflexion on ScienceWorld; transfers
+    to new tasks and environments.
+  excluded_reason: 'background: Fixed causal-memory update procedure; not a recursive improver.'
+- key: wang2025agent
+  short: AWM
+  title: Agent Workflow Memory
+  authors: Zora Zhiruo Wang, Mao, Jiayuan, Daniel Fried, Graham Neubig
+  venue: ICML 2025
+  date: 2024-09
+  arxiv: '2409.07429'
+  url: https://arxiv.org/abs/2409.07429
+  code: https://github.com/zorazrw/agent-workflow-memory
+  section: outputs.memory
+  signal: mixed
+  note: Induces reusable workflows offline or online; +24.6% (Mind2Web) and +51.1% (WebArena) relative success.
+  excluded_reason: 'background: Fixed workflow-induction procedure from trajectories.'
+- key: qiu2025alita
+  short: Alita
+  title: 'Alita: Generalist Agent Enabling Scalable Agentic Reasoning with Minimal Predefinition and Maximal Self-Evolution'
+  authors: Qiu, Jiahao, Qi Xuan, Tongcheng Zhang, Xinzhe Juan, Jiacheng Guo, Yifu Lu, Yimin Wang, Zixin Yao, Qihan Ren, Xun
+    Jiang, Xing Zhou, Dongrui Liu, Ling Yang, Yue Wu, Kaixuan Huang, Shilong Liu, Hongru Wang, Mengdi Wang
+  venue: arXiv 2025
+  date: 2025-05
+  arxiv: '2505.20286'
+  url: https://arxiv.org/abs/2505.20286
+  code: https://github.com/CharlesQ9/Alita
+  section: outputs.memory
+  signal: execution
+  note: Minimal agent that builds its own MCP tools from open source as needed; 75.15% pass@1 on GAIA validation.
+  excluded_reason: 'background: Fixed tool-building procedure from existing open-source code.'
+- key: zhou2025memento
+  short: Memento
+  title: 'Memento: Fine-tuning LLM Agents without Fine-tuning LLMs'
+  authors: Zhou, Huichi, Chen, Yihang, Guo, Siyuan, Yan, Xue, Lee, Kin Hei, Wang, Zihan, Lee, Ka Yiu, Zhang, Guchun, Shao,
+    Kun, Yang, Linyi, Wang, Jun
+  venue: arXiv 2025
+  date: 2025-08
+  arxiv: '2508.16153'
+  url: https://arxiv.org/abs/2508.16153
+  code: https://github.com/Memento-Teams/Memento
+  section: outputs.memory
+  signal: execution
+  note: 'Memory-augmented MDP: case-based memory plus a learned case-selection policy; 87.88% pass@3 on GAIA validation.'
+  excluded_reason: 'background: Case-memory plus fixed selection policy, no weight updates.'
+- key: ouyang2026reasoningbank
+  short: ReasoningBank
+  title: 'ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory'
+  authors: Siru Ouyang, Yan, Jun, I-Hung Hsu, Yanfei Chen, Ke Jiang, Zifeng Wang, Han, Rujun, Long T. Le, Samira Daruki, Xiangru
+    Tang, Vishy Tirumalashetty, George Lee, Mahsan Rofouei, Hangfei Lin, Jiawei Han, Chen-Yu Lee, Tomas Pfister
+  venue: ICLR 2026
+  date: 2025-09
+  arxiv: '2509.25140'
+  url: https://arxiv.org/abs/2509.25140
+  code: https://github.com/google-research/reasoning-bank
+  section: outputs.memory
+  signal: self
+  note: Distills strategies from self-judged successes and failures; memory-aware test-time scaling (MaTTS) links memory to
+    test-time compute.
+  excluded_reason: 'background: Fixed distillation procedure into a memory bank.'
+- key: cai2025training
+  short: Training-Free GRPO
+  title: Training-Free Group Relative Policy Optimization
+  authors: Yusong Cai, Cai, Siqi, Y. Shi, Zihan Xu, Chen, Lichao, Qin, Yulei, Xiaoyu Tan, Gang Li, Zongyi Li, Lin, Haojia,
+    Mao, Yong, Ke Li, Xing Sun
+  venue: arXiv 2025
+  date: 2025-10
+  arxiv: '2510.08191'
+  url: https://arxiv.org/abs/2510.08191
+  section: outputs.memory
+  signal: ground-truth
+  note: Swaps numeric GRPO advantages for "semantic advantages" distilled into an experiential token prior, with no weight
+    updates.
+  excluded_reason: 'background: Fixed semantic-advantage distillation, no weight/procedure updates.'
+- key: yang2026skillopt
+  short: SkillOpt
+  title: 'SkillOpt: Executive Strategy for Self-Evolving Agent Skills'
+  authors: Yifan Yang, Ziyang Gong, Weiquan Huang, Qihao Yang, Ziwei Zhou, Zisu Huang, Yan Li, Xuemei Gao, Qi Dai, Bei Liu,
+    Kai Qiu, Yuqing Yang, Dongdong Chen, Xue Yang, Chong Luo
+  venue: arXiv 2026
+  date: 2026-05
+  arxiv: '2605.23904'
+  url: https://arxiv.org/abs/2605.23904
+  section: outputs.memory
+  signal: benchmark
+  note: 'Treats a skill document as a trainable state: bounded edits accepted only on strict held-out improvement, plus a
+    textual "learning-rate" budget.'
+  excluded_reason: 'background: Bounded skill edits under a fixed acceptance rule; procedure itself fixed.'
+- key: lin2026rethinking
+  short: SkillBoost
+  title: 'Rethinking Self-Evolution: A Constrained Exploration-Exploitation Process for Mitigating Skill Overfitting'
+  authors: Hongqiang Lin, Chao Liu, Xiaofan Bai, Xuan Jin, Yuhong Li, Nenggan Zheng, Xipeng Cao
+  venue: arXiv 2026
+  date: 2026-07
+  arxiv: '2607.26643'
+  url: https://arxiv.org/abs/2607.26643
+  section: outputs.memory
+  signal: benchmark
+  note: Frames skill self-evolution as constrained search to limit overfitting to small trajectory batches and regression
+    on solved cases.
+  excluded_reason: 'background: Fixed constrained-search procedure limiting skill-evolution overfitting.'
+- key: zheng2026skillprox
+  short: SkillProx
+  title: 'SkillProx: Self-Evolving Agent Skills via Proximal Textual Gradient Descent'
+  authors: Mingxuan Zheng, Yujin Zhou, Chuxue Cao, Boqin Yin, Yuyao Zhang, Jiapeng Sun, Shuaishuai Gong, Sirui Han, Yike Guo
+  venue: arXiv 2026
+  date: 2026-08
+  arxiv: '2608.07449'
+  url: https://arxiv.org/abs/2608.07449
+  section: outputs.memory
+  signal: benchmark
+  note: Forward–backward proximal "textual gradient" updates with rollback of regressions and utility-aware pruning of skills.
+  excluded_reason: 'background: Fixed proximal-textual-gradient skill-update procedure with rollback.'
+- key: lee2026mega
+  short: MEGA
+  title: 'MEGA: Self-Evolving Agent Optimization Infrastructure via Wisdom Graph'
+  authors: Jung Hwan Lee, Kyu Ho Lee, Gwang Hoon Yoo
+  venue: arXiv 2026
+  date: 2026-08
+  arxiv: '2608.10504'
+  url: https://arxiv.org/abs/2608.10504
+  section: outputs.memory
+  signal: mixed
+  note: Infrastructure that distills A/B-validated "wisdom" from agent sessions into a typed graph that guides later optimization.
+  excluded_reason: 'background: Fixed infrastructure distilling session wisdom into a graph.'
+- key: wei2026evo
+  short: Evo-Harness
+  title: 'Evo-Harness: Context-to-Harness Skill Compilation for Self-Evolving Agents'
+  authors: Tianxin Wei, Zhan Shi, Minhua Lin, Bing He, Zewen Liu, Yisi Sang, Yuanchen Bei, Xuying Ning, Jiaru Zou, Ting-Wei
+    Li, Xiao Lin, Yanjun Zhao, Chi Wang, Benoit Dumoulin, Dakuo Wang, Jingrui He, Hanqing Lu
+  venue: EMNLP 2026
+  date: 2026-08
+  arxiv: '2608.15071'
+  url: https://arxiv.org/abs/2608.15071
+  section: outputs.memory
+  signal: execution
+  note: 'Formulates "online harness learning": a frozen agent compiles noisy one-shot executions into reusable skill harnesses.'
+  excluded_reason: 'background: Explicitly frozen agent compiling skill harnesses; fixed procedure.'
+- key: xiao2026pilot
+  short: PILOT
+  title: 'PILOT in the Loop: Live Self-Improvement for Long-Horizon Agents'
+  authors: Yang Xiao, Yusong Sun, Haoyi Wu, Wenyang Hui, Wen Da, Zhaokai Luo, Mu Chuan, Yao Hu, Wenjie Li, Chengyue Jiang
+  venue: arXiv 2026
+  date: 2026-08
+  arxiv: '2608.26530'
+  url: https://arxiv.org/abs/2608.26530
+  section: outputs.memory
+  signal: execution
+  note: A supervisor steers or aborts a live worker and distills skills and memory mid-run; +14.6 (GLM-5.1) and +12.4 (Kimi-K2.6)
+    points in the self-improvement setting.
+  excluded_reason: 'background: Fixed supervisor distills skills/memory mid-run; not self-modifying.'
+- key: fu2026se
+  short: SE-GoS
+  title: 'SE-GoS: Self-Evolving Graph-of-Skills for Skill Library at Scale'
+  authors: Dawei Fu, Cheng Jiang, Sitian Qian, Huainan Wang, Zhongkai Hao
+  venue: arXiv 2026
+  date: 2026-09
+  arxiv: '2609.08228'
+  url: https://arxiv.org/abs/2609.08228
+  section: outputs.memory
+  signal: execution
+  note: Training-free evolution of a skill-dependency retrieval graph (topology and edge weights) from execution traces.
+  excluded_reason: 'background: Training-free evolution of a retrieval graph; fixed procedure.'
+- key: zhou2023large
+  short: APE
+  title: Large Language Models Are Human-Level Prompt Engineers
+  authors: Yongchao Zhou, Andrei Ioan Muresanu, Ziwen Han, Keiran Paster, Silviu Pitis, Harris Chan, Jimmy Lei Ba
+  venue: ICLR 2023
+  date: 2022-11
+  arxiv: '2211.01910'
+  url: https://arxiv.org/abs/2211.01910
+  code: https://github.com/keirp/automatic_prompt_engineer
+  section: outputs.prompt
+  signal: benchmark
+  note: LLM proposes instruction candidates and selects by score; matches or beats human prompts on 19/24 tasks.
+  excluded_reason: 'background: LLM proposes/selects prompts; fixed procedure, not canonical.'
+- key: pryzant2023automatic
+  short: ProTeGi (APO)
+  title: Automatic Prompt Optimization with "Gradient Descent" and Beam Search
+  authors: Reid Pryzant, Dan Iter, Jerry Li, Yin Tat Lee, Chenguang Zhu, Michael Zeng
+  venue: EMNLP 2023
+  date: 2023-05
+  arxiv: '2305.03495'
+  url: https://arxiv.org/abs/2305.03495
+  section: outputs.prompt
+  signal: benchmark
+  note: Natural-language "gradients" (critiques) from minibatch errors edit prompts inside a beam search.
+  excluded_reason: 'background: Textual-gradient prompt optimization; fixed procedure, not canonical.'
+- key: guo2024evoprompt
+  short: EvoPrompt
+  title: 'EvoPrompt: Connecting LLMs with Evolutionary Algorithms Yields Powerful Prompt Optimizers'
+  authors: Qingyan Guo, Wang, Rui, Junliang Guo, Bei Li, Kaitao Song, Xu Tan, Guoqing Liu, Jiang Bian, Yujiu Yang
+  venue: ICLR 2024
+  date: 2023-09
+  arxiv: '2309.08532'
+  url: https://arxiv.org/abs/2309.08532
+  code: https://github.com/beeevita/EvoPrompt
+  section: outputs.prompt
+  signal: benchmark
+  note: LLM-implemented GA and DE operators over prompt populations; up to 25% gain on BBH across 31 datasets.
+  excluded_reason: 'background: Evolutionary prompt optimization; fixed operators, not canonical.'
+- key: opsahlong2024optimizing
+  short: MIPRO
+  title: Optimizing Instructions and Demonstrations for Multi-Stage Language Model Programs
+  authors: Krista Opsahl-Ong, Michael J. Ryan, Josh Purtell, David Broman, Christopher E. Potts, Matei Zaharia, Omar Khattab
+  venue: EMNLP 2024
+  date: 2024-06
+  arxiv: '2406.11695'
+  url: https://arxiv.org/abs/2406.11695
+  code: https://github.com/stanfordnlp/dspy
+  section: outputs.prompt
+  signal: benchmark
+  note: Jointly optimizes instructions and demonstrations with surrogate models; includes meta-optimization of how proposals
+    are generated.
+  excluded_reason: 'background: Joint instruction/demo optimization; fixed procedure, not canonical.'
+- key: yuksekgonul2024textgrad
+  short: TextGrad
+  title: 'TextGrad: Automatic "Differentiation" via Text'
+  authors: Mert Yüksekgönül, Federico Bianchi, Joseph Boen, Liu, Sheng, Zhi Huang, Carlos Guestrin, James Zou
+  venue: Nature 2025
+  date: 2024-06
+  arxiv: '2406.07496'
+  url: https://arxiv.org/abs/2406.07496
+  code: https://github.com/zou-group/textgrad
+  section: outputs.prompt
+  signal: model
+  note: Backpropagates LLM textual feedback through compound-system graphs; GPQA 51%→55% with GPT-4o.
+  excluded_reason: 'background: Textual backprop through compound systems; fixed procedure.'
+- key: cheng2024trace
+  short: Trace / OptoPrime
+  title: 'Trace is the Next AutoDiff: Generative Optimization with Rich Feedback, Execution Traces, and LLMs'
+  authors: Ching-An Cheng, Allen Nie, Adith Swaminathan
+  venue: NeurIPS 2024
+  date: 2024-06
+  arxiv: '2406.16218'
+  url: https://arxiv.org/abs/2406.16218
+  code: https://github.com/microsoft/Trace
+  section: outputs.prompt
+  signal: execution
+  note: 'Defines OPTO: the optimizer sees execution traces as "gradients"; OptoPrime updates prompts and code.'
+  excluded_reason: 'background: Execution-trace-as-gradient prompt/code optimizer; fixed procedure.'
+- key: zhou2026multi
+  short: MASS
+  title: 'Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies'
+  authors: Han Zhou, Xingchen Wan, Ruoxi Sun, Hamid Palangi, Iqbal, Shariq, Ivan Vulić, Anna Korhonen, Sercan Ö. Arık
+  venue: ICLR 2026
+  date: 2025-02
+  arxiv: '2502.02533'
+  url: https://arxiv.org/abs/2502.02533
+  section: outputs.prompt
+  signal: benchmark
+  note: Three-stage search interleaving prompt and topology optimization for multi-agent systems.
+  excluded_reason: 'background: Prompt+topology search for multi-agent systems; fixed procedure.'
+- key: bai2026mas
+  short: MAS-PromptBench
+  title: 'MAS-PromptBench: When Does Prompt Optimization Improve Multi-Agent LLM Systems?'
+  authors: Juyang Bai, Laixi Shi
+  venue: arXiv 2026
+  date: 2026-06
+  arxiv: '2606.23664'
+  url: https://arxiv.org/abs/2606.23664
+  section: outputs.prompt
+  signal: benchmark
+  note: Systematic study showing multi-agent prompt-optimization gains are real but sensitive to workflow, protocol and team
+    size.
+  excluded_reason: 'background: Empirical study of when prompt optimization helps multi-agent systems.'
+- key: oved2026optimize
+  short: Cheap→Strong
+  title: 'Optimize Cheap, Deploy Strong: Cost-Aware Cross-Tier Transfer for Evolutionary Optimization'
+  authors: Tal Oved, Roi Pony, Oshri Naparstek, Udi Barzelay
+  venue: arXiv 2026
+  date: 2026-08
+  arxiv: '2608.10694'
+  url: https://arxiv.org/abs/2608.10694
+  section: outputs.prompt
+  signal: benchmark
+  note: Evolves prompts using a cheap answering model and deploys them on stronger models; 5.6–14× lower search cost with
+    parity or better.
+  excluded_reason: 'background: Cost-aware prompt-evolution transfer across model tiers; fixed procedure.'
+- key: georgiev2025mathematical
+  short: AlphaEvolve-math
+  title: Mathematical exploration and discovery at scale
+  authors: Bogdan Georgiev, Javier Gómez-Serrano, Terence Tao, Ascher Wagner
+  venue: arXiv 2025
+  date: 2025-11
+  arxiv: '2511.02864'
+  url: https://arxiv.org/abs/2511.02864
+  section: agents.evolution
+  signal: execution
+  note: AlphaEvolve on 67 math problems; mostly rediscovers the best known and improves several; combined with Deep Think
+    and AlphaProof.
+  excluded_reason: 'out: AlphaEvolve applied to pure math problems, not an AI4AI application.'
+- key: gottweis2025accelerating
+  short: 'Co-Scientist (contrast: biomed)'
+  title: Accelerating scientific discovery with Co-Scientist
+  authors: Juraj Gottweis, Wei-Hung Weng, Alexander Daryin, Tao Tu, Petar Sirkovic, Artiom Myaskovsky, Grzegorz Glowaty, Felix
+    Weissenberger, Alessio Orlandi, Dan Popovici, Anil Palepu, Keran Rong, Ryutaro Tanno, Khaled Saab, Fan Zhang, Jacob Blum,
+    Andrew Carroll, Kavita Kulkarni, Nenad Tomasev, Dina Zverinski, Ivor Rendulic, Elahe Vedadi, Florian Hasler, Luka Rimanic,
+    Marina Boia, Ivan Budiselic, Ben Feinstein, Mathias Bellaiche, Tom Sheffer, Jan Freyberg, Jeremy Ratcliff, Ottavia Bertolli,
+    Katherine Chou, Avinatan Hassidim, Burak Gokturk, Amin Vahdat, Yuan Guan, Vikram Dhillon, Eeshit Dhaval Vaishnav, Byron
+    Lee, Tiago R D Costa, José R Penadés, Gary Peltz, Yossi Matias, James Manyika, Demis Hassabis, Yunhan Xu, Pushmeet Kohli,
+    Annalisa Pawlosky, Alan Karthikesalingam, Vivek Natarajan
+  venue: arXiv 2025
+  date: 2025-02
+  arxiv: '2502.18864'
+  url: https://arxiv.org/abs/2502.18864
+  section: ai4ai.scientist
+  locus: output
+  signal: mixed
+  recursive: 'no'
+  note: Gemini multi-agent generate–critique–tournament loop for hypotheses, with scaled test-time compute and wet-lab validation.
+  excluded_reason: 'out: Explicit biomedical contrast case, not AI/ML research.'
+- key: ghareeb2025robin
+  short: 'Robin (contrast: bio)'
+  title: 'Robin: A multi-agent system for automating scientific discovery'
+  authors: Ali Essam Ghareeb, Benjamin Chang, Ludovico Mitchener, Angela Yiu, Caralyn J. Szostkiewicz, Jon M. Laurent, Muhammed
+    T. Razzak, Andrew D. White, Michaela M. Hinks, Samuel G. Rodriques
+  venue: Nature 2026
+  date: 2025-05
+  arxiv: '2505.13400'
+  url: https://arxiv.org/abs/2505.13400
+  section: ai4ai.scientist
+  locus: output
+  signal: mixed
+  recursive: 'no'
+  note: Literature and data-analysis agents propose and interpret wet-lab experiments; identified ripasudil for dry AMD.
+  excluded_reason: 'out: Explicit biology contrast case, not AI/ML research.'
+- key: mitchener2025kosmos
+  short: 'Kosmos (contrast: data-driven science)'
+  title: 'Kosmos: An AI Scientist for Autonomous Discovery'
+  authors: Ludovico Mitchener, Angela Yiu, Benjamin Chang, Mathieu Bourdenx, Tyler Nadolski, Arvis Sulovari, Eric C. Landsness,
+    Daniel L. Barabasi, Siddharth Narayanan, Nicky Evans, Shriya Reddy, Martha Foiani, Aizad Kamal, Leah P. Shriver, Fang
+    Cao, Asmamaw T. Wassie, Jon M. Laurent, Edwin Melville-Green, Mayk Caldas, Albert Bou, Kaleigh F. Roberts, Sladjana Zagorac,
+    Timothy C. Orr, Miranda E. Orr, Kevin J. Zwezdaryk, Ali E. Ghareeb, Laurie McCoy, Bruna Gomes, Euan A. Ashley, Karen E.
+    Duff, Tonio Buonassisi, Tom Rainforth, Randall J. Bateman, Michael Skarlinski, Samuel G. Rodriques, Michaela M. Hinks,
+    Andrew D. White
+  venue: arXiv 2025
+  date: 2025-11
+  arxiv: '2511.02824'
+  url: https://arxiv.org/abs/2511.02824
+  section: ai4ai.scientist
+  locus: output
+  signal: mixed
+  recursive: 'no'
+  note: Structured world model coordinating 200 rollouts; about 42k lines of code and 1,500 papers read per run.
+  excluded_reason: 'out: Explicit data-driven-science contrast case, not AI/ML research.'
+- key: yang2024moose
+  short: 'MOOSE-Chem (contrast: chemistry)'
+  title: 'MOOSE-Chem: Large Language Models for Rediscovering Unseen Chemistry Scientific Hypotheses'
+  authors: Zonglin Yang, Wanhao Liu, Ben Gao, Tong Xie, Yuqiang Li, Wanli Ouyang, Soujanya Poria, Erik Cambria, Dongzhan Zhou
+  venue: arXiv 2024
+  date: 2024-10
+  arxiv: '2410.07076'
+  url: https://arxiv.org/abs/2410.07076
+  section: ai4ai.ideation
+  locus: output
+  signal: ground-truth
+  recursive: 'no'
+  note: Inspiration-retrieval framework for rediscovering post-cutoff chemistry hypotheses.
+  excluded_reason: 'out: Explicit chemistry contrast case, not AI/ML research.'
+- key: skarlinski2024language
+  short: PaperQA2
+  title: Language agents achieve superhuman synthesis of scientific knowledge
+  authors: Michael D. Skarlinski, Sam Cox, Jon M. Laurent, James D. Braza, Michaela Hinks, Michael J. Hammerling, Manvitha
+    Ponnapati, Samuel G. Rodriques, Andrew D. White
+  venue: arXiv 2024
+  date: 2024-09
+  arxiv: '2409.13740'
+  url: https://arxiv.org/abs/2409.13740
+  code: https://github.com/Future-House/paper-qa
+  section: ai4ai.writing-review
+  locus: output
+  signal: mixed
+  recursive: 'no'
+  note: Agentic RAG over full-text papers for QA, summarisation and contradiction detection, evaluated against experts.
+  excluded_reason: 'out: Generic scientific-literature synthesis agent, not AI/ML-specific.'
+- key: asai2024openscholar
+  short: OpenScholar
+  title: 'OpenScholar: Synthesizing Scientific Literature with Retrieval-augmented LMs'
+  authors: Akari Asai, Jacqueline He, Rulin Shao, Weijia Shi, Amanpreet Singh, Joseph Chee Chang, Kyle Lo, Luca Soldaini,
+    Sergey Feldman, Mike D'arcy, David Wadden, Matt Latzke, Minyang Tian, Pan Ji, Shengyan Liu, Hao Tong, Bohao Wu, Yanyu
+    Xiong, Luke Zettlemoyer, Graham Neubig, Dan Weld, Doug Downey, Wen-tau Yih, Pang Wei Koh, Hannaneh Hajishirzi
+  venue: Nature 2026
+  date: 2024-11
+  arxiv: '2411.14199'
+  url: https://arxiv.org/abs/2411.14199
+  code: https://github.com/AkariAsai/OpenScholar
+  section: ai4ai.writing-review
+  locus: output
+  signal: mixed
+  recursive: 'no'
+  note: Open retrieval-augmented LM over 45M papers, with ScholarQABench and citation-grounded synthesis.
+  excluded_reason: 'out: Generic retrieval-augmented literature synthesis, not AI/ML-specific.'
+- key: miserendino2025swe
+  short: SWE-Lancer
+  title: 'SWE-Lancer: Can Frontier LLMs Earn $1 Million from Real-World Freelance Software Engineering?'
+  authors: Samuel Miserendino, Michele Wang, Tejal Patwardhan, Johannes Heidecke
+  venue: arXiv 2025
+  date: 2025-02
+  arxiv: '2502.12115'
+  url: https://arxiv.org/abs/2502.12115
+  section: evaluation.benchmarks
+  excluded_reason: 'out: Generic freelance software-engineering benchmark, not AI-research specific'
+- key: dong2024survey
+  short: Dong-ITSI
+  title: A Survey on LLM Inference-Time Self-Improvement
+  authors: Xiangjue Dong, Maria Teleki, James Caverlee
+  venue: arXiv 2024
+  date: 2024-12
+  arxiv: '2412.14352'
+  url: https://arxiv.org/abs/2412.14352
+  section: surveys.self-improvement
+  note: Inference-time self-improvement
+  excluded_reason: 'out: generic inference-time self-improvement survey'
+- key: liang2024internal
+  short: Liang-ICSF
+  title: 'Internal Consistency and Self-Feedback in Large Language Models: A Survey'
+  authors: Xun Liang, Shichao Song, Zifan Zheng, Hanyu Wang, Qingchen Yu, Xunkai Li, Rong-Hua Li, Yi Wang, Zhonghao Wang,
+    Feiyu Xiong, Zhiyu Li
+  venue: arXiv 2024
+  date: 2024-07
+  arxiv: '2407.14507'
+  url: https://arxiv.org/abs/2407.14507
+  section: surveys.self-improvement
+  note: '"Self-" methods through internal consistency'
+  excluded_reason: 'out: generic internal-consistency/self-feedback survey'
+- key: feng2026self
+  short: Feng-SE-Embodied
+  title: Self-evolving Embodied AI
+  authors: Tongtong Feng, Xin Eric Wang, Wenwu Zhu
+  venue: arXiv 2026
+  date: 2026-02
+  arxiv: '2602.04411'
+  url: https://arxiv.org/abs/2602.04411
+  section: surveys.self-improvement
+  note: Embodied self-evolution paradigm
+  excluded_reason: 'out: embodied-domain self-evolution survey'
+- key: qi2026beyond
+  short: Qi-LIFE-MAS
+  title: 'Beyond Individual Intelligence: Surveying Collaboration, Failure Attribution, and Self-Evolution in LLM-based MAS'
+  authors: Shihao Qi, Jie Ma, Rui Xing, Wei Guo, Xiao Huang, Zhitao Gao, Jianhao Deng, Jun Liu, Lingling Zhang, Bifan Wei,
+    Boqian Yang, Pinghui Wang, Jianwen Sun, Tao, Jing, Yaqiang Wu, Hui Liu, Yu Yao, Tongliang Liu
+  venue: arXiv 2026
+  date: 2026-05
+  arxiv: '2605.14892'
+  url: https://arxiv.org/abs/2605.14892
+  section: surveys.self-improvement
+  note: Multi-agent systems
+  excluded_reason: 'out: multi-agent collaboration survey'
+- key: huang2026survey
+  short: Huang-AgentMemory
+  title: 'A Survey of Agent Memory in the Second Half: Towards Self-Evolving and Long-Horizon Agents'
+  authors: Wei-Chieh Huang, Weizhi Zhang, Yueqing Liang, Yuanchen Bei, Yankai Chen, Tao Feng, Xinyu Pan, Zhen Tan, Yu Wang,
+    Tianxin Wei, Shanglin Wu, Ruiyao Xu, Liangwei Yang, Rui Yang, Wooseong Yang, Chin-Yuan Yeh, Hanrong Zhang, Haozhen Zhang,
+    Siqi Zhu, Henry Peng Zou, Wanjia Zhao, Song Wang, Wujiang Xu, Zixuan Ke, Zheng Hui, Dawei Li, Yaozu Wu, Langzhou He, Chen
+    Wang, Xiongxiao Xu, Baixiang Huang, Juntao Tan, Shelby Heinecke, Huan Wang, Caiming Xiong, Ahmed A. Metwally, Jun Yan,
+    Chen-Yu Lee, Hanqing Zeng, Yinglong Xia, Xiaokai Wei, Ali Payani, Yu Wang, Haitong Ma, Wenya Wang, Chenguang Wang, Yu
+    Zhang, Xin Wang, Yongfeng Zhang, Jiaxuan You, Hanghang Tong, Xiao Luo, Xue Liu, Yizhou Sun, Wei Wang, Julian McAuley,
+    James Zou, Jiawei Han, Philip S. Yu, Kai Shu
+  venue: TMLR 2026
+  date: 2026-02
+  arxiv: '2602.06052'
+  url: https://arxiv.org/abs/2602.06052
+  section: surveys.self-improvement
+  note: Memory as the substrate of self-evolution
+  excluded_reason: 'out: agent memory survey'
+- key: zheng2024lifelong
+  short: Zheng-Lifelong
+  title: 'Towards Lifelong Learning of Large Language Models: A Survey'
+  authors: Junhao Zheng, Shengjie Qiu, Chengming Shi, Qianli Ma
+  venue: arXiv 2024
+  date: 2024-06
+  arxiv: '2406.06391'
+  url: https://arxiv.org/abs/2406.06391
+  section: surveys.self-improvement
+  note: Continual/lifelong learning
+  excluded_reason: 'out: Generic lifelong/continual learning survey, not self-improvement specific'
+- key: venktesh2025trust
+  short: Venktesh-TrustVerify
+  title: Trust but Verify! A Survey on Verification Design for Test-time Scaling
+  authors: Venktesh, V, Rathee, Mandeep, Anand, Avishek
+  venue: arXiv 2025
+  date: 2025-08
+  arxiv: '2508.16665'
+  url: https://arxiv.org/abs/2508.16665
+  section: surveys.related
+  note: Verifier design for test-time scaling
+  excluded_reason: 'out: Generic verifier-design survey for test-time scaling'
+- key: zheng2025survey
+  short: Zheng-PRM
+  title: 'A Survey of Process Reward Models: From Outcome Signals to Process Supervisions for LLMs'
+  authors: Congmin Zheng, Jiachen Zhu, Ou, Zhuoying, Yuxiang Chen, Kangning Zhang, Rong Shan, Zeyu Zheng, Mengyue Yang, Jianghao
+    Lin, Yong Hai Yu, Weinan Zhang
+  venue: arXiv 2025
+  date: 2025-10
+  arxiv: '2510.08049'
+  url: https://arxiv.org/abs/2510.08049
+  section: surveys.related
+  note: PRMs
+  excluded_reason: 'out: Generic process reward model survey'
+- key: shan2026survey
+  short: Shan-RubricRL
+  title: A Survey on Rubric-Guided Reinforcement Learning for Language Models
+  authors: Zifei Shan, Fangning Shao
+  venue: Findings of EMNLP 2026
+  date: 2026-08
+  arxiv: '2608.27505'
+  url: https://arxiv.org/abs/2608.27505
+  section: surveys.related
+  note: Rubric rewards for non-verifiable tasks
+  excluded_reason: 'out: Generic rubric-guided RL survey'
+- key: gu2024survey
+  short: Gu-Judge
+  title: A Survey on LLM-as-a-Judge
+  authors: Jiawei Gu, Jiang, Xuhui, Zhichao Shi, Hexiang Tan, Zhai, Xuehao, Xu, Chengjin, Wei Li, Yinghan Shen, Shengjie Ma,
+    H.-Y. Liu, Wang, Saizhuo, Zhang, Kun, Wang, Yuanzhuo, Gao, Wen, Ni, Lionel, Guo, Jian
+  venue: arXiv 2024
+  date: 2024-11
+  arxiv: '2411.15594'
+  url: https://arxiv.org/abs/2411.15594
+  section: surveys.related
+  note: 'LLM judges: reliability, bias'
+  excluded_reason: 'out: Generic LLM-as-judge survey'
+- key: li2024llms
+  short: Li-Judges
+  title: 'LLMs-as-Judges: A Comprehensive Survey on LLM-based Evaluation Methods'
+  authors: Haitao Li, Qian Dong, Junjie Chen, Huixue Su, Yujia Zhou, Qingyao Ai, Ziyi Ye, Yiqun Liu
+  venue: arXiv 2024
+  date: 2024-12
+  arxiv: '2412.05579'
+  url: https://arxiv.org/abs/2412.05579
+  section: surveys.related
+  note: LLM-based evaluation
+  excluded_reason: 'out: Generic LLM-as-judge evaluation survey'
+- key: mohammadi2025evaluation
+  short: Mohammadi-AgentEval
+  title: 'Evaluation and Benchmarking of LLM Agents: A Survey'
+  authors: Mahmoud Mohammadi, Yipeng Li, Jane Lo, Wendy Yip
+  venue: KDD 2025
+  date: 2025-07
+  arxiv: '2507.21504'
+  url: https://arxiv.org/abs/2507.21504
+  section: surveys.related
+  note: Agent evaluation
+  excluded_reason: 'out: Generic LLM agent evaluation/benchmarking survey'
+- key: luo2025llm4sr
+  short: Luo-LLM4SR
+  title: 'LLM4SR: A Survey on Large Language Models for Scientific Research'
+  authors: Luo, Ziming, Zonglin Yang, Zheng Xu, Wei Yang, Xinya Du
+  venue: arXiv 2025
+  date: 2025-01
+  arxiv: '2501.04306'
+  url: https://arxiv.org/abs/2501.04306
+  section: surveys.self-improvement
+  note: LLMs in research
+  excluded_reason: 'out: general science LLM survey, not AI research'
+- key: ren2025scientific
+  short: Ren-SciIntel
+  title: 'Towards Scientific Intelligence: A Survey of LLM-based Scientific Agents'
+  authors: Ren, Shuo, Can Xie, Jian Yu Pu, Ren, Zhenjiang, Leng, Chunlin, Jiajun Zhang
+  venue: arXiv 2025
+  date: 2025-03
+  arxiv: '2503.24047'
+  url: https://arxiv.org/abs/2503.24047
+  section: surveys.self-improvement
+  note: Scientific agents
+  excluded_reason: 'out: general scientific-agent survey'
+- key: wei2025ai
+  short: Wei-AgenticScience
+  title: 'From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery'
+  authors: Jiaqi Wei, Yue-Jin Yang, Xiang Zhang, Yuhan Chen, Xiang Zhuang, Zhangyang Gao, Dongzhan Zhou, Guangshuai Wang,
+    Zhiqiang Gao, Cao, Juntai, Zijie Qiu, Hu, Ming, Ma, Chenglong, Tang, Shixiang, He, Junjun, Song, Chunfeng, Xuming He,
+    Qiang Zhang, Chenyu You, Shuangjia Zheng, Ning Ding, Wanli Ouyang, Nanqing Dong, Yu Cheng, Sun, Siqi, Lei Bai, Bowen Zhou
+  venue: arXiv 2025
+  date: 2025-08
+  arxiv: '2508.14111'
+  url: https://arxiv.org/abs/2508.14111
+  section: surveys.self-improvement
+  note: Autonomous scientific discovery
+  excluded_reason: 'out: AI for natural science survey'
+- key: gridach2025agentic
+  short: Gridach-AgenticSci
+  title: 'Agentic AI for Scientific Discovery: A Survey of Progress, Challenges, and Future Directions'
+  authors: Mourad Gridach, Jay Nanavati, Khaldoun Zine El Abidine, Mendes, Lenon, Christina DeFilippo Mack
+  venue: arXiv 2025
+  date: 2025-03
+  arxiv: '2503.08979'
+  url: https://arxiv.org/abs/2503.08979
+  section: surveys.self-improvement
+  note: Agentic science systems
+  excluded_reason: 'out: general agentic scientific discovery survey'
+- key: hu2025survey
+  short: Hu-SciLLM
+  title: 'A Survey of Scientific Large Language Models: From Data Foundations to Agent Frontiers'
+  authors: Ming Hu, Chenglong Ma, Wei Li, Wanghan Xu, Jiamin Wu, Jucheng Hu, Tianbin Li, Guohang Zhuang, Jiaqi Liu, Yingzhou
+    Lu, Ying Chen, Chaoyang Zhang, Cheng Tan, Jie Ying, Guocheng Wu, Shujian Gao, Pengcheng Chen, Jiashi Lin, Haitao Wu, Lulu
+    Chen, Fengxiang Wang, Yuanyuan Zhang, Xiangyu Zhao, Feilong Tang, Encheng Su, Junzhi Ning, Xinyao Liu, Ye Du, Changkai
+    Ji, Pengfei Jiang, Cheng Tang, Ziyan Huang, Jiyao Liu, Jiaqi Wei, Yuejin Yang, Xiang Zhang, Guangshuai Wang, Yue Yang,
+    Huihui Xu, Ziyang Chen, Yizhou Wang, Chen Tang, Jianyu Wu, Yuchen Ren, Siyuan Yan, Zhonghua Wang, Zhongxing Xu, Shiyan
+    Su, Shangquan Sun, Runkai Zhao, Zhisheng Zhang, Dingkang Yang, Jinjie Wei, Jiaqi Wang, Jiahao Xu, Jiangtao Yan, Wenhao
+    Tang, Hongze Zhu, Yu Liu, Fudi Wang, Yiqing Shen, Yuanfeng Ji, Yanzhou Su, Tong Xie, Hongming Shan, Chun-Mei Feng, Zhi
+    Hou, Diping Song, Lihao Liu, Yanyan Huang, Lequan Yu, Bin Fu, Shujun Wang, Xiaomeng Li, Xiaowei Hu, Yun Gu, Ben Fei, Benyou
+    Wang, Yuewen Cao, Minjie Shen, Jie Xu, Haodong Duan, Fang Yan, Hongxia Hao, Jielan Li, Jiajun Du, Yanbo Wang, Imran Razzak,
+    Zhongying Deng, Chi Zhang, Lijun Wu, Conghui He, Zhaohui Lu, Jinhai Huang, Wenqi Shao, Yihao Liu, Siqi Luo, Yi Xin, Xiaohong
+    Liu, Fenghua Ling, Yuqiang Li, Aoran Wang, Siqi Sun, Qihao Zheng, Nanqing Dong, Tianfan Fu, Dongzhan Zhou, Yan Lu, Wenlong
+    Zhang, Jin Ye, Jianfei Cai, Yirong Chen, Wanli Ouyang, Yu Qiao, Zongyuan Ge, Shixiang Tang, Junjun He, Chunfeng Song,
+    Lei Bai, Bowen Zhou
+  venue: arXiv 2025
+  date: 2025-08
+  arxiv: '2508.21148'
+  url: https://arxiv.org/abs/2508.21148
+  section: surveys.ai-research
+  note: Scientific LLMs, data → agents
+  excluded_reason: 'out: scientific LLMs data survey'
+- key: eger2025transforming
+  short: Eger-TransformSci
+  title: 'Transforming Science with LLMs: A Survey on AI-assisted Scientific Discovery, Experimentation, Content Generation,
+    and Evaluation'
+  authors: Steffen Eger, Yong Cao, Jennifer D'Souza, Andreas Geiger, Christian Greisinger, Stephanie Gross, Yufang Hou, Brigitte
+    Krenn, Anne Lauscher, Yizhi Li, Chenghua Lin, Nafise Sadat Moosavi, Wei Zhao, Tristan Miller
+  venue: arXiv 2025
+  date: 2025-02
+  arxiv: '2502.05151'
+  url: https://arxiv.org/abs/2502.05151
+  section: surveys.self-improvement
+  note: AI-assisted science incl. evaluation and ethics
+  excluded_reason: 'out: general AI-assisted science survey'
+- key: zhang2024comprehensive
+  short: Zhang-SciLLMs
+  title: A Comprehensive Survey of Scientific LLMs and Their Applications in Scientific Discovery
+  authors: Yu Zhang, Xiusi Chen, Bowen Jin, Wang, Sheng, Shuiwang Ji, Wang, Wei, Jiawei Han
+  venue: EMNLP 2024
+  date: 2024-06
+  arxiv: '2406.10833'
+  url: https://arxiv.org/abs/2406.10833
+  section: surveys.self-improvement
+  note: Scientific LLMs by field/modality
+  excluded_reason: 'out: scientific LLMs survey'
+- key: alkan2025survey
+  short: Alkan-HypGen
+  title: A Survey on Hypothesis Generation for Scientific Discovery in the Era of LLMs
+  authors: Atilla Kaan Alkan, Shashwat Sourav, M. Jabłońska, Simone Astarita, Rishabh Chakrabarty, Nikhil Garuda, Pranav Khetarpal,
+    Maciej Pióro, Dimitrios Tanoglidis, Kartheik G. Iyer, Mugdha Polimera, Michael J. Smith, Tirthankar Ghosal, Marc Huertas-Company,
+    Sandor Kruk, Kevin Schawinski, Ioana Ciucă
+  venue: arXiv 2025
+  date: 2025-04
+  arxiv: '2504.05496'
+  url: https://arxiv.org/abs/2504.05496
+  section: surveys.self-improvement
+  note: Hypothesis generation
+  excluded_reason: 'out: general scientific hypothesis generation survey'
+- key: zhang2025deep
+  short: Zhang-DeepResearch
+  title: 'Deep Research: A Survey of Autonomous Research Agents'
+  authors: Wenlin Zhang, Xiaopeng Li, Yingyi Zhang, Pengyue Jia, Yichao Wang, Huifeng Guo, Yong Liu, Xiangyu Zhao
+  venue: arXiv 2025
+  date: 2025-08
+  arxiv: '2508.12752'
+  url: https://arxiv.org/abs/2508.12752
+  section: surveys.self-improvement
+  note: Deep-research (search + report) agents
+  excluded_reason: 'out: deep research (web report) agents survey'
+- key: sun2025survey
+  short: Sun-StatDSAgents
+  title: A Survey on Large Language Model-based Agents for Statistics and Data Science
+  authors: Maojun Sun, Ruijian Han, Binyan Jiang, Houduo Qi, Defeng Sun, Yancheng Yuan, Jian Huang
+  venue: The American Statistician
+  date: 2024-12
+  arxiv: '2412.14222'
+  url: https://arxiv.org/abs/2412.14222
+  section: evaluation.measurement
+  note: Data-science agents
+  excluded_reason: 'out: statistics/data-science agents survey, not AI research'
+- key: zhang2026landscape
+  title: 'The Landscape of Agentic Reinforcement Learning for LLMs: A Survey'
+  authors: Guibin Zhang, Hejia Geng, Xiaohang Yu, Zhenfei Yin, Zaibin Zhang, Zelin Tan, Heng Zhou, Zhongzhi Li, Xiangyuan
+    Xue, Yijiang Li, Yifan Zhou, Yang Chen, Chen Zhang, Yutao Fan, Zihu Wang, Songtao Huang, Francisco Piedrahita-Velez, Yue
+    Liao, Hongru Wang, Mengyue Yang, Heng Ji, Jun Wang, Shuicheng Yan, Philip Torr, Lei Bai
+  venue: TMLR 2026
+  date: 2025-09
+  arxiv: '2509.02547'
+  url: https://arxiv.org/abs/2509.02547
+  section: surveys.related
+  excluded_reason: 'out: Generic agentic RL survey'
+- key: zhang2025survey
+  short: Zhang-RL4LRM
+  title: A Survey of Reinforcement Learning for Large Reasoning Models
+  authors: Kaiyan Zhang, Yuxin Zuo, He, Bingxiang, Youbang Sun, Runze Liu, Jiang, Che, Yu‐Chen Fan, Kai Tian, Guoli Jia, Pengfei
+    Li, Yu Fu, Xingtai Lv, Yuchen Zhang, Zeng, Sihang, Shang Qu, Haozhan Li, Shijie Wang, Yuru Wang, Xinwei Long, Fangfu Liu,
+    Xiangyang Xu, Jiaze Ma, Zhu, Xuekai, Ermo Hua, Yihao Liu, Zonglin Li, Huayu Chen, Xiaoye Qu, Yafu Li, Weize Chen, Z. Y.
+    Yuan, Junqi Gao, Li Dong, Zhiyuan Ma, Ganqu Cui, Zhiyuan Liu, Biqing Qi, Ning Ding, Bowen Zhou
+  venue: arXiv 2025
+  date: 2025-09
+  arxiv: '2509.08827'
+  url: https://arxiv.org/abs/2509.08827
+  section: surveys.related
+  note: RL for LRMs
+  excluded_reason: 'out: Generic RL-for-reasoning survey'
+- key: yu2026survey
+  short: Yu-RLScarcity
+  title: 'A Survey of Reinforcement Learning for Large Language Models under Data Scarcity: Challenges and Solutions'
+  authors: Zhiyin Yu, Yuchen Mou, Juncheng Yan, Junyu Luo, Chunchun Chen, Xing Wei, Yunhui Liu, Hongru Sun, Yuxing Zhang,
+    Jun Xu, Yatao Bian, Ming Zhang, Wei Ye, Tieke He, Jie Yang, Guanjie Zheng, Zhonghai Wu, Bo Zhang, Lei Bai, Xiao Luo
+  venue: ACL 2026
+  date: 2026-04
+  arxiv: '2604.17312'
+  url: https://arxiv.org/abs/2604.17312
+  section: surveys.related
+  note: RL with scarce data (self-play, self-reward)
+  excluded_reason: 'out: Generic RL-under-data-scarcity survey'
+- key: song2026survey
+  short: Song-OPD
+  title: A Survey of On-Policy Distillation for Large Language Models
+  authors: Mingyang Song, Mao Zheng
+  venue: arXiv 2026
+  date: 2026-04
+  arxiv: '2604.00626'
+  url: https://arxiv.org/abs/2604.00626
+  section: surveys.related
+  note: On-policy (self-)distillation
+  excluded_reason: 'out: Generic on-policy distillation survey'
+- key: liu2024large
+  short: Liu-SEAgents
+  title: 'Large Language Model-Based Agents for Software Engineering: A Survey'
+  authors: Junwei Liu, Kaixin Wang, Yixuan Chen, Xin Peng, Zhenpeng Chen, Lingming Zhang, Yiling Lou
+  venue: ACM TOSEM 2024
+  date: 2024-09
+  arxiv: '2409.02977'
+  url: https://arxiv.org/abs/2409.02977
+  section: surveys.related
+  note: LLM agents in SE
+  excluded_reason: 'out: Generic LLM agents for software engineering survey'
+- key: dong2025survey
+  short: Dong-CodeGenAgents
+  title: A Survey on Code Generation with LLM-based Agents
+  authors: Yihong Dong, Xue Jiang, Qian, Jiaru, Wang, Tian, Kechi Zhang, Zhi Yang Jin, Ge Li
+  venue: arXiv 2025
+  date: 2025-08
+  arxiv: '2508.00083'
+  url: https://arxiv.org/abs/2508.00083
+  section: surveys.related
+  note: Code-generation agents
+  excluded_reason: 'out: Generic code-generation agents survey'
+- key: yang2025code
+  short: Yang-CodeIntel
+  title: 'From Code Foundation Models to Agents and Applications: A Comprehensive Survey and Practical Guide to Code Intelligence'
+  authors: Jian Yang, Xianglong Liu, Weifeng Lv, Ken Deng, Shawn Guo, Lin Jing, Li, Yizhi, Liu, Shark, Xianzhen Luo, Yuyu
+    Luo, Changzai Pan, Ensheng Shi, Yingshui Tan, Renshuai Tao, Wu, Jiajun, Xianjie Wu, Wu, Zhenhe, Daoguang Zan, Zhang, Chenchen,
+    Wei Zhang, He Zhu, Terry Yue Zhuo, Kerui Cao, Xianfu Cheng, Dong, Jun, Fang, Shengjie, Fei, Zhiwei, Xiangyuan Guan, Qipeng
+    Guo, Zhiguang Han, James, Joseph, Luo, Tianqi, Renyuan Li, Yuhang Li, Yiming Liang, Congnan Liu, Jiaheng Liu, Qian Liu,
+    Ruitong Liu, Tyler Loakman, Xiangxin Meng, Peng, Chuang, Peng, Tianhao, Jiajun Shi, Mingjie Tang, Boyang Wang, Wang, Haowen,
+    Yunli Wang, Fanglin Xu, Xu, Zihan, Yuan, Fei, Ge Zhang, Jiayi Zhang, Xinhao Zhang, Wangchunshu Zhou, Hualei Zhu, Zhu,
+    King, Dai, Bryan, Liu, Aishan, Zhoujun Li, Chenghua Lin, Tianyu Liu, Chao Peng, Shen, Kai, Libo Qin, Shuangyong Song,
+    Zizheng Zhan, Jiajun Zhang, Zhang, Jie, Zhaoxiang Zhang, Bo Zheng
+  venue: arXiv 2025
+  date: 2025-11
+  arxiv: '2511.18538'
+  url: https://arxiv.org/abs/2511.18538
+  section: surveys.related
+  note: Code LLMs → agents
+  excluded_reason: 'out: Generic code-LLM-to-agents survey'
+- key: liu2024best
+  short: Liu-SynthBestPractices
+  title: Best Practices and Lessons Learned on Synthetic Data
+  authors: Ruibo Liu, Jerry Wei, Fangyu Liu, Chenglei Si, Yanzhe Zhang, Jinmeng Rao, Steven Zheng, Daiyi Peng, Diyi Yang,
+    Denny Zhou, Andrew M. Dai
+  venue: COLM 2024
+  date: 2024-04
+  arxiv: '2404.07503'
+  url: https://arxiv.org/abs/2404.07503
+  section: surveys.related
+  note: Synthetic data for LMs
+  excluded_reason: 'out: Generic synthetic-data best-practices survey'
+- key: wang2024survey
+  short: Wang-DataSynth
+  title: A Survey on Data Synthesis and Augmentation for Large Language Models
+  authors: Ke Wang, Jiahui Zhu, Minjie Ren, Zeming Liu, Shiwei Li, Zongye Zhang, Chenkai Zhang, Xiaoyu Wu, Qiqi Zhan, Qingjie
+    Liu, Yunhong Wang
+  venue: arXiv 2024
+  date: 2024-10
+  arxiv: '2410.12896'
+  url: https://arxiv.org/abs/2410.12896
+  section: surveys.related
+  note: Data synthesis over the LLM lifecycle
+  excluded_reason: 'out: Generic data-synthesis/augmentation survey'
+- key: havrilla2024surveying
+  short: Havrilla-QDC
+  title: Surveying the Effects of Quality, Diversity, and Complexity in Synthetic Data From LLMs
+  authors: Alex Havrilla, Andrew M. Dai, Laura O'Mahony, Koen Oostermeijer, Vera Zisler, Alon Albalak, Fabrizio Milo, Sharath
+    Chandra Raparthy, Kanishk Gandhi, Baber Abbasi, Duy Phung, Maia Iyer, Dakota Mahan, Blagden, Chase, Srishti Gureja, Mohammed
+    Hamdy, Li, Wen-Ding, Giovanni Paolini, Pawan Sasanka Ammanamanchi, Elliot Meyerson
+  venue: arXiv 2024
+  date: 2024-12
+  arxiv: '2412.02980'
+  url: https://arxiv.org/abs/2412.02980
+  section: surveys.related
+  note: Synthetic data quality/diversity/complexity
+  excluded_reason: 'out: Generic synthetic-data quality/diversity survey'
+- key: bhattacharya2026position
+  short: Bhattacharya-FMOS
+  title: 'Position: It is Time to Virtualize Foundation Models with a Self-evolving Operating System Layer'
+  authors: Suparna Bhattacharya, Tarun Kumar, Cong Xu, Satish Kumar Mopur, Jiahao Li, Ashish Mishra, Aalap Tripathy, Annmary
+    Justine Koomthanam, Martin Foltín, Ian Foster
+  venue: ICML 2026
+  date: 2026-09
+  arxiv: '2609.19203'
+  url: https://arxiv.org/abs/2609.19203
+  section: surveys.position
+  note: Agent runtime stacks
+  excluded_reason: 'out: systems position, not RSI or AI4AI'
+- key: emami2026position
+  short: Emami-HAS
+  title: 'Position: AI Agents in Scientific Teams Should Be Studied as Human-Agent Systems'
+  authors: Patrick Emami, Sameera Horawalavithana, Truc Nguyen, Gihan Panapitiya, Bruno Jacob, Siddhisanket Raskar, Saumya
+    Sinha, Jared Willard, Andrew Glaws, Nithin Somasekharan, Ling Yue, Brian Lu, Shaowu Pan, Jason Eisner
+  venue: COLM 2026
+  date: 2026-08
+  arxiv: '2608.14667'
+  url: https://arxiv.org/abs/2608.14667
+  section: surveys.position
+  note: AI scientists in teams
+  excluded_reason: 'out: human-agent science teams position'
+- key: rasheed2026fluent
+  short: Rasheed-Auditability
+  title: 'From Fluent to Verifiable: Claim-Level Auditability for Deep Research Agents'
+  authors: Razeen A Rasheed, Somnath Banerjee, Animesh Mukherjee, Rima Hazra
+  venue: arXiv 2026
+  date: 2026-02
+  arxiv: '2602.13855'
+  url: https://arxiv.org/abs/2602.13855
+  section: surveys.position
+  note: Deep research reports
+  excluded_reason: 'out: deep-research auditability position'
+- key: pres2026position
+  short: Pres-SelfConsistency
+  title: 'Position: It''s Time to Optimize LLMs for Self-Consistency'
+  authors: Itamar Pres, Belinda Z. Li, Laura Ruis, Zifan Carl Guo, Keya Hu, Mehul Damani, Isha Puri, Ekdeep Singh Lubana,
+    Jacob Andreas
+  venue: ICML 2026
+  date: 2026-08
+  arxiv: '2608.05188'
+  url: https://arxiv.org/abs/2608.05188
+  section: surveys.position
+  note: LM training/evaluation pipeline
+  excluded_reason: 'out: Generic self-consistency training position, not RSI-specific'
+- key: mccormick2026position
+  short: McCormick-Structure
+  title: 'Position: Prioritize Identifying Structure, Not Complex Models, for Scientific Discovery'
+  authors: Tyler H. McCormick
+  venue: ICML 2026
+  date: 2026-06
+  arxiv: '2606.02632'
+  url: https://arxiv.org/abs/2606.02632
+  section: surveys.position
+  note: LLM-generated mechanistic hypotheses
+  excluded_reason: 'out: Generic AI-for-science methodology position, not AI-research automation'
+- key: yu2025position
+  short: Yu-AIResearchers
+  title: 'Position Paper: Unlocking the Potential of AI Researchers in Scientific Discovery — What Is Missing?'
+  authors: Yu, Hengjie, Liu, Shuya, Haiyun Yang, Yuping Yan, Qu, Maozhen, Yaochu Jin
+  venue: arXiv 2025
+  date: 2025-03
+  arxiv: '2503.05822'
+  url: https://arxiv.org/abs/2503.05822
+  section: surveys.position
+  note: AI4Science adoption
+  excluded_reason: 'out: general AI-for-science position'
+- key: yan2026position
+  short: Yan-MLLMSciReason
+  title: 'Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning'
+  authors: Yibo Yan, Shen Wang, Jiahao Huo, Jingheng Ye, Zhendong Chu, Xuming Hu, Philip S. Yu, Carla Gomes, Bart Selman,
+    Qingsong Wen
+  venue: Findings of ACL 2026
+  date: 2025-02
+  arxiv: '2502.02871'
+  url: https://arxiv.org/abs/2502.02871
+  section: surveys.position
+  note: Scientific reasoning
+  excluded_reason: 'out: Generic position on multimodal scientific reasoning capability'
+- key: zhuang2026test
+  short: TRT
+  title: 'Test-time Recursive Thinking: Self-Improvement without External Feedback'
+  authors: Yufan Zhuang, Chandan Singh, Liyuan Liu, Yelong Shen, Dinghuai Zhang, Jingbo Shang, Jianfeng Gao, Weizhu Chen
+  venue: arXiv 2026
+  date: 2026-02
+  arxiv: '2602.03094'
+  url: https://arxiv.org/abs/2602.03094
+  section: weights.self-training
+  locus: context
+  signal: self
+  recursive: 'no'
+  note: Test-time loop with accumulated knowledge and self-verification; open models reach 100% AIME-25/24
+  excluded_reason: 'out: Test-time-only loop, own flag marks non-recursive, not canonical'
+- key: mitchell2025fully
+  short: No fully autonomous agents
+  title: Fully Autonomous AI Agents Should Not be Developed
+  authors: Margaret A. Mitchell, Avijit Ghosh, Alexandra Sasha Luccioni, Giada Pistilli
+  venue: arXiv 2025
+  date: 2025-02
+  arxiv: '2502.02649'
+  url: https://arxiv.org/abs/2502.02649
+  section: surveys.position
+  note: Defines agent autonomy levels. Risk rises as users cede control, so full autonomy should not be built.
+  excluded_reason: 'out: Generic autonomous-agent risk position, not RSI/AI4AI specific'
+- key: yang2024self
+  short: SDFT (self-distill FT)
+  title: Self-Distillation Bridges Distribution Gap in Language Model Fine-Tuning
+  authors: Zhaorui Yang, Tianyu Pang, Haozhe Feng, Han Wang, Wei Chen, Minfeng Zhu, Qian Liu
+  venue: ACL 2024
+  date: 2024-02
+  arxiv: '2402.13669'
+  url: https://arxiv.org/abs/2402.13669
+  code: https://github.com/sail-sg/sdft
+  section: weights.self-training
+  locus: weights
+  signal: mixed
+  recursive: 'no'
+  note: Model rewrites task targets in its own distribution before fine-tuning, reducing catastrophic forgetting of general
+    and safety abilities.
+  excluded_reason: 'out: Single-round self-distillation trick to reduce forgetting; not an iterated loop.'
+- key: zhang2025generative
+  short: GenRM
+  title: 'Generative Verifiers: Reward Modeling as Next-Token Prediction'
+  authors: Lunjun Zhang, Arian Hosseini, Hritik Bansal, Mehran Kazemi, Aviral Kumar, Rishabh Agarwal
+  venue: ICLR 2025
+  date: 2024-08
+  arxiv: '2408.15240'
+  url: https://arxiv.org/abs/2408.15240
+  section: weights.self-reward
+  locus: weights
+  signal: ground-truth
+  recursive: 'no'
+  note: Trains verifiers with next-token prediction and CoT rationales, with majority voting over verifications; beats discriminative
+    RMs for Best-of-N.
+  excluded_reason: 'out: Trains a generative verifier via supervised CoT labels; not a self-loop.'
+- key: zhang2025right
+  short: EMPO
+  title: 'Right Question is Already Half the Answer: Fully Unsupervised LLM Reasoning Incentivization'
+  authors: Qingyang Zhang, Haitao Wu, Changqing Zhang, Peilin Zhao, Yatao Bian
+  venue: NeurIPS 2025
+  date: 2025-04
+  arxiv: '2504.05812'
+  url: https://arxiv.org/abs/2504.05812
+  code: https://github.com/QingyangZhang/EMPO
+  section: weights.intrinsic-rl
+  locus: weights
+  signal: self
+  recursive: partial
+  note: Minimizes semantic-space predictive entropy on unlabeled questions as the RL objective.
+  excluded_reason: 'out: Non-canonical entropy-minimization variant of label-free RL, not iterated.'
+- key: wang2025reinforcement
+  short: One-shot RLVR
+  title: Reinforcement Learning for Reasoning in Large Language Models with One Training Example
+  authors: Yiping Wang, Qing Yang, Zhiyuan Zeng, Liliang Ren, Liyuan Liu, Baolin Peng, Hao Cheng, Xuehai He, Kuan Wang, Jianfeng
+    Gao, Weizhu Chen, Shuohang Wang, Simon Shaolei Du, Yelong Shen
+  venue: NeurIPS 2025
+  date: 2025-04
+  arxiv: '2504.20571'
+  url: https://arxiv.org/abs/2504.20571
+  code: https://github.com/ypwang61/One-Shot-RLVR
+  section: weights.intrinsic-rl
+  locus: weights
+  signal: ground-truth
+  recursive: 'no'
+  note: A single training example nearly matches 1.2k-example RLVR on Qwen2.5-Math-1.5B; "post-saturation generalization."
+  excluded_reason: 'out: RLVR data-efficiency finding with external reward, not a self-improvement loop.'
+- key: agarwal2025unreasonable
+  short: EM (entropy minimization)
+  title: The Unreasonable Effectiveness of Entropy Minimization in LLM Reasoning
+  authors: Shivam Agarwal, Zimin Zhang, Lifan Yuan, Jiawei Han, Hao Peng
+  venue: NeurIPS 2025
+  date: 2025-05
+  arxiv: '2505.15134'
+  url: https://arxiv.org/abs/2505.15134
+  section: weights.intrinsic-rl
+  locus: weights
+  signal: self
+  recursive: partial
+  note: Token- or trajectory-entropy minimization via fine-tuning, RL or inference-time logit adjustment elicits reasoning
+    with no labels.
+  excluded_reason: 'out: Non-canonical entropy-minimization variant, not an iterated self-improvement loop.'
+- key: zhao2025learning
+  short: Intuitor (RLIF)
+  title: Learning to Reason without External Rewards
+  authors: Xuandong Zhao, Zhewei Kang, Aosong Feng, Sergey Levine, Dawn Xiaodong Song
+  venue: ICLR 2026
+  date: 2025-05
+  arxiv: '2505.19590'
+  url: https://arxiv.org/abs/2505.19590
+  code: https://github.com/sunblaze-ucb/Intuitor
+  section: weights.intrinsic-rl
+  locus: weights
+  signal: self
+  recursive: partial
+  note: Replaces GRPO's external reward with the model's self-certainty; matches GRPO on math and generalizes better to code.
+  excluded_reason: 'out: Non-canonical self-certainty reward variant, redundant with TTRL-style methods.'
+- key: prabhudesai2025maximizing
+  short: RENT
+  title: Maximizing Confidence Alone Improves Reasoning
+  authors: Mihir Prabhudesai, Lili Chen, Alex Ippoliti, Katerina Fragkiadaki, Hao Liu, Deepak Pathak
+  venue: TMLR 2025
+  date: 2025-05
+  arxiv: '2505.22660'
+  url: https://arxiv.org/abs/2505.22660
+  section: weights.intrinsic-rl
+  locus: weights
+  signal: self
+  recursive: partial
+  note: Uses negative entropy of the answer distribution as the sole RL reward across Qwen, Mistral and Llama families.
+  excluded_reason: 'out: Non-canonical confidence-only reward variant of label-free RL.'
+- key: zhang2025consistent
+  short: CoVo
+  title: 'Consistent Paths Lead to Truth: Self-Rewarding Reinforcement Learning for LLM Reasoning'
+  authors: Kongcheng Zhang, Qi Yao, Shunyu Liu, Yingjie Wang, Baisheng Lai, Jieping Ye, Mingli Song, Dacheng Tao
+  venue: NeurIPS 2025
+  date: 2025-06
+  arxiv: '2506.08745'
+  url: https://arxiv.org/abs/2506.08745
+  code: https://github.com/sastpg/CoVo
+  section: weights.intrinsic-rl
+  locus: weights
+  signal: self
+  recursive: partial
+  note: Intrinsic reward from consistency and volatility of intermediate reasoning states across trajectories, plus a curiosity
+    bonus.
+  excluded_reason: 'out: Non-canonical self-consistency intrinsic reward variant, single training run.'
+- key: zhang2026co
+  short: Co-rewarding
+  title: 'Co-rewarding: Stable Self-supervised RL for Eliciting Reasoning in Large Language Models'
+  authors: Zizhuo Zhang, Jianing Zhu, Ge, Xinmu, Zihua Zhao, Zhanke Zhou, Xuan Li, Feng Xiao, Jiangchao Yao, Bo Han
+  venue: ICLR 2026
+  date: 2025-08
+  arxiv: '2508.00410'
+  url: https://arxiv.org/abs/2508.00410
+  code: https://github.com/tmlr-group/Co-rewarding
+  section: weights.intrinsic-rl
+  locus: weights
+  signal: self
+  recursive: partial
+  note: Cross-view supervision (analogous questions, or a slow EMA teacher) prevents the "self-consistent illusion" collapse
+    of single-view self-rewards.
+  excluded_reason: 'out: Non-canonical stabilization variant of self-supervised RL, not central.'
+- key: jayalath2026compute
+  short: CaT
+  title: 'Compute as Teacher: Turning Inference Compute Into Reference-Free Supervision'
+  authors: Dulhan Jayalath, Shashwat Goel, Thomas Foster, Parag Jain, Suchin Gururangan, Cheng Zhang, Anirudh Goyal, Alan
+    Schelten
+  venue: ICML 2026
+  date: 2025-09
+  arxiv: '2509.14234'
+  url: https://arxiv.org/abs/2509.14234
+  section: weights.intrinsic-rl
+  locus: weights
+  signal: mixed
+  recursive: partial
+  note: Aggregates parallel rollouts into a pseudo-reference plus self-proposed rubrics, making RL rewards available even
+    in non-verifiable domains (HealthBench).
+  excluded_reason: 'out: Non-canonical inference-compute-as-reward method variant, single training run.'
+- key: zhou2025evolving
+  short: EVOL-RL
+  title: 'Evolving Language Models without Labels: Majority Drives Selection, Novelty Promotes Variation'
+  authors: Yujun Zhou, Liang, Zhenwen, Haolin Liu, Yu, Wenhao, Kishan Panaganti, Linfeng Song, Dian Yu, Xiangliang Zhang,
+    Haitao Mi, Dong Yu
+  venue: arXiv 2025
+  date: 2025-09
+  arxiv: '2509.15194'
+  url: https://arxiv.org/abs/2509.15194
+  code: https://github.com/YujunZhou/EVOL-RL
+  section: weights.intrinsic-rl
+  locus: weights
+  signal: self
+  recursive: partial
+  note: Majority vote as anchor plus a novelty reward prevents entropy collapse from purely self-confirming rewards.
+  excluded_reason: 'out: Non-canonical novelty-reward variant preventing entropy collapse, incremental.'
+- key: yu2025restrain
+  short: RESTRAIN
+  title: 'RESTRAIN: From Spurious Votes to Signals - Self-Driven RL with Self-Penalization'
+  authors: Yu, Zhaoning, Wanghui Su, Leitian Tao, Wang, Haozhu, Singh, Aashu, Hanchao Yu, Wang, Jianyu, Gao, Hongyang, Weizhe
+    Yuan, Jason Weston, Yu, Ping, Jing Xu
+  venue: arXiv 2025
+  date: 2025-10
+  arxiv: '2510.02172'
+  url: https://arxiv.org/abs/2510.02172
+  section: weights.intrinsic-rl
+  locus: weights
+  signal: self
+  recursive: partial
+  note: Penalizes overconfident rollouts and low-consistency examples instead of trusting spurious majority votes.
+  excluded_reason: 'out: Non-canonical self-penalization variant of label-free RL.'
+- key: li2025model
+  short: SePT
+  title: 'A Model Can Help Itself: Reward-Free Self-Training for LLM Reasoning'
+  authors: Mengqi Li, Lei Zhao, So, Anthony Man-Cho, Sun, Ruoyu, Xiao Li
+  venue: arXiv 2025
+  date: 2025-10
+  arxiv: '2510.18814'
+  url: https://arxiv.org/abs/2510.18814
+  code: https://github.com/ElementQiii/SePT
+  section: weights.intrinsic-rl
+  locus: weights
+  recursive: partial
+  note: Trains on its own temperature-controlled samples with online refresh and no rewards; beats the best-temperature untuned
+    baseline.
+  excluded_reason: 'out: Non-canonical reward-free self-training variant, not iterated across rounds.'
+- key: wang2026sarl
+  short: SARL
+  title: 'SARL: Label-Free Reinforcement Learning by Rewarding Reasoning Topology'
+  authors: Yifan Wang, Bolian Li, David Cho, Ruqi Zhang, Fanping Sui, Ananth Y. Grama
+  venue: arXiv 2026
+  date: 2026-03
+  arxiv: '2603.27977'
+  url: https://arxiv.org/abs/2603.27977
+  code: https://github.com/cacayaya/SARL
+  section: weights.intrinsic-rl
+  locus: weights
+  signal: self
+  recursive: partial
+  note: Rewards the structure of per-response reasoning maps rather than outcomes; label-free RL extended to open-ended tasks.
+  excluded_reason: 'out: Non-canonical structural-reward variant of label-free RL, incremental.'
+- key: huang2026free
+  short: FREIA
+  title: Free Energy-Driven Reinforcement Learning with Adaptive Advantage Shaping for Unsupervised Reasoning in LLMs
+  authors: Yiming Huang, Zhenbo Shi, Xin-Cheng Wen, Jichuan Zeng, Cuiyun Gao, Peiyi Han, Chuanyi Liu
+  venue: ACL 2026
+  date: 2026-05
+  arxiv: '2605.04065'
+  url: https://arxiv.org/abs/2605.04065
+  section: weights.intrinsic-rl
+  locus: weights
+  signal: self
+  recursive: partial
+  note: A free-energy reward balances consensus and exploration, with adaptive advantage shaping for unsupervised RL.
+  excluded_reason: 'out: Non-canonical free-energy reward variant for unsupervised RL, incremental.'
+- key: joarder2026two
+  short: Two-is-better RLIF
+  title: 'Two is better than one: A Collapse-free Multi-Reward RLIF Training Framework'
+  authors: Shourov Joarder, Diganta Sikdar, Ahsan Habib Akash, Binod Bhattarai, Prashnna Gyawali
+  venue: arXiv 2026
+  date: 2026-05
+  arxiv: '2605.22620'
+  url: https://arxiv.org/abs/2605.22620
+  section: weights.intrinsic-rl
+  locus: weights
+  signal: self
+  recursive: partial
+  note: Combines cluster-vote and self-certainty rewards with KL-Cov regularization to prevent late-stage RLIF collapse.
+  excluded_reason: 'out: Non-canonical multi-reward RLIF stabilization variant, incremental.'
+- key: wang2026self
+  short: RLAVR / CARE
+  title: 'When Self-Belief Misleads: Active Label Acquisition for Reinforcement Learning with Verifiable Rewards'
+  authors: Li Xin Wang, Xiaodong Lu, Xiaohan Wang, Yikun Ban, Jiajun Chai, Wei Lin, Tianhao Peng, Guojun Yin
+  venue: arXiv 2026
+  date: 2026-05
+  arxiv: '2605.25864'
+  url: https://arxiv.org/abs/2605.25864
+  code: https://github.com/Lumina04/CARE
+  section: weights.intrinsic-rl
+  locus: weights
+  signal: mixed
+  recursive: partial
+  note: Actively buys ground-truth labels for a few high-value samples to stabilize pseudo-label RL that is "notoriously susceptible
+    to training collapse."
+  excluded_reason: 'out: Non-canonical active-labeling variant to stabilize pseudo-label RL.'
+- key: hardt2024test
+  short: TTT-NN
+  title: Test-Time Training on Nearest Neighbors for Large Language Models
+  authors: Moritz Hardt, Yu Sun
+  venue: ICLR 2024
+  date: 2023-05
+  arxiv: '2305.18466'
+  url: https://arxiv.org/abs/2305.18466
+  section: weights.self-adapt
+  locus: weights
+  signal: ground-truth
+  recursive: 'no'
+  note: Fine-tunes the LM at test time on retrieved nearest-neighbor texts for each input.
+  excluded_reason: 'out: Test-time FT on retrieved external text, not self-generated signal.'
+- key: akyurek2025surprising
+  short: TTT few-shot
+  title: The Surprising Effectiveness of Test-Time Training for Few-Shot Learning
+  authors: Ekin Akyürek, Mehul Damani, Zweiger, Adam, Linlu Qiu, Guo, Han, Pari, Jyothish, Yoon Kim, Jacob Andreas
+  venue: ICML 2025
+  date: 2024-11
+  arxiv: '2411.07279'
+  url: https://arxiv.org/abs/2411.07279
+  section: weights.self-adapt
+  locus: weights
+  signal: ground-truth
+  recursive: 'no'
+  note: Temporary parameter updates on in-context examples give up to 6× on ARC and +7.3 points on BBH over few-shot prompting.
+  excluded_reason: 'out: Test-time parameter updates on given few-shot examples, not self-generated.'
+- key: tandon2025end
+  short: E2E TTT (lead)
+  title: End-to-End Test-Time Training for Long Context
+  authors: Arnuv Tandon, Karan Dalal, Xinhao Li, Daniel Koceja, Marcel Rød, Buchanan, Sam, Xiaolong Wang, Jure Leskovec, Sanmi
+    Koyejo, Tatsunori Hashimoto, Carlos Guestrin, Jed McCaleb, Yejin Choi, Yu Sun
+  venue: arXiv 2025
+  date: 2025-12
+  arxiv: '2512.23675'
+  url: https://arxiv.org/abs/2512.23675
+  section: weights.self-adapt
+  locus: weights
+  recursive: 'no'
+  note: Test-time training for long-context modeling.
+  excluded_reason: 'out: Generic test-time training method for long context, not self-generated loop.'
+- key: he2024improving
+  short: QE-as-reward MT
+  title: 'Improving Machine Translation with Human Feedback: An Exploration of Quality Estimation as a Reward Model'
+  authors: He, Zhiwei, Xing Wang, Wenxiang Jiao, Zhuosheng Zhang, Rui Wang, Shuming Shi, Zhaopeng Tu
+  venue: NAACL 2024
+  date: 2024-01
+  arxiv: '2401.12873'
+  url: https://arxiv.org/abs/2401.12873
+  code: https://github.com/zwhe99/FeedbackMT
+  section: weights.nlp
+  locus: weights
+  recursive: 'no'
+  note: QE-reward feedback training overoptimizes (reward up, quality down); a penalty for detected bad translations fixes
+    it and is data-efficient.
+  excluded_reason: 'out: Domain-specific machine-translation reward-model application.'
+- key: zhang2024enhancing
+  short: SDRRL
+  title: Enhancing Multilingual Capabilities of Large Language Models through Self-Distillation from Resource-Rich Languages
+  authors: Yuanchi Zhang, Yile Wang, Zijun Liu, Shuo Wang, Xiaolong Wang, Peng Li, Maosong Sun, Yang Liu
+  venue: ACL 2024
+  date: 2024-02
+  arxiv: '2402.12204'
+  url: https://arxiv.org/abs/2402.12204
+  section: weights.nlp
+  locus: weights
+  signal: mixed
+  recursive: 'no'
+  note: Self-distills the model's own resource-rich-language abilities into other languages, beating translation-only data.
+  excluded_reason: 'out: Domain-specific multilingual self-distillation application.'
+- key: ulmer2024bootstrapping
+  short: Self-Talk
+  title: Bootstrapping LLM-based Task-Oriented Dialogue Agents via Self-Talk
+  authors: Dennis Ulmer, Elman Mansimov, Kaixiang Lin, Justin Sun, Xibin Gao, Yi Zhang
+  venue: ACL 2024
+  date: 2024-01
+  arxiv: '2401.05033'
+  url: https://arxiv.org/abs/2401.05033
+  section: weights.nlp
+  locus: weights
+  signal: mixed
+  recursive: 'no'
+  note: LLMs role-play both dialogue sides; an automatic success metric filters self-talk data for SFT.
+  excluded_reason: 'out: Domain-specific dialogue self-play application.'
+- key: zhang2024self
+  short: Self-Alignment for Factuality
+  title: 'Self-Alignment for Factuality: Mitigating Hallucinations in LLMs via Self-Evaluation'
+  authors: Xiaoying Zhang, Baolin Peng, Ye Tian, Jingyan Zhou, Lifeng Jin, Linfeng Song, Haitao Mi, Helen M. L. Meng
+  venue: ACL 2024
+  date: 2024-02
+  arxiv: '2402.09267'
+  url: https://arxiv.org/abs/2402.09267
+  section: weights.nlp
+  locus: weights
+  signal: self
+  recursive: partial
+  note: The model self-evaluates the factuality of its outputs (improved by SK-Tuning) to build DPO preference data.
+  excluded_reason: 'out: Narrow non-canonical self-alignment technique for factuality, not a general loop.'
+- key: wang2024sotopia
+  short: SOTOPIA-π
+  title: 'SOTOPIA-π: Interactive Learning of Socially Intelligent Language Agents'
+  authors: Ruiyi Wang, Haofei Yu, Wenxin Zhang, Zhengyang Qi, Maarten Sap, Graham Neubig, Yonatan Bisk, Hao Zhu
+  venue: ACL 2024
+  date: 2024-03
+  arxiv: '2403.08715'
+  url: https://arxiv.org/abs/2403.08715
+  section: weights.nlp
+  locus: weights
+  recursive: partial
+  note: Behavior cloning plus self-reinforcement on LLM-rated social interactions; LLM evaluators overestimate trained agents.
+  excluded_reason: 'out: Domain-specific social-dialogue self-reinforcement application.'
+- key: hwang2024self
+  short: Self-Explore
+  title: 'Self-Explore: Enhancing Mathematical Reasoning in Language Models with Fine-grained Rewards'
+  authors: Hyeonbin Hwang, Doyoung Kim, Seungone Kim, Seonghyeon Ye, Minjoon Seo
+  venue: EMNLP 2024
+  date: 2024-04
+  arxiv: '2404.10346'
+  url: https://arxiv.org/abs/2404.10346
+  section: weights.nlp
+  locus: weights
+  signal: ground-truth
+  recursive: 'no'
+  note: The model locates the first wrong step in its own rationales to build step-level preference data.
+  excluded_reason: 'out: Narrow non-canonical self-training reward variant for math reasoning.'
+- key: yang2025language
+  short: Language Imbalance Rewarding
+  title: Language Imbalance Driven Rewarding for Multilingual Self-improving
+  authors: Wen Tao Yang, Junhong Wu, Chen Wang, Chengqing Zong, Jiajun Zhang
+  venue: ICLR 2025
+  date: 2024-10
+  arxiv: '2410.08964'
+  url: https://arxiv.org/abs/2410.08964
+  code: https://github.com/ZNLP/Language-Imbalance-Driven-Rewarding
+  section: weights.nlp
+  locus: weights
+  signal: self
+  recursive: partial
+  note: Uses the dominant vs non-dominant language quality gap as a self-reward; iterative DPO improves both.
+  excluded_reason: 'out: Domain-specific multilingual self-improvement application.'
+- key: feng2025mt
+  short: MT-R1-Zero
+  title: 'MT-R1-Zero: Advancing LLM-based Machine Translation via R1-Zero-like Reinforcement Learning'
+  authors: Zhaopeng Feng, Shaosheng Cao, Ren, Jiahan, Jianwen Su, Ruizhe Chen, Yan Zhang, Zhe Xu, Yao Hu, Jian Feng Wu, Zuozhu
+    Liu
+  venue: EMNLP 2025
+  date: 2025-04
+  arxiv: '2504.10160'
+  url: https://arxiv.org/abs/2504.10160
+  section: weights.nlp
+  locus: weights
+  signal: mixed
+  recursive: 'no'
+  note: Applies R1-Zero-style RL without SFT cold-start to LLM MT.
+  excluded_reason: 'out: Domain-specific machine-translation RL application.'
+- key: yang2025ssr
+  short: SSR-Zero
+  title: 'SSR-Zero: Simple Self-Rewarding Reinforcement Learning for Machine Translation'
+  authors: Yang, Wenjie, Zheng, Mao, Song, Mingyang, Li, Zheng, Wang, Sitong
+  venue: ACL 2025
+  date: 2025-05
+  arxiv: '2505.16637'
+  url: https://arxiv.org/abs/2505.16637
+  section: weights.nlp
+  locus: weights
+  signal: self
+  recursive: partial
+  note: Reference-free, fully online RL for MT using only self-judged rewards on 13K monolingual examples; combines well with
+    COMET.
+  excluded_reason: 'out: Domain-specific machine-translation self-rewarding RL application.'
+- key: su2026reinforcement
+  short: Semantic-reward low-resource RL
+  title: Reinforcement Learning with Semantic Rewards Enables Low-Resource Language Expansion without Alignment Tax
+  authors: Zeli Su, Ziyin Zhang, Zhou Liu, Xuexian Song, Zhankai Xu, Longfei Zheng, Xiaolu Zhang, Rong Fu, Guixian Xu, Wentao
+    Zhang
+  venue: ACL 2026
+  date: 2026-05
+  arxiv: '2605.14366'
+  url: https://arxiv.org/abs/2605.14366
+  section: weights.nlp
+  locus: weights
+  recursive: 'no'
+  note: GRPO with embedding-level semantic rewards for Tibetan–Chinese MT and headlines reduces forgetting relative to SFT.
+  excluded_reason: 'out: Domain-specific low-resource language expansion application.'
+- key: hou2026continual
+  short: Continual Learning in Transition
+  title: Continual Learning in Transition
+  authors: Zhiyan Hou, Dan Zhang, Tao Feng, Liyuan Wang, Wei Li, Xiangzhao Hao, Hongyan An, Junfeng Fang, Haokai Ma, Zhaohui
+    Xu, Xinyu Tang, Haiyun Guo, Jinqiao Wang, Tat‐Seng Chua
+  venue: arXiv 2026
+  date: 2026-08
+  arxiv: '2608.06216'
+  url: https://arxiv.org/abs/2608.06216
+  section: surveys.self-improvement
+  note: ''
+  excluded_reason: 'out: Generic continual-learning survey, no clear RSI-specific focus given.'
+- key: vatsal2026beyond
+  short: Vatsal-SE-Health
+  title: 'Beyond Static Agents: A Six-Dimensional Taxonomy and Survey of Self-Evolving LLM Agents for Healthcare'
+  authors: Shubham Vatsal et al.
+  venue: IEEE Access 2026
+  date: 2026-01
+  url: https://doi.org/10.1109/access.2026.3720396
+  section: surveys.self-improvement
+  note: Healthcare
+  excluded_reason: 'out: Healthcare-specific self-evolving agent survey; domain application.'
+- key: nguyen2026survey
+  short: Nguyen-SE-Wireless
+  title: A Survey on Self-evolving Agents for Wireless Networks
+  authors: Loc Nguyen et al.
+  venue: SSRN 2026
+  date: 2026-01
+  url: https://doi.org/10.2139/ssrn.7079180
+  section: surveys.self-improvement
+  note: 6G/RAN
+  excluded_reason: 'out: Wireless/6G-specific self-evolving agent survey; domain application.'
+- key: li2025generation
+  short: Li-GenToJudge
+  title: 'From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge'
+  authors: Dawei Li et al.
+  venue: EMNLP 2025
+  date: 2025-01
+  url: https://aclanthology.org/2025.emnlp-main.138/
+  section: surveys.related
+  note: LLM-as-judge
+  excluded_reason: 'out: Generic LLM-as-judge survey, not self-improvement specific.'
+- key: yehudai2026survey
+  short: Yehudai-AgentEval
+  title: A Survey on Evaluation of LLM-based Agents
+  authors: Asaf Yehudai et al.
+  venue: Findings of ACL 2026
+  date: 2026-01
+  url: https://aclanthology.org/2026.findings-acl.1330/
+  section: surveys.related
+  note: Agent evaluation benchmarks and frameworks
+  excluded_reason: 'out: Generic agent-evaluation survey, not self-improvement specific.'
+- key: long2024llms
+  short: Long-SynthData
+  title: 'On LLMs-Driven Synthetic Data Generation, Curation, and Evaluation: A Survey'
+  authors: Lin Long et al.
+  venue: Findings of ACL 2024
+  date: 2024-01
+  url: https://aclanthology.org/2024.findings-acl.658/
+  section: surveys.related
+  note: Synthetic data
+  excluded_reason: 'out: Generic synthetic-data survey, not self-improvement specific.'
