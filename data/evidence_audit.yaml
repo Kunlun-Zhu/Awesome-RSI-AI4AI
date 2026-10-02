@@ -1,0 +1,1149 @@
+# Evidence audit for decisive classifications (supplement S8 of From-RSI-to-AI4AI).
+# One record per system; keys match papers.yaml. Quotes are verbatim (under 50 words) with section and page.
+# 'not reported' means the source does not state it. Generated 2026-10-02.
+audit:
+  title: Evidence audit for decisive classifications
+  date: '2026-10-02'
+  scope: the 12 systems of paper/tables/v7_ledger.tex plus SICA, SEAL, NAS with an RL controller, and population-based
+    training
+  sources: arXiv PDFs (version given per record) in From-RSI-to-AI4AI/figures/_refs/pdf/, read with pdftotext; every
+    quote was checked against the text of the stated page
+  levels:
+    E0: 'iteration: artifact-level optimization under a documented fixed improver'
+    E1: 'recursive reuse: a changed proposer, verifier, or update rule (parametric or procedural) is used in subsequent
+      improvement; no benefit implied'
+    E2: 'better improver: the changed mechanism produced greater audited improvement, at matched cost and from matched
+      starting artifacts, than an appropriate frozen control, scored by an evaluation that did not steer selection'
+    E3: 'acceleration: audited improvement rates rose across successive replacements of the improver'
+  outcomes:
+    positive: the changed mechanism beat the control on the comparison as reported
+    negative: the changed mechanism did worse than the control
+    inconclusive: no difference distinguishable from noise, or the authors report the test as inconclusive
+    diagnostic only: a measurement bearing on the improver (e.g. a correlation or judge accuracy) without an improvement
+      comparison against a control
+    none: no comparison bearing on the improver is reported (task-score comparisons only, or the improver is fixed)
+  rules:
+  - The level is the highest whose conditions the source reports; an unreported condition counts as unmet.
+  - E2 additionally requires that the source report uncertainty (replicate runs, intervals, or a test) and that
+    the difference exceed it.
+  - 'The coding manual''s tie-breakers apply: a separate agent that stays fixed and edits another agent leaves the
+    loop empty (tie-breaker 3); on-policy training of the model that generates its own training samples gives at
+    least {P} par. (tie-breaker 4).'
+  - Where a paper has several loops, each is coded and the loop that sets the level is named.
+  - Numbers read from figures are marked as digitized.
+  summary:
+    E3: []
+    E2:
+    - zelikman2024self (GPT-4 arm)
+    - zhang2026hyperagents
+    E1:
+    - zelikman2022star
+    - yuan2024self
+    - grattafiori2024llama
+    - yang2026frontis
+    - zhang2025darwin
+    - iacob2026red
+    - wang2025huxley
+    - novikov2025alphaevolve
+    - srikanth2026recursive
+    - robeyns2025self
+    - zweiger2025self
+    - zoph2017neural
+    - jaderberg2017population
+    E0:
+    - hu2025automated
+records:
+- key: zelikman2022star
+  system: STaR
+  source:
+    arxiv: '2203.14465'
+    version: v2
+    pdf: figures/_refs/pdf/2203.14465.pdf
+  level: E1
+  outcome: none
+  justification: Each round's fine-tuned model generates the next round's rationales, and no comparison tests whether
+    a later model is a better data generator than a frozen earlier one.
+  level_in_current_text: E1
+  level_change: none
+  loops:
+  - name: rationale bootstrapping (outer loop of Alg. 1)
+    sets_level: true
+    artifact: model weights
+    P: the fine-tuned model samples rationales (changes, parametric)
+    V: 'filter: final answer matches the gold answer (fixed)'
+    U: fine-tune the original base model on kept rationales (fixed)
+    closure: '{P} par.'
+    level: E1
+  changed_component:
+    members:
+    - P
+    kind: parametric
+  evidence_of_reuse_or_fixity:
+    type: reuse
+    location: Sec. 3.1, p. 3
+    quote: We fine-tune the base model M on this filtered dataset, and then restart this process by generating the
+      new rationales with the newly fine-tuned model.
+  strongest_comparison:
+    compared: final STaR model vs GPT-J fine-tuned directly on answers (task accuracy); no comparison of a later
+      round's model as data generator against a frozen earlier one
+    evaluation: CommonsenseQA dev set (test withheld); GSM8K test
+    evaluation_steered_selection: 'partly: the reported CQA figure is the best over iterations after running to
+      saturation'
+    cost_matched: no (methods use different amounts of training data)
+    starting_artifacts_matched: same base model (GPT-J)
+    replication: no replicates or uncertainty reported
+    numbers: CQA dev 72.5 (with rationalization) and 68.8 (without) vs 60.0; GSM8K test 10.7 / 10.1 vs 5.8
+    location: Sec. 4.1, p. 5; Tables 1-2, pp. 7-8
+    quote: We run STaR until we see performance saturate, and we report the best results.
+  other_comparisons: []
+  survey_text_checks:
+  - where: tables/v7_ledger.tex (strongest comparison)
+    ours: Later rounds' models on a test split of the same tasks
+    source: CQA results are on the dev set (the test set is withheld) and are the best over iterations ('we report
+      the best results', p. 5); GSM8K results are on the test set.
+    verdict: partly supported
+- key: yuan2024self
+  system: Self-Rewarding LMs
+  source:
+    arxiv: '2401.10020'
+    version: v3
+    pdf: figures/_refs/pdf/2401.10020.pdf
+  level: E1
+  outcome: diagnostic only
+  justification: Each model generates and judges the next round's preference data, but the report measures judge
+    accuracy and task scores without comparing the improvement produced with the updated judge against a frozen
+    one.
+  level_in_current_text: E1
+  level_change: none
+  loops:
+  - name: iterative DPO, M1 -> M2 -> M3
+    sets_level: true
+    artifact: model weights
+    P: the model writes candidate responses (changes, parametric)
+    V: the same model scores them through a fixed LLM-as-a-judge prompt (changes, parametric)
+    U: DPO on self-labelled pairs (fixed)
+    closure: '{P,V} par.'
+    level: E1
+  changed_component:
+    members:
+    - P
+    - V
+    kind: parametric
+  evidence_of_reuse_or_fixity:
+    type: reuse
+    location: Sec. 2.4, p. 4
+    quote: 'M2: Initialized with M1, then trained with AIFT(M1) data using DPO. M3: Initialized with M2, then trained
+      with AIFT(M2) data using DPO.'
+  strongest_comparison:
+    compared: the judge's agreement with held-out human rankings across iterations (SFT baseline, M1, M2, M3); no
+      comparison of the improvement produced with the updated judge against a frozen judge
+    evaluation: evaluation split of the Open Assistant human rankings (541 examples; the 1,630-example training
+      split supplies the EFT seed data)
+    evaluation_steered_selection: no selection on it reported (fixed number of iterations)
+    cost_matched: not applicable (no improvement comparison)
+    starting_artifacts_matched: not applicable
+    replication: no replicates or uncertainty reported
+    numbers: 'pairwise accuracy: SFT baseline (IFT only) 65.1%, M1 (IFT+EFT seed, before any self-rewarding) 78.7%,
+      M2 80.4%, M3 81.7%'
+    location: Sec. 3.2.2 and Table 4, p. 10
+    quote: We find improvements across all five metrics measured when using IFT+EFT vs. IFT alone, e.g., the pairwise
+      accuracy agreement with humans increases from 65.1% to 78.7%.
+  other_comparisons:
+  - what: 'instruction following, head to head (GPT-4 judge): M2 vs M1 55.5% vs 11.7% wins; M3 vs M2 47.7% vs 12.5%;
+      AlpacaEval 2.0 win rate 9.94 -> 15.38 -> 20.44'
+    note: task scores of later models
+  survey_text_checks:
+  - where: sections/v7_2_feedback.tex and tables/v7_ledger.tex
+    ours: its agreement with human preference rankings rises from 65.1% to 81.7%
+    source: 65.1% is the SFT baseline trained without the EFT seed data; M1 (seed IFT+EFT, before self-rewarding)
+      is already 78.7%, so the self-rewarding iterations account for 78.7% -> 81.7% (Table 4, p. 10).
+    verdict: 'misattributed: most of the rise comes from human-derived seed data'
+  - where: tables/v7_ledger.tex (next comparison)
+    ours: Judge accuracy against a standard it does not train on
+    source: Table 4 measures judge accuracy on a held-out split of the Open Assistant human rankings, the same standard
+      whose training split supplies the EFT data.
+    verdict: partly provided (held-out split of the same standard)
+- key: grattafiori2024llama
+  system: Llama 3 post-training
+  source:
+    arxiv: '2407.21783'
+    version: v3
+    pdf: figures/_refs/pdf/2407.21783.pdf
+  level: E1
+  outcome: none
+  justification: Each round samples its training data from the latest model, but no per-round result or comparison
+    of rounds as data generators is reported.
+  level_in_current_text: E1
+  level_change: none
+  loops:
+  - name: six post-training rounds (SFT + DPO)
+    sets_level: true
+    artifact: chat model weights
+    P: rejection sampling and synthetic data from the latest model (changes, parametric)
+    V: reward model retrained each round on all preference data collected so far, over responses sampled from the
+      latest models (changes, parametric; labels are human)
+    U: SFT then DPO; data mix adjusted by people each round
+    closure: '{P} par. (arguably {P,V} par.)'
+    level: E1
+  changed_component:
+    members:
+    - P
+    - V (reward model, human-labelled)
+    kind: parametric
+  evidence_of_reuse_or_fixity:
+    type: reuse
+    location: Sec. 4.1.6, p. 17
+    quote: Following Llama 2, we apply the above methods in six rounds. In each cycle, we collect new preference
+      annotations and SFT data, sampling synthetic data from the latest models.
+  strongest_comparison:
+    compared: 'not reported: no per-round results and no comparison of rounds as data generators'
+    evaluation: not reported
+    evaluation_steered_selection: benchmarks steer each round's data mix (see quote)
+    cost_matched: not reported
+    starting_artifacts_matched: not reported
+    replication: not reported
+    numbers: not reported
+    location: Sec. 4.2.2, p. 18
+    quote: In each round of post-training, we adjust our overall data mix carefully across these axes to tune performance
+      across a wide range of benchmarks.
+  other_comparisons: []
+  survey_text_checks:
+  - where: tables/v7_ledger.tex
+    ours: Each round's model generates the next round's data over six rounds
+    source: Supported (p. 17); each round also adds new human preference annotations and retrains the reward model
+      on them (p. 17), so the verifier changes too, through human labels.
+    verdict: supported; closure could add V par.
+- key: yang2026frontis
+  system: Frontis-MA1
+  source:
+    arxiv: '2607.28568'
+    version: v1
+    pdf: figures/_refs/pdf/2607.28568.pdf
+  level: E1
+  outcome: positive
+  justification: On-policy RL reuses the updated weights to generate later rollouts (E1), but the positive base-versus-trained
+    comparison mixes teacher distillation with RL and never compares the RL loop against its frozen SFT predecessor,
+    so the loop is not shown to produce a better improver.
+  level_in_current_text: not established (uncounted)
+  level_change: unclassified -> E1
+  loops:
+  - name: test-time search on one task (OpenMLE-Evo)
+    sets_level: false
+    artifact: ML program
+    P: trained model applying Draft/Improve/Debug/Crossover (frozen during search)
+    V: sandbox task evaluator (fixed)
+    U: three-factor parent selection; task-local experience board read by the harness (fixed)
+    closure: empty
+    level: E0
+  - name: scaffold/framework development (AIRA-Evo -> OpenMLE-Evo)
+    sets_level: false
+    artifact: search harness
+    P: human designers
+    V: benchmark comparisons
+    U: human decision
+    closure: not an AI-driven loop; the harness is fixed in every reported run
+    level: E0 (not an automated loop)
+  - name: 'model training (OpenMLE-ERL): SFT warm start, then online RL'
+    sets_level: true
+    artifact: model weights
+    P: SFT data distilled from stronger teacher models (not recursive); RL rollouts sampled from the current policy
+      (changes, parametric)
+    V: sandbox score mapped through adaptive bounds derived from the policy's on-policy score frontier (changes
+      with the policy, parametric)
+    U: SFT then RL with entropic advantages (fixed)
+    closure: '{P} par. (arguably {P,V} par.)'
+    level: E1
+  - name: meta-evolution across model generations (search trajectories train the next generation)
+    sets_level: false
+    artifact: successor model
+    P: --
+    V: --
+    U: --
+    closure: only generation 1 is reported; a successor trained on Frontis-MA1's own search trajectories is not
+      reported
+    level: not reported
+  changed_component:
+    members:
+    - P
+    - V (reward bounds)
+    kind: parametric
+  evidence_of_reuse_or_fixity:
+    type: reuse (training loop) and fixity (framework)
+    location: Sec. 4.3, p. 13
+    quote: OpenMLE therefore derives tighter adaptive bounds from each task’s historical on-policy score frontier
+    extra:
+    - location: Sec. 8, p. 31
+      quote: In OpenMLE, evolution operates primarily over candidate solutions, while the evolutionary system itself
+        remains largely fixed.
+    - location: Sec. 4, p. 10
+      quote: Execution-grounded SFT distills complete solutions and successful local revisions from stronger teachers
+  strongest_comparison:
+    compared: post-trained Frontis-MA1-35B vs its frozen base Qwen3.6-35B-A3B as the proposer in the identical OpenMLE-Evo
+      harness; the RL loop's own frozen predecessor (the SFT warm-start checkpoint) is not compared
+    evaluation: MLE-Bench Lite final test (22 tasks) after validation-based node selection; held-out NatureBench
+      Lite (10 tasks, hidden evaluator)
+    evaluation_steered_selection: no for node selection; whether MLE-Bench Lite results informed training or checkpoint
+      choices is not reported (training data deduplicated against evaluation benchmarks)
+    cost_matched: sandbox time matched (12 h per task on one RTX 4090; 4 h on NatureBench); inference cost not compared
+    starting_artifacts_matched: yes (same tasks and harness)
+    replication: 3 runs on MLE-Bench Lite (mean +/- SD); no replicates reported on NatureBench
+    numbers: Medal Average 39.39% +/- 5.67 -> 60.61% +/- 7.73; Human Rank 0.5828 -> 0.7647; NatureBench Lite Match-SOTA
+      5/10 -> 7/10, Surpass-SOTA 2/10 -> 3/10; companion 30B model 34.85% -> 53.03%
+    location: Sec. 1, p. 5; Table 1, p. 18; Table 2, p. 28; Table 9, p. 60
+    quote: At the model level, under the identical OpenMLE-Evo harness, Frontis-MA1-35B improves over Qwen3.6-35B-A3B
+      from 39.39% to 60.61% Medal Average and from 0.5828 to 0.7647 Human Rank.
+  other_comparisons:
+  - what: 'framework swap with the base model fixed: AIRA-Evo -> OpenMLE-Evo NatureBench adapter, Match-SOTA 2/10
+      -> 5/10'
+    note: compares two human-designed harnesses
+  - what: 'reward-shaping ablation during RL (simpler early-stage harness): test medal rate 34.8 +/- 4.3 vs 24.2
+      +/- 5.7'
+    note: compares RL variants, not the RL loop against its frozen predecessor
+  survey_text_checks:
+  - where: tables/v7_ledger.tex (level), fig:evidence caption, sections/v7_1b_landscape.tex, sections/v7_6_successor.tex
+    ours: not est.; Frontis-MA1, whose return as improver is unreported, is left uncounted; the trained model's
+      later return as the improver remains unreported
+    source: The trained model is deployed as the proposer ('variation engine') of later OpenMLE-Evo searches, and
+      its RL stage is on-policy (p. 13), which the coding manual's fourth tie-breaker codes {P} par.; what is unreported
+      is a second generation trained on Frontis-MA1's own search trajectories ('generation 1', p. 5).
+    verdict: should be counted at E1 (training loop); the framework loop is E0
+  - where: sections/v7_6_successor.tex
+    ours: the trained model in a fixed framework raises the rate of matching the state of the art from 50% to 70%,
+      and the improved framework with a fixed model from 20% to 50%
+    source: Supported (Table 2, p. 28); ten tasks, so each task moves the rate by ten points.
+    verdict: supported
+- key: zhang2025darwin
+  system: DGM
+  source:
+    arxiv: '2505.22954'
+    version: v3
+    pdf: figures/_refs/pdf/2505.22954.pdf
+  level: E1
+  outcome: positive
+  justification: The parent edits its own code to make the child (reuse), and the positive comparison against a
+    frozen-meta-agent control is scored on the selection subsets, without replicate runs, at about 2.2 times the
+    control's cost.
+  level_in_current_text: E1
+  level_change: none
+  loops:
+  - name: archive search over self-modifying coding agents
+    sets_level: true
+    artifact: agent code
+    P: the selected parent edits its own code to make the child (changes, procedural)
+    V: staged SWE-bench or Polyglot subsets (fixed)
+    U: archive with fixed parent selection (fixed)
+    closure: '{P} proc.'
+    level: E1
+  changed_component:
+    members:
+    - P
+    kind: procedural
+  evidence_of_reuse_or_fixity:
+    type: reuse
+    location: Sec. 3, p. 4
+    quote: Each selected parent analyzes its own benchmark evaluation logs, proposes the next feature to implement,
+      and receives this proposal as a problem statement to execute (Appendix C.3). The parent then implements the
+      suggested feature into its own codebase, generating a new coding agent.
+  strongest_comparison:
+    compared: DGM vs DGM w/o self-improve (meta agent fixed as the base agent; the ADAS setting), 80 iterations
+      each from the same base agent
+    evaluation: the staged benchmark subsets used for selection
+    evaluation_steered_selection: 'yes'
+    cost_matched: 'no: about USD 22,000 per DGM run vs about USD 10,000 per baseline run on SWE-bench (App. E.1)'
+    starting_artifacts_matched: yes (same base agent)
+    replication: 'no replicate runs reported for the comparison (DGM alone was repeated three times on Polyglot:
+      40.7% +/- 2.3%)'
+    numbers: SWE-bench 50.0% vs 39.0%; Polyglot 38.0% vs 28.0% (Table 1, App. A.3, p. 25)
+    location: Sec. 4.3, p. 6; Fig. 2 caption, p. 7; Table 1, p. 25; App. E.1, p. 32
+    quote: DGM w/o self-improve replicates the approach of ADAS (Hu et al., 2025) in this setting, wherein the meta
+      agent responsible for modifying the coding agents remains fixed as the base agent throughout the experiment
+  other_comparisons:
+  - what: best agent vs base agent with other models on SWE-bench (Claude 3.7 Sonnet 19.0% -> 59.5%; o3-mini 23.0%
+      -> 33.0%) and across benchmarks (Polyglot 14.2% -> 28.9%)
+    note: task-agent transfer, not improver transfer
+  survey_text_checks:
+  - where: tables/v7_ledger.tex (strongest comparison; next comparison)
+    ours: Task score of later agents (20.0% to 50.0%); a task agent moved to an unused model / Descendants of a
+      parent against a frozen copy of it
+    source: 'The paper also reports a frozen-meta-agent control (DGM w/o self-improve): 50.0% vs 39.0% on SWE-bench
+      and 38.0% vs 28.0% on Polyglot, on the selection subsets and at unmatched cost (pp. 6-7, 25, 32).'
+    verdict: 'omission: the strongest reported comparison is the frozen-meta-agent control'
+  - where: sections/v7_3_improver.tex
+    ours: DGM's best agent lifts Claude 3.7 Sonnet, unused during the run, from 19.0% to 59.5%
+    source: Supported by the text (p. 8); Figure 4 labels the bar 59.0%.
+    verdict: supported
+- key: iacob2026red
+  system: Red Queen Goedel Machine
+  source:
+    arxiv: '2606.26294'
+    version: v2
+    pdf: figures/_refs/pdf/2606.26294.pdf
+  level: E1
+  outcome: inconclusive
+  justification: Promoted evaluators and edited agents take part in later epochs (reuse of V and P), and the budget-matched
+    held-out comparison against frozen evaluators differs by 3 of 166 tasks, without replicate runs.
+  level_in_current_text: E1
+  level_change: none
+  loops:
+  - name: HGM-style tree search over multi-agent workspaces with epoch-wise evaluator replacement
+    sets_level: true
+    artifact: workspace code (task agents and evaluators)
+    P: node meta-agent and role-agent code, editable (changes, procedural)
+    V: learned evaluators, frozen within an epoch and replaced at epoch boundaries by challengers that beat the
+      incumbent on a ground-truth anchor (changes, procedural)
+    U: scoring and orchestration harness (fixed)
+    closure: '{P,V} proc.'
+    level: E1
+  changed_component:
+    members:
+    - P
+    - V
+    kind: procedural
+  evidence_of_reuse_or_fixity:
+    type: reuse
+    location: Sec. 1, p. 2
+    quote: At an epoch boundary, a challenger replaces the frozen evaluator only if it statistically outperforms
+      the incumbent on this ground truth; the RQGM then applies selective erasure, discarding only utility records
+      that depended on the replaced evaluator.
+  strongest_comparison:
+    compared: RQGM (co-evolving evaluators) vs HGM-H (the same search with frozen evaluators) at matched evaluation
+      budgets
+    evaluation: held-out Polyglot test split (166 tasks); node selection used the validation split only
+    evaluation_steered_selection: no (p. 5)
+    cost_matched: yes in evaluations (12,288 per run); RQGM used 1.35-1.72x fewer tokens
+    starting_artifacts_matched: yes (role agents initialized from a minimal template)
+    replication: no replicate runs or test reported
+    numbers: 119/166 (71.7%) vs 116/166 (69.9%) held-out pass rate
+    location: Sec. 3.2, p. 5; Table 5, p. 24; Table 3, p. 20
+    quote: Node selection is driven solely by evaluations on the validation split, preventing overfitting. Final
+      performance is reported on a held-out test split separate from the validation data used for search.
+  other_comparisons:
+  - what: 'paper writers at matched compute: mean acceptance by a four-reviewer LLM panel (including the run''s
+      own adversarial reviewer) 38.8% vs 21.8%'
+    note: judge-panel acceptance, not an independent quality audit
+  - what: 'provers: panel mean score 4.33 vs 3.73 (s.e.m. about 0.4); under ProofAutoGrader alone Pass@7 40.0% vs
+      45.0%'
+    note: mixed
+  - what: 'graders: ''9% higher ground-truth accuracy'' on 100 held-out IMO-GradingBench items'
+    note: values shown only in Fig. 5
+  survey_text_checks:
+  - where: tables/v7_systems.tex (evaluation beyond selection)
+    ours: Coding test pass rate; role in selection not reported
+    source: '''Node selection is driven solely by evaluations on the validation split ... Final performance is reported
+      on a held-out test split separate from the validation data used for search.'' (p. 5); Table 3 lists a 166-item
+      Polyglot test split (p. 20).'
+    verdict: 'contradicted: the role in selection is reported'
+  - where: tables/v7_ledger.tex (next comparison)
+    ours: An audit independent of the anchor that selects evaluators
+    source: Evaluators are scored on 100 held-out test items per dataset, separate from the anchor data (Table 3,
+      App. C.4); who saw these results before the run was frozen is not reported.
+    verdict: partly provided
+- key: zelikman2024self
+  system: STOP
+  source:
+    arxiv: '2310.02304'
+    version: v3
+    pdf: figures/_refs/pdf/2310.02304.pdf
+  level: E2
+  outcome: positive (GPT-4); negative (GPT-3.5, Mixtral)
+  justification: The level is set by the GPT-4 arm, where the improved improver beats its frozen seed and a full-budget
+    fixed improver on held-out instances; the same procedure lowers held-out meta-utility with GPT-3.5 and Mixtral.
+  level_in_current_text: E2 (GPT-4 arm)
+  level_change: none
+  loops:
+  - name: self-improvement of the improver program, I_t = I_{t-1}(meta-utility, I_{t-1}, LM)
+    sets_level: true
+    artifact: improver program
+    P: the current improver, applied to its own code (changes, procedural)
+    V: meta-utility on training LPN instances (fixed)
+    U: the improver returns its best candidate by meta-utility (part of the improver code)
+    closure: '{P} proc.'
+    level: E2 with GPT-4; E1 with GPT-3.5 and Mixtral
+  - name: downstream task improvement (an improver applied to a task solution)
+    sets_level: false
+    artifact: task solution
+    P: improver I_t (fixed during the task)
+    V: task utility
+    U: improver's choice
+    closure: empty
+    level: E0
+  changed_component:
+    members:
+    - P
+    kind: procedural
+  evidence_of_reuse_or_fixity:
+    type: reuse
+    location: Fig. 3 caption, p. 3
+    quote: STOP (Algorithm 1) uses a seed improver program to iteratively optimize its own code using LM calls and
+      a meta-utility function evaluating how well an improver optimizes code for downstream tasks.
+  strongest_comparison:
+    compared: see the GPT-4 arm
+    evaluation: 50 held-out LPN instances
+    evaluation_steered_selection: 'no'
+    cost_matched: caps matched; greedy full-budget control also beaten
+    starting_artifacts_matched: 'yes'
+    replication: 5 runs, +/- 1 SE
+    numbers: 61.0 -> 72.3 (T=3) / 72.2 (T=4), digitized
+    location: Sec. 5.1, p. 6
+    quote: To evaluate the generalization of improved improvers to new problem instances of the same task, we report
+      test meta-utility on an independent set of Mtest = 50 LPN instances not seen during improvement.
+  arms:
+  - arm: GPT-4 (gpt-4-0314)
+    compared: improved improver I_T vs the frozen seed improver I_0, both applied to the same initial LPN solution
+      under the same LM-call and utility-call caps; also a fixed greedy iterative improver that spends the full
+      budget
+    evaluation: test meta-utility on 50 held-out LPN instances not seen during improvement
+    evaluation_steered_selection: no; T fixed in advance ('a prespecified number of iterations T', p. 5)
+    cost_matched: caps matched (LanguageModel(budget=n, max_responses_per_call=m), utility budget n*m+1; Fig. A.20,
+      p. 34); the seed issues one batch while improved improvers may spend up to the cap; actual spend not reported;
+      the greedy improver that spends the cap scores 64.2% +/- 0.9% (10 runs)
+    starting_artifacts_matched: yes (same initial solution and task)
+    replication: 5 independent STOP runs, mean +/- 1 SE; bands of T=0 and T>=1 do not overlap; no formal test
+    numbers: 61.0 (seed) -> 68.4 (T=1) -> 70.1 (T=2) -> 72.3 (T=3) -> 72.2 (T=4), digitized from Fig. 4; text gives
+      the GPT-4 seed as 61%
+    location: Sec. 5.1, p. 6; Fig. 4, p. 5
+    quote: To evaluate the generalization of improved improvers to new problem instances of the same task, we report
+      test meta-utility on an independent set of Mtest = 50 LPN instances not seen during improvement.
+    outcome: positive
+    level: E2
+    justification: The self-improved improver beat its frozen seed, and a fixed improver that spends the full budget,
+      on 50 held-out instances from the same starting solution under the same call caps, across five runs.
+  - arm: GPT-3.5 (gpt-3.5-turbo-0613)
+    compared: same protocol as the GPT-4 arm, 25 runs
+    evaluation: the same 50 held-out LPN instances
+    evaluation_steered_selection: 'no'
+    cost_matched: caps matched as above
+    starting_artifacts_matched: 'yes'
+    replication: 25 runs, mean +/- 1 SE
+    numbers: 65.2 -> 27.7 at T=4 (digitized; text gives the seed as 65%); only 12% of runs gained at least 3 points
+    location: Sec. 5.3, p. 7; Fig. 4, p. 5
+    quote: we find that GPT-3.5 is sometimes able to propose and implement better scaffolds, but only 12% of GPT-3.5
+      runs yielded at least a 3% improvement.
+    outcome: negative
+    level: E1
+    justification: The improved improver was reused in later rounds, and on held-out instances it did worse than
+      its seed.
+  - arm: Mixtral-8x7B-Instruct
+    compared: same protocol
+    evaluation: the same held-out instances
+    evaluation_steered_selection: 'no'
+    cost_matched: caps matched
+    starting_artifacts_matched: 'yes'
+    replication: as reported in Fig. 4
+    numbers: 48.8 -> 36.4 at T=4 (digitized)
+    location: Fig. 4 caption, p. 5
+    quote: Given access to a strong LM like GPT-4 (left), STOP consistently improves mean downstream performance.
+      In contrast, with GPT-3.5 (middle) and Mixtral (right), performance degrades.
+    outcome: negative
+    level: E1
+    justification: Reuse with a negative held-out comparison.
+  other_comparisons:
+  - what: 'transfer (Table 1): an improver from Sec. 5.1 (T=4) vs the seed on five new tasks, e.g. 3SAT 21.2% ->
+      75.1%, Maxcut 58.7% -> 74.2%, parity without noise 59.3% -> 81.7%'
+    note: new tasks unused in selection, but the transferred improver was picked as 'a better-performing improver'
+      by an unstated criterion, no run counts or uncertainty are given, and it issues three LM batches against the
+      seed's one
+  - what: 'E3 check: successive improvers 61.0 -> 68.4 -> 70.1 -> 72.3 -> 72.2 on the same 50 instances'
+    note: increments shrink after T=1 and fall within the SE bands; the same test instances are reused at every
+      T, so a rising rate is not shown
+  survey_text_checks:
+  - where: tables/v7_ledger.tex; sections/v7_5_runs.tex (Fig. iterations B)
+    ours: raises held-out meta-utility from 61.0 to 72.3
+    source: Values are digitized from Fig. 4; 72.3 is the T=3 peak and T=4 is about 72.2; panel B pairs the GPT-4
+      peak with the GPT-3.5 end value (T=4).
+    verdict: supported (digitized; minor start/end inconsistency)
+  - where: tables/v7_systems.tex (evaluation beyond selection)
+    ours: Held-out parity-with-noise tasks
+    source: '''an independent set of Mtest = 50 LPN instances not seen during improvement'' (p. 6): held-out instances
+      of the same task; the held-out tasks are the five transfer tasks of Table 1.'
+    verdict: 'wording: instances, not tasks'
+- key: wang2025huxley
+  system: Huxley-Goedel Machine (HGM)
+  source:
+    arxiv: '2510.21614'
+    version: v3
+    pdf: figures/_refs/pdf/2510.21614.pdf
+  level: E1
+  outcome: diagnostic only
+  justification: Agents self-modify to produce children that are expanded later (reuse), but the report offers correlations
+    of selection statistics and comparisons of fixed search policies or task agents, none of which compares an evolved
+    improver with a frozen predecessor.
+  level_in_current_text: E2
+  level_change: E2 -> E1
+  loops:
+  - name: tree search over self-modifying coding agents
+    sets_level: true
+    artifact: agent code
+    P: the selected agent self-modifies to produce a child (changes, procedural)
+    V: benchmark task evaluations allocated by Thompson sampling (fixed)
+    U: 'HGM policy: clade-metaproductivity estimator, Thompson sampling, UCB-Air expansion (fixed, human-designed)'
+    closure: '{P} proc.'
+    level: E1
+  changed_component:
+    members:
+    - P
+    kind: procedural
+  evidence_of_reuse_or_fixity:
+    type: reuse
+    location: Sec. 2, p. 3
+    quote: the policy either selects an agent (a node in the tree) to expand by producing a child agent (a self-modified
+      version of the selected agent) or selects an agent to undergo additional evaluation on downstream tasks.
+  strongest_comparison:
+    compared: weighted correlation between each method's parent-selection statistic and empirical clade metaproductivity,
+      each computed on that method's own completed tree; no comparison of an evolved agent's productivity as improver
+      against a frozen predecessor
+    evaluation: the benchmark evaluations that steered the search (SWE-Verified-60, Polyglot)
+    evaluation_steered_selection: 'yes'
+    cost_matched: not applicable (correlation)
+    starting_artifacts_matched: not applicable
+    replication: no replicates or uncertainty reported
+    numbers: 'weighted correlation on SWE-Verified-60: SICA 0.444, DGM 0.285, HGM 0.778 (Polyglot 0.274, 0.383,
+      0.626)'
+    location: Sec. 4.1 and Table 1, p. 8
+    quote: To obtain empirical CMPs, we analyze the expanded search tree after each method has completed its run.
+      For every node in the tree, we define its empirical CMP as the maximum empirical mean of the task performance
+      achieved within its clade, with the root of this clade excluded.
+  other_comparisons:
+  - what: 'HGM vs DGM vs SICA as fixed outer search policies after 800 evaluations: SWE-Verified-60 best-belief
+      accuracy 56.7 / 53.3 / 50.0 (allocated CPU-hours 517 / 1231 / infinite loop); Polyglot 30.5 / 27.1 / 25.4'
+    note: compares human-designed search policies, scored on the selection set, without replicates; 56.7 vs 53.3
+      is two of 60 tasks
+  - what: 'best agent vs its initial ancestor on SWE-bench Lite: filtered (unseen) 34.8% -> 40.1%, standard 44.0%
+      -> 49.0%; transfer of the agent to GPT-5'
+    note: task-agent comparisons
+  survey_text_checks:
+  - where: tables/v7_ledger.tex (level E2); sections/v7_1b_landscape.tex; sections/v7_3_improver.tex (evidence box);
+      sections/v7_8_conclusion.tex; fig:evidence
+    ours: HGM through descendant productivity (E2); Four systems compare the changed improver with a control, through
+      ... descendant estimates
+    source: Table 1 (p. 8) reports correlations between selection statistics and empirical CMP, computed on each
+      method's own tree from the selection evaluations; no evolved-vs-frozen improver comparison appears (pp. 8-10).
+    verdict: 'not supported: diagnostic only; HGM belongs at E1'
+  - where: sections/v7_3_improver.tex
+    ours: HGM beats DGM on the same 60 tasks with fewer CPU-hours
+    source: Supported (Table 2, p. 9), without replicates, on the selection set (56.7% vs 53.3%, two tasks of 60).
+    verdict: supported
+- key: zhang2026hyperagents
+  system: Hyperagents (DGM-H)
+  source:
+    arxiv: '2603.19461'
+    version: v1
+    pdf: figures/_refs/pdf/2603.19461.pdf
+  level: E2
+  outcome: positive
+  justification: Against a frozen copy of the initial meta agent, at matched iterations and from the same initial
+    agent, the self-modifying loop produced higher held-out test scores in both domains over five runs (p < 0.05);
+    the single-improver transfer test is confounded by the moved task agent and its continuation is inconclusive.
+  level_in_current_text: E2 (via transfer)
+  level_change: none (qualifying comparison is the Sec. 5.1 ablation, not the transfer)
+  loops:
+  - name: DGM-H archive loop over hyperagents (task agent + meta agent in one editable program)
+    sets_level: true
+    artifact: hyperagent code
+    P: the parent hyperagent's meta agent, which edits itself and its task agent (changes, procedural)
+    V: domain evaluations on validation or training splits (fixed)
+    U: handcrafted parent selection (fixed)
+    closure: '{P} proc.'
+    level: E2
+  changed_component:
+    members:
+    - P
+    kind: procedural
+  evidence_of_reuse_or_fixity:
+    type: reuse
+    location: Sec. 3, p. 5
+    quote: During the metacognitive self-modification phase, selected parent hyperagents from the archive generate
+      modified versions of themselves.
+  strongest_comparison:
+    compared: DGM-H vs DGM-H w/o self-improve (the meta agent fixed to the initial meta agent for the whole run),
+      100 iterations each from the same initial agent
+    evaluation: held-out test tasks used only for final evaluation (paper review; robotics reward design with a
+      different test task); best agents selected on validation or training scores
+    evaluation_steered_selection: no ('used only for final evaluation', p. 6)
+    cost_matched: iterations and models matched; token cost per arm not reported
+    starting_artifacts_matched: yes (same initial agent)
+    replication: 5 runs per method; medians with 95% bootstrap CIs; Wilcoxon signed-rank test (how five runs per
+      arm are paired, and the sidedness, are not stated; an exact two-sided test on five pairs cannot fall below
+      p = 0.0625)
+    numbers: paper review 0.710 (CI 0.590-0.750) vs 0.0 (CI 0.0-0.130); robotics 0.372 (CI 0.355-0.436) vs 0.213
+      (CI 0.180-0.348); p < 0.05 in both
+    location: Sec. 5.1, pp. 8-9; Sec. 4.1, p. 6
+    quote: 'DGM-H w/o self-improve (Hu et al., 2025) shows little to no improvement, achieving test-set performance
+      of 0.0 (CI: 0.0 – 0.130) on paper review and 0.213 (CI: 0.180 – 0.348) on robotics reward design. The DGM-H
+      significantly outperforms this baseline in both domains (p < 0.05)'
+  other_comparisons:
+  - what: 'transfer (Sec. 5.2): transferred hyperagents (meta agent and task agent from paper-review/robotics runs,
+      chosen by source-domain descendant growth), held fixed under DGM-H w/o self-improve for 50 iterations on IMO-level
+      grading: imp@50 0.630 (CI 0.540-0.630) vs 0.0 (CI 0.0-0.130) for the initial agent, p < 0.05; transferred
+      DGM-custom agents 0.0 (CI 0.0-0.010), no test against them reported'
+    note: evolved improver vs frozen ancestor, on held-out test tasks, at matched iterations; but the starting task
+      agent differs because the task agent is transferred with the meta agent (both score 0.0 on test), and whether
+      memory contents move is not reported
+    location: Sec. 5.2, p. 10
+    quote: For transfer, we carry over the entire agent implementation from the source domain, including both the
+      meta agent and the task agent.
+  - what: '200-iteration continuation (Sec. 5.3): DGM-H from transferred hyperagents 0.640 (CI 0.550-0.720) vs from
+      the initial agent 0.610 (CI 0.510-0.680)'
+    note: 'both arms keep self-modifying; starting hyperagents differ; not significant (p > 0.05): inconclusive'
+    location: Sec. 5.3, p. 12
+    quote: Although the difference between DGM-H + transfer and DGM-H is not statistically significant (p > 0.05)
+  survey_text_checks:
+  - where: tables/v7_ledger.tex; sections/v7_3_improver.tex
+    ours: A transferred improver reaches imp@50 of 0.630 against about 0 for DGM / against about 0 for transferred
+      DGM agents
+    source: The significance test (p < 0.05) is against the initial agent (imp@50 0.0, CI 0.0-0.130); the 'about
+      0' control is transferred DGM-custom agents (0.0, CI 0.0-0.010), with no test reported against them (p. 11).
+    verdict: control misnamed (DGM-custom, untested); the tested control is the initial agent
+  - where: tables/v7_ledger.tex; sections/v7_3_improver.tex
+    ours: transfer as the improver comparison
+    source: The transfer carries the task agent with the meta agent (p. 10), so starting artifacts differ; the Sec.
+      5.1 ablation against a frozen initial meta agent on held-out tests (p. 9) meets the E2 conditions and is not
+      cited.
+    verdict: cite the Sec. 5.1 ablation as the E2 comparison; treat the transfer as confounded
+  - where: sections/v7_3_improver.tex
+    ours: over 200 iterations of continued self-improvement, starting from them is not significantly better than
+      starting from the initial agent (0.640 against 0.610)
+    source: Supported (p. 12).
+    verdict: supported
+- key: hu2025automated
+  system: ADAS (Meta Agent Search)
+  source:
+    arxiv: '2408.08435'
+    version: v2
+    pdf: figures/_refs/pdf/2408.08435.pdf
+  level: E0
+  outcome: none
+  justification: A fixed GPT-4 meta agent reads a growing archive, so no improvement component changes; DGM and
+    Hyperagents later use this setting as their frozen-improver control.
+  level_in_current_text: E0
+  level_change: none
+  loops:
+  - name: Meta Agent Search
+    sets_level: true
+    artifact: agent code (forward function)
+    P: a fixed meta agent (GPT-4 with a fixed prompt) writes new agents
+    V: validation accuracy of each agent (GPT-3.5 evaluation)
+    U: append to the archive; the archive is history read by the fixed meta agent
+    closure: empty
+    level: E0
+  changed_component:
+    members: []
+    kind: none
+  evidence_of_reuse_or_fixity:
+    type: fixed improver
+    location: Fig. 1 caption, p. 2
+    quote: we instruct the “meta” agent to iteratively program new agents, test their performance on tasks, add
+      them to an archive of discovered agents, and use this archive to inform the meta agent in subsequent iterations.
+  strongest_comparison:
+    compared: discovered agents vs hand-designed agents and OPRO (task performance); the improver is fixed, so no
+      improver comparison applies
+    evaluation: held-out test sets with 95% bootstrap intervals
+    evaluation_steered_selection: no for the main tables; agents for the model-transfer test were picked by held-out
+      test accuracy (p. 8)
+    cost_matched: not applicable
+    starting_artifacts_matched: not applicable
+    replication: bootstrap CIs over evaluations
+    numbers: e.g. DROP F1 79.4 +/- 0.8 vs 65.8 +/- 0.9 (best hand-designed); MGSM 53.4% +/- 3.5 vs 39.0% +/- 3.4
+    location: Sec. 4.1, p. 6; Table 1, p. 7; Sec. 4.3, p. 8
+    quote: Meta Agent Search runs for 25 iterations and the meta agent uses GPT-4 (OpenAI, 2024), while discovered
+      agents and baselines are evaluated using GPT-3.5
+  other_comparisons: []
+  survey_text_checks:
+  - where: tables/v7_ledger.tex; tables/v7_systems.tex
+    ours: E0; Agent code enters an archive read by a fixed meta-agent
+    source: Supported (pp. 2, 6).
+    verdict: supported
+- key: novikov2025alphaevolve
+  system: AlphaEvolve
+  source:
+    arxiv: '2506.13131'
+    version: v1
+    pdf: figures/_refs/pdf/2506.13131.pdf
+  level: E1
+  outcome: positive
+  justification: In the full method, LLM-written meta prompts are co-evolved and reused as proposer instructions,
+    and their ablation is scored only on the objective that drives selection; the successor return through Gemini
+    is not reported.
+  level_in_current_text: E0 with successor path
+  level_change: E0 -> E1 (run level); successor return still unreported
+  loops:
+  - name: evolutionary discovery run (full method)
+    sets_level: true
+    artifact: program
+    P: frozen LLM ensemble prompted by the prompt sampler; with meta prompt evolution, LLM-written instructions
+      are co-evolved and used in later proposal prompts (changes, procedural)
+    V: user-supplied evaluate() code (fixed)
+    U: program database and sampling (fixed)
+    closure: '{P} proc. when meta prompt evolution is on; empty with fixed prompts'
+    level: E1
+  - name: 'successor path: kernel heuristic -> Gemini training -> Gemini as AlphaEvolve''s proposer'
+    sets_level: false
+    artifact: Gemini training stack
+    P: --
+    V: --
+    U: --
+    closure: contribution and route documented; a Gemini model trained with the kernel later serving as AlphaEvolve's
+      proposer is not reported
+    level: not reported
+  changed_component:
+    members:
+    - P (meta prompts)
+    kind: procedural
+  evidence_of_reuse_or_fixity:
+    type: reuse (full method)
+    location: Sec. 2.2, p. 5
+    quote: 'Meta prompt evolution: instructions and context suggested by the LLM itself in an additional prompt-generation
+      step, co-evolved in a separate database analogous to the solution programs.'
+  strongest_comparison:
+    compared: full method vs 'No meta prompt evolution' on tensor decomposition, against the fraction of compute
+      budget
+    evaluation: the aggregated target metric (the evolutionary objective)
+    evaluation_steered_selection: 'yes'
+    cost_matched: yes (matched fractions of the compute budget)
+    starting_artifacts_matched: 'yes'
+    replication: three runs per setting (intra-target standard deviation shaded); no test
+    numbers: shown only in Fig. 8 (p. 18); the authors state each component gives 'a significant improvement'
+    location: Sec. 4 and Fig. 8, p. 18
+    quote: To test the efficacy of meta prompting, we disable it for the task of tensor decomposition. We refer
+      to this approach as “No meta prompt evolution”.
+  other_comparisons:
+  - what: 'Gemini kernel: heuristic vs the expert-designed heuristic, 23% average kernel speedup and a 1% reduction
+      in Gemini''s overall training time; half of the input shapes held out as an evaluation set'
+    note: artifact comparison; whether the kernel run used meta prompt evolution is not reported
+    location: Sec. 3.3.2, p. 16
+    quote: a heuristic that yields an average 23% kernel speedup across all kernels over the existing expert-designed
+      heuristic, and a corresponding 1% reduction in Gemini’s overall training time.
+  survey_text_checks:
+  - where: tables/v7_ledger.tex (E0, succ); tables/v7_systems.tex ('fixed sampler (fixed prompts)'); sections/v7_2_feedback.tex;
+      fig:framework caption
+    ours: E0; Programs enter a database read by a fixed sampler (fixed prompts); with fixed prompts the closure
+      set is empty
+    source: Meta prompt evolution is part of AlphaEvolve's prompt sampler (p. 5) and of the full method in the ablations
+      (p. 18); no reported run is said to use fixed prompts, and the coding manual (case B4) itself codes the discovery
+      run {P} proc.
+    verdict: E0 not supported at run level; E1 with the successor link unreported
+  - where: sections/v7_6_successor.tex; tables/v7_systems.tex
+    ours: The heuristic reached Gemini through a human integration decision / engineers decide integration
+    source: The source says the heuristic 'has been deployed in production' (p. 16) without describing who decided.
+    verdict: inference, not stated
+  - where: sections/v7_6_successor.tex
+    ours: 23% kernel speedup and cut Gemini's overall training time by 1%; 'accelerated the training of the LLM
+      underpinning AlphaEvolve itself'
+    source: Supported (pp. 1, 16).
+    verdict: supported
+- key: srikanth2026recursive
+  system: AIDE^2
+  source:
+    arxiv: '2609.26457'
+    version: v1
+    pdf: figures/_refs/pdf/2609.26457.pdf
+  level: E1
+  outcome: inconclusive
+  justification: The main run's rewrites are made by a fixed outer agent (E0 by the coding manual's third tie-breaker),
+    and the one test that reuses a discovered agent as the editor is scored on the selection grade and is inconclusive.
+  level_in_current_text: E2, inconclusive
+  level_change: E2 -> E1 (main run E0; reuse only in the ignition test)
+  loops:
+  - name: 'inner loop: a research agent optimizes task code under a fixed dollar budget'
+    sets_level: false
+    artifact: task code
+    P: inner-loop agent a_k (fixed during a run)
+    V: public task score
+    U: the agent's own selection rule (part of its code)
+    closure: empty within a run
+    level: E0
+  - name: outer loop, main 8-day run
+    sets_level: false
+    artifact: inner-loop agent code
+    P: AIDE_human on Claude Opus 4.7 (fixed for the whole run)
+    V: private grade g on hidden held-out data of the selection tasks (fixed)
+    U: keep the best graded agent (fixed)
+    closure: empty (a separate agent that stays fixed performs the edits; coding manual, third tie-breaker)
+    level: E0
+  - name: 'ignition test: a discovered agent (AIDE_47) drives the outer loop'
+    sets_level: true
+    artifact: inner-loop agent code
+    P: AIDE_47, a product of the outer loop (changed, procedural)
+    V: private grade g (fixed)
+    U: keep the best graded agent (fixed)
+    closure: '{P} proc. (one replacement)'
+    level: E1
+  changed_component:
+    members:
+    - P
+    kind: procedural
+  evidence_of_reuse_or_fixity:
+    type: fixed editor in the main run; reuse only in the ignition test
+    location: Sec. 2.2, p. 4
+    quote: The outer-loop agent a_out is driven by AIDE_human, an autonomous research agent used in production and
+      developed by Weco’s R&D team.
+    extra:
+    - location: Sec. 2.1, p. 3
+      quote: In practice, the outer-loop agent edits the current incumbent, so each accepted rewrite becomes the
+        codebase that is edited at the next step.
+    - location: Sec. 3.6, p. 10
+      quote: Both arms start from the same inner-loop agent, AIDE47, and differ only in the agent used in the outer
+        loop. The treatment arm uses AIDE47, the agent being tested, while the reference arm uses AIDEhuman in the
+        outer loop.
+  strongest_comparison:
+    compared: 'ignition test: AIDE_47 vs AIDE_human (the agent that produced it) as the outer-loop improver, from
+      the same inner-loop agent, 50 outer steps each'
+    evaluation: the private grade g, which is the outer loop's selection signal; no held-out benchmark evaluation
+      of the final agents
+    evaluation_steered_selection: 'yes'
+    cost_matched: 50 outer steps per run; per-step cost and AIDE_47's outer-loop model not reported
+    starting_artifacts_matched: yes (AIDE_47 as inner-loop agent in both arms)
+    replication: 3 seeds per arm; min-max bands; no test
+    numbers: 'arm means at step 49: 0.780 (AIDE_47) vs 0.782 (AIDE_human); the treatment mean reaches its final
+      region after about 20 steps vs about 40'
+    location: Sec. 3.6, p. 10; Fig. 7, p. 11
+    quote: However, with only three seeds per outer-loop agent, we find these results to be inconclusive; they do
+      not establish that AIDE47 is more sample-efficient as a self-improver than AIDEhuman.
+  other_comparisons:
+  - what: main-run checkpoints AIDE_0, AIDE_47, AIDE_85 on four held-out benchmarks (ALE-Bench, MLE-Bench, FML-Bench,
+      WeatherBench 2) and a reward-hacking test (55% -> 39% -> 32%)
+    note: audits the edited inner-loop agent, produced by a fixed outer improver; two runs of the same protocol
+      accepted two and four rewrites
+  survey_text_checks:
+  - where: tables/v7_systems.tex
+    ours: Research-agent code becomes the next editor (7 of 99 attempted rewrites accepted)
+    source: Each accepted rewrite 'becomes the codebase that is edited at the next step' (p. 3); the editor is AIDE_human
+      throughout the main run (p. 4); a discovered agent becomes the editor only in the ignition test (p. 10).
+    verdict: contradicted for the main run
+  - where: sections/v7_6_successor.tex; sections/v7_7_bottleneck.tex
+    ours: accepted seven successive rewrites of itself; attempted 99 edits of itself and audited three checkpoints
+    source: The 99 rewrite proposals were made by AIDE_human to the inner-loop agent (pp. 3-5); the audited checkpoints
+      are AIDE_0 (initial), AIDE_47, and AIDE_85 (p. 6).
+    verdict: '''of itself'' follows the paper''s framing but not its method; two evolved checkpoints plus the initial
+      agent'
+  - where: tables/v7_ledger.tex; fig:evidence; sections/v7_1b_landscape.tex
+    ours: E2, incon.
+    source: The ignition test is scored on the selection grade with three seeds and is inconclusive (pp. 10-11).
+    verdict: E1 (inconclusive) under the E2 definition
+- key: robeyns2025self
+  system: SICA
+  source:
+    arxiv: '2504.15228'
+    version: v2
+    pdf: figures/_refs/pdf/2504.15228.pdf
+  level: E1
+  outcome: none
+  justification: The best agent so far edits the codebase to produce the next agent (reuse), and the reported gains
+    are selection-subset scores of successive agents in one run.
+  level_in_current_text: E1 (list coding)
+  level_change: none
+  loops:
+  - name: archive loop of a self-editing coding agent
+    sets_level: true
+    artifact: agent codebase
+    P: the best agent so far acts as meta-agent and edits the codebase (changes, procedural)
+    V: utility from benchmark score, cost, and time on fixed benchmark subsets
+    U: arg max utility over the archive (fixed)
+    closure: '{P} proc.'
+    level: E1
+  changed_component:
+    members:
+    - P
+    kind: procedural
+  evidence_of_reuse_or_fixity:
+    type: reuse
+    location: Sec. 3, p. 3
+    quote: SICA takes the best performing agent from the archive up until this point as the meta-agent, which is
+      instructed to look through the archive, identify an improvement, and implement it.
+  strongest_comparison:
+    compared: per-iteration benchmark accuracy of successive agents; no comparison of a later meta-agent against
+      a frozen earlier one
+    evaluation: the fixed benchmark subsets whose scores select the next meta-agent (e.g. 50 random SWE-bench Verified
+      questions)
+    evaluation_steered_selection: 'yes'
+    cost_matched: not applicable
+    starting_artifacts_matched: not applicable
+    replication: one 15-iteration run (about USD 7,000), as stated
+    numbers: SWE-bench Verified subset 0.17 (iteration 0) -> 0.53 (iteration 14) -> 0.51 (iteration 15)
+    location: Sec. 3, p. 3; Table 1, p. 6
+    quote: Note that since we are not performing any weight updates, this numerical score is only used to pick the
+      next meta agent, as well as the base agent for the next iteration.
+  other_comparisons: []
+  survey_text_checks:
+  - where: sections/v7_2_feedback.tex
+    ours: SICA's rise from 17% to 53% on a SWE-bench Verified subset
+    source: Supported (Table 1, p. 6); 53% is iteration 14 and iteration 15 is 51%, on the subset that also selects.
+    verdict: supported
+- key: zweiger2025self
+  system: SEAL
+  source:
+    arxiv: '2506.10943'
+    version: v2
+    pdf: figures/_refs/pdf/2506.10943.pdf
+  level: E1
+  outcome: positive
+  justification: The RL-trained self-edit writer produced larger held-out gains than its frozen base predecessor,
+    but update cost, the tuning split, the update's starting weights, and run-to-run uncertainty are not reported,
+    so E2 is not established (an E2 candidate).
+  level_in_current_text: E1
+  level_change: none (E2 candidate)
+  loops:
+  - name: 'inner loop: a self-edit sets data and directives for the model''s own update'
+    sets_level: false
+    artifact: model weights
+    P: the model writes the self-edit (parametric)
+    V: none in the inner update (evaluation only rewards the outer loop)
+    U: self-edit directives configure the SFT update (parametric)
+    closure: '{P,U} par.'
+    level: E1
+  - name: 'outer loop: ReSTEM (on-policy filtered behaviour cloning) on self-edits'
+    sets_level: true
+    artifact: self-edit policy
+    P: the current model samples self-edits; kept self-edits train the next policy (changes, parametric)
+    V: post-update accuracy on the context's questions (fixed)
+    U: SFT on kept self-edits (fixed)
+    closure: '{P} par.'
+    level: E1
+  changed_component:
+    members:
+    - P
+    - U (inner loop)
+    kind: parametric
+  evidence_of_reuse_or_fixity:
+    type: reuse
+    location: Sec. 3.1, p. 4
+    quote: we adopt an on-policy approach, in which self-edits are sampled from—and, crucially, rewards are computed
+      using—the current model.
+  strongest_comparison:
+    compared: RL-trained self-edit generator vs its frozen predecessor, the base model writing self-edits with the
+      same prompt and update pipeline
+    evaluation: 'no-context QA on a 200-article subset of the SQuAD evaluation set (974 questions), disjoint from
+      the RL training passages; ARC: 8 held-out evaluation tasks (40 self-edits)'
+    evaluation_steered_selection: not by the RL reward (training passages only); the split used to tune the update
+      hyperparameters, and whether the evaluation curve informed the choice of two RL rounds, are not reported
+    cost_matched: one self-edit per passage and the same SFT pipeline; RL lengthens self-edits (Fig. 5; App. B.11),
+      so update tokens are not matched; hyperparameters tuned per setting
+    starting_artifacts_matched: same passages and questions; whether the evaluation-time update starts from the
+      RL-trained or the base weights is not reported
+    replication: no replicates or uncertainty reported; the gain recurs for six prompts
+    numbers: 'single passage: base 32.7, passage only 33.5, base-model self-edits 39.7, SEAL 47.0 (GPT-4.1 data
+      46.3); continued pretraining n=2067: 43.4 vs 46.4; RL adds 6-11 points for each of six prompts, but the base
+      model with the ''implications-long'' prompt (49.3) beats RL-trained ''implications'' (47.0); ARC 20% vs 72.5%'
+    location: Sec. 4.2, p. 7; Table 2, p. 8; App. B.1, p. 20; App. B.11, p. 24; Table 1, p. 7
+    quote: Using synthetic data produced by the base Qwen-2.5-7B model yields 39.7%, a 6.2-point increase. After
+      reinforcement learning, SEAL further improves accuracy to 47.0%, notably outperforming using synthetic data
+      from GPT-4.1
+  other_comparisons:
+  - what: 'successive RL rounds (Table 10): implications 39.7 -> 43.7 -> 47.0; rewrite 49.4 -> 55.3 -> 55.6; self-QA
+      37.3 -> 42.8 -> 48.7'
+    note: 'no consistent rise in the per-round gain: no E3'
+  - what: 'sequential self-edits: accuracy on earlier passages declines as edits accumulate (Fig. 6)'
+    note: forgetting, not measured by the outer reward
+  survey_text_checks:
+  - where: tables/v7_systems.tex; fig:glyphs; fig:evidence
+    ours: SEAL coded inner {P,U} / outer {P} param.; placed at E1; no improver comparison cited
+    source: Codes supported (pp. 3-4). The paper reports a comparison of the RL-trained self-edit generator against
+      its frozen base generator on held-out passages (pp. 7, 20) that the survey does not cite.
+    verdict: level supported (E1), but the strongest comparison is omitted; SEAL is the closest E1 system to E2
+- key: zoph2017neural
+  system: NAS with an RL controller
+  source:
+    arxiv: '1611.01578'
+    version: v2
+    pdf: figures/_refs/pdf/1611.01578.pdf
+  level: E1
+  outcome: positive
+  justification: The REINFORCE-updated controller samples later architectures (reuse), and its advantage over random
+    search is shown on reward-ranked models without replicates, not on an independent evaluation.
+  level_in_current_text: E1 by list coding; text calls it a fixed searcher
+  level_change: none (text wording)
+  loops:
+  - name: controller training with REINFORCE
+    sets_level: true
+    artifact: controller weights (and the sampled architectures)
+    P: the controller RNN samples architectures; its updated weights sample later ones (changes, parametric)
+    V: validation accuracy (or perplexity) of each trained child network (fixed)
+    U: REINFORCE (fixed)
+    closure: '{P} par.'
+    level: E1
+  changed_component:
+    members:
+    - P
+    kind: parametric
+  evidence_of_reuse_or_fixity:
+    type: reuse
+    location: Sec. 1, p. 2
+    quote: Using this accuracy as the reward signal, we can compute the policy gradient to update the controller.
+      As a result, in the next iteration, the controller will give higher probabilities to architectures that receive
+      high accuracies.
+  strongest_comparison:
+    compared: policy-gradient controller vs random search (a fixed uniform proposer) over matched numbers of sampled
+      models on Penn Treebank
+    evaluation: perplexity of the top-k models ranked by the reward signal; the split plotted is not stated
+    evaluation_steered_selection: yes (models ranked by the reward signal)
+    cost_matched: yes (matched number of sampled models)
+    starting_artifacts_matched: 'yes'
+    replication: no replicates or uncertainty reported
+    numbers: 'Fig. 6 (p. 10): top-1/5/15 perplexity improvement over random search plotted every 400 models'
+    location: Sec. 4.3, control experiment 2, p. 10
+    quote: The results show that not only the best model using policy gradient is better than the best model using
+      random search, but also the average of top models is also much better.
+  other_comparisons:
+  - what: best architectures vs human-designed ones on test sets (CIFAR-10 error 3.65; PTB perplexity 62.4)
+    note: artifact comparison, test computed once for the best-validation network
+  survey_text_checks:
+  - where: sections/v7_1b_landscape.tex (lineage paragraph)
+    ours: AI R&D automation began by searching for the artifacts of machine learning with a fixed searcher, such
+      as ... architectures \citep{zoph2017neural}
+    source: The controller is updated by policy gradient so that 'in the next iteration' it samples differently
+      (p. 2); the coding manual's fourth tie-breaker codes this {P} par.
+    verdict: 'contradicted: the searcher is trained, not fixed'
+- key: jaderberg2017population
+  system: Population-based training
+  source:
+    arxiv: '1711.09846'
+    version: v2
+    pdf: figures/_refs/pdf/1711.09846.pdf
+  level: E1
+  outcome: positive
+  justification: Hyperparameters adapted from population performance configure later training (reuse of U), and
+    the one held-out comparison against a fixed schedule is a 0.35-BLEU difference without reported replicates or
+    uncertainty.
+  level_in_current_text: 'E1 (paradigms table: E0 to E1)'
+  level_change: none
+  loops:
+  - name: population training with exploit and explore
+    sets_level: true
+    artifact: network weights
+    P: gradient steps (fixed)
+    V: 'eval: episodic return or validation BLEU / Inception score (fixed)'
+    U: hyperparameters copied from better members and perturbed, then used by later training steps (changes, parametric)
+    closure: '{U} par.'
+    level: E1
+  changed_component:
+    members:
+    - U
+    kind: parametric
+  evidence_of_reuse_or_fixity:
+    type: reuse
+    location: Sec. 3, p. 5
+    quote: explore creates new hyperparameters for the next steps of gradient-based learning by either perturbing
+      the copied hyperparameters or resampling hyperparameters from the originally defined prior distribution.
+  strongest_comparison:
+    compared: 'PBT vs the same population size and steps with fixed hyperparameters: random search (RL) or the hand-tuned
+      schedule (machine translation)'
+    evaluation: 'machine translation: WMT 2014 test BLEU, while PBT''s eval and exploit use newstest2012; RL: episodic
+      return, the exploit signal'
+    evaluation_steered_selection: no for the translation test set; yes for RL
+    cost_matched: yes (workers x steps)
+    starting_artifacts_matched: yes (random initializations)
+    replication: no replicates or uncertainty reported
+    numbers: translation test BLEU 22.30 -> 22.65 (newstest2012 23.71 -> 24.23); DeepMind Lab 93% -> 106% human-normalized;
+      Atari 147% -> 181%; StarCraft II 36% -> 39%
+    location: Sec. 4.2.2, p. 10; Sec. 4.1.2, p. 8
+    quote: BLEU score on the validation set (newstest2012) is improved from 23.71 to 24.23, and on the test set
+      of WMT 2014 English-to-German is improved from 22.30 to 22.65 using PBT
+  other_comparisons:
+  - what: 'ablation (Fig. 5d): adaptive hyperparameters vs the final hyperparameters fixed from the start (DeepMind
+      Lab)'
+    note: scored on the exploit signal
+  survey_text_checks:
+  - where: sections/v7_1b_landscape.tex (Table paradigms); sections/v7_2_feedback.tex
+    ours: '{U} param when it steers later updates; E0 to E1'
+    source: Supported (p. 5).
+    verdict: supported
