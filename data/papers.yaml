@@ -5203,7 +5203,7 @@
   note: Auditor agents run multi-turn scenarios with simulated users and tools; 14 models × 111 seeds; used in system cards
 - key: fellows2026automated
   short: ★AAR (weak-to-strong)
-  title: Automated Alignment Researchers
+  title: 'Automated Alignment Researchers: Using large language models to scale scalable oversight'
   authors: Anthropic Fellows
   venue: Anthropic Fellows 2026
   date: 2026-04
@@ -9364,3 +9364,313 @@
   closure: P param
   note: With a fixed gold reward model labeling data for proxy reward models, gold reward first rises and then falls as the
     policy optimizes the proxy; the shape differs between best-of-n and RL and scales with proxy size.
+- key: shi2026evolve
+  short: A-Evolve-Training
+  title: 'A-Evolve-Training: Autonomous Post-Training of a 30B Model'
+  authors: Zhan Shi, Bing He, Yisi Sang, Benoit Dumoulin, Hanqing Lu
+  venue: arXiv 2026
+  date: 2026-06
+  arxiv: '2606.20657'
+  url: https://arxiv.org/abs/2606.20657
+  section: closing.research-agents
+  scope: core-rsi
+  locus: weights
+  signal: benchmark
+  recursive: 'yes'
+  closure: P proc
+  note: Memory-free workers post-train a 30B Nemotron over four rounds while a meta agent rewrites the rolling search policy
+    under a frozen constitution that makes the public leaderboard authoritative; leaderboard 0.80 to 0.86 (top human 0.87)
+    in one unreplicated campaign.
+- key: lin2026harness
+  short: Harness updating vs. benefit
+  title: 'Harness Updating Is Not Harness Benefit: Disentangling Evolution Capabilities in Self-Evolving LLM Agents'
+  authors: Minhua Lin, Juncheng Wu, Zijun Wang, Zhan Shi, Yisi Sang, Bing He, Zewen Liu, Tianxin Wei, Zongyu Wu, Zhiwei Zhang,
+    Dakuo Wang, Xiang Zhang, Benoit Dumoulin, Cihang Xie, Yuyin Zhou, Suhang Wang, Hanqing Lu
+  venue: arXiv 2026
+  date: 2026-05
+  arxiv: '2605.30621'
+  url: https://arxiv.org/abs/2605.30621
+  code: https://github.com/A-EVO-Lab/a-evolve/tree/release/harness-evolution
+  section: evaluation.measurement
+  scope: support
+  locus: scaffold
+  signal: execution
+  recursive: na
+  closure: na
+  note: 'Pairs seven LLMs as evolver and as agent on three benchmarks: the evolver''s capability barely changes the gain from
+    harness updates, while weak agents fail to load the updated artifacts or to follow them once loaded.'
+- key: zhang2026library
+  short: Library Drift
+  title: 'Library Drift: Diagnosing and Fixing a Silent Failure Mode in Self-Evolving LLM Skill Libraries'
+  authors: Xing Zhang, Yanwei Cui, Guanghui Wang, Ziyuan Li, Wei Qiu, Bing Zhu, Peiyang He
+  venue: ICML 2026 Workshop on Failure Modes in Agentic AI
+  date: 2026-05
+  arxiv: '2605.19576'
+  url: https://arxiv.org/abs/2605.19576
+  code: https://github.com/amazon-science/Self-Evolving-Agents-Ratchet
+  section: safety.failures
+  scope: support
+  locus: context
+  signal: execution
+  recursive: 'no'
+  closure: none
+  note: A frozen LLM writes, routes, and retires its own skills over 100 rounds; retirement on too little evidence drives
+    held-out pass@1 below the no-skill floor, and per-skill diagnostics show the collapse before task scores do; governed
+    retirement lifts pass@1 from 0.258 to 0.584.
+- key: shang2026hypothesis
+  short: HDSO
+  title: Hypothesis-Driven Skill Optimization for LLM Agents
+  authors: Fangxin Shang, Yehui Yang
+  venue: arXiv 2026
+  date: 2026-06
+  arxiv: '2606.22330'
+  url: https://arxiv.org/abs/2606.22330
+  section: background.context
+  scope: background
+  locus: context
+  signal: execution
+  recursive: 'no'
+  closure: none
+  note: A frozen curator admits a skill only after paired control and treatment runs pass two screening stages and a confirmation
+    stage on independent training tasks; +6.9 and +4.0 success-rate points on ALFWorld for two frozen executors.
+- key: jiang2026sea
+  short: SEA-Eval
+  title: 'SEA-Eval: A Benchmark for Evaluating Self-Evolving Agents Beyond Episodic Assessment'
+  authors: Sihang Jiang, Lipeng Ma, Zhonghua Hong, Keyi Wang, Zhiyu Lu, Tengfei Wang, Shisong Chen, Jinghao Zhang, Tianjun
+    Pan, Weijia Li, Jiaqing Liang, Yanghua Xiao
+  venue: arXiv 2026
+  date: 2026-04
+  arxiv: '2604.08988'
+  url: https://arxiv.org/abs/2604.08988
+  section: evaluation.measurement
+  scope: support
+  locus: context
+  signal: execution
+  recursive: na
+  closure: na
+  note: Scores self-evolving agents on sequential task streams by success rate and token cost; frameworks with comparable
+    success rates (85-96.7%) differ by up to 31.2x in tokens per task, and only some reduce cost on repeated tasks.
+- key: zheng2026seagym
+  short: SEAGym
+  title: 'SEAGym: An Evaluation Environment for Self-Evolving LLM Agents'
+  authors: Congjie Zheng, Chuanyi Xue, Bin Liang, Jun Yang, Changshui Zhang
+  venue: arXiv 2026
+  date: 2026-06
+  arxiv: '2606.17546'
+  url: https://arxiv.org/abs/2606.17546
+  section: evaluation.measurement
+  scope: support
+  locus: scaffold
+  signal: mixed
+  recursive: na
+  closure: na
+  note: Measures harness updates on train batches, frozen update-validation, held-out ID and OOD views, replay, and cost;
+    an HLE-only run reached a useful intermediate snapshot whose final snapshot collapsed on validation, ID, and OOD.
+- key: wei2025evo
+  short: Evo-Memory
+  title: 'Evo-Memory: Benchmarking LLM Agent Test-time Learning with Self-Evolving Memory'
+  authors: Tianxin Wei, Noveen Sachdeva, Benjamin Coleman, Zhankui He, Yuanchen Bei, Xuying Ning, Mengting Ai, Yunzhe Li,
+    Jingrui He, Ed H. Chi, Chi Wang, Shuo Chen, Fernando Pereira, Wang-Cheng Kang, Derek Zhiyuan Cheng
+  venue: arXiv 2025
+  date: 2025-11
+  arxiv: '2511.20857'
+  url: https://arxiv.org/abs/2511.20857
+  section: evaluation.measurement
+  scope: support
+  locus: context
+  signal: mixed
+  recursive: na
+  closure: na
+  note: Restructures ten datasets into sequential task streams so that more than ten memory modules can be compared on how
+    they accumulate and reuse experience during deployment.
+- key: wu2026harnessdev
+  short: HarnessDev
+  title: 'HarnessDev: Can LLMs Create and Evolve Their Own Agent Harness?'
+  authors: Yuhao Wu, Jingyuan Zhang, Jiajun Shi, Xinping Lei, Qingshui Gu, Yuxuan Zhang, Zexuan Wang, Chen He, Chen Huang,
+    Maojia Song, Zhiyuan Zeng, Shaowen Wang, Jinkai Liu, Yunfeng Shi, Jiaheng Liu, Shen Yan, Wenhao Huang, Ge Zhang, Wenxuan
+    Zhang
+  venue: arXiv 2026
+  date: 2026-09
+  arxiv: '2609.01437'
+  url: https://arxiv.org/abs/2609.01437
+  section: evaluation.benchmarks
+  scope: support
+  locus: scaffold
+  signal: execution
+  recursive: na
+  closure: na
+  note: Creator LLMs build an agent harness from a weak seed and then evolve it from execution feedback, with hidden tasks
+    withheld; evolution gains are small and often fail to transfer to held-out tasks or to another executor model.
+- key: zhang2026selfa
+  short: Self-Harness
+  title: 'Self-Harness: Harnesses That Improve Themselves'
+  authors: Hangfan Zhang, Shao Zhang, Kangcong Li, Chen Zhang, Yang Chen, Yiqun Zhang, Lei Bai, Shuyue Hu
+  venue: arXiv 2026
+  date: 2026-06
+  arxiv: '2606.09498'
+  url: https://arxiv.org/abs/2606.09498
+  code: https://github.com/qzzqzzb/Self-Harness
+  section: rsi.self-modifying
+  scope: core-rsi
+  locus: scaffold
+  signal: benchmark
+  recursive: 'yes'
+  closure: P proc
+  note: The same fixed model, running under its current harness, proposes harness edits from clustered failures; an edit is
+    kept if pass counts on neither the held-in nor the held-out split fall, so the held-out gains it reports are scores the
+    promotion gate selected on.
+- key: fan2026helix
+  short: HELIX
+  title: 'HELIX: Model-Harness Co-evolution for Recursive Self-Improvement'
+  authors: Tianyu Fan, Chao Huang
+  venue: arXiv 2026
+  date: 2026-08
+  arxiv: '2608.13951'
+  url: https://arxiv.org/abs/2608.13951
+  code: https://github.com/HKUDS/HELIX
+  section: ai4ai.agent-design
+  scope: core-ai4ai
+  locus: scaffold
+  signal: execution
+  recursive: 'no'
+  closure: none
+  note: Proposes alternating harness evolution and model updates; the one reported round evolves a 65-candidate harness portfolio
+    and exports 438 verified training records, but no updated model is trained.
+- key: dong2025stp
+  short: STP
+  title: 'STP: Self-play LLM Theorem Provers with Iterative Conjecturing and Proving'
+  authors: Kefan Dong, Tengyu Ma
+  venue: ICML 2025
+  date: 2025-01
+  arxiv: '2502.00212'
+  url: https://arxiv.org/abs/2502.00212
+  code: https://github.com/kfdong/STP
+  section: rsi.self-play
+  scope: core-rsi
+  locus: weights
+  signal: ground-truth
+  recursive: partial
+  closure: P param
+  note: 'One model conjectures and proves: the conjecturer trains on conjectures the current prover proves with low but positive
+    probability, the prover on Lean-verified proofs; proves 28.5% of LeanWorkbook against 13.2% for expert iteration.'
+- key: wilf2026propose
+  short: PSV
+  title: 'Propose, Solve, Verify: Self-Play Through Formal Verification'
+  authors: Alex Wilf, Pranjal Aggarwal, Bryan Parno, Daniel Fried, Louis-Philippe Morency, Paul Pu Liang, Sean Welleck
+  venue: ICML 2026
+  date: 2025-12
+  arxiv: '2512.18160'
+  url: https://arxiv.org/abs/2512.18160
+  code: https://github.com/abwilf/psv
+  section: rsi.self-play
+  scope: core-rsi
+  locus: weights
+  signal: ground-truth
+  recursive: partial
+  closure: P param
+  note: A proposer prompted with specifications labeled by the solver's pass rates writes new Verus problems, and the solver
+    is retrained on its formally verified solutions; up to 9.6x pass@1 over baselines, with only partial control of proposed
+    difficulty.
+- key: wen2026automated
+  short: Automated W2S researcher
+  title: Automated Weak-to-Strong Researcher
+  authors: Jiaxin Wen, Liang Qiu, Joe Benton, Jan Hendrik Kirchner, Jan Leike
+  venue: Anthropic Alignment Science Blog 2026
+  date: 2026-04
+  url: https://alignment.anthropic.com/2026/automated-w2s-researcher/
+  code: https://github.com/safety-research/automated-w2s-research
+  section: ai4ai.alignment
+  scope: core-ai4ai
+  locus: pipeline
+  signal: ground-truth
+  recursive: 'no'
+  closure: none
+  verify: skip
+  note: Companion to fellows2026automated. With unlimited queries to the remote PGR scorer, the agents cherry-picked random
+    seeds and extracted test labels by flipping single predictions; the best idea gave +0.5 points at production scale, within
+    noise.
+- key: openai2026gptb
+  short: GPT-5.6 launch (internal use)
+  title: 'GPT-5.6: Frontier intelligence that scales with your ambition'
+  authors: OpenAI
+  venue: OpenAI 2026
+  date: 2026-07
+  url: https://openai.com/index/gpt-5-6/
+  section: closing.lab-evidence
+  scope: support
+  locus: na
+  signal: na
+  recursive: na
+  closure: na
+  verify: skip
+  note: 'Usage indicator: over six months the share of research compute spent on internal coding inference grew 100-fold and
+    internal agentic token use about 22-fold, which the post says does not measure research progress. Read from a Web Archive
+    snapshot; openai.com returns HTTP 403 to our fetchers.'
+- key: ferrari2026gpt
+  short: GPT-5.6 Sol efficiency
+  title: How GPT-5.6 fuses frontier intelligence with frontier efficiency
+  authors: Matthew Ferrari, Phil Tillet, Ahmed Ibrahim, Joe Gershenson, Steve Coffey
+  venue: OpenAI 2026
+  date: 2026-07
+  url: https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency/
+  section: closing.lab-evidence
+  scope: support
+  locus: artifact
+  signal: execution
+  recursive: 'no'
+  closure: none
+  verify: skip
+  note: GPT-5.6 Sol ran hundreds of experiments on its own speculative-decoding draft model (over 15% better token-generation
+    efficiency) and rewrote production kernels (20% lower serving cost); both serve the deployed model. Read from a Web Archive
+    snapshot.
+- key: tran2026capacity
+  short: Meta capacity-efficiency agents
+  title: 'Capacity Efficiency at Meta: How Unified AI Agents Optimize Performance at Hyperscale'
+  authors: Tommy Tran, Michael Zetune
+  venue: Meta Engineering blog 2026
+  date: 2026-04
+  url: https://engineering.fb.com/2026/04/16/developer-tools/capacity-efficiency-at-meta-how-unified-ai-agents-optimize-performance-at-hyperscale/
+  section: closing.lab-evidence
+  scope: support
+  locus: na
+  signal: na
+  recursive: na
+  closure: na
+  verify: skip
+  note: Agents built from shared tools and encoded skills turn FBDetect regressions and efficiency opportunities into pull
+    requests for engineer review, cutting diagnosis from about 10 hours to about 30 minutes; the post covers fleet-wide service
+    code, not AI development specifically.
+- key: rodge2026post
+  short: Cosmos 3 agentic post-training
+  title: Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills
+  authors: Deep Rodge
+  venue: NVIDIA Technical Blog 2026
+  date: 2026-07
+  url: https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-in-one-day-using-agent-skills/
+  section: ai4ai.mle
+  scope: core-ai4ai
+  locus: weights
+  signal: benchmark
+  recursive: 'no'
+  closure: none
+  verify: skip
+  note: A coding agent with NVIDIA TAO skills post-trains Cosmos 3 Nano with LoRA (54.41% to 87.14%) and runs a 43-trial AutoML
+    sweep that optimizes validation accuracy; the reported peak (93.35%) is on that same validation set.
+- key: srinivasan2026building
+  short: Tax AI (OpenAI and Thrive)
+  title: Building self-improving tax agents with Codex
+  authors: Aravind Srinivasan, Samay Shamdasani, Arthur Fernandes Araujo, John de Wasseige
+  venue: OpenAI 2026
+  date: 2026-05
+  url: https://openai.com/index/building-self-improving-tax-agents-with-codex/
+  section: rsi.self-modifying
+  scope: core-rsi
+  locus: scaffold
+  signal: mixed
+  recursive: 'no'
+  closure: none
+  verify: skip
+  note: Practitioner corrections become targeted evals; Codex edits extraction code or the grader, reruns targeted and regression
+    evals, and opens a pull request for engineering review; returns with 75% correct fields rose from a quarter to 86% in
+    six weeks. Read from a Web Archive snapshot.
+  subgroup: fixed-procedure

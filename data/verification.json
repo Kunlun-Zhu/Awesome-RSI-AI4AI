@@ -2118,6 +2118,21 @@
   "status": "ok",
   "title": "Self-play with Execution Feedback: Improving Instruction-following Capabilities of Large Language Models"
  },
+ "dong2025stp": {
+  "authors": [
+   "Kefan Dong",
+   "Tengyu Ma"
+  ],
+  "date": "2025-01-31",
+  "method": "arxiv",
+  "query_arxiv": "2502.00212",
+  "query_doi": null,
+  "query_title": "STP: Self-play LLM Theorem Provers with Iterative Conjecturing and Proving",
+  "query_url": "https://arxiv.org/abs/2502.00212",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "STP: Self-play LLM Theorem Provers with Iterative Conjecturing and Proving"
+ },
  "dong2025survey": {
   "authors": [
    "Yihong Dong",
@@ -2463,6 +2478,21 @@
   "status": "ok",
   "title": "DARC: Decoupled Asymmetric Reasoning Curriculum for LLM Evolution"
  },
+ "fan2026helix": {
+  "authors": [
+   "Tianyu Fan",
+   "Chao Huang"
+  ],
+  "date": "2026-08-14",
+  "method": "arxiv",
+  "query_arxiv": "2608.13951",
+  "query_doi": null,
+  "query_title": "HELIX: Model-Harness Co-evolution for Recursive Self-Improvement",
+  "query_url": "https://arxiv.org/abs/2608.13951",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "HELIX: Model-Harness Co-evolution for Recursive Self-Improvement"
+ },
  "fang2025comprehensive": {
   "authors": [
    "Jinyuan Fang",
@@ -2582,10 +2612,9 @@
   "title": "EMAS: Stabilizing Multi-Agent System Evolution through Evidence-Guided Revision"
  },
  "fellows2026automated": {
-  "page": "title-found",
   "query_arxiv": null,
   "query_doi": null,
-  "query_title": "Automated Alignment Researchers",
+  "query_title": "Automated Alignment Researchers: Using large language models to scale scalable oversight",
   "query_url": "https://www.anthropic.com/research/automated-alignment-researchers",
   "status": "manual"
  },
@@ -2674,6 +2703,13 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Promptbreeder: Self-Referential Self-Improvement Via Prompt Evolution"
+ },
+ "ferrari2026gpt": {
+  "query_arxiv": null,
+  "query_doi": null,
+  "query_title": "How GPT-5.6 fuses frontier intelligence with frontier efficiency",
+  "query_url": "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency/",
+  "status": "manual"
  },
  "field2026ai": {
   "authors": [
@@ -5121,6 +5157,31 @@
   "status": "ok",
   "title": "Learning to Optimize through Solver-Grounded Self-Play"
  },
+ "jiang2026sea": {
+  "authors": [
+   "Sihang Jiang",
+   "Lipeng Ma",
+   "Zhonghua Hong",
+   "Keyi Wang",
+   "Zhiyu Lu",
+   "Tengfei Wang",
+   "Shisong Chen",
+   "Jinghao Zhang",
+   "Tianjun Pan",
+   "Weijia Li",
+   "Jiaqing Liang",
+   "Yanghua Xiao"
+  ],
+  "date": "2026-04-10",
+  "method": "arxiv",
+  "query_arxiv": "2604.08988",
+  "query_doi": null,
+  "query_title": "SEA-Eval: A Benchmark for Evaluating Self-Evolving Agents Beyond Episodic Assessment",
+  "query_url": "https://arxiv.org/abs/2604.08988",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "SEA-Eval: A Benchmark for Evaluating Self-Evolving Agents Beyond Episodic Assessment"
+ },
  "jiang2026self": {
   "page": "title-not-found",
   "query_arxiv": null,
@@ -6567,6 +6628,36 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Beyond Endpoint Performance: Process-Level Evaluation of Self-Evolving Agents"
+ },
+ "lin2026harness": {
+  "authors": [
+   "Minhua Lin",
+   "Juncheng Wu",
+   "Zijun Wang",
+   "Zhan Shi",
+   "Yisi Sang",
+   "Bing He",
+   "Zewen Liu",
+   "Tianxin Wei",
+   "Zongyu Wu",
+   "Zhiwei Zhang",
+   "Dakuo Wang",
+   "Xiang Zhang",
+   "Benoit Dumoulin",
+   "Cihang Xie",
+   "Yuyin Zhou",
+   "Suhang Wang",
+   "Hanqing Lu"
+  ],
+  "date": "2026-05-28",
+  "method": "arxiv",
+  "query_arxiv": "2605.30621",
+  "query_doi": null,
+  "query_title": "Harness Updating Is Not Harness Benefit: Disentangling Evolution Capabilities in Self-Evolving LLM Agents",
+  "query_url": "https://arxiv.org/abs/2605.30621",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Harness Updating Is Not Harness Benefit: Disentangling Evolution Capabilities in Self-Evolving LLM Agents"
  },
  "lin2026hidden": {
   "authors": [
@@ -8024,6 +8115,13 @@
   "query_url": "https://deploymentsafety.openai.com/gpt-5-6-preview",
   "status": "manual"
  },
+ "openai2026gptb": {
+  "query_arxiv": null,
+  "query_doi": null,
+  "query_title": "GPT-5.6: Frontier intelligence that scales with your ambition",
+  "query_url": "https://openai.com/index/gpt-5-6/",
+  "status": "manual"
+ },
  "openai2026introducing": {
   "page": "title-not-found",
   "query_arxiv": null,
@@ -8983,6 +9081,13 @@
   "status": "ok",
   "title": "A Self-Improving Coding Agent"
  },
+ "rodge2026post": {
+  "query_arxiv": null,
+  "query_doi": null,
+  "query_title": "Post-Train NVIDIA Cosmos 3 in One Day Using Agent Skills",
+  "query_url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-in-one-day-using-agent-skills/",
+  "status": "manual"
+ },
  "roe2026iterative": {
   "authors": [
    "Zephaniah Roe",
@@ -9410,6 +9515,21 @@
   "status": "ok",
   "title": "AgentSquare: Automatic LLM Agent Search in Modular Design Space"
  },
+ "shang2026hypothesis": {
+  "authors": [
+   "Fangxin Shang",
+   "Yehui Yang"
+  ],
+  "date": "2026-06-21",
+  "method": "arxiv",
+  "query_arxiv": "2606.22330",
+  "query_doi": null,
+  "query_title": "Hypothesis-Driven Skill Optimization for LLM Agents",
+  "query_url": "https://arxiv.org/abs/2606.22330",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Hypothesis-Driven Skill Optimization for LLM Agents"
+ },
  "shao2024deepseekmath": {
   "authors": [
    "Zhihong Shao",
@@ -9511,6 +9631,24 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Self-Distillation Enables Continual Learning"
+ },
+ "shi2026evolve": {
+  "authors": [
+   "Zhan Shi",
+   "Bing He",
+   "Yisi Sang",
+   "Benoit Dumoulin",
+   "Hanqing Lu"
+  ],
+  "date": "2026-06-09",
+  "method": "arxiv",
+  "query_arxiv": "2606.20657",
+  "query_doi": null,
+  "query_title": "A-Evolve-Training: Autonomous Post-Training of a 30B Model",
+  "query_url": "https://arxiv.org/abs/2606.20657",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "A-Evolve-Training: Autonomous Post-Training of a 30B Model"
  },
  "shinn2023reflexion": {
   "authors": [
@@ -9862,6 +10000,13 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Recursive self-improvement of AI research agents"
+ },
+ "srinivasan2026building": {
+  "query_arxiv": null,
+  "query_doi": null,
+  "query_title": "Building self-improving tax agents with Codex",
+  "query_url": "https://openai.com/index/building-self-improving-tax-agents-with-codex/",
+  "status": "manual"
  },
  "starace2025paperbench": {
   "authors": [
@@ -10733,6 +10878,13 @@
   "status": "ok",
   "title": "Llama 2: Open Foundation and Fine-Tuned Chat Models"
  },
+ "tran2026capacity": {
+  "query_arxiv": null,
+  "query_doi": null,
+  "query_title": "Capacity Efficiency at Meta: How Unified AI Agents Optimize Performance at Hyperscale",
+  "query_url": "https://engineering.fb.com/2026/04/16/developer-tools/capacity-efficiency-at-meta-how-unified-ai-agents-optimize-performance-at-hyperscale/",
+  "status": "manual"
+ },
  "trirat2025automl": {
   "authors": [
    "Patara Trirat",
@@ -11472,6 +11624,34 @@
   "status": "ok",
   "title": "Astra: A Multi-Agent System for GPU Kernel Performance Optimization"
  },
+ "wei2025evo": {
+  "authors": [
+   "Tianxin Wei",
+   "Noveen Sachdeva",
+   "Benjamin Coleman",
+   "Zhankui He",
+   "Yuanchen Bei",
+   "Xuying Ning",
+   "Mengting Ai",
+   "Yunzhe Li",
+   "Jingrui He",
+   "Ed H. Chi",
+   "Chi Wang",
+   "Shuo Chen",
+   "Fernando Pereira",
+   "Wang-Cheng Kang",
+   "Derek Zhiyuan Cheng"
+  ],
+  "date": "2025-11-25",
+  "method": "arxiv",
+  "query_arxiv": "2511.20857",
+  "query_doi": null,
+  "query_title": "Evo-Memory: Benchmarking LLM Agent Test-time Learning with Self-Evolving Memory",
+  "query_url": "https://arxiv.org/abs/2511.20857",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Evo-Memory: Benchmarking LLM Agent Test-time Learning with Self-Evolving Memory"
+ },
  "wei2026evo": {
   "authors": [
    "Tianxin Wei",
@@ -11555,6 +11735,13 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Predicting Empirical AI Research Outcomes with Language Models"
+ },
+ "wen2026automated": {
+  "query_arxiv": null,
+  "query_doi": null,
+  "query_title": "Automated Weak-to-Strong Researcher",
+  "query_url": "https://alignment.anthropic.com/2026/automated-w2s-researcher/",
+  "status": "manual"
  },
  "weng2025cycleresearcher": {
   "authors": [
@@ -11698,6 +11885,26 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "RE-Bench: Evaluating frontier AI R&D capabilities of language model agents against human experts"
+ },
+ "wilf2026propose": {
+  "authors": [
+   "Alex Wilf",
+   "Pranjal Aggarwal",
+   "Bryan Parno",
+   "Daniel Fried",
+   "Louis-Philippe Morency",
+   "Paul Pu Liang",
+   "Sean Welleck"
+  ],
+  "date": "2025-12-20",
+  "method": "arxiv",
+  "query_arxiv": "2512.18160",
+  "query_doi": null,
+  "query_title": "Propose, Solve, Verify: Self-Play Through Formal Verification",
+  "query_url": "https://arxiv.org/abs/2512.18160",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Propose, Solve, Verify: Self-Play Through Formal Verification"
  },
  "williams2026responsible": {
   "page": "title-found",
@@ -11903,6 +12110,38 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Envs-FORGE: Frontier-Optimized Reward-Grounded Environment Synthesis for Agent RL"
+ },
+ "wu2026harnessdev": {
+  "authors": [
+   "Yuhao Wu",
+   "Jingyuan Zhang",
+   "Jiajun Shi",
+   "Xinping Lei",
+   "Qingshui Gu",
+   "Yuxuan Zhang",
+   "Zexuan Wang",
+   "Chen He",
+   "Chen Huang",
+   "Maojia Song",
+   "Zhiyuan Zeng",
+   "Shaowen Wang",
+   "Jinkai Liu",
+   "Yunfeng Shi",
+   "Jiaheng Liu",
+   "Shen Yan",
+   "Wenhao Huang",
+   "Ge Zhang",
+   "Wenxuan Zhang"
+  ],
+  "date": "2026-09-01",
+  "method": "arxiv",
+  "query_arxiv": "2609.01437",
+  "query_doi": null,
+  "query_title": "HarnessDev: Can LLMs Create and Evolve Their Own Agent Harness?",
+  "query_url": "https://arxiv.org/abs/2609.01437",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "HarnessDev: Can LLMs Create and Evolve Their Own Agent Harness?"
  },
  "xia2025live": {
   "authors": [
@@ -13881,6 +14120,26 @@
   "status": "ok",
   "title": "Latent On-Policy Self-Distillation"
  },
+ "zhang2026library": {
+  "authors": [
+   "Xing Zhang",
+   "Yanwei Cui",
+   "Guanghui Wang",
+   "Ziyuan Li",
+   "Wei Qiu",
+   "Bing Zhu",
+   "Peiyang He"
+  ],
+  "date": "2026-05-19",
+  "method": "arxiv",
+  "query_arxiv": "2605.19576",
+  "query_doi": null,
+  "query_title": "Library Drift: Diagnosing and Fixing a Silent Failure Mode in Self-Evolving LLM Skill Libraries",
+  "query_url": "https://arxiv.org/abs/2605.19576",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Library Drift: Diagnosing and Fixing a Silent Failure Mode in Self-Evolving LLM Skill Libraries"
+ },
  "zhang2026privileged": {
   "authors": [
    "XiuYu Zhang",
@@ -13929,6 +14188,27 @@
   "similarity": 1.0,
   "status": "ok",
   "title": "Self-Reference in Large Language Models: The Introspection Threshold for Recursive Self-Improvement"
+ },
+ "zhang2026selfa": {
+  "authors": [
+   "Hangfan Zhang",
+   "Shao Zhang",
+   "Kangcong Li",
+   "Chen Zhang",
+   "Yang Chen",
+   "Yiqun Zhang",
+   "Lei Bai",
+   "Shuyue Hu"
+  ],
+  "date": "2026-06-08",
+  "method": "arxiv",
+  "query_arxiv": "2606.09498",
+  "query_doi": null,
+  "query_title": "Self-Harness: Harnesses That Improve Themselves",
+  "query_url": "https://arxiv.org/abs/2606.09498",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "Self-Harness: Harnesses That Improve Themselves"
  },
  "zhao2024expel": {
   "authors": [
@@ -14191,6 +14471,24 @@
   "similarity": 0.911,
   "status": "ok",
   "title": "A Survey of Process Reward Models: From Outcome Signals to Process Supervisions for Large Language Models"
+ },
+ "zheng2026seagym": {
+  "authors": [
+   "Congjie Zheng",
+   "Chuanyi Xue",
+   "Bin Liang",
+   "Jun Yang",
+   "Changshui Zhang"
+  ],
+  "date": "2026-06-16",
+  "method": "arxiv",
+  "query_arxiv": "2606.17546",
+  "query_doi": null,
+  "query_title": "SEAGym: An Evaluation Environment for Self-Evolving LLM Agents",
+  "query_url": "https://arxiv.org/abs/2606.17546",
+  "similarity": 1.0,
+  "status": "ok",
+  "title": "SEAGym: An Evaluation Environment for Self-Evolving LLM Agents"
  },
  "zheng2026skillprox": {
   "authors": [
